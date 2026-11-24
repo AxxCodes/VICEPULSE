@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>VICEPULSE news</title>
+  <link>https://axxcodes.github.io/VICEPULSE/news/</link>
+  <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
+  <language>en</language>
+  <lastBuildDate>Tue, 24 Nov 2026 13:29:54 GMT</lastBuildDate>
+  <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Exclusive: CGBJ gets GTA VI in game, walking and talking in an unlit world</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-cgbj-in-game.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-cgbj-in-game.html</guid>
+    <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>A private build based on VIctory and XCL lets a player walk around and talk to NPCs, very slowly. A video shows the opening scenes in flat colours, without lighting.</description>
+  </item>
+  <item>
+    <title>Exclusive: XCL reports 30 fps in GTA VI but won&#39;t say if it&#39;s past the menus</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-xcl-30fps-in-game.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-xcl-30fps-in-game.html</guid>
+    <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The team refused to say more for fear of being nuked, but hinted to one of our members that it&#39;s working really well. Update: testers&#39; reports now show it loading into the world.</description>
+  </item>
+  <item>
+    <title>TuxBox draws GTA VI&#39;s first screen as VIctory edges into the world</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-tuxbox-first-frame-victory-world.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-tuxbox-first-frame-victory-world.html</guid>
+    <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>Overnight, a Linux-first layer showed GTA VI&#39;s player-selection prompt, VIctory reported a title card inside the game world, and two smaller projects got GTA VI&#39;s code running.</description>
+  </item>
+  <item>
+    <title>Leonida is nuked: GitHub repo deleted, Discord gone, creator quits</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-nuked.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-nuked.html</guid>
+    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>Within an hour on Monday night the biggest GTA VI port lost its Discord server and its GitHub repository, and its creator said he was stepping away.</description>
+  </item>
+  <item>
+    <title>Leonida&#39;s Discord server disappears as the project moves to a new GitHub account</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-discord-down.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-discord-down.html</guid>
+    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Takedown</category>
+    <description>The 179,000-member server stopped resolving late on Monday. Members say Discord banned it; nobody has said why. Update: the GitHub repository has since been deleted too.</description>
+  </item>
+  <item>
+    <title>Exclusive: Marvis livestreams GTA VI reaching its menus at about 15 fps</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-marvis-menus-stream.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-marvis-menus-stream.html</guid>
+    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>He has since published the code as VIctory, but nobody else has reproduced the run yet. Viewers who studied the stream think it is most likely real.</description>
+  </item>
+  <item>
+    <title>Leonida gets GTA VI&#39;s executable running, but nothing is on screen yet</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-exe-runs.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-exe-runs.html</guid>
+    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>Contributors&#39; builds run the game&#39;s own code for minutes behind a blank window; posts in its Discord say it won&#39;t be playable today, but maybe tomorrow.</description>
+  </item>
+  <item>
+    <title>Cyberleek&#39;s README frames the leak as a protest and asks for crypto</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-exe-readme.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-exe-readme.html</guid>
+    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Leak</category>
+    <description>A note said to ship with the executable says donations fund a secret project and counts every token trade as a vote. None of it can be checked.</description>
+  </item>
+  <item>
+    <title>Cyberleek says the missing GTA VI executable is out, hours before its own deadline</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-exe-released.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-exe-released.html</guid>
+    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Leak</category>
+    <description>The leaker posted the release at 15:36 CET. Nobody has confirmed the file is genuine yet, and no project has booted the game.</description>
+  </item>
+  <item>
+    <title>AnyPS5 developer suspended on X, with no evidence Sony or Rockstar was behind it</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-22-anyps5-developer-x-suspended.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-22-anyps5-developer-x-suspended.html</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Safety</category>
+    <description>The suspension is real, but the cause isn&#39;t public, and an account blaming the two companies also promotes a crypto token.</description>
+  </item>
+  <item>
+    <title>XCL takes the lead after running its first retail Xbox games on PC</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-22-xcl-takes-lead.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-22-xcl-takes-lead.html</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The Wine-style layer says Minecraft Preview is fully playable on Windows. GTA VI still can&#39;t start, because its executable is missing.</description>
+  </item>
+  <item>
+    <title>The missing GTA VI executable is due Monday at 18:00 CET, and votes cost money</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-22-exe-deadline-time.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-22-exe-deadline-time.html</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Leak</category>
+    <description>Cyberleek&#39;s countdown ends at 17:00 UTC on Nov 23 while its site charges for poll votes; the early-release token goal is reportedly down to $6 million.</description>
+  </item>
+  <item>
+    <title>Re-uploads of the leading GTA VI projects are already circulating</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-22-copies.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-22-copies.html</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Safety</category>
+    <description>On its first run, our scout found three copies of Leonida under other accounts. One had been renamed and given a vague description.</description>
+  </item>
+  <item>
+    <title>Cyberleek&#39;s Xbox build is out, except the file that runs it</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-21-exe-deadline.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-21-exe-deadline.html</guid>
+    <pubDate>Sat, 21 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Leak</category>
+    <description>The leaker says the missing executable will be released on Monday, Nov 23, or sooner if its meme coin reaches a $15 million market cap.</description>
+  </item>
+  <item>
+    <title>Every “GTA VI for PC” download is fake, and some empty your accounts</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-19-fake-downloads.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-19-fake-downloads.html</guid>
+    <pubDate>Thu, 19 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Security</category>
+    <description>Security firms have tracked tens of thousands of GTA VI malware detections, and a ready-made scam kit is for sale on the dark web.</description>
+  </item>
+  <item>
+    <title>Take-Two hits GTA V ports on GitHub, saying “bring your own files” is no defence</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-18-take-two-dmca.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-18-take-two-dmca.html</guid>
+    <pubDate>Wed, 18 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Takedown</category>
+    <description>Four DMCA notices, filed the day before GTA VI launched, took down unofficial GTA V ports along with hundreds of forks.</description>
+  </item>
+  <item>
+    <title>The 2022 GTA VI hacker pleads guilty and will be sentenced on Monday</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-16-kurtaj-plea.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-16-kurtaj-plea.html</guid>
+    <pubDate>Mon, 16 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Legal</category>
+    <description>Arion Kurtaj admitted hacking Rockstar and posting about 90 development clips. His sentencing falls on the same day as Cyberleek&#39;s executable deadline.</description>
+  </item>
+</channel>
+</rss>

@@ -7,7 +7,7 @@ import { esc, NEWS_ID_RE, articlePath, coverHtml, storyImageUrl } from '../../as
 
 const SITE_NAME = 'VICEPULSE';
 const articleUrl = (n, siteUrl) => siteUrl
-  ? `${siteUrl}${articlePath(n).replace(/\.html$/, '')}`
+  ? `${siteUrl}${articlePath(n)}`
   : `${n.id}.html`;
 const isDay = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d || '');
 const httpsOnly = (u) => (/^https:\/\/[^\s"'<>]+$/.test(u || '') ? u : null);

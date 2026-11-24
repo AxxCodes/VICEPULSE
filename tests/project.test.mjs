@@ -50,8 +50,10 @@ test('archive, individual articles, RSS and discovery metadata use the configure
   assert.ok(published.length > 0);
   assert.equal(Object.keys(files).filter((path) => /news\/.+\.html$/.test(path)).length, published.length + 1);
   for (const article of published) {
-    assert.ok(files[`news/${article.id}.html`].includes(`href="${siteUrl}news/${article.id}"`));
-    assert.ok(files['news/feed.xml'].includes(`${siteUrl}news/${article.id}`));
+    const path = `news/${article.id}.html`;
+    assert.ok(files[path].includes(`href="${siteUrl}${path}"`));
+    assert.ok(files['news/feed.xml'].includes(`<link>${siteUrl}${path}</link>`));
+    assert.ok(files['sitemap.xml'].includes(`<loc>${siteUrl}${path}</loc>`));
   }
   assert.ok(files['news/index.html'].includes('VICEPULSE'));
   assert.ok(files['sitemap.xml'].includes(siteUrl));
