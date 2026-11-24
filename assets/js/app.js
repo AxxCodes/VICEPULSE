@@ -22,7 +22,7 @@ const effortUrl = (e) => (hasRepo(e) ? repoUrl(e.repo, e.branch) : /^news\/[a-z0
 const safeHttp = (u) => (/^https:\/\//.test(u || '') ? u : '#');
 const pct = (v) => `${Math.round(v * 10) / 10}`;
 const axis = (score) => (score / MAX_SCORE) * 100;
-const points = (score) => `${pct(score)} pts`;
+const percent = (score) => `${pct(axis(score))}%`;
 
 // Names from scoring.js, in the page's language when a translation exists.
 const msLabel = (key) => tr(`ms.${key}.label`, MILESTONES.find((m) => m.key === key)?.label || key);
@@ -258,6 +258,7 @@ function startForecast() {
     });
     if (seconds === 0) {
       $('#forecast-status').textContent = 'Checkpoint reached · awaiting verified results';
+      $('#forecast-live').hidden = true;
       clearInterval(timer);
       document.removeEventListener('visibilitychange', tick);
     }
@@ -265,6 +266,7 @@ function startForecast() {
   };
 
   if (tick()) {
+    $('#forecast-live').hidden = false;
     timer = setInterval(tick, 250);
     document.addEventListener('visibilitychange', tick);
   }
@@ -329,13 +331,14 @@ function renderOverall(data) {
   const all = data.efforts;
   const ov = overall(all);
   const leader = ov.leader?.effort;
-  $('#ov-score').textContent = pct(ov.score);
+  $('#ov-score').textContent = pct(axis(ov.score));
   $('#hero-progress-link').hidden = !leader;
-  $('#hero-progress-value').textContent = points(ov.score);
-  $('#score-track').setAttribute('aria-valuenow', ov.score);
+  $('#hero-progress-value').textContent = percent(ov.score);
+  $('#score-track').setAttribute('aria-valuenow', pct(axis(ov.score)));
   $('#score-fill').style.setProperty('--score', `${axis(ov.score)}%`);
   const hasStableRun = all.some((e) => !e.nuked && e._s.reached === 'ingame' && gameplaySignals(e.gta).sessionMinutes >= 30);
   const hasSustained30 = all.some((e) => !e.nuked && e._s.reached === 'ingame' && gameplaySignals(e.gta).sustained30);
+  $('#fps-status').textContent = t(hasSustained30 ? 'ov.fpsVerified' : 'ov.fpsPending');
   const answer = $('#answer');
   answer.hidden = !leader;
   answer.textContent = t(`answer.${hasStableRun ? 'yes' : hasSustained30 ? 'mostly' : ov.furthest.key === 'ingame' ? 'sortOf' : 'notYet'}`);
@@ -343,7 +346,7 @@ function renderOverall(data) {
     ? `${esc(t('ov.leader'))} <a href="#effort-${esc(leader.id)}">${esc(leader.name)}</a> ${hasRepo(leader) ? `${esc(t('ov.byOwner', { owner: owner(leader.repo) }))} ` : ''}${esc(ov.leader.reached === 'groundwork' ? t('ov.stillGroundwork') : t('ov.reached', { label: msLabel(ov.leader.reached) }))}`
     : esc(t('ov.none'));
   $('#ov-stage').textContent = msLabel(ov.furthest.key);
-  $('#ov-top3').textContent = points(ov.top3);
+  $('#ov-top3').textContent = percent(ov.top3);
   const booted = all.filter((e) => ladderValue(e.gta?.boots) >= 1).length;
   $('#ov-boot').textContent = `${booted} / ${all.length}`;
   $('#ov-count').textContent = `${all.length}`;
@@ -376,7 +379,7 @@ function renderRoute(furthest) {
     return `<button type="button" class="route-step ${i < current ? 'is-passed' : i === current ? 'is-current' : ''}"
       data-step="${i}" aria-controls="roadmap-detail" aria-pressed="false"
       ${i === current ? 'aria-current="step"' : ''}>
-      <span class="route-value">${milestone.at} pts</span><span class="route-node" aria-hidden="true"></span><span>${esc(label)}</span>
+      <span class="route-value">${percent(milestone.at)}</span><span class="route-node" aria-hidden="true"></span><span>${esc(label)}</span>
     </button>`;
   }).join('');
   const select = (i) => {
@@ -423,8 +426,8 @@ function drawMarkers(ranked, leader) {
       const e = it.r.effort;
       const src = effortAvatar(e);
       return `<a class="marker ${e === leader ? 'is-leader' : ''}" href="#effort-${esc(e.id)}" style="left:${it.a}px;bottom:${H - avatarY - 32}px"
-                data-tip-title="${esc(e.name)} · ${points(it.r.score)}" data-tip="${esc(msLabel(it.r.reached))} · ${esc(e.approach || '')}">
-                <span class="mk-name">${esc(e.name)} · ${points(it.r.score)}</span>
+                data-tip-title="${esc(e.name)} · ${percent(it.r.score)}" data-tip="${esc(msLabel(it.r.reached))} · ${esc(e.approach || '')}">
+                <span class="mk-name">${esc(e.name)} · ${percent(it.r.score)}</span>
                 ${src ? `<img src="${esc(src)}" alt="" loading="lazy" data-fallback="${esc(e.name.slice(0, 2))}">` : `<span class="mk-fallback">${esc(e.name.slice(0, 2))}</span>`}
               </a>`;
     }).join('');
@@ -451,7 +454,7 @@ function renderHistory(history, efforts) {
       <summary>${esc(t('road.historyData'))}</summary>
       <table>
         <thead><tr><th scope="col">${esc(t('road.day'))}</th><th scope="col">${esc(t('ov.leader'))}</th><th scope="col">${esc(t('ov.top3'))}</th><th scope="col">${esc(t('ov.furthest'))}</th></tr></thead>
-        <tbody>${[...pts].reverse().map((p) => `<tr><th scope="row"><time datetime="${esc(p.date)}">${esc(fmtDay(p.date))}</time></th><td><b>${points(p.leader)}</b><br>${esc(names.get(p.leaderId) || p.leaderId || "–")}</td><td>${Number.isFinite(p.top3) ? points(p.top3) : '–'}</td><td>${p.furthest ? esc(msLabel(p.furthest)) : '–'}</td></tr>`).join('')}</tbody>
+        <tbody>${[...pts].reverse().map((p) => `<tr><th scope="row"><time datetime="${esc(p.date)}">${esc(fmtDay(p.date))}</time></th><td><b>${percent(p.leader)}</b><br>${esc(names.get(p.leaderId) || p.leaderId || "–")}</td><td>${Number.isFinite(p.top3) ? percent(p.top3) : '–'}</td><td>${p.furthest ? esc(msLabel(p.furthest)) : '–'}</td></tr>`).join('')}</tbody>
       </table>
     </details>`;
 }
@@ -514,7 +517,7 @@ function playChecks(e) {
       return { label, value: value === 1 ? 'Verified for the test scene' : value > 0 ? 'Partial' : 'Unverified', state: value === 1 ? 'pass' : value > 0 ? 'partial' : '' };
     }),
     { label: 'In-game frame rate', value: play.fps ? `${play.fps} FPS reported` : 'Unmeasured', state: play.fps ? 'partial' : '' },
-    { label: 'Sustained 30 FPS', value: play.sustained30 ? 'Documented' : 'Unverified', state: play.sustained30 ? 'pass' : '' },
+    { label: 'Sustained 30 FPS in gameplay', value: play.sustained30 ? 'Documented' : 'Not verified', state: play.sustained30 ? 'pass' : '' },
     { label: 'Crash-free session', value: play.sessionMinutes ? `${play.sessionMinutes} min documented` : 'Unverified', state: play.sessionMinutes >= 30 ? 'pass' : play.sessionMinutes ? 'partial' : '' },
   ];
 }
@@ -560,7 +563,7 @@ function effortCard(e, rank, open, overallRank = null) {
           <h3>${url ? `<a href="${esc(url)}"${external}>${esc(e.name)}</a>` : esc(e.name)}</h3>
           <p class="e-by">${hasRepo(e) ? `${esc(e.repo)}${e.branch && !['main', 'master'].includes(e.branch) ? ` · ${esc(t('effort.branch', { b: e.branch }))}` : ''}` : esc(e.byline || '')}</p>
         </div>
-        <div class="e-score"><b>${pct(s.score)}<span> pts</span></b><small>${esc(msLabel(s.reached))}</small></div>
+        <div class="e-score"><b>${pct(axis(s.score))}<span>%</span></b><small>${esc(msLabel(s.reached))}</small></div>
       </div>
       <div class="tags">${tags}</div>
       <p class="e-summary">${esc(e.summary)}</p>
@@ -569,7 +572,7 @@ function effortCard(e, rank, open, overallRank = null) {
         const project = state.data.efforts.find((effort) => effort.id === id);
         return project ? `<a href="#effort-${esc(project.id)}">${esc(project.name)}</a>` : esc(id);
       }).join(' · ')}</p>` : ''}
-      <div class="bar" aria-label="${esc(t('effort.progressLabel', { name: e.name, n: pct(s.score) }))}">
+      <div class="bar" aria-label="${esc(t('effort.progressLabel', { name: e.name, n: pct(axis(s.score)) }))}">
         <div class="bar-track"><div class="bar-fill" data-width="${axis(s.score)}"></div><div class="bar-ticks">${ticks}</div></div>
         ${checkList(e)}
       </div>
@@ -620,7 +623,7 @@ function mountComparison(efforts) {
       for (const opt of select.options) opt.disabled = opt.value === pair[1 - i].id;
     });
     const rows = [
-      ['watch.progress', (e) => points(e._s.score)],
+      ['watch.progress', (e) => percent(e._s.score)],
       ...playChecks(pair[0]).map(({ label }, i) => [label, (e) => playChecks(e)[i].value]),
       ['ov.furthest', (e) => msLabel(e._s.reached)],
       ['search.evidence', evidenceLabel],
@@ -651,7 +654,7 @@ function renderWatchlist(data) {
         </details>` : ''}
       </div>
       <span class="w-muted" role="cell">${esc(e.approach)}${e.target && /gta|ps5/i.test(e.target) ? ` · ${esc(e.target)}` : ''}</span>
-      <div class="w-bar" role="cell"><div class="bar-track"><div class="bar-fill" data-width="${axis(e._s.score)}"></div></div><b>${points(e._s.score)}</b></div>
+      <div class="w-bar" role="cell"><div class="bar-track"><div class="bar-fill" data-width="${axis(e._s.score)}"></div></div><b>${percent(e._s.score)}</b></div>
       <span class="w-muted" role="cell">★ ${fmtK(e.stats?.stars)}</span>
       <span class="w-muted" role="cell">${esc(ago(e.stats?.pushedAt))}</span>
     </div>`).join('');
@@ -775,8 +778,8 @@ function renderFlags(flags) {
 /* ---------- Method ---------- */
 function renderMethod() {
   $('#ladder-explain').innerHTML = MILESTONES.map((m, i) => `
-    <li><span class="le-at">${i === 0 ? '0–4' : m.at}</span><div><h4>${esc(msLabel(m.key))}</h4><p>${esc(msDesc(m))}</p></div></li>`).join('');
-  $('#gw-explain').innerHTML = GROUNDWORK.map((g) => `<li><b>${esc(gwLabel(g))}<span>${esc(t('method.pts', { n: Math.round(g.weight * 4 * 10) / 10 }))}</span></b>${esc(gwDesc(g))}</li>`).join('');
+    <li><span class="le-at">${i === 0 ? '0–5%' : percent(m.at)}</span><div><h4>${esc(msLabel(m.key))}</h4><p>${esc(msDesc(m))}</p></div></li>`).join('');
+  $('#gw-explain').innerHTML = GROUNDWORK.map((g) => `<li><b>${esc(gwLabel(g))}<span>${percent(g.weight * 4)}</span></b>${esc(gwDesc(g))}</li>`).join('');
 }
 
 /* ---------- Interaction ---------- */

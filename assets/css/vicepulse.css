@@ -754,3 +754,30 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
 .watch-details { margin-top: 6px; font-size: .85rem; }
 .watch-details summary { cursor: pointer; }
 .watch-details .play-checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.forecast-badges { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.forecast-live {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .55rem .95rem;
+  border: 1px solid #4de59e;
+  border-radius: 999px;
+  background: #092d23;
+  color: #b5ffda;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+.forecast-live[hidden] { display: none; }
+.forecast-live-dot {
+  width: .8rem;
+  height: .8rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #65ffa9;
+  box-shadow: 0 0 0 .23rem #65ffa935, 0 0 .85rem #65ffa9;
+}
+.forecast-refresh { margin: -.2rem 0 .9rem; color: #e0d1eb; font-size: .88rem; }
+.fps-status { margin: .75rem 0; font-weight: 700; }

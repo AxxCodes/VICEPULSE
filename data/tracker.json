@@ -25,7 +25,7 @@
       "body": [
         "PortWatch VI has changed its scale and added two tests worth following. It describes playable movement and improved lighting, including reported ray-traced effects, in hyphennn’s private opening-scene build. That build is based on fxceless’s public victory-gta6 fork. The clips do not give us a measured frame rate or a verified long run.",
         "The public fork’s README reports characters, textures and sunlit geometry in the opening, with shadows still going black and performance around 2–4 FPS on one test machine. It also documents checkpoint save and reload, which H4NK highlighted on X. omonkey’s streamed test remains about 5 FPS, and CGBJ’s earlier report remains around 4 FPS. The older X lighting clip is still unattributed to a confirmed build.",
-        "VICEPULSE now uses gameplay points. Early milestones carry fewer points, and the cards show colors and textures, lighting and shadows, shader behavior, measured FPS, sustained 30 FPS, and crash-free time. A missing measurement earns no credit for that check. November 30 stays a low-confidence checkpoint for a documented 30-minute crash-free Windows session."
+        "VICEPULSE shows gameplay readiness as a percentage. Early milestones carry less weight, and the cards show colors and textures, lighting and shadows, shader behavior, measured FPS, sustained 30 FPS, and crash-free time. A missing measurement earns no credit for that check. November 30 stays a low-confidence checkpoint for a documented 30-minute crash-free Windows session."
       ],
       "sources": [
         {

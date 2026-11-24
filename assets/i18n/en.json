@@ -97,7 +97,7 @@
   "effort.mayMean": "which may mean",
   "effort.awaiting": "Awaiting review.",
   "effort.branch": "branch {b}",
-  "effort.progressLabel": "{name} gameplay score: {n} points",
+  "effort.progressLabel": "{name} gameplay readiness: {n}%",
   "effort.gwBreakdown": "Groundwork breakdown",
   "effort.provenOn": "Proven on: {x}",
   "effort.works": "What works",
@@ -162,9 +162,9 @@
   "safety.seen": "{n} seen",
   "method.kicker": "Methodology",
   "method.title": "How we score",
-  "method.sub": "The leaderboard ranks evidence of gameplay. Colors, textures, lighting, shaders, performance and crash-free time are scored separately.",
+  "method.sub": "The percentage shows how much of our gameplay checklist a build has demonstrated. It weighs rendering, frame rate and crash-free play.",
   "method.gwTitle": "Groundwork, weighted",
-  "method.fine1": "Once the world loads, rendering can add up to 18 points. In-game frame rate adds up to 12, sustained 30 FPS adds 5, and a documented crash-free session adds up to 20 at 30 minutes. Menu FPS does not count.",
+  "method.fine1": "Only gameplay FPS counts. Sustained 30 FPS needs its own evidence, and crash-free play is measured separately against a 30-minute session.",
   "method.fine2": "Maintain a project and think it's mis-scored? Open an issue with a link to your evidence.",
   "method.pts": "{n} pts",
   "footer.disclaimer": "Fan-made tracker. Not affiliated with or endorsed by Rockstar Games, Take-Two or Microsoft. Grand Theft Auto and related marks belong to their owners. No game files, keys or executables are hosted or linked here.",
@@ -278,5 +278,7 @@
   "ms.world.label": "World loads",
   "ms.world.desc": "The world loads after the menus.",
   "ms.ingame.label": "Player control",
-  "ms.ingame.desc": "A player can control the character in a rendered scene."
+  "ms.ingame.desc": "A player can control the character in a rendered scene.",
+  "ov.fpsPending": "Sustained 30 FPS in gameplay is still unverified. Menu FPS is tracked separately.",
+  "ov.fpsVerified": "Sustained 30 FPS in gameplay is documented for at least one build."
 }

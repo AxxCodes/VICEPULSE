@@ -125,7 +125,7 @@
   "effort.mayMean": "que podría significar",
   "effort.awaiting": "Pendiente de revisión.",
   "effort.branch": "rama {b}",
-  "effort.progressLabel": "Puntuación de {name}: {n} puntos",
+  "effort.progressLabel": "Preparación para jugar de {name}: {n}%",
   "effort.gwBreakdown": "Desglose de la preparación",
   "effort.provenOn": "Probado en: {x}",
   "effort.works": "Qué funciona",
@@ -190,9 +190,9 @@
   "safety.seen": "{n} detectados",
   "method.kicker": "Metodología",
   "method.title": "Cómo puntuamos",
-  "method.sub": "La clasificación se basa en pruebas de juego. Se valoran por separado colores, texturas, luces, shaders, rendimiento y tiempo sin fallos.",
+  "method.sub": "El porcentaje indica qué parte de la lista de requisitos de juego ha demostrado una versión. Se valora el renderizado, el rendimiento y el tiempo sin fallos.",
   "method.gwTitle": "Preparación, con pesos",
-  "method.fine1": "El renderizado suma hasta 18 puntos. Los FPS durante la partida suman hasta 12, mantener 30 FPS suma 5 y 30 minutos sin fallos suman 20. Los FPS del menú no cuentan.",
+  "method.fine1": "Solo cuentan los FPS durante el juego. Mantener 30 FPS requiere pruebas propias y el tiempo sin fallos se mide respecto a una sesión de 30 minutos.",
   "method.fine2": "¿Mantienes un proyecto y crees que está mal puntuado? Abre un issue con un enlace a tus pruebas.",
   "method.pts": "{n} pts",
   "footer.disclaimer": "Tracker hecho por fans. Sin afiliación ni respaldo de Rockstar Games, Take-Two o Microsoft. Grand Theft Auto y las marcas relacionadas pertenecen a sus dueños. Aquí no se alojan ni se enlazan archivos del juego, claves ni ejecutables.",
@@ -304,5 +304,7 @@
   "live.dispatch": "Últimas noticias",
   "live.unknownTime": "Hora de actualización no disponible",
   "ms.world.label": "Carga del mundo",
-  "ms.world.desc": "El mundo carga después de los menús."
+  "ms.world.desc": "El mundo carga después de los menús.",
+  "ov.fpsPending": "Aún no se han verificado 30 FPS sostenidos durante el juego. Los FPS del menú se registran aparte.",
+  "ov.fpsVerified": "Se han documentado 30 FPS sostenidos durante el juego en al menos una versión."
 }

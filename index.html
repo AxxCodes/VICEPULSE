@@ -143,7 +143,10 @@
             <p class="kicker">GTA VI · Community forecast</p>
             <h2 id="forecast-title">First stable PC session</h2>
           </div>
-          <span class="forecast-chip">Low confidence</span>
+          <div class="forecast-badges">
+            <span class="forecast-live" id="forecast-live" hidden><span class="forecast-live-dot" aria-hidden="true"></span> Live countdown</span>
+            <span class="forecast-chip">Low confidence</span>
+          </div>
         </header>
         <div class="forecast-clock" role="timer" aria-label="Time to the estimated first stable PC session">
           <div><strong id="forecast-days">—</strong><small>Days</small></div>
@@ -156,7 +159,8 @@
           <time id="forecast-target" datetime="2026-11-30T04:00:00Z">November 30, 2026</time>
           <span>Early window <b>Nov 28–Dec 7</b></span>
         </p>
-        <p class="forecast-goal">The first target is a publicly documented 30-minute gameplay session without a crash on one PC. This is an unofficial forecast.</p>
+        <p class="forecast-goal">Counting down to our current best estimate for a publicly documented 30-minute crash-free Windows gameplay session.</p>
+        <p class="forecast-refresh">Clock ticks every second. We review the date when new gameplay evidence comes in.</p>
         <details class="forecast-method">
           <summary>How the estimate works</summary>
           <p>Early builds moved from booting to the opening scene quickly. CGBJ and omonkey still report single-digit gameplay FPS. The public victory-gta6 fork reports visible textures and direct sunlight, with most shadows still black.</p>
@@ -180,7 +184,7 @@
         <div class="overall-head">
           <div class="ov-main">
             <h2 class="kicker" id="ov-title" data-i18n="ov.title">Gameplay readiness</h2>
-            <div class="big-score"><span id="ov-score">–</span><span class="pct"> pts</span></div>
+            <div class="big-score"><span id="ov-score">–</span><span class="pct">%</span></div>
             <p class="ov-leader" id="ov-leader"></p>
           </div>
           <div class="roadmap">
@@ -192,9 +196,10 @@
             <p class="roadmap-detail" id="roadmap-detail" aria-live="polite"></p>
           </div>
         </div>
-        <div class="score-track" id="score-track" role="progressbar" aria-labelledby="ov-title" aria-valuemin="0" aria-valuemax="80">
+        <div class="score-track" id="score-track" role="progressbar" aria-labelledby="ov-title" aria-valuemin="0" aria-valuemax="100">
           <span id="score-fill"></span>
         </div>
+        <p class="fps-status" id="fps-status"></p>
         <div class="leader-checks" id="leader-checks"></div>
         <div class="ov-stats">
             <div class="ov-stat"><b id="ov-stage">-</b><small data-i18n="ov.furthest">Furthest milestone</small></div>
@@ -361,7 +366,7 @@
         <div>
           <p class="kicker" data-i18n="method.kicker">Methodology</p>
           <h2 id="method-title" data-i18n="method.title">How we score</h2>
-          <p class="sub" data-i18n="method.sub">The leaderboard ranks evidence of gameplay. Colors, textures, lighting, shaders, performance and crash-free time are scored separately.</p>
+          <p class="sub" data-i18n="method.sub">The percentage shows how much of our gameplay checklist a build has demonstrated. It weighs rendering, frame rate and crash-free play.</p>
         </div>
       </div>
       <div class="method">
@@ -369,7 +374,7 @@
         <div class="card gw-explain">
           <h3 data-i18n="method.gwTitle">Groundwork, weighted</h3>
           <ul id="gw-explain"></ul>
-          <p class="fine" data-i18n="method.fine1">Once the world loads, rendering can add up to 18 points. In-game frame rate adds up to 12, sustained 30 FPS adds 5, and a documented crash-free session adds up to 20 at 30 minutes. Menu FPS does not count.</p>
+          <p class="fine" data-i18n="method.fine1">Only gameplay FPS counts. Sustained 30 FPS needs its own evidence, and crash-free play is measured separately against a 30-minute session.</p>
           <p class="fine" data-i18n="method.fine2">Maintain a project and think it's mis-scored? Open an issue with a link to your evidence.</p>
         </div>
       </div>

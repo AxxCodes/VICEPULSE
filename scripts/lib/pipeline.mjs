@@ -1,6 +1,6 @@
 // The scout pipeline (runs every 3 hours). Pure data-in / data-out: the caller loads and saves tracker.json.
 // Runs in Node (GitHub Actions) and in a browser (local testing).
-import { scoreEffort, overall, RANK_RUBRIC } from '../../assets/js/scoring.js';
+import { scoreEffort, overall, MAX_SCORE, RANK_RUBRIC } from '../../assets/js/scoring.js';
 import * as core from './core.mjs';
 
 const lc = (s) => String(s || '').toLowerCase();
@@ -473,10 +473,11 @@ export async function runScout(data, opts = {}) {
     const after = scoreEffort(e).score;
     if (before == null) continue;
     const delta = Math.round((after - before) * 10) / 10;
-    if (Math.abs(delta) >= 0.5) addChange(delta > 0 ? 'up' : 'down', `${e.name} ${delta > 0 ? 'rose' : 'fell'} ${Math.abs(delta)} pts to ${after} pts.`);
+    const percentage = Math.round(after / MAX_SCORE * 1000) / 10;
+    if (Math.abs(delta) >= 0.5) addChange(delta > 0 ? 'up' : 'down', `${e.name} ${delta > 0 ? 'rose' : 'fell'} to ${percentage}%.`);
   }
   const ov = overall(data.efforts.filter((e) => !e.stats?.missing));
-  if (ov.leader && prevLeader && ov.leader.effort.id !== prevLeader) addChange('up', `${ov.leader.effort.name} takes the lead at ${ov.leader.score} pts.`);
+  if (ov.leader && prevLeader && ov.leader.effort.id !== prevLeader) addChange('up', `${ov.leader.effort.name} takes the lead at ${Math.round(ov.leader.score / MAX_SCORE * 1000) / 10}%.`);
   data.history ||= [];
   const point = { date: today, rubric: RANK_RUBRIC, leader: ov.score, leaderId: ov.leader?.effort.id || null, top3: ov.top3, furthest: ov.furthest.key, tracked: data.efforts.length };
   const idx = data.history.findIndex((h) => h.date === today && h.rubric === RANK_RUBRIC);
