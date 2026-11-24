@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Tue, 24 Nov 2026 13:29:54 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 16:24:31 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>What comes after 72% for GTA VI on PC?</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-stable-play-checkpoint.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-stable-play-checkpoint.html</guid>
+    <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The latest PortWatch VI snapshot still puts CGBJ at 72%. A private 4 FPS demo and XCL world-loading reports show how much work remains before smooth play.</description>
+  </item>
   <item>
     <title>Exclusive: CGBJ gets GTA VI in game, walking and talking in an unlit world</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-cgbj-in-game.html</link>

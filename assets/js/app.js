@@ -143,6 +143,7 @@ async function refreshSnapshots(manual = false) {
 
 async function main() {
   await initI18n();
+  startForecast();
   window.addEventListener('scroll', () => $('#nav').classList.toggle('is-scrolled', window.scrollY > 8), { passive: true });
   $('#live-refresh').addEventListener('click', () => refreshSnapshots(true));
   bindControls();
@@ -243,6 +244,28 @@ function watchViewers() {
 }
 
 /* ---------- Countdown ---------- */
+function startForecast() {
+  const target = Date.parse($('#forecast-target').dateTime);
+  const fields = ['days', 'hours', 'minutes', 'seconds'].map((unit) => $(`#forecast-${unit}`));
+  let timer;
+  const tick = () => {
+    const seconds = Math.max(0, Math.ceil((target - Date.now()) / 1000));
+    const units = [Math.floor(seconds / 86400), Math.floor(seconds / 3600) % 24, Math.floor(seconds / 60) % 60, seconds % 60];
+    fields.forEach((field, i) => { field.textContent = String(units[i]).padStart(2, '0'); });
+    if (seconds === 0) {
+      $('#forecast-status').textContent = 'Estimate reached · check current milestones';
+      clearInterval(timer);
+      document.removeEventListener('visibilitychange', tick);
+    }
+    return seconds;
+  };
+
+  if (tick()) {
+    timer = setInterval(tick, 250);
+    document.addEventListener('visibilitychange', tick);
+  }
+}
+
 function startCountdown(exe) {
   clearInterval(countdownTimer);
   const box = $('#countdown');
@@ -334,7 +357,7 @@ function renderOverall(data) {
   markerResize = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); };
   window.addEventListener('resize', markerResize);
 
-  renderHistory(data.history || []);
+  renderHistory(data.history || [], all);
 }
 
 function renderRoute(furthest) {
@@ -401,14 +424,15 @@ function drawMarkers(ranked, leader) {
     }).join('');
 }
 
-function renderHistory(history) {
+function renderHistory(history, efforts) {
   const box = $('#ov-history');
-  const pts = history.filter((h) => Number.isFinite(h.leader));
+  const pts = history.filter((h) => Number.isFinite(h.leader)).sort((a, b) => a.date.localeCompare(b.date));
+  const names = new Map(efforts.map((effort) => [effort.id, effort.name]));
   box.hidden = pts.length < 2;
   if (box.hidden) return;
-  const W = 1000, H = 70, max = Math.max(30, ...pts.map((p) => p.leader)) * 1.1;
+  const W = 1000, H = 70;
   const x = (i) => (i / (pts.length - 1)) * W;
-  const y = (v) => H - (v / max) * (H - 6) - 3;
+  const y = (v) => H - (v / 100) * (H - 6) - 3;
   const d = pts.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(p.leader).toFixed(1)}`).join(' ');
   box.innerHTML = `<p>${esc(t('ov.history'))}</p>
     <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-label="${esc(t('ov.historyLabel'))}">
@@ -417,11 +441,11 @@ function renderHistory(history) {
       <path d="${d} L${W} ${H} L0 ${H} Z" fill="url(#hf)"/>
       <path d="${d}" fill="none" stroke="url(#hg)" stroke-width="3" vector-effect="non-scaling-stroke"/>
     </svg>
-    <details class="history-data">
+    <details class="history-data"${box.querySelector(".history-data")?.open === false ? "" : " open"}>
       <summary>${esc(t('road.historyData'))}</summary>
       <table>
-        <thead><tr><th scope="col">${esc(t('road.day'))}</th><th scope="col">${esc(t('ov.leader'))}</th><th scope="col">${esc(t('ov.top3'))}</th></tr></thead>
-        <tbody>${[...pts].reverse().map((p) => `<tr><th scope="row"><time datetime="${esc(p.date)}">${esc(fmtDay(p.date))}</time></th><td>${pct(p.leader)}%</td><td>${Number.isFinite(p.top3) ? `${pct(p.top3)}%` : '–'}</td></tr>`).join('')}</tbody>
+        <thead><tr><th scope="col">${esc(t('road.day'))}</th><th scope="col">${esc(t('ov.leader'))}</th><th scope="col">${esc(t('ov.top3'))}</th><th scope="col">${esc(t('ov.furthest'))}</th></tr></thead>
+        <tbody>${[...pts].reverse().map((p) => `<tr><th scope="row"><time datetime="${esc(p.date)}">${esc(fmtDay(p.date))}</time></th><td><b>${pct(p.leader)}%</b><br>${esc(names.get(p.leaderId) || p.leaderId || "–")}</td><td>${Number.isFinite(p.top3) ? `${pct(p.top3)}%` : '–'}</td><td>${p.furthest ? esc(msLabel(p.furthest)) : '–'}</td></tr>`).join('')}</tbody>
       </table>
     </details>`;
 }

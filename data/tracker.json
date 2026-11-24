@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T13:29:54.857Z",
+  "updated": "2026-11-24T16:24:31.934Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-waterfront.webp",
@@ -16,6 +16,37 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-24-stable-play-checkpoint",
+      "date": "2026-11-24",
+      "category": "Port",
+      "title": "What comes after 72% for GTA VI on PC?",
+      "dek": "The latest PortWatch VI snapshot still puts CGBJ at 72%. A private 4 FPS demo and XCL world-loading reports show how much work remains before smooth play.",
+      "body": [
+        "PortWatch VI’s Nov 24 afternoon snapshot keeps CGBJ at the top of its milestone scale. The private demo reportedly shows movement and NPC interaction at roughly four frames per second, with lighting missing. That is evidence of progress into the world. The project has yet to show a public, reproducible session with correct graphics.",
+        "XCL testers have reported reaching world loading and then hitting the game’s GPU watchdog. A reported frame rate without a documented scene and session length cannot establish sustained gameplay. For the next score change, look for repeatable tests with the hardware, settings, frame pacing and crash behavior documented.",
+        "VICEPULSE’s July 2027 checkpoint is an editorial scenario for stable community play across multiple PCs. The current evidence leaves the window broad, and the estimate will move as better evidence arrives."
+      ],
+      "sources": [
+        {
+          "outlet": "PortWatch VI",
+          "title": "November 24 tracker snapshot",
+          "url": "https://portwatch-vi.xyz/"
+        },
+        {
+          "outlet": "GitHub",
+          "title": "XCL tester reports on world loading and GPU watchdog",
+          "url": "https://github.com/ivall/xcl/issues/505"
+        },
+        {
+          "outlet": "GitHub",
+          "title": "VIctory project status",
+          "url": "https://github.com/Marvisak/VIctory"
+        }
+      ],
+      "image": null,
+      "by": "archive"
+    },
     {
       "id": "2026-11-24-cgbj-in-game",
       "date": "2026-11-24",
