@@ -5,8 +5,24 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Tue, 24 Nov 2026 19:14:36 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 19:56:50 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>GTA VI footage surfaces on a reported M5 Max MacBook</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-gta-vi-m5-max-macbook.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-gta-vi-m5-max-macbook.html</guid>
+    <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>A 41-second clip shows GTA VI scenes on a laptop identified by the poster as an M5 Max. Character models and some textures are visible, though lighting and materials still look inconsistent.</description>
+  </item>
+  <item>
+    <title>omonkey reportedly reaches GTA VI’s prison scene at about 5 FPS</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-omonkey-shaders-prison.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-omonkey-shaders-prison.html</guid>
+    <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>PortWatch VI reports character movement and partial shader rendering in a private Windows build. It also reports progress on Five Star Recomp.</description>
+  </item>
   <item>
     <title>GTA VI PC footage shows sunlight and working lamps</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-gta-vi-pc-lighting-footage.html</link>

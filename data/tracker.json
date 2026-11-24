@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T19:14:36.491Z",
+  "updated": "2026-11-24T19:56:50.291Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-waterfront.webp",
@@ -16,6 +16,71 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-24-gta-vi-m5-max-macbook",
+      "date": "2026-11-24",
+      "category": "Port",
+      "title": "GTA VI footage surfaces on a reported M5 Max MacBook",
+      "dek": "A 41-second clip shows GTA VI scenes on a laptop identified by the poster as an M5 Max. Character models and some textures are visible, though lighting and materials still look inconsistent.",
+      "body": [
+        "In a clip posted by @chasmmmmmmmmmmm, the camera films a laptop screen as GTA VI cuts between outdoor and indoor scenes. Faces, hair and some patterned textures are clearly visible. Several characters have very bright, washed-out surfaces. The poster identifies the computer as an M5 Max MacBook.",
+        "The clip shows a short sequence of rendered scenes. It does not provide a reproducible build, a measured frame rate or sustained player-controlled gameplay. It gives us no reliable basis to rank Mac performance against Windows.",
+        "There is also a separate public VIctory-macOS project. Its maintainers report that their compatibility-layer test suite passes on an M4 MacBook using Wine and Metal. That is a useful result for Apple Silicon, but the developers still describe the game as unplayable, and we found no confirmed link between their repository and this M5 Max clip."
+      ],
+      "sources": [
+        {
+          "outlet": "X · @chasmmmmmmmmmmm",
+          "title": "Original 41-second MacBook clip",
+          "url": "https://x.com/chasmmmmmmmmmmm/status/2125238687785177580"
+        },
+        {
+          "outlet": "GitHub · VIctory-macOS",
+          "title": "M4 test results and project status",
+          "url": "https://github.com/pragyaangaur/VIctory-macOS"
+        }
+      ],
+      "image": {
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2125238524089692160/img/vJW7zpTTkaO57GZN.jpg",
+        "credit": "Clip preview via @chasmmmmmmmmmmm on X",
+        "link": "https://x.com/chasmmmmmmmmmmm/status/2125238687785177580"
+      },
+      "by": "report",
+      "video": {
+        "url": "https://video.twimg.com/amplify_video/2125238524089692160/vid/avc1/1280x720/O1r8cufnAkvYCj20.mp4",
+        "post": "https://x.com/chasmmmmmmmmmmm/status/2125238687785177580"
+      }
+    },
+    {
+      "id": "2026-11-24-omonkey-shaders-prison",
+      "date": "2026-11-24",
+      "category": "Port",
+      "title": "omonkey reportedly reaches GTA VI’s prison scene at about 5 FPS",
+      "dek": "PortWatch VI reports character movement and partial shader rendering in a private Windows build. It also reports progress on Five Star Recomp.",
+      "body": [
+        "PortWatch VI reports that omonkey’s build shows movement around the opening prison area at roughly 5 FPS, with some shaders beginning to render. It points to development streams on Swaggely’s Rumble channel. The build is private, and there is no public test that establishes longer sessions.",
+        "PortWatch VI placed the run at 76%. On VICEPULSE’s published rubric, reaching in-game at a reported 5 FPS with unknown stability scores 72.5%, just ahead of CGBJ at 72%. These are tracker points and use different scoring judgments.",
+        "Five Star Recomp’s public project also reports reaching the story intro’s title card before a GPU frame stalls. VICEPULSE records its completed menu milestone at 55%. The Windows countdown still targets November 30 as a low-confidence checkpoint for a publicly documented 30-minute crash-free session."
+      ],
+      "sources": [
+        {
+          "outlet": "PortWatch VI",
+          "title": "Report on omonkey’s streamed build",
+          "url": "https://portwatch-vi.xyz/news/2026-11-24-omonkey-shaders-prison"
+        },
+        {
+          "outlet": "Rumble · Swaggely",
+          "title": "Development stream channel",
+          "url": "https://rumble.com/user/Swaggely"
+        },
+        {
+          "outlet": "GitHub · Five Star Recomp",
+          "title": "Public project status",
+          "url": "https://github.com/ThatRecompDev/five-star-recomp"
+        }
+      ],
+      "image": null,
+      "by": "report"
+    },
     {
       "id": "2026-11-24-gta-vi-pc-lighting-footage",
       "date": "2026-11-24",
@@ -674,6 +739,39 @@
   ],
   "efforts": [
     {
+      "id": "omonkey",
+      "name": "omonkey",
+      "repo": null,
+      "link": "news/2026-11-24-omonkey-shaders-prison.html",
+      "byline": "Streamed on Rumble by Swaggely",
+      "tier": "tracked",
+      "summary": "PortWatch VI reports player movement in the opening prison area at about 5 FPS, with some shaders loading. The build is private and stability is unknown.",
+      "highlights": [
+        "Some shaders reportedly render in the opening prison sequence",
+        "A player reportedly moves around the scene at about 5 FPS",
+        "PortWatch VI points to footage from Swaggely’s Rumble streams"
+      ],
+      "blockers": [
+        "Stuck in the opening prison scene",
+        "Runs at about 5 fps",
+        "No public code or build, so nobody can test it outside the streams"
+      ],
+      "provenOn": null,
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "ingame": 1,
+        "fps": 5,
+        "stability": "unknown"
+      },
+      "verification": "self-reported",
+      "stats": {},
+      "assessedAt": "2026-11-24",
+      "assessedBy": "manual",
+      "claims": []
+    },
+    {
       "id": "cgbj",
       "name": "CGBJ",
       "repo": null,
@@ -814,7 +912,7 @@
     {
       "id": "xcl",
       "name": "XCL",
-      "repo": "ivall/xcl",
+      "repo": "xcl-dev/xcl",
       "branch": "main",
       "tier": "tracked",
       "approach": "Compatibility layer",
@@ -847,11 +945,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 6633,
-        "forks": 820,
-        "openIssues": 712,
+        "stars": 7528,
+        "forks": 962,
+        "openIssues": 1094,
         "createdAt": "2026-11-20T20:03:21Z",
-        "pushedAt": "2026-11-24T11:03:43Z",
+        "pushedAt": "2026-11-24T18:29:22Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -859,7 +957,7 @@
       },
       "assessedAt": "2026-11-24",
       "assessedBy": "claude",
-      "readmeSha": "f06001630f1aed00d860b3b4b29d1460fb370f0b79aeed9878def3a7fb47a91f",
+      "readmeSha": "60109b4e46f226fc14b0d0c0a170ba03f6d3b57f762c4c4c710234a730ad99c7",
       "claims": [],
       "readmeChangedAt": "2026-11-24"
     },
@@ -1987,16 +2085,14 @@
       "tier": "watchlist",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "C# layer and toolkit for GTA VI. It reports the game showing its logo, intro video and every first-run setup screen, answered by scripted input, then starting the story load, which fails on corrupted memory. Self-reported; no capture yet.",
+      "summary": "The project reports completing first-run menus and reaching the story intro’s title card before a GPU frame stalls. The game world and player movement are still unverified.",
       "highlights": [
-        "Reports GTA VI's first-run screens responding to scripted gamepad input at 30 fps",
-        "Names the exe and logs each boot step, up to the start of the story load",
-        "Translator marks unsupported instructions as failures instead of faking them"
+        "Reports loading as far as the story intro’s title card",
+        "Reports skipping first-run screens on later boots using saved settings"
       ],
       "blockers": [
-        "The story load stops on corrupted game memory",
-        "Its 25,908-program shader count doesn't match the 26,503 records others report",
-        "No screenshot or recording of the menus in the repo"
+        "A GPU frame reportedly stalls about 200 seconds into the story load",
+        "No public capture establishes world rendering or player movement"
       ],
       "groundwork": {
         "loader": 0.35,
@@ -2008,18 +2104,18 @@
       "gta": {
         "loads": 1,
         "boots": 1,
-        "menu": 0.5,
+        "menu": 1,
         "ingame": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 101,
-        "forks": 4,
-        "openIssues": 2,
+        "stars": 174,
+        "forks": 8,
+        "openIssues": 6,
         "createdAt": "2026-11-23T09:57:42Z",
-        "pushedAt": "2026-11-24T12:32:20Z",
+        "pushedAt": "2026-11-24T19:12:57Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2027,7 +2123,7 @@
       "assessedAt": "2026-11-24",
       "assessedBy": "claude",
       "claims": [],
-      "readmeSha": "26e2cc2fbc4ad2800a2c9579c06d28e794795b1ed71b9f9b775329bbc8fe1a23",
+      "readmeSha": "4a57db7f9bea84859306b8ce7c2c91153aa6a0bd0b3c7969deb39678db4e1dd3",
       "readmeChangedAt": "2026-11-24"
     },
     {
@@ -5248,6 +5344,16 @@
   "changes": [
     {
       "date": "2026-11-24",
+      "kind": "up",
+      "text": "omonkey joins at 72.5% on VICEPULSE. PortWatch VI reports early shader rendering and movement in the prison scene at roughly 5 FPS."
+    },
+    {
+      "date": "2026-11-24",
+      "kind": "up",
+      "text": "Five Star Recomp moves from 47.5% to 55%. The project reports getting past setup screens to the title card in the story intro."
+    },
+    {
+      "date": "2026-11-24",
       "kind": "removed",
       "text": "XlaunchVI is no longer reachable on GitHub (HTTP 404)."
     },
@@ -5674,11 +5780,11 @@
     },
     {
       "date": "2026-11-24",
-      "leader": 72,
-      "leaderId": "cgbj",
-      "top3": 67.2,
+      "leader": 72.5,
+      "leaderId": "omonkey",
+      "top3": 70.5,
       "furthest": "ingame",
-      "tracked": 30
+      "tracked": 31
     }
   ],
   "scout": {
