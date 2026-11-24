@@ -1,0 +1,16 @@
+{
+  "name": "vicepulse",
+  "private": true,
+  "type": "module",
+  "description": "Tracker of community efforts to run GTA VI on PC, plus the scout that updates it every 3 hours.",
+  "scripts": {
+    "build": "node scripts/build-site.mjs --local",
+    "test": "node --test tests/*.test.mjs",
+    "scout": "node scripts/scout.mjs",
+    "scout:dry": "node scripts/scout.mjs --dry-run"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest"
+  }
+}
