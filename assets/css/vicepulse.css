@@ -282,7 +282,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
 .roadmap-head a { color: var(--accent-text); font-size: .875rem; text-underline-offset: .25em; }
 .roadmap-steps {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   isolation: isolate;
   position: relative;
   margin: 8px -5px 0;
@@ -295,8 +295,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
   top: 36px;
   height: 2px;
 }
-.roadmap-steps::before { width: calc(100% * 6 / 7); background: var(--track); }
-.roadmap-steps::after { width: calc(var(--route-progress, 0%) * 6 / 7); background: var(--grad); }
+.roadmap-steps::before { width: calc(100% * 5 / 6); background: var(--track); }
+.roadmap-steps::after { width: calc(var(--route-progress, 0%) * 5 / 6); background: var(--grad); }
 .route-step {
   display: grid;
   grid-template-rows: 18px 17px auto;
@@ -738,3 +738,19 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
 .story-video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #130e19; border-radius: 12px; }
 .story-video figcaption { margin-top: .5rem; font-size: .9rem; }
 .story-video a { color: var(--text); text-underline-offset: .2em; }
+
+.play-checks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; margin: 10px 0 0; }
+.play-checks > div { padding: 8px 10px; border: 1px solid var(--line); border-inline-start: 3px solid var(--line); border-radius: 9px; min-width: 0; }
+.play-checks > [data-state="partial"] { border-inline-start-color: #d98b55; }
+.play-checks > [data-state="pass"] { border-inline-start-color: #27a884; }
+.play-checks dt { font-size: .75rem; color: var(--muted); }
+.play-checks dd { font-size: .86rem; font-weight: 700; margin: 2px 0 0; }
+.leader-checks { margin-bottom: 13px; }
+.e-provenance { color: var(--muted); font-size: .85rem; margin: 5px 0; }
+.e-provenance b { color: var(--text); margin-inline-end: .35em; }
+.big-score .pct { font-size: .27em; }
+@media (max-width: 540px) { .play-checks { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+
+.watch-details { margin-top: 6px; font-size: .85rem; }
+.watch-details summary { cursor: pointer; }
+.watch-details .play-checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }

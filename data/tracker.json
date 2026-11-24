@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T19:56:50.291Z",
+  "updated": "2026-11-24T21:01:23.425Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-waterfront.webp",
@@ -16,6 +16,47 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-24-gameplay-score-revamp",
+      "date": "2026-11-24",
+      "category": "Port",
+      "title": "GTA VI PC tracker now scores rendering, frame rate and stability",
+      "dek": "The new leaderboard separates getting into the game from correct graphics, sustained 30 FPS and crash-free sessions.",
+      "body": [
+        "PortWatch VI has changed its scale and added two tests worth following. It describes playable movement and improved lighting, including reported ray-traced effects, in hyphennn’s private opening-scene build. That build is based on fxceless’s public victory-gta6 fork. The clips do not give us a measured frame rate or a verified long run.",
+        "The public fork’s README reports characters, textures and sunlit geometry in the opening, with shadows still going black and performance around 2–4 FPS on one test machine. It also documents checkpoint save and reload, which H4NK highlighted on X. omonkey’s streamed test remains about 5 FPS, and CGBJ’s earlier report remains around 4 FPS. The older X lighting clip is still unattributed to a confirmed build.",
+        "VICEPULSE now uses gameplay points. Early milestones carry fewer points, and the cards show colors and textures, lighting and shadows, shader behavior, measured FPS, sustained 30 FPS, and crash-free time. A missing measurement earns no credit for that check. November 30 stays a low-confidence checkpoint for a documented 30-minute crash-free Windows session."
+      ],
+      "sources": [
+        {
+          "outlet": "PortWatch VI",
+          "title": "Project standings and revised rubric",
+          "url": "https://portwatch-vi.xyz/"
+        },
+        {
+          "outlet": "GitHub · fxceless",
+          "title": "Public victory-gta6 build status",
+          "url": "https://github.com/fxceless/victory-gta6"
+        },
+        {
+          "outlet": "X · H4NK",
+          "title": "Updates on PC fork checkpoint saving",
+          "url": "https://x.com/h4nkick"
+        },
+        {
+          "outlet": "X · @Mamozziee",
+          "title": "Earlier, unattributed lighting clip",
+          "url": "https://x.com/mamozziee/status/2125294748831305759"
+        },
+        {
+          "outlet": "Rumble · Swaggely",
+          "title": "Stream channel cited for omonkey",
+          "url": "https://rumble.com/user/Swaggely"
+        }
+      ],
+      "image": null,
+      "by": "report"
+    },
     {
       "id": "2026-11-24-gta-vi-m5-max-macbook",
       "date": "2026-11-24",
@@ -742,8 +783,12 @@
       "id": "omonkey",
       "name": "omonkey",
       "repo": null,
+      "basedOn": [
+        "victory-gta6"
+      ],
+      "evidence": "Live streams on Rumble",
       "link": "news/2026-11-24-omonkey-shaders-prison.html",
-      "byline": "Streamed on Rumble by Swaggely",
+      "byline": "Streamed on Rumble by Swaggely · built on victory-gta6, a VIctory fork",
       "tier": "tracked",
       "summary": "PortWatch VI reports player movement in the opening prison area at about 5 FPS, with some shaders loading. The build is private and stability is unknown.",
       "highlights": [
@@ -761,7 +806,10 @@
         "loads": 1,
         "boots": 1,
         "menu": 1,
-        "ingame": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0,
+        "render": 0.5,
         "fps": 5,
         "stability": "unknown"
       },
@@ -769,12 +817,22 @@
       "stats": {},
       "assessedAt": "2026-11-24",
       "assessedBy": "manual",
-      "claims": []
+      "claims": [],
+      "visuals": {
+        "color": 0.25,
+        "lighting": 0.15,
+        "shaders": 0.35
+      }
     },
     {
       "id": "cgbj",
       "name": "CGBJ",
       "repo": null,
+      "basedOn": [
+        "marvis",
+        "xcl"
+      ],
+      "evidence": "Checked by PortWatch with the group",
       "link": "news/2026-11-24-cgbj-in-game.html",
       "byline": "Private code · based on VIctory and XCL",
       "tier": "tracked",
@@ -796,19 +854,26 @@
         "loads": 1,
         "boots": 1,
         "menu": 1,
-        "ingame": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0,
+        "render": 0.25,
         "fps": 4,
         "stability": "unknown"
       },
       "verification": "self-reported",
+      "stats": {},
+      "assessedAt": "2026-11-24",
+      "assessedBy": "manual",
+      "claims": [],
       "observation": {
         "date": "2026-11-24",
         "source": "news/2026-11-24-cgbj-in-game.html"
       },
-      "stats": {},
-      "assessedAt": "2026-11-24",
-      "assessedBy": "manual",
-      "claims": []
+      "visuals": {
+        "color": 0.25,
+        "shaders": 0.2
+      }
     },
     {
       "id": "marvis",
@@ -834,15 +899,18 @@
         "loads": 1,
         "boots": 1,
         "menu": 1,
-        "ingame": 0.8,
+        "world": 1,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 8734,
-        "forks": 1182,
-        "openIssues": 679,
+        "stars": 10576,
+        "forks": 1530,
+        "openIssues": 1299,
         "createdAt": "2026-11-23T21:47:25Z",
         "pushedAt": "2026-11-24T09:55:08Z",
         "commits7d": 100,
@@ -853,7 +921,11 @@
       "assessedAt": "2026-11-24",
       "assessedBy": "manual",
       "claims": [],
-      "readmeSha": "a1f64bb3b89911c551bd175535c9ce09f36fe9e90af530e1bf8d96628a8eb0ae"
+      "readmeSha": "a1f64bb3b89911c551bd175535c9ce09f36fe9e90af530e1bf8d96628a8eb0ae",
+      "visuals": {
+        "lighting": 0.15,
+        "shaders": 0.1
+      }
     },
     {
       "id": "xbox-emulator",
@@ -885,7 +957,10 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -894,9 +969,9 @@
         "drycheetah84/TomBox"
       ],
       "stats": {
-        "stars": 1755,
-        "forks": 117,
-        "openIssues": 145,
+        "stars": 1792,
+        "forks": 119,
+        "openIssues": 162,
         "createdAt": "2026-11-21T08:08:39Z",
         "pushedAt": "2026-11-23T11:58:17Z",
         "commits7d": 100,
@@ -939,7 +1014,10 @@
         "loads": 1,
         "boots": 1,
         "menu": 1,
-        "ingame": 0.5,
+        "world": 0.5,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -991,15 +1069,18 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 246,
-        "forks": 25,
-        "openIssues": 29,
+        "stars": 256,
+        "forks": 24,
+        "openIssues": 27,
         "createdAt": "2026-11-20T06:54:47Z",
         "pushedAt": "2026-11-22T10:38:07Z",
         "commits7d": 57,
@@ -1042,24 +1123,27 @@
         "loads": 1,
         "boots": 1,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 261,
-        "forks": 17,
-        "openIssues": 22,
+        "stars": 296,
+        "forks": 22,
+        "openIssues": 29,
         "createdAt": "2026-11-21T12:07:28Z",
-        "pushedAt": "2026-11-24T07:22:08Z",
+        "pushedAt": "2026-11-24T17:30:45Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
       },
       "assessedAt": "2026-11-24",
       "assessedBy": "claude",
-      "readmeSha": "7e7a3163e429326ce60d2e113a13d6c4dffa45c7474a843f94738aee30650988",
+      "readmeSha": "64db7c7f3454f3bd039d99fd7a3668ff007f76ab0ec472dd222e5076032b1725",
       "claims": [],
       "readmeChangedAt": "2026-11-24"
     },
@@ -1097,7 +1181,10 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -1156,7 +1243,10 @@
         "loads": 1,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -1171,7 +1261,11 @@
         "archived": false,
         "missing": true,
         "missingStatus": 404,
-        "mentions7d": 9
+        "mentions7d": 17,
+        "dmca": {
+          "date": "2026-11-24",
+          "url": "https://github.com/github/dmca/blob/master/2026/11/2026-11-24-take-two.md"
+        }
       },
       "assessedAt": "2026-11-23",
       "assessedBy": "claude",
@@ -1209,15 +1303,18 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 79,
-        "forks": 11,
-        "openIssues": 16,
+        "stars": 86,
+        "forks": 12,
+        "openIssues": 17,
         "createdAt": "2026-11-21T14:35:25Z",
         "pushedAt": "2026-11-24T06:47:57Z",
         "commits7d": 100,
@@ -1259,13 +1356,16 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 35,
+        "stars": 40,
         "forks": 4,
         "openIssues": 2,
         "createdAt": "2026-11-20T23:54:18Z",
@@ -1310,24 +1410,27 @@
         "loads": 1,
         "boots": 1,
         "menu": 0.5,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 1803,
-        "forks": 198,
-        "openIssues": 109,
+        "stars": 1877,
+        "forks": 211,
+        "openIssues": 206,
         "createdAt": "2026-11-20T17:43:52Z",
-        "pushedAt": "2026-11-24T13:29:58Z",
+        "pushedAt": "2026-11-24T19:13:11Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
       },
       "assessedAt": "2026-11-24",
       "assessedBy": "manual",
-      "readmeSha": "92237686613cd7afad84087149d323c6a140d6116fbff7ae88b69e5c50f98747",
+      "readmeSha": "b14134dfab68c62d557aa2bd18f8898a1c7b40620c14751bf9b33625f123ad91",
       "claims": [],
       "readmeChangedAt": "2026-11-24"
     },
@@ -1360,24 +1463,27 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 140,
-        "forks": 16,
-        "openIssues": 27,
+        "stars": 233,
+        "forks": 25,
+        "openIssues": 43,
         "createdAt": "2026-11-21T00:18:13Z",
-        "pushedAt": "2026-11-24T12:29:53Z",
+        "pushedAt": "2026-11-24T17:19:25Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
       },
       "assessedAt": "2026-11-24",
       "assessedBy": "claude",
-      "readmeSha": "c29da2891f3d6159b451b8a811f5661b82c47f25e6c0512e508123bf4a8761e7",
+      "readmeSha": "db6da79e869bec88cfaa2e3156185eacf786a75e3f04e62973d3686b1fb935dc",
       "claims": [
         {
           "milestone": "fps30",
@@ -1416,15 +1522,18 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 213,
+        "stars": 217,
         "forks": 11,
-        "openIssues": 10,
+        "openIssues": 11,
         "createdAt": "2026-11-20T00:25:27Z",
         "pushedAt": "2026-11-23T19:24:06Z",
         "commits7d": 100,
@@ -1463,14 +1572,17 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 58,
-        "forks": 5,
+        "stars": 59,
+        "forks": 6,
         "openIssues": 0,
         "createdAt": "2026-11-19T20:32:01Z",
         "pushedAt": "2026-11-24T13:09:35Z",
@@ -1512,7 +1624,10 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -1561,13 +1676,16 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 1,
+        "stars": 2,
         "forks": 1,
         "openIssues": 0,
         "createdAt": "2026-11-21T13:29:19Z",
@@ -1609,7 +1727,10 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -1622,7 +1743,8 @@
         "pushedAt": "2026-11-23T07:20:39Z",
         "commits7d": 84,
         "archived": false,
-        "missing": false
+        "missing": true,
+        "missingStatus": 404
       },
       "assessedAt": "2026-11-23",
       "assessedBy": "claude",
@@ -1659,13 +1781,16 @@
         "loads": 1,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 37,
+        "stars": 38,
         "forks": 3,
         "openIssues": 8,
         "createdAt": "2026-11-21T16:49:38Z",
@@ -1706,7 +1831,10 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -1719,7 +1847,8 @@
         "pushedAt": "2026-11-20T09:35:39Z",
         "commits7d": 5,
         "archived": false,
-        "missing": false
+        "missing": true,
+        "missingStatus": 404
       },
       "assessedAt": "2026-11-21",
       "assessedBy": "manual",
@@ -1753,7 +1882,10 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -1763,7 +1895,7 @@
         "forks": 1,
         "openIssues": 12,
         "createdAt": "2026-11-21T21:05:28Z",
-        "pushedAt": "2026-11-24T10:22:33Z",
+        "pushedAt": "2026-11-24T19:07:33Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -1803,13 +1935,16 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 3,
+        "stars": 7,
         "forks": 0,
         "openIssues": 3,
         "createdAt": "2026-11-22T07:31:37Z",
@@ -1854,7 +1989,10 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -1903,7 +2041,10 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -1911,7 +2052,7 @@
       "stats": {
         "stars": 3,
         "forks": 0,
-        "openIssues": 0,
+        "openIssues": 1,
         "createdAt": "2026-11-22T15:09:24Z",
         "pushedAt": "2026-11-23T19:36:47Z",
         "commits7d": 16,
@@ -1952,7 +2093,10 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -1962,8 +2106,8 @@
         "forks": 0,
         "openIssues": 0,
         "createdAt": "2026-11-23T02:45:46Z",
-        "pushedAt": "2026-11-24T13:25:41Z",
-        "commits7d": 18,
+        "pushedAt": "2026-11-24T18:47:59Z",
+        "commits7d": 23,
         "archived": false,
         "missing": false
       },
@@ -2003,17 +2147,20 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 2,
-        "forks": 0,
+        "stars": 4,
+        "forks": 1,
         "openIssues": 55,
         "createdAt": "2026-11-22T20:45:44Z",
-        "pushedAt": "2026-11-24T09:01:37Z",
+        "pushedAt": "2026-11-24T19:04:46Z",
         "commits7d": 5,
         "archived": false,
         "missing": false,
@@ -2055,17 +2202,20 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 59,
+        "stars": 69,
         "forks": 3,
         "openIssues": 1,
         "createdAt": "2026-11-21T04:47:46Z",
-        "pushedAt": "2026-11-24T13:04:35Z",
+        "pushedAt": "2026-11-24T17:44:54Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -2105,7 +2255,10 @@
         "loads": 1,
         "boots": 1,
         "menu": 1,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
@@ -2156,13 +2309,16 @@
         "loads": 0,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 6,
+        "stars": 7,
         "forks": 0,
         "openIssues": 2,
         "createdAt": "2026-11-20T15:07:18Z",
@@ -2205,15 +2361,18 @@
         "loads": 1,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 38,
-        "forks": 2,
-        "openIssues": 1,
+        "stars": 41,
+        "forks": 3,
+        "openIssues": 2,
         "createdAt": "2026-11-23T16:34:11Z",
         "pushedAt": "2026-11-24T01:09:59Z",
         "commits7d": 22,
@@ -2255,17 +2414,20 @@
         "loads": 1,
         "boots": 0,
         "menu": 0,
-        "ingame": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
         "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 116,
-        "forks": 51,
-        "openIssues": 5,
+        "stars": 134,
+        "forks": 54,
+        "openIssues": 4,
         "createdAt": "2026-11-23T22:56:30Z",
-        "pushedAt": "2026-11-24T13:04:09Z",
+        "pushedAt": "2026-11-24T19:13:18Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -2274,8 +2436,105 @@
       "assessedAt": "2026-11-24",
       "assessedBy": "claude",
       "claims": [],
-      "readmeSha": "6882b81383210c06a620fe985f75f4097c82ffcca4599ebd5357756a9144ddc6",
+      "readmeSha": "edd4cb2f51b07c5f076529e265d3c284e8fe6b35414363ceeb9068e75d2b0b23",
       "readmeChangedAt": "2026-11-24"
+    },
+    {
+      "id": "hyphennn",
+      "name": "hyphennn",
+      "repo": null,
+      "basedOn": [
+        "victory-gta6"
+      ],
+      "evidence": "Live streams on Rumble",
+      "byline": "Streams on Rumble as hyphennn · built on victory-gta6, a VIctory fork",
+      "tier": "tracked",
+      "summary": "A private Windows build based on fxceless’s victory-gta6 fork. PortWatch reports playable movement in the opening, better scene lighting and signs of ray tracing in Rumble footage.",
+      "highlights": [
+        "PortWatch describes player-controlled movement in the opening",
+        "Stream footage reportedly shows improved lighting and ray-traced effects"
+      ],
+      "blockers": [
+        "No measured frame rate or documented long session",
+        "Evidence is limited to the opening sequence",
+        "Private changes have no publicly reproducible build"
+      ],
+      "provenOn": null,
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0,
+        "render": 0.79,
+        "fps": 0,
+        "stability": "unknown"
+      },
+      "verification": "self-reported",
+      "stats": {},
+      "assessedAt": "2026-11-24",
+      "assessedBy": "manual",
+      "claims": [],
+      "link": "news/2026-11-24-gameplay-score-revamp.html",
+      "visuals": {
+        "color": 0.5,
+        "lighting": 0.5,
+        "shaders": 0.6
+      }
+    },
+    {
+      "id": "victory-gta6",
+      "name": "victory-gta6",
+      "repo": "fxceless/victory-gta6",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "summary": "fxceless’s public VIctory fork reports an interactive prologue at 2–4 FPS on one RTX 4070 system. The same README reports checkpoint autosave and reload.",
+      "highlights": [
+        "Characters, textures, sky and sunlit geometry render in the opening",
+        "HUD, pause menu and controller input work",
+        "Opening cutscene plays through and a checkpoint can be saved and reloaded",
+        "Fork adds its own meshlet, descriptor and shader fixes"
+      ],
+      "blockers": [
+        "Most shadowed surfaces are black; bounce lighting and ray-traced shadows are missing",
+        "Reported 2–4 FPS on an i7-14700KF, RTX 4070 and 32 GB RAM; Windows 11",
+        "Some fixes are specific to the tested game and GPU; independent reproduction pending"
+      ],
+      "provenOn": null,
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0,
+        "render": 0.5,
+        "fps": 3,
+        "stability": "unknown"
+      },
+      "verification": "self-reported",
+      "stats": {
+        "stars": 179,
+        "forks": 24,
+        "openIssues": 11,
+        "pushedAt": "2026-11-24T19:32:07Z",
+        "archived": false,
+        "missing": false
+      },
+      "assessedAt": "2026-11-24",
+      "assessedBy": "manual",
+      "claims": [],
+      "basedOn": [
+        "marvis"
+      ],
+      "visuals": {
+        "color": 0.5,
+        "lighting": 0.25,
+        "shaders": 0.45
+      }
     }
   ],
   "tools": [
@@ -5751,6 +6010,16 @@
       "date": "2026-11-24",
       "kind": "new",
       "text": "Scout spotted SankeerthMallesh/GTA-6 (possible effort, substance 43)."
+    },
+    {
+      "date": "2026-11-24",
+      "kind": "up",
+      "text": "hyphennn and victory-gta6 join the leaderboard. The new gameplay score weighs rendering, sustained 30 FPS and crash-free sessions."
+    },
+    {
+      "date": "2026-11-24",
+      "kind": "new",
+      "text": "The victory-gta6 fork reports checkpoint save and reload, with gameplay around 2–4 FPS on one Windows PC."
     }
   ],
   "history": [
@@ -5785,6 +6054,15 @@
       "top3": 70.5,
       "furthest": "ingame",
       "tracked": 31
+    },
+    {
+      "date": "2026-11-24",
+      "rubric": "gameplay-v2",
+      "leader": 34.7,
+      "leaderId": "hyphennn",
+      "top3": 33.2,
+      "furthest": "ingame",
+      "tracked": 33
     }
   ],
   "scout": {

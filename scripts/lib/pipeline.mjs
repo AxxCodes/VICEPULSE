@@ -1,6 +1,6 @@
 // The scout pipeline (runs every 3 hours). Pure data-in / data-out: the caller loads and saves tracker.json.
 // Runs in Node (GitHub Actions) and in a browser (local testing).
-import { scoreEffort, overall } from '../../assets/js/scoring.js';
+import { scoreEffort, overall, RANK_RUBRIC } from '../../assets/js/scoring.js';
 import * as core from './core.mjs';
 
 const lc = (s) => String(s || '').toLowerCase();
@@ -473,13 +473,13 @@ export async function runScout(data, opts = {}) {
     const after = scoreEffort(e).score;
     if (before == null) continue;
     const delta = Math.round((after - before) * 10) / 10;
-    if (Math.abs(delta) >= 0.5) addChange(delta > 0 ? 'up' : 'down', `${e.name} ${delta > 0 ? 'rose' : 'fell'} ${Math.abs(delta)} pts to ${after}%.`);
+    if (Math.abs(delta) >= 0.5) addChange(delta > 0 ? 'up' : 'down', `${e.name} ${delta > 0 ? 'rose' : 'fell'} ${Math.abs(delta)} pts to ${after} pts.`);
   }
   const ov = overall(data.efforts.filter((e) => !e.stats?.missing));
-  if (ov.leader && prevLeader && ov.leader.effort.id !== prevLeader) addChange('up', `${ov.leader.effort.name} takes the lead at ${ov.leader.score}%.`);
+  if (ov.leader && prevLeader && ov.leader.effort.id !== prevLeader) addChange('up', `${ov.leader.effort.name} takes the lead at ${ov.leader.score} pts.`);
   data.history ||= [];
-  const point = { date: today, leader: ov.score, leaderId: ov.leader?.effort.id || null, top3: ov.top3, furthest: ov.furthest.key, tracked: data.efforts.length };
-  const idx = data.history.findIndex((h) => h.date === today);
+  const point = { date: today, rubric: RANK_RUBRIC, leader: ov.score, leaderId: ov.leader?.effort.id || null, top3: ov.top3, furthest: ov.furthest.key, tracked: data.efforts.length };
+  const idx = data.history.findIndex((h) => h.date === today && h.rubric === RANK_RUBRIC);
   if (idx >= 0) data.history[idx] = point; else data.history.push(point);
   data.changes = changes.slice(-MAX_CHANGES);
   if (data.ignored.length > MAX_IGNORED) data.ignored = [...data.ignored.filter((i) => !i.auto), ...data.ignored.filter((i) => i.auto).slice(-MAX_IGNORED)];

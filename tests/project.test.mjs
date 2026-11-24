@@ -22,19 +22,23 @@ test('headline, milestone and top-three average use the highest active community
   ];
   const result = overall(efforts);
   assert.equal(result.leader.effort.id, 'observed');
-  assert.equal(result.score, 72);
-  assert.equal(result.top3, 67.2);
+  assert.equal(result.score, 26.6);
+  assert.equal(result.top3, 19);
   assert.equal(result.furthest.key, 'ingame');
 });
 
 test('scoring handles old boolean values, partial steps, missing steps and stability', () => {
   assert.equal(scoreEffort({}).score, 0);
-  assert.equal(scoreEffort({ groundwork: { loader: 1, shaders: 1, graphics: 1, proven: 1 } }).score, 25);
-  assert.equal(scoreEffort({ gta: { loads: true, boots: .5, menu: true } }).score, 32.5);
+  assert.equal(scoreEffort({ groundwork: { loader: 1, shaders: 1, graphics: 1, proven: 1 } }).score, 4);
+  assert.equal(scoreEffort({ gta: { loads: true, boots: .5, menu: true } }).score, 6);
   assert.equal(scoreEffort({ gta: { loads: 0, boots: 1 } }).reached, 'groundwork');
   const active = { loads: 1, boots: 1, menu: 1, ingame: 1 };
-  assert.equal(scoreEffort({ gta: { ...active, fps: 4 } }).score, 72);
-  assert.equal(scoreEffort({ gta: { ...active, fps: 30, stability: 'stable' } }).score, 100);
+  assert.equal(scoreEffort({ gta: { ...active, fps: 4 } }).score, 26.6);
+  assert.equal(scoreEffort({ gta: { ...active, fps: 30, stability: 'stable' } }).score, 37);
+  const visuals = { color: 1, lighting: .5, shaders: 1 };
+  assert.equal(scoreEffort({ gta: { ...active, world: 1, playable: 0, fps: 30 }, visuals }).score, 32);
+  assert.equal(scoreEffort({ gta: { ...active, fps: 30, sustained30: true, sessionMinutes: 30 }, visuals }).score, 77);
+  assert.equal(scoreEffort({ gta: { ...active, fps: 5, sustained30: true } }).score, 27);
 });
 
 test('a high-score archived effort is retained in data and excluded from the headline', () => {
@@ -86,11 +90,11 @@ test('scout records a daily leader and replaces that day on rerun', async () => 
     sources: { github: false, hn: false, reddit: false, x: false, chan: false, social: false, gitlab: false, news: false, dmca: false },
   };
   await runScout(snapshot, options);
-  assert.equal(snapshot.history[0].leader, 40);
+  assert.equal(snapshot.history[0].leader, 8);
   snapshot.efforts[0].gta.menu = 1;
   await runScout(snapshot, options);
   assert.equal(snapshot.history.length, 1);
-  assert.equal(snapshot.history[0].leader, 55);
+  assert.equal(snapshot.history[0].leader, 12);
   assert.equal(snapshot.scout.lastRun, options.now.toISOString());
 });
 

@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Tue, 24 Nov 2026 19:56:50 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 21:01:23 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>GTA VI PC tracker now scores rendering, frame rate and stability</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-gameplay-score-revamp.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-gameplay-score-revamp.html</guid>
+    <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The new leaderboard separates getting into the game from correct graphics, sustained 30 FPS and crash-free sessions.</description>
+  </item>
   <item>
     <title>GTA VI footage surfaces on a reported M5 Max MacBook</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-gta-vi-m5-max-macbook.html</link>

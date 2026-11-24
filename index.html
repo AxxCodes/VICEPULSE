@@ -159,10 +159,10 @@
         <p class="forecast-goal">The first target is a publicly documented 30-minute gameplay session without a crash on one PC. This is an unofficial forecast.</p>
         <details class="forecast-method">
           <summary>How the estimate works</summary>
-          <p>PortWatch VI’s leader climbed from 15.8% on Nov 21 to 55% on Nov 23 and 72% on Nov 24. CGBJ reportedly reached the world at around 4 FPS, with lighting missing. VIctory reports 30 FPS in menus and world loading, with rendering still failing in gameplay.</p>
+          <p>Early builds moved from booting to the opening scene quickly. CGBJ and omonkey still report single-digit gameplay FPS. The public victory-gta6 fork reports visible textures and direct sunlight, with most shadows still black.</p>
           <p>A fix for a major crash could unlock a long session quickly. November 30 is a six-day editorial checkpoint based on the pace of those early milestones. The Nov 28–Dec 7 window assumes teams can resolve their current blockers, and may slip if crashes recur elsewhere in the game.</p>
           <p>We’ll move the forecast when there’s a dated gameplay recording or repeatable test with the build, hardware, session length and crash behavior documented.</p>
-          <p>Nov 24 update: <a href="news/2026-11-24-omonkey-shaders-prison.html">omonkey’s reported 5 FPS prison test</a> shows additional rendering progress. The <a href="news/2026-11-24-gta-vi-m5-max-macbook.html">MacBook clip</a> also looks promising. Neither establishes the 30-minute crash-free Windows session this clock is tracking, so November 30 remains the checkpoint.</p>
+          <p>Nov 24 update: <a href="news/2026-11-24-gameplay-score-revamp.html">the revised leaderboard</a> now includes hyphennn and the public victory-gta6 fork. <a href="news/2026-11-24-omonkey-shaders-prison.html">omonkey’s reported 5 FPS prison test</a> shows additional rendering progress. The <a href="news/2026-11-24-gta-vi-m5-max-macbook.html">MacBook clip</a> also looks promising. Neither establishes the 30-minute crash-free Windows session this clock is tracking, so November 30 remains the checkpoint.</p>
           <p>Evidence checked <time datetime="2026-11-24">Nov 24, 2026</time> · <a href="https://portwatch-vi.xyz/">PortWatch VI</a> · <a href="https://github.com/Marvisak/VIctory">VIctory status</a> · <a href="https://github.com/ivall/xcl/issues/505">XCL crash reports</a></p>
         </details>
         <div class="forecast-next">
@@ -179,8 +179,8 @@
       <div class="card overall" id="overall">
         <div class="overall-head">
           <div class="ov-main">
-            <h2 class="kicker" id="ov-title" data-i18n="ov.title">Community progress</h2>
-            <div class="big-score"><span id="ov-score">–</span><span class="pct">%</span></div>
+            <h2 class="kicker" id="ov-title" data-i18n="ov.title">Gameplay readiness</h2>
+            <div class="big-score"><span id="ov-score">–</span><span class="pct"> pts</span></div>
             <p class="ov-leader" id="ov-leader"></p>
           </div>
           <div class="roadmap">
@@ -192,9 +192,10 @@
             <p class="roadmap-detail" id="roadmap-detail" aria-live="polite"></p>
           </div>
         </div>
-        <div class="score-track" id="score-track" role="progressbar" aria-labelledby="ov-title" aria-valuemin="0" aria-valuemax="100">
+        <div class="score-track" id="score-track" role="progressbar" aria-labelledby="ov-title" aria-valuemin="0" aria-valuemax="80">
           <span id="score-fill"></span>
         </div>
+        <div class="leader-checks" id="leader-checks"></div>
         <div class="ov-stats">
             <div class="ov-stat"><b id="ov-stage">-</b><small data-i18n="ov.furthest">Furthest milestone</small></div>
             <div class="ov-stat"><b id="ov-top3">-</b><small data-i18n="ov.top3">Top-3 average</small></div>
@@ -360,7 +361,7 @@
         <div>
           <p class="kicker" data-i18n="method.kicker">Methodology</p>
           <h2 id="method-title" data-i18n="method.title">How we score</h2>
-          <p class="sub" data-i18n="method.sub">Groundwork makes up the first 25 points. After that, the ladder measures what each project achieves in GTA VI. The headline score belongs to the leading active community effort.</p>
+          <p class="sub" data-i18n="method.sub">The leaderboard ranks evidence of gameplay. Colors, textures, lighting, shaders, performance and crash-free time are scored separately.</p>
         </div>
       </div>
       <div class="method">
@@ -368,7 +369,7 @@
         <div class="card gw-explain">
           <h3 data-i18n="method.gwTitle">Groundwork, weighted</h3>
           <ul id="gw-explain"></ul>
-          <p class="fine" data-i18n="method.fine1">Past "In-game", the last 30 points split between frame rate (average FPS ÷ 30) and stability (from crashes often up to stable). Partial milestones, such as a menu that renders but is broken, count half.</p>
+          <p class="fine" data-i18n="method.fine1">Once the world loads, rendering can add up to 18 points. In-game frame rate adds up to 12, sustained 30 FPS adds 5, and a documented crash-free session adds up to 20 at 30 minutes. Menu FPS does not count.</p>
           <p class="fine" data-i18n="method.fine2">Maintain a project and think it's mis-scored? Open an issue with a link to your evidence.</p>
         </div>
       </div>

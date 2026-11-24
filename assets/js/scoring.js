@@ -1,22 +1,24 @@
 // Scoring model shared by the website (assets/js/app.js) and the scout (scripts/).
 // Keep this file dependency-free so it runs unchanged in browsers and in Node.
 //
-// A project's score is "how close is it to playing GTA VI on PC", 0-100.
-// It climbs a ladder of milestones. Before anyone has the executable, the only
-// thing a project can do is groundwork, which fills the first 25%.
-//
-//   0 ──── 25 ───── 40 ───── 55 ───── 70 ───── 85 ───── 100
-//   Groundwork │ Exe runs │ First frame │ Main menu │ In-game │ 30 FPS │ Stable
-
+// Entry milestones form a base score. Rendering, performance and stability
+// add independent points once the project shows the game world.
 export const MILESTONES = [
-  { key: 'groundwork', label: 'Groundwork', at: 0, desc: 'Loader, system libraries, shader translation and graphics layer, built before the executable exists.' },
-  { key: 'loads', label: 'Exe runs', at: 25, desc: "GTA VI's executable is mapped, its imports resolve and its own code starts running." },
-  { key: 'boots', label: 'First frame', at: 40, desc: 'The game draws its first real frames: logos, a loading screen or the intro.' },
-  { key: 'menu', label: 'Main menu', at: 55, desc: 'The title screen / main menu is reached and responds to input.' },
-  { key: 'ingame', label: 'In-game', at: 70, desc: 'Story mode loads and you can move around the world.' },
-  { key: 'fps30', label: '30 FPS', at: 85, desc: 'In-game performance reaches a 30 FPS average on a reported PC.' },
-  { key: 'stable', label: 'Stable', at: 100, desc: 'Plays for long sessions without crashing.' },
+  { key: 'groundwork', label: 'Groundwork', at: 0, desc: 'Platform, graphics and shader work before gameplay.' },
+  { key: 'loads', label: 'Boots', at: 4, desc: 'The game executable starts.' },
+  { key: 'boots', label: 'First frame', at: 8, desc: 'A game screen or intro renders.' },
+  { key: 'menu', label: 'Menus', at: 12, desc: 'Menus render and respond to input.' },
+  { key: 'world', label: 'World loads', at: 17, desc: 'The game reaches its world after the menus.' },
+  { key: 'ingame', label: 'Player control', at: 25, desc: 'A player can move in a rendered gameplay scene.' },
 ];
+
+export const RENDER_CHECKS = [
+  { key: 'color', label: 'Colors & textures', points: 5 },
+  { key: 'lighting', label: 'Lighting & shadows', points: 6 },
+  { key: 'shaders', label: 'Shaders in gameplay', points: 7 },
+];
+export const MAX_SCORE = 80;
+export const RANK_RUBRIC = 'gameplay-v2';
 
 // Groundwork parts and their share of the first 25%.
 export const GROUNDWORK = [
@@ -35,7 +37,7 @@ export const STABILITY = {
   stable: { label: 'Stable', value: 1 },
 };
 
-const LADDER = ['loads', 'boots', 'menu', 'ingame'];
+const LADDER = MILESTONES.slice(1);
 const TICK = Object.fromEntries(MILESTONES.map((m) => [m.key, m.at]));
 
 const clamp01 = (v) => (Number.isFinite(+v) ? Math.min(1, Math.max(0, +v)) : 0);
@@ -52,39 +54,42 @@ export function groundworkFraction(gw) {
   return GROUNDWORK.reduce((sum, g) => sum + g.weight * clamp01(gw?.[g.key]), 0);
 }
 
+export function gameplaySignals(gta = {}) {
+  return {
+    world: ladderValue(gta.world ?? gta.ingame),
+    ingame: ladderValue(gta.playable ?? (ladderValue(gta.ingame) === 1 ? 1 : 0)),
+    fps: Math.max(0, Number(gta.fps) || 0),
+    sustained30: gta.sustained30 === true && Number(gta.fps) >= 30,
+    sessionMinutes: Math.max(0, Number(gta.sessionMinutes) || 0),
+  };
+}
+
 export function scoreEffort(effort) {
   const gw = groundworkFraction(effort.groundwork);
   const gta = effort.gta || {};
+  const play = gameplaySignals(gta);
   let score = TICK.loads * gw;
   let reached = 'groundwork';
-  let prevTick = score;
 
-  for (const key of LADDER) {
-    const v = ladderValue(gta[key]);
-    if (v >= 1) {
-      score = TICK[key];
-      prevTick = score;
-      reached = key;
-      continue;
+  for (const step of LADDER) {
+    const value = ladderValue(play[step.key] ?? gta[step.key]);
+    if (value < 1) {
+      score += Math.max(0, step.at - score) * value;
+      break;
     }
-    if (v > 0) score = Math.max(score, prevTick + v * (TICK[key] - prevTick));
-    break;
+    score = step.at;
+    reached = step.key;
   }
 
+  if (play.world === 1 && (reached === 'world' || reached === 'ingame')) {
+    score += RENDER_CHECKS.reduce((sum, check) => sum + check.points * ladderValue(effort.visuals?.[check.key]), 0);
+  }
   if (reached === 'ingame') {
-    const fps = clamp01((+gta.fps || 0) / 30);
-    const stab = (STABILITY[gta.stability] || STABILITY.unknown).value;
-    score = TICK.ingame + fps * (TICK.fps30 - TICK.ingame) + stab * (TICK.stable - TICK.fps30);
-    if (fps >= 1) reached = 'fps30';
-    if (fps >= 1 && stab >= 1) reached = 'stable';
+    score += 12 * Math.min(1, play.fps / 30) + (play.sustained30 ? 5 : 0);
+    score += 20 * Math.min(1, play.sessionMinutes / 30);
   }
 
-  return {
-    score: Math.round(score * 10) / 10,
-    groundwork: gw,
-    reached,
-    reachedLabel: MILESTONES.find((m) => m.key === reached).label,
-  };
+  return { score: Math.round(score * 10) / 10, groundwork: gw, reached, reachedLabel: MILESTONES.find((m) => m.key === reached).label };
 }
 
 // Equal scores rank the effort with more GitHub stars first.

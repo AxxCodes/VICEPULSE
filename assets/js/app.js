@@ -1,4 +1,4 @@
-import { MILESTONES, GROUNDWORK, STABILITY, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
+import { MILESTONES, GROUNDWORK, RENDER_CHECKS, MAX_SCORE, RANK_RUBRIC, gameplaySignals, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
 import { getLiveViewers, trackView } from './backend.js';
 import { coverHtml, articlePath, storyImageUrl, storyVideoHtml } from './news-shared.js';
 import { fillPinned } from './pinned.js';
@@ -21,13 +21,14 @@ const effortAvatar = (e) => (/^assets\/img\/[\w/.-]+$/.test(e.avatar || '') ? e.
 const effortUrl = (e) => (hasRepo(e) ? repoUrl(e.repo, e.branch) : /^news\/[a-z0-9-]+\.html$/.test(e.link || '') ? e.link : '');
 const safeHttp = (u) => (/^https:\/\//.test(u || '') ? u : '#');
 const pct = (v) => `${Math.round(v * 10) / 10}`;
+const axis = (score) => (score / MAX_SCORE) * 100;
+const points = (score) => `${pct(score)} pts`;
 
 // Names from scoring.js, in the page's language when a translation exists.
 const msLabel = (key) => tr(`ms.${key}.label`, MILESTONES.find((m) => m.key === key)?.label || key);
 const msDesc = (m) => tr(`ms.${m.key}.desc`, m.desc);
 const gwLabel = (g) => tr(`gw.${g.key}.label`, g.label);
 const gwDesc = (g) => tr(`gw.${g.key}.desc`, g.desc);
-const stabLabel = (key) => tr(`stab.${key}`, (STABILITY[key] || STABILITY.unknown).label);
 const catLabel = (cat) => tr(`cat.${cat}`, cat);
 
 function ago(iso) {
@@ -330,26 +331,28 @@ function renderOverall(data) {
   const leader = ov.leader?.effort;
   $('#ov-score').textContent = pct(ov.score);
   $('#hero-progress-link').hidden = !leader;
-  $('#hero-progress-value').textContent = `${pct(ov.score)}%`;
+  $('#hero-progress-value').textContent = points(ov.score);
   $('#score-track').setAttribute('aria-valuenow', ov.score);
-  $('#score-fill').style.setProperty('--score', `${ov.score}%`);
-  const answers = { ingame: 'sortOf', fps30: 'mostly', stable: 'yes' };
+  $('#score-fill').style.setProperty('--score', `${axis(ov.score)}%`);
+  const hasStableRun = all.some((e) => !e.nuked && e._s.reached === 'ingame' && gameplaySignals(e.gta).sessionMinutes >= 30);
+  const hasSustained30 = all.some((e) => !e.nuked && e._s.reached === 'ingame' && gameplaySignals(e.gta).sustained30);
   const answer = $('#answer');
   answer.hidden = !leader;
-  answer.textContent = t(`answer.${answers[ov.furthest.key] || 'notYet'}`);
+  answer.textContent = t(`answer.${hasStableRun ? 'yes' : hasSustained30 ? 'mostly' : ov.furthest.key === 'ingame' ? 'sortOf' : 'notYet'}`);
   $('#ov-leader').innerHTML = leader
     ? `${esc(t('ov.leader'))} <a href="#effort-${esc(leader.id)}">${esc(leader.name)}</a> ${hasRepo(leader) ? `${esc(t('ov.byOwner', { owner: owner(leader.repo) }))} ` : ''}${esc(ov.leader.reached === 'groundwork' ? t('ov.stillGroundwork') : t('ov.reached', { label: msLabel(ov.leader.reached) }))}`
     : esc(t('ov.none'));
   $('#ov-stage').textContent = msLabel(ov.furthest.key);
-  $('#ov-top3').textContent = `${pct(ov.top3)}%`;
+  $('#ov-top3').textContent = points(ov.top3);
   const booted = all.filter((e) => ladderValue(e.gta?.boots) >= 1).length;
   $('#ov-boot').textContent = `${booted} / ${all.length}`;
   $('#ov-count').textContent = `${all.length}`;
 
+  $('#leader-checks').innerHTML = leader ? checkList(leader) : '';
   renderRoute(ov.furthest);
 
-  $('#mega-ticks').innerHTML = MILESTONES.slice(1, -1).map((m) => `<i style="left:${m.at}%"></i>`).join('');
-  $('#mega-fill').dataset.width = ov.score;
+  $('#mega-ticks').innerHTML = MILESTONES.slice(1, -1).map((m) => `<i style="left:${axis(m.at)}%"></i>`).join('');
+  $('#mega-fill').dataset.width = axis(ov.score);
 
   const top = ov.ranked.slice(0, 6);
   const draw = () => drawMarkers(top, leader);
@@ -373,7 +376,7 @@ function renderRoute(furthest) {
     return `<button type="button" class="route-step ${i < current ? 'is-passed' : i === current ? 'is-current' : ''}"
       data-step="${i}" aria-controls="roadmap-detail" aria-pressed="false"
       ${i === current ? 'aria-current="step"' : ''}>
-      <span class="route-value">${milestone.at}%</span><span class="route-node" aria-hidden="true"></span><span>${esc(label)}</span>
+      <span class="route-value">${milestone.at} pts</span><span class="route-node" aria-hidden="true"></span><span>${esc(label)}</span>
     </button>`;
   }).join('');
   const select = (i) => {
@@ -399,7 +402,7 @@ function drawMarkers(ranked, leader) {
   const H = box.clientHeight;
   if (!W) return;
   const GAP = Math.min(42, (W - 36) / Math.max(1, ranked.length - 1));
-  const items = ranked.map((r) => ({ r, x: (r.score / 100) * W })).sort((a, b) => a.x - b.x);
+  const items = ranked.map((r) => ({ r, x: (r.score / MAX_SCORE) * W })).sort((a, b) => a.x - b.x);
   items.forEach((it, i) => { it.a = i ? Math.max(it.x, items[i - 1].a + GAP) : it.x; });
   const shift = items.reduce((s, it) => s + (it.x - it.a), 0) / Math.max(1, items.length);
   items.forEach((it, i) => {
@@ -420,8 +423,8 @@ function drawMarkers(ranked, leader) {
       const e = it.r.effort;
       const src = effortAvatar(e);
       return `<a class="marker ${e === leader ? 'is-leader' : ''}" href="#effort-${esc(e.id)}" style="left:${it.a}px;bottom:${H - avatarY - 32}px"
-                data-tip-title="${esc(e.name)} · ${pct(it.r.score)}%" data-tip="${esc(msLabel(it.r.reached))} · ${esc(e.approach || '')}">
-                <span class="mk-name">${esc(e.name)} · ${pct(it.r.score)}%</span>
+                data-tip-title="${esc(e.name)} · ${points(it.r.score)}" data-tip="${esc(msLabel(it.r.reached))} · ${esc(e.approach || '')}">
+                <span class="mk-name">${esc(e.name)} · ${points(it.r.score)}</span>
                 ${src ? `<img src="${esc(src)}" alt="" loading="lazy" data-fallback="${esc(e.name.slice(0, 2))}">` : `<span class="mk-fallback">${esc(e.name.slice(0, 2))}</span>`}
               </a>`;
     }).join('');
@@ -429,26 +432,26 @@ function drawMarkers(ranked, leader) {
 
 function renderHistory(history, efforts) {
   const box = $('#ov-history');
-  const pts = history.filter((h) => Number.isFinite(h.leader)).sort((a, b) => a.date.localeCompare(b.date));
+  const pts = history.filter((h) => h.rubric === RANK_RUBRIC && Number.isFinite(h.leader)).sort((a, b) => a.date.localeCompare(b.date));
   const names = new Map(efforts.map((effort) => [effort.id, effort.name]));
-  box.hidden = pts.length < 2;
+  box.hidden = pts.length === 0;
   if (box.hidden) return;
   const W = 1000, H = 70;
-  const x = (i) => (i / (pts.length - 1)) * W;
-  const y = (v) => H - (v / 100) * (H - 6) - 3;
+  const x = (i) => (i / Math.max(1, pts.length - 1)) * W;
+  const y = (v) => H - (v / MAX_SCORE) * (H - 6) - 3;
   const d = pts.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(p.leader).toFixed(1)}`).join(' ');
-  box.innerHTML = `<p>${esc(t('ov.history'))}</p>
-    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-label="${esc(t('ov.historyLabel'))}">
+  box.innerHTML = `<p>Gameplay-score history starts with the new rubric on November 24. Earlier percentage scores used a different method.</p>
+    ${pts.length > 1 ? `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-label="${esc(t('ov.historyLabel'))}">
       <defs><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#7a5cff"/><stop offset=".55" stop-color="#ff2e7e"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient>
       <linearGradient id="hf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2e7e" stop-opacity=".18"/><stop offset="1" stop-color="#ff2e7e" stop-opacity="0"/></linearGradient></defs>
       <path d="${d} L${W} ${H} L0 ${H} Z" fill="url(#hf)"/>
       <path d="${d}" fill="none" stroke="url(#hg)" stroke-width="3" vector-effect="non-scaling-stroke"/>
-    </svg>
+    </svg>` : ""}
     <details class="history-data"${box.querySelector(".history-data")?.open === false ? "" : " open"}>
       <summary>${esc(t('road.historyData'))}</summary>
       <table>
         <thead><tr><th scope="col">${esc(t('road.day'))}</th><th scope="col">${esc(t('ov.leader'))}</th><th scope="col">${esc(t('ov.top3'))}</th><th scope="col">${esc(t('ov.furthest'))}</th></tr></thead>
-        <tbody>${[...pts].reverse().map((p) => `<tr><th scope="row"><time datetime="${esc(p.date)}">${esc(fmtDay(p.date))}</time></th><td><b>${pct(p.leader)}%</b><br>${esc(names.get(p.leaderId) || p.leaderId || "–")}</td><td>${Number.isFinite(p.top3) ? `${pct(p.top3)}%` : '–'}</td><td>${p.furthest ? esc(msLabel(p.furthest)) : '–'}</td></tr>`).join('')}</tbody>
+        <tbody>${[...pts].reverse().map((p) => `<tr><th scope="row"><time datetime="${esc(p.date)}">${esc(fmtDay(p.date))}</time></th><td><b>${points(p.leader)}</b><br>${esc(names.get(p.leaderId) || p.leaderId || "–")}</td><td>${Number.isFinite(p.top3) ? points(p.top3) : '–'}</td><td>${p.furthest ? esc(msLabel(p.furthest)) : '–'}</td></tr>`).join('')}</tbody>
       </table>
     </details>`;
 }
@@ -503,29 +506,27 @@ function renderRace() {
   observeBars();
 }
 
-function ladderCells(e) {
-  const g = e.gta || {};
-  const gw = e._s.groundwork;
-  const st = (v) => (v >= 1 ? 'is-reached' : v > 0 ? 'is-partial' : '');
-  const fpsV = Math.min(1, (+g.fps || 0) / 30);
-  const stabV = (STABILITY[g.stability] || STABILITY.unknown).value;
-  const fpsLabel = t('effort.fps', { n: g.fps ? Math.round(g.fps) : 30 });
-  const stab = g.stability && g.stability !== 'unknown' && STABILITY[g.stability] ? stabLabel(g.stability) : msLabel('stable');
-  // Past "Exe runs" the score no longer depends on groundwork, so that step reads as done.
-  const pastGroundwork = ladderValue(g.loads) >= 1;
-  return `
-    <span class="${pastGroundwork ? 'is-reached' : st(gw)}" title="${esc(msDesc(MILESTONES[0]))}">${esc(pastGroundwork ? msLabel('groundwork') : t('effort.groundworkPct', { n: Math.round(gw * 100) }))}</span>
-    <span class="${st(ladderValue(g.loads))}">${esc(msLabel('loads'))}</span>
-    <span class="${st(ladderValue(g.boots))}">${esc(msLabel('boots'))}</span>
-    <span class="${st(ladderValue(g.menu))}">${esc(msLabel('menu'))}</span>
-    <span class="${st(ladderValue(g.ingame))}">${esc(msLabel('ingame'))}</span>
-    <div><span class="${st(fpsV)}">${esc(fpsLabel)}</span><span class="${st(stabV)}">${esc(stab)}</span></div>`;
+function playChecks(e) {
+  const play = gameplaySignals(e.gta);
+  return [
+    ...RENDER_CHECKS.map(({ key, label }) => {
+      const value = ladderValue(e.visuals?.[key]);
+      return { label, value: value === 1 ? 'Verified for the test scene' : value > 0 ? 'Partial' : 'Unverified', state: value === 1 ? 'pass' : value > 0 ? 'partial' : '' };
+    }),
+    { label: 'In-game frame rate', value: play.fps ? `${play.fps} FPS reported` : 'Unmeasured', state: play.fps ? 'partial' : '' },
+    { label: 'Sustained 30 FPS', value: play.sustained30 ? 'Documented' : 'Unverified', state: play.sustained30 ? 'pass' : '' },
+    { label: 'Crash-free session', value: play.sessionMinutes ? `${play.sessionMinutes} min documented` : 'Unverified', state: play.sessionMinutes >= 30 ? 'pass' : play.sessionMinutes ? 'partial' : '' },
+  ];
+}
+
+function checkList(e) {
+  return `<dl class="play-checks">${playChecks(e).map(({ label, value, state }) => `<div data-state="${state}"><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>`;
 }
 
 function effortCard(e, rank, open, overallRank = null) {
   const s = e._s;
   const st = e.stats || {};
-  const ticks = MILESTONES.slice(1, -1).map((m) => `<i style="left:${m.at}%"></i>`).join('');
+  const ticks = MILESTONES.slice(1, -1).map((m) => `<i style="left:${axis(m.at)}%"></i>`).join('');
   const stale = st.pushedAt && daysSince(st.pushedAt) > 3;
   const tags = [
     e.approach && `<span class="tag">${esc(e.approach)}</span>`,
@@ -559,13 +560,18 @@ function effortCard(e, rank, open, overallRank = null) {
           <h3>${url ? `<a href="${esc(url)}"${external}>${esc(e.name)}</a>` : esc(e.name)}</h3>
           <p class="e-by">${hasRepo(e) ? `${esc(e.repo)}${e.branch && !['main', 'master'].includes(e.branch) ? ` · ${esc(t('effort.branch', { b: e.branch }))}` : ''}` : esc(e.byline || '')}</p>
         </div>
-        <div class="e-score"><b>${pct(s.score)}<span>%</span></b><small>${esc(msLabel(s.reached))}</small></div>
+        <div class="e-score"><b>${pct(s.score)}<span> pts</span></b><small>${esc(msLabel(s.reached))}</small></div>
       </div>
       <div class="tags">${tags}</div>
       <p class="e-summary">${esc(e.summary)}</p>
+      ${e.evidence ? `<p class="e-provenance"><b>Evidence</b> ${esc(e.evidence)}</p>` : ''}
+      ${e.basedOn?.length ? `<p class="e-provenance"><b>Based on</b> ${e.basedOn.map((id) => {
+        const project = state.data.efforts.find((effort) => effort.id === id);
+        return project ? `<a href="#effort-${esc(project.id)}">${esc(project.name)}</a>` : esc(id);
+      }).join(' · ')}</p>` : ''}
       <div class="bar" aria-label="${esc(t('effort.progressLabel', { name: e.name, n: pct(s.score) }))}">
-        <div class="bar-track"><div class="bar-fill" data-width="${s.score}"></div><div class="bar-ticks">${ticks}</div></div>
-        <div class="ladder">${ladderCells(e)}</div>
+        <div class="bar-track"><div class="bar-fill" data-width="${axis(s.score)}"></div><div class="bar-ticks">${ticks}</div></div>
+        ${checkList(e)}
       </div>
       ${claims}
       <div class="e-details" id="details-${esc(e.id)}" ${open ? '' : 'hidden'}>
@@ -614,7 +620,8 @@ function mountComparison(efforts) {
       for (const opt of select.options) opt.disabled = opt.value === pair[1 - i].id;
     });
     const rows = [
-      ['watch.progress', (e) => `${pct(e._s.score)}%`],
+      ['watch.progress', (e) => points(e._s.score)],
+      ...playChecks(pair[0]).map(({ label }, i) => [label, (e) => playChecks(e)[i].value]),
       ['ov.furthest', (e) => msLabel(e._s.reached)],
       ['search.evidence', evidenceLabel],
       ['watch.approach', (e) => e.approach || '–'],
@@ -622,7 +629,7 @@ function mountComparison(efforts) {
       ['effort.blocking', (e) => e.blockers?.join(' · ') || '–'],
     ];
     $('#compare-head').innerHTML = `<tr><th scope="col">${esc(t('compare.metric'))}</th>${pair.map((e) => `<th scope="col">${esc(e.name)}</th>`).join('')}</tr>`;
-    $('#compare-body').innerHTML = rows.map(([key, value]) => `<tr><th scope="row">${esc(t(key))}</th>${pair.map((e) => `<td>${esc(value(e))}</td>`).join('')}</tr>`).join('');
+    $('#compare-body').innerHTML = rows.map(([key, value]) => `<tr><th scope="row">${esc(tr(key, key))}</th>${pair.map((e) => `<td>${esc(value(e))}</td>`).join('')}</tr>`).join('');
   };
   picks.forEach((select) => { select.onchange = render; });
   render();
@@ -638,9 +645,13 @@ function renderWatchlist(data) {
     <div class="w-row w-head" role="row">${head}</div>` +
     rows.map((e) => `
     <div class="w-row" role="row" id="effort-${esc(e.id)}">
-      <div class="w-name" role="cell"><a href="${esc(repoUrl(e.repo, e.branch))}" target="_blank" rel="noopener">${esc(e.name)}</a><p>${esc(e.summary)}</p></div>
+      <div class="w-name" role="cell"><a href="${esc(repoUrl(e.repo, e.branch))}" target="_blank" rel="noopener">${esc(e.name)}</a><p>${esc(e.summary)}</p>
+        ${e.highlights?.length || e.blockers?.length ? `<details class="watch-details"><summary>Project evidence</summary>${checkList(e)}
+          <ul>${[...(e.highlights || []), ...(e.blockers || [])].map((note) => `<li>${esc(note)}</li>`).join('')}</ul>
+        </details>` : ''}
+      </div>
       <span class="w-muted" role="cell">${esc(e.approach)}${e.target && /gta|ps5/i.test(e.target) ? ` · ${esc(e.target)}` : ''}</span>
-      <div class="w-bar" role="cell"><div class="bar-track"><div class="bar-fill" data-width="${e._s.score}"></div></div><b>${pct(e._s.score)}%</b></div>
+      <div class="w-bar" role="cell"><div class="bar-track"><div class="bar-fill" data-width="${axis(e._s.score)}"></div></div><b>${points(e._s.score)}</b></div>
       <span class="w-muted" role="cell">★ ${fmtK(e.stats?.stars)}</span>
       <span class="w-muted" role="cell">${esc(ago(e.stats?.pushedAt))}</span>
     </div>`).join('');
@@ -764,8 +775,8 @@ function renderFlags(flags) {
 /* ---------- Method ---------- */
 function renderMethod() {
   $('#ladder-explain').innerHTML = MILESTONES.map((m, i) => `
-    <li><span class="le-at">${i === 0 ? '0–25' : m.at}</span><div><h4>${esc(msLabel(m.key))}</h4><p>${esc(msDesc(m))}</p></div></li>`).join('');
-  $('#gw-explain').innerHTML = GROUNDWORK.map((g) => `<li><b>${esc(gwLabel(g))}<span>${esc(t('method.pts', { n: Math.round(g.weight * 25 * 10) / 10 }))}</span></b>${esc(gwDesc(g))}</li>`).join('');
+    <li><span class="le-at">${i === 0 ? '0–4' : m.at}</span><div><h4>${esc(msLabel(m.key))}</h4><p>${esc(msDesc(m))}</p></div></li>`).join('');
+  $('#gw-explain').innerHTML = GROUNDWORK.map((g) => `<li><b>${esc(gwLabel(g))}<span>${esc(t('method.pts', { n: Math.round(g.weight * 4 * 10) / 10 }))}</span></b>${esc(gwDesc(g))}</li>`).join('');
 }
 
 /* ---------- Interaction ---------- */
