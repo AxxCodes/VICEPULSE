@@ -733,3 +733,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
 .hero-side .countdown.is-released { background: linear-gradient(135deg, #103c2fee, #185341ee 68%, #174438ee); border-color: #7ef1aeaa; }
 .hero-side .countdown.is-released .cd-pulse { background: #8effb8; box-shadow: 0 0 0 4px #63e6a14d; }
 .positions-note { margin: 9px 0; font-size: .88rem; color: var(--muted); }
+
+.story-video { margin: 0 0 1.35rem; }
+.story-video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #130e19; border-radius: 12px; }
+.story-video figcaption { margin-top: .5rem; font-size: .9rem; }
+.story-video a { color: var(--text); text-underline-offset: .2em; }

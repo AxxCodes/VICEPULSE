@@ -1,6 +1,6 @@
 import { MILESTONES, GROUNDWORK, STABILITY, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
 import { getLiveViewers, trackView } from './backend.js';
-import { coverHtml, articlePath, storyImageUrl } from './news-shared.js';
+import { coverHtml, articlePath, storyImageUrl, storyVideoHtml } from './news-shared.js';
 import { fillPinned } from './pinned.js';
 import { initI18n, t, tr, locale } from './i18n.js';
 import { getUpdateAge } from './update-time.js';
@@ -737,6 +737,7 @@ function renderNews(news) {
         <p class="meta">${esc(catLabel(n.category))} · ${esc(fmtDay(n.date))}</p>
         <h2 id="reader-title">${esc(n.title)}</h2>
         <p class="dek">${esc(n.dek)}</p>
+        ${storyVideoHtml(n)}
         <div class="article">${(n.body || []).map((p) => `<p>${esc(p)}</p>`).join('')}</div>
         <div class="sources">
           <h4>${esc(t('news.sources'))}</h4>

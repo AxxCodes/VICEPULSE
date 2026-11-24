@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T16:24:31.934Z",
+  "updated": "2026-11-24T19:14:36.491Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-waterfront.webp",
@@ -16,6 +16,50 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-24-gta-vi-pc-lighting-footage",
+      "date": "2026-11-24",
+      "category": "Port",
+      "title": "GTA VI PC footage shows sunlight and working lamps",
+      "dek": "A new 17-second clip shows bright light on Lucia and visible ceiling lamps, while much of the room stays almost black. The exact build is unconfirmed.",
+      "body": [
+        "A 17-second clip posted to X on Nov 24 shows Lucia in a room with bright ceiling lamps and warm sunlight. As the camera turns, the light catches her hair and face, while much of the furniture and interior stays nearly black. We compared the uploads from @Mamozziee and @h4nkick. They show the same sequence, so they count as one piece of footage.",
+        "@h4nkick associated the clip with a VIctory-related build and explicitly said the developer had not confirmed it. Tarreo separately covered earlier clips attributed to the private CGBJ project, including a scene lit through a window. VIctory’s public status documents 30 FPS in menus and world loading with rendering problems during gameplay. These reports provide context, but do not establish which build appears in this clip.",
+        "The visible improvement is in how this scene is lit. The clip does not establish a frame rate, a crash-free session or how other parts of the game render. VICEPULSE is keeping its leaderboard and stability forecast unchanged pending a reproducible test or confirmation from the team behind the footage."
+      ],
+      "sources": [
+        {
+          "outlet": "X · @Mamozziee",
+          "title": "17-second lighting clip",
+          "url": "https://x.com/mamozziee/status/2125294748831305759"
+        },
+        {
+          "outlet": "X · @h4nkick",
+          "title": "Second upload of the same clip, with an attribution caveat",
+          "url": "https://x.com/h4nkick/status/2125294654749057308"
+        },
+        {
+          "outlet": "Tarreo",
+          "title": "Earlier coverage of reported CGBJ lighting improvements",
+          "url": "https://www.tarreo.com/pc/gta-6-en-pc-cgbj-caminar-personajes/"
+        },
+        {
+          "outlet": "GitHub · VIctory",
+          "title": "Public project status and rendering limitations",
+          "url": "https://github.com/Marvisak/VIctory"
+        }
+      ],
+      "image": {
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2125294703251779585/img/qmG9qt9u6K5CUkY8.jpg",
+        "credit": "Clip preview via @Mamozziee on X",
+        "link": "https://x.com/mamozziee/status/2125294748831305759"
+      },
+      "video": {
+        "url": "https://video.twimg.com/amplify_video/2125294703251779585/vid/avc1/1278x712/ytNAUfpKlHwAEDWU.mp4",
+        "post": "https://x.com/mamozziee/status/2125294748831305759"
+      },
+      "by": "report"
+    },
     {
       "id": "2026-11-24-stable-play-checkpoint",
       "date": "2026-11-24",
@@ -659,7 +703,10 @@
         "stability": "unknown"
       },
       "verification": "self-reported",
-      "observation": { "date": "2026-11-24", "source": "news/2026-11-24-cgbj-in-game.html" },
+      "observation": {
+        "date": "2026-11-24",
+        "source": "news/2026-11-24-cgbj-in-game.html"
+      },
       "stats": {},
       "assessedAt": "2026-11-24",
       "assessedBy": "manual",

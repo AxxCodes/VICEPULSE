@@ -3,7 +3,7 @@
 // Pure functions with no Node or DOM APIs, so the same code can be checked in a browser;
 // scripts/build-site.mjs does the file I/O in GitHub Actions.
 
-import { esc, NEWS_ID_RE, articlePath, coverHtml, storyImageUrl } from '../../assets/js/news-shared.js';
+import { esc, NEWS_ID_RE, articlePath, coverHtml, storyImageUrl, storyVideoHtml } from '../../assets/js/news-shared.js';
 
 const SITE_NAME = 'VICEPULSE';
 const articleUrl = (n, siteUrl) => siteUrl
@@ -150,6 +150,7 @@ function articlePage(n, others, siteUrl) {
         <p class="meta">${esc(n.category)} · <time datetime="${n.date}">${esc(fmtDay(n.date))}</time></p>
         <h1>${esc(n.title)}</h1>
         ${n.dek ? `<p class="dek">${esc(n.dek)}</p>` : ''}
+        ${storyVideoHtml(n)}
         <div class="article">
           ${(n.body || []).map((p) => `<p>${esc(p)}</p>`).join('\n          ')}
         </div>

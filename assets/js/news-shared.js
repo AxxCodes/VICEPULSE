@@ -15,6 +15,20 @@ export function storyImageUrl(value, prefix = '') {
   return /^https:\/\/[^\s"'<>]+$/.test(url) ? url : '';
 }
 
+// Play the publisher-hosted clip and keep the source post available as a fallback.
+export function storyVideoHtml(story) {
+  const { url, post } = story.video || {};
+  if (!/^https:\/\/video\.twimg\.com\/[\w/-]+\.mp4$/.test(url || '')) return '';
+  if (!/^https:\/\/x\.com\/\w+\/status\/\d+$/.test(post || '')) return '';
+  const poster = storyImageUrl(story.image?.url);
+  return `<figure class="story-video">
+          <video controls playsinline preload="none"${poster ? ` poster="${esc(poster)}"` : ''} aria-label="Video accompanying this article">
+            <source src="${esc(url)}" type="video/mp4">
+          </video>
+          <figcaption><a href="${esc(post)}" target="_blank" rel="noopener noreferrer">Watch the clip on X</a></figcaption>
+        </figure>`;
+}
+
 export const COVER_ICON = {
   Leak: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 2h8l5 5v8.5l-2-2V8h-4V4H6v16h7.5l2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm12.5 13.5L21 18l-3 4-3-4 2.5-2.5Z"/></svg>',
   Takedown: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm0 2a8 8 0 0 0-6.3 12.9L16.9 5.7A8 8 0 0 0 12 4Zm6.3 3.1L7.1 18.3A8 8 0 0 0 18.3 7.1Z"/></svg>',
