@@ -656,30 +656,80 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
 #pc-forecast { scroll-margin-top: 86px; }
 .tracker-overview { margin-top: clamp(16px, 3vw, 32px); }
 .forecast-card {
-  padding: clamp(18px, 4vw, 46px);
-  border: 1px solid #c188ba;
-  border-radius: 22px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(18px, 4.6vw, 58px);
+  border: 1px solid #ffb8cf8c;
+  border-radius: clamp(17px, 3vw, 30px);
   color: #fff5fc;
-  background: radial-gradient(ellipse at 88% 0%, #214158 0%, transparent 59%),
-              radial-gradient(ellipse at 0% 0%, #562448 0%, transparent 67%), #171322;
-  box-shadow: 0 18px 38px #170d2438, inset 0 1px #ffdeee31;
+  background:
+    linear-gradient(90deg, #1b102b 5%, #291333ed 52%, #3f18527a),
+    linear-gradient(0deg, #160d22 6%, transparent 85%),
+    url("../img/vice-waterfront.webp") center 50% / cover, #171322;
+  box-shadow: 0 19px 48px #1f102e48, inset 0 1px #ffdeee45;
 }
-.forecast-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 10px 22px; }
-.forecast-head .kicker { color: #ffc6e7; margin: 0 0 8px; }
-.forecast-head h2 { margin: 0; font-size: clamp(1.64rem, 4vw, 3.4rem); line-height: 1.06; }
-.forecast-chip { color: #fff0cc; border: 1px solid #af8e57; border-radius: 999px; padding: 4px 12px; font-size: .8rem; }
+.forecast-card::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, #ffa178 0%, #fb598b 33%, #a679ed 72%, #8ffff1);
+}
+.forecast-emblem {
+  position: absolute;
+  z-index: -1;
+  inset: clamp(-17px, -1vw, -5px) clamp(12px, 6vw, 76px) auto auto;
+  pointer-events: none;
+  transform: skew(-8deg);
+  font-family: var(--display);
+  font-size: clamp(7rem, 22vw, 20rem);
+  font-weight: 900;
+  letter-spacing: -.13em;
+  line-height: .95;
+  opacity: .7;
+}
+.forecast-emblem span {
+  display: block;
+  padding-right: .16em;
+  color: transparent;
+  background: linear-gradient(175deg, #ffe8c5 5%, #ff9a77 29%, #ff5ca4 54%, #b383f3 78%, #6adcd9 98%);
+  background-clip: text;
+  -webkit-text-stroke: 1px #ffdeef67;
+  filter: drop-shadow(0 9px 16px #130b233d);
+}
+.forecast-head { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.forecast-head .kicker { color: #ffbcdb; margin: 0 0 8px; }
+.forecast-head h2 { max-width: 12ch; margin: 0; font-size: clamp(2rem, 6.25vw, 5.5rem); line-height: .93; letter-spacing: -.045em; text-wrap: balance; text-shadow: 0 4px 27px #100919; }
+.forecast-chip { color: #ffe6c6; background: #211329dd; border: 1px solid #e0a887a6; border-radius: 999px; padding: 4px 12px; font-size: .82rem; }
 .forecast-clock { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(5px, 1.7vw, 19px); margin: clamp(15px, 3vw, 32px) 0 15px; }
-.forecast-clock div { text-align: center; padding: clamp(10px, 2.3vw, 25px) 2px; background: #100e1ecc; border: 1px solid #bdaada65; border-radius: 13px; box-shadow: inset 0 2px #ffbee242; }
-.forecast-clock strong { display: block; font: 800 clamp(1.48rem, 6vw, 5.4rem)/1 var(--mono); letter-spacing: -.055em; font-variant-numeric: tabular-nums; color: #ffe9f9; }
-.forecast-clock small { display: block; margin-top: 6px; font-size: clamp(.68rem, 1.8vw, 1rem); color: #e4d8f3; }
-.forecast-date { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 10px; margin: 0 0 10px; color: #e4d8f3; }
-.forecast-date time { margin-right: auto; font-weight: 800; color: #fff; }
-.forecast-goal, .forecast-method { max-width: 95ch; color: #efe4f1; }
+.forecast-clock div {
+  position: relative;
+  text-align: center;
+  padding: clamp(10px, 2.3vw, 25px) 2px;
+  background: linear-gradient(173deg, #40213be8, #160d20f5 76%);
+  border: 1px solid #f6b6d66e;
+  border-radius: clamp(8px, 1.5vw, 16px);
+  box-shadow: inset 0 2px #ffbee24a, 0 10px 25px #10081959;
+}
+.forecast-clock strong { display: block; font: 800 clamp(1.65rem, 7vw, 6rem)/1 var(--mono); letter-spacing: -.065em; font-variant-numeric: tabular-nums; color: #fff1e5; }
+.forecast-clock div:last-child strong { color: #ffafd6; }
+.forecast-clock small { display: block; margin-top: 6px; font-size: clamp(.7rem, 1.8vw, 1rem); color: #f0d9ec; }
+.forecast-date { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 10px; margin: 0 0 10px; color: #f1d8ea; }
+.forecast-date time { margin-right: auto; font-weight: 800; color: #fff3db; }
+.forecast-goal, .forecast-method { max-width: 90ch; color: #f0e3ef; }
 .forecast-goal { margin: 0 0 13px; }
 .forecast-method summary { width: fit-content; cursor: pointer; font-weight: 750; color: #ffd1ee; }
-.forecast-method ol { padding-inline-start: 1.25rem; }
-.forecast-method li { margin: .45em 0; }
 .forecast-method a { color: #ffd1ee; }
+.forecast-next { display: flex; align-items: center; gap: 13px; margin-top: 22px; padding-top: 17px; border-top: 1px solid #ffc1d34a; }
+.forecast-next-icon { flex: 0 0 auto; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 10px; background: #362246; border: 1px solid #bd98e0a0; color: #edc7ff; font: 800 1.1rem var(--mono); }
+.forecast-next h3 { margin: 0 0 2px; font-size: 1rem; color: #ffe7fa; }
+.forecast-next p { margin: 0; color: #e5d6e9; font-size: .9rem; }
+@media (max-width: 520px) {
+  .forecast-card { background-position: center, center, 64% 50%; }
+  .forecast-emblem { opacity: .45; }
+  .forecast-next { align-items: flex-start; }
+}
 .hero-side .countdown.is-released { background: linear-gradient(135deg, #103c2fee, #185341ee 68%, #174438ee); border-color: #7ef1aeaa; }
 .hero-side .countdown.is-released .cd-pulse { background: #8effb8; box-shadow: 0 0 0 4px #63e6a14d; }
 .positions-note { margin: 9px 0; font-size: .88rem; color: var(--muted); }

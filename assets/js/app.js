@@ -251,9 +251,12 @@ function startForecast() {
   const tick = () => {
     const seconds = Math.max(0, Math.ceil((target - Date.now()) / 1000));
     const units = [Math.floor(seconds / 86400), Math.floor(seconds / 3600) % 24, Math.floor(seconds / 60) % 60, seconds % 60];
-    fields.forEach((field, i) => { field.textContent = String(units[i]).padStart(2, '0'); });
+    fields.forEach((field, i) => {
+      const digit = String(units[i]).padStart(2, '0');
+      if (field.textContent !== digit) field.textContent = digit;
+    });
     if (seconds === 0) {
-      $('#forecast-status').textContent = 'Estimate reached · check current milestones';
+      $('#forecast-status').textContent = 'Checkpoint reached · awaiting verified results';
       clearInterval(timer);
       document.removeEventListener('visibilitychange', tick);
     }

@@ -20,12 +20,12 @@
       "id": "2026-11-24-stable-play-checkpoint",
       "date": "2026-11-24",
       "category": "Port",
-      "title": "What comes after 72% for GTA VI on PC?",
-      "dek": "The latest PortWatch VI snapshot still puts CGBJ at 72%. A private 4 FPS demo and XCL world-loading reports show how much work remains before smooth play.",
+      "title": "The next GTA VI PC milestone is a crash-free session",
+      "dek": "VICEPULSE is watching for a documented 30-minute gameplay run after a fast jump from menus to the game world.",
       "body": [
         "PortWatch VI’s Nov 24 afternoon snapshot keeps CGBJ at the top of its milestone scale. The private demo reportedly shows movement and NPC interaction at roughly four frames per second, with lighting missing. That is evidence of progress into the world. The project has yet to show a public, reproducible session with correct graphics.",
         "XCL testers have reported reaching world loading and then hitting the game’s GPU watchdog. A reported frame rate without a documented scene and session length cannot establish sustained gameplay. For the next score change, look for repeatable tests with the hardware, settings, frame pacing and crash behavior documented.",
-        "VICEPULSE’s July 2027 checkpoint is an editorial scenario for stable community play across multiple PCs. The current evidence leaves the window broad, and the estimate will move as better evidence arrives."
+        "VICEPULSE is counting down to November 30 as a low-confidence checkpoint for one documented 30-minute session without a crash. A broadly reproducible 30 FPS build is a later milestone. The estimate can move as developers publish longer gameplay tests."
       ],
       "sources": [
         {
