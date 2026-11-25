@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T03:01:52.104Z",
+  "updated": "2026-11-25T11:33:50.347Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-waterfront.webp",
@@ -16,6 +16,37 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-25-belobug-amd-open-world",
+      "date": "2026-11-25",
+      "category": "Port",
+      "by": "sources",
+      "title": "Belobug’s AMD build renders GTA VI’s open world at 3–5 FPS",
+      "dek": "The Radeon fork shows textured streets, traffic, vegetation and water. Driving runs at about 3 FPS on an RX 9070 XT.",
+      "body": [
+        "Belobug published a Radeon-focused fork of Marvisak’s VIctory. The maintainer reports a lit open world with textured surfaces, people, vehicles, vegetation and water on Windows 11 with an RX 9070 XT, Ryzen 7 9800X3D and 64 GB of RAM. PortWatch says it saw the build running through missions.",
+        "The maintainer reports 3–5 FPS in the world and around 3 FPS while driving. Distant trees are missing, moving vehicles can stretch or leave parts behind, and shaded areas use a flat lighting approximation. The README records a driver timeout during the test session.",
+        "Separately, hyphennn’s victory-fork reports cutting one CPU-side graphics pass from 70–220 ms to about 3 ms. That test still took 250–380 ms per frame overall, or roughly 3–4 FPS, with the GPU setting the pace.",
+        "Belobug leads VICEPULSE’s readiness ranking on the strength of its rendering. The documented crash-free gameplay checkpoint remains open."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · Belobug",
+          "title": "AMD fork test results and known issues",
+          "url": "https://github.com/Belobug/VIctory-Belobug-AMD"
+        },
+        {
+          "outlet": "PortWatch VI",
+          "title": "Firsthand coverage of Belobug’s gameplay",
+          "url": "https://portwatch-vi.xyz/news/2026-11-25-belobug-way-ahead.html"
+        },
+        {
+          "outlet": "GitHub · victory-fork",
+          "title": "CPU and GPU frame-time measurements",
+          "url": "https://github.com/fxceless/victory-fork"
+        }
+      ]
+    },
     {
       "id": "2026-11-24-gta-vi-pc-readiness-session-reports",
       "date": "2026-11-24",
@@ -912,6 +943,66 @@
     }
   ],
   "efforts": [
+    {
+      "id": "belobug",
+      "name": "Belobug (AMD)",
+      "repo": "Belobug/VIctory-Belobug-AMD",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "basedOn": [
+        "marvis"
+      ],
+      "summary": "This Radeon-focused VIctory fork renders the open world on an RX 9070 XT. PortWatch reports seeing it run through missions.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0,
+        "render": 0.8,
+        "fps": 3,
+        "stability": "unknown"
+      },
+      "visuals": {
+        "color": 0.8,
+        "lighting": 0.65,
+        "shaders": 0.7
+      },
+      "visualNotes": {
+        "color": "Textured streets, people, vehicles and vegetation",
+        "lighting": "Lit world with flat lighting in shadow",
+        "shaders": "Water and sky render; some effects and distant trees are missing"
+      },
+      "fpsNote": "3–5 FPS in the world, about 3 while driving",
+      "sessionNote": "Driver timeout reported during testing",
+      "highlights": [
+        "Open-world gameplay shown on Windows 11 with an RX 9070 XT",
+        "Maintainer reports that saves load and persist"
+      ],
+      "blockers": [
+        "Moving vehicles can stretch or leave parts behind",
+        "Published results cover one AMD PC"
+      ],
+      "verification": "self-reported",
+      "evidence": "Maintainer’s hardware and FPS report plus PortWatch gameplay coverage",
+      "byline": "Public source · PortWatch gameplay coverage",
+      "assessedAt": "2026-11-25",
+      "assessedBy": "manual",
+      "link": "news/2026-11-25-belobug-amd-open-world.html",
+      "readmeSha": "0daa560302b551899beaacd1c1ca876658ed72491cb005ba560c0b55fc49d8cc",
+      "stats": {
+        "stars": 356,
+        "forks": 56,
+        "openIssues": 7,
+        "pushedAt": "2026-11-25T09:42:39Z",
+        "createdAt": "2026-11-25T09:41:37Z",
+        "archived": false,
+        "missing": false
+      }
+    },
     {
       "id": "omonkey",
       "name": "omonkey",
@@ -2615,7 +2706,8 @@
         "HUD, pause menu and controller input work",
         "Opening cutscene plays through and a checkpoint can be saved and reloaded",
         "Fork adds its own meshlet, descriptor and shader fixes",
-        "PortWatch reports improved lighting and hair in a stream attributed to this fork"
+        "PortWatch reports improved lighting and hair in a stream attributed to this fork",
+        "A CPU graphics pass fell from 70–220 ms to about 3 ms. Whole frames still took 250–380 ms in that test."
       ],
       "blockers": [
         "Most shadowed surfaces are black; bounce lighting and ray-traced shadows are missing",
@@ -2640,12 +2732,12 @@
         "forks": 274,
         "openIssues": 164,
         "createdAt": "2026-11-24T18:02:37Z",
-        "pushedAt": "2026-11-24T22:00:21Z",
+        "pushedAt": "2026-11-25T10:20:53Z",
         "archived": false,
         "missing": false,
         "commits7d": 100
       },
-      "assessedAt": "2026-11-24",
+      "assessedAt": "2026-11-25",
       "assessedBy": "manual",
       "claims": [],
       "basedOn": [
@@ -6368,6 +6460,11 @@
       "date": "2026-11-24",
       "kind": "up",
       "text": "ScarlettCompat reports executable startup. No rendered frame has been demonstrated."
+    },
+    {
+      "date": "2026-11-25",
+      "kind": "up",
+      "text": "Belobug joins at 48.8% readiness. Its AMD build renders the open world at 3–5 FPS, with roughly 3 FPS while driving."
     }
   ],
   "history": [
@@ -6411,6 +6508,15 @@
       "top3": 36.2,
       "furthest": "ingame",
       "tracked": 36
+    },
+    {
+      "date": "2026-11-25",
+      "rubric": "gameplay-v2",
+      "leader": 39,
+      "leaderId": "belobug",
+      "top3": 37.3,
+      "furthest": "ingame",
+      "tracked": 37
     }
   ],
   "scout": {

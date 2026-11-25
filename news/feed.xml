@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Wed, 25 Nov 2026 03:01:52 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 25 Nov 2026 11:33:50 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Belobug’s AMD build renders GTA VI’s open world at 3–5 FPS</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-25-belobug-amd-open-world.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-25-belobug-amd-open-world.html</guid>
+    <pubDate>Wed, 25 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The Radeon fork shows textured streets, traffic, vegetation and water. Driving runs at about 3 FPS on an RX 9070 XT.</description>
+  </item>
   <item>
     <title>GTA VI PC builds report longer runs at 1–5 FPS</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-gta-vi-pc-readiness-session-reports.html</link>
