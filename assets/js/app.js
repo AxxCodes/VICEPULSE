@@ -235,30 +235,22 @@ function renderHeroArt(site) {
 const LIVE_REFRESH_MS = 5 * 60_000;
 function watchViewers() {
   const pill = $('#watching');
-  let measured = null;
-  let demo = 120;
-  const show = () => {
-    pill.textContent = measured === null
-      ? t('hero.simulatedWatching', { n: demo })
-      : t('hero.watching', { n: measured.toLocaleString(locale()) });
-    pill.title = measured === null ? t('hero.simulationTitle') : t('hero.watchingTitle');
-    pill.hidden = false;
-  };
+  let last = 0;
   const refresh = async () => {
     if (document.hidden) return;
-    measured = await getLiveViewers();
-    show();
+    last = Date.now();
+    const measured = await getLiveViewers();
+    pill.hidden = measured === null;
+    if (measured !== null) {
+      pill.textContent = t('hero.watching', { n: measured.toLocaleString(locale()) });
+      pill.title = t('hero.watchingTitle');
+    }
   };
-  show();
   refresh();
   setInterval(refresh, LIVE_REFRESH_MS);
-  setInterval(() => {
-    if (document.hidden || measured !== null) return;
-    const step = 1 + Math.floor(Math.random() * 16);
-    demo += demo < 104 ? step : demo > 184 ? -step : Math.random() < 0.5 ? -step : step;
-    show();
-  }, 120_000);
-  document.addEventListener('visibilitychange', refresh);
+  document.addEventListener('visibilitychange', () => {
+    if (Date.now() - last >= LIVE_REFRESH_MS) refresh();
+  });
 }
 
 /* ---------- Countdown ---------- */

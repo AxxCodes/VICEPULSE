@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T20:00:33.024Z",
+  "updated": "2026-11-25T21:56:14.464Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,36 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-25-private-victory-free-roam-24-fps",
+      "date": "2026-11-25",
+      "category": "Port",
+      "by": "report",
+      "title": "Private VIctory demo reportedly peaks at 24 FPS in GTA VI free roam",
+      "dek": "The demo streamed by darkworldhm was previously reported to peak at 18 FPS. Typical performance is still reported around 12–15 FPS.",
+      "body": [
+        "The latest community tracking update raised the reported peak for the private GTA VI demo streamed by darkworldhm from 18 to 24 FPS in free roam. It still puts typical performance around 12–15 FPS, with drops to about 5 FPS. That makes 24 FPS a new reported high for this demo and leaves its usual frame rate unchanged.",
+        "The tracker now identifies VIctory as the base. The specific fork and build author remain unknown. The code is private, and no reproducible frame-time log was available for VICEPULSE to review. We did not find an original X post that independently established the new peak.",
+        "The reported peak does not affect VICEPULSE’s public-build leaderboard or the open-source stability review. That review looks for extended gameplay near 30 FPS on a public build that others can test."
+      ],
+      "sources": [
+        {
+          "outlet": "PortWatch VI",
+          "title": "Dated build entry and change feed",
+          "url": "https://portwatch-vi.xyz/data/tracker.json"
+        },
+        {
+          "outlet": "Rumble",
+          "title": "Stream attributed to darkworldhm",
+          "url": "https://rumble.com/v7iwggw-gta-6-mooding-pc.html"
+        },
+        {
+          "outlet": "GitHub · VIctory",
+          "title": "Public upstream project",
+          "url": "https://github.com/Marvisak/VIctory"
+        }
+      ]
+    },
     {
       "id": "2026-11-25-free-roam-belobug-zettrox",
       "date": "2026-11-25",
@@ -6659,6 +6689,11 @@
       "date": "2026-11-25",
       "kind": "up",
       "text": "victory-perf leads at 55.1% after VICEPULSE removed an unattributed clip from the rankings."
+    },
+    {
+      "date": "2026-11-25",
+      "kind": "up",
+      "text": "A private demo streamed by darkworldhm is reported to peak at 24 FPS in free roam. Typical performance remains around 12–15 FPS."
     }
   ],
   "history": [

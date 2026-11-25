@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Wed, 25 Nov 2026 20:00:33 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 25 Nov 2026 21:56:14 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Private VIctory demo reportedly peaks at 24 FPS in GTA VI free roam</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-25-private-victory-free-roam-24-fps.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-25-private-victory-free-roam-24-fps.html</guid>
+    <pubDate>Wed, 25 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The demo streamed by darkworldhm was previously reported to peak at 18 FPS. Typical performance is still reported around 12–15 FPS.</description>
+  </item>
   <item>
     <title>Belobug reports faster AMD gameplay as ZETTROX’s repo goes offline</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-25-free-roam-belobug-zettrox.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Thu, 19 Nov 2026 12:00:00 GMT</pubDate>
     <category>Security</category>
     <description>Security firms have tracked tens of thousands of GTA VI malware detections, and a ready-made scam kit is for sale on the dark web.</description>
-  </item>
-  <item>
-    <title>Take-Two hits GTA V ports on GitHub, saying “bring your own files” is no defence</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-18-take-two-dmca.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-18-take-two-dmca.html</guid>
-    <pubDate>Wed, 18 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Takedown</category>
-    <description>Four DMCA notices, filed the day before GTA VI launched, took down unofficial GTA V ports along with hundreds of forks.</description>
   </item>
 </channel>
 </rss>
