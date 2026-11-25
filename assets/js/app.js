@@ -240,8 +240,9 @@ function watchViewers() {
     if (document.hidden) return;
     last = Date.now();
     const n = await getLiveViewers();
-    pill.hidden = n === null;
-    if (n !== null) pill.textContent = t('hero.watching', { n: n.toLocaleString(locale()) });
+    pill.textContent = n === null ? t('hero.watchingUnavailable') : t('hero.watching', { n: n.toLocaleString(locale()) });
+    pill.title = t(n === null ? 'hero.watchingUnavailable' : 'hero.watchingTitle');
+    pill.hidden = false;
   };
   refresh();
   setInterval(refresh, LIVE_REFRESH_MS);

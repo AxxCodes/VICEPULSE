@@ -330,5 +330,6 @@
   "metric.session": "Jogo sem travar",
   "metric.sessionDetail": "{minutes} min documentados",
   "metric.noSession": "Sem teste cronometrado",
-  "readiness.method": "Os marcos são cumulativos. Os projetos podem avançar em vários testes ao mesmo tempo."
+  "readiness.method": "Os marcos são cumulativos. Os projetos podem avançar em vários testes ao mesmo tempo.",
+  "hero.watchingUnavailable": "Contagem de espectadores indisponível"
 }

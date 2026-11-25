@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T11:33:50.347Z",
+  "updated": "2026-11-25T13:48:25.314Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-waterfront.webp",
@@ -16,6 +16,35 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-25-gta-vi-pc-interior-fps-tests",
+      "date": "2026-11-25",
+      "category": "Port",
+      "by": "sources",
+      "title": "GTA VI PC clips show faster interiors, with heavier scenes still slower",
+      "dek": "Linux4real claims 12–15 FPS in the prison. A separate public fork reports up to 14 FPS indoors and 4.5–6.5 FPS in heavier scenes.",
+      "body": [
+        "Linux4real (@Linux5real) posted a 29-second clip on X showing movement in Lucia’s prison area. The author claims 12–15 FPS and lists a GeForce RTX 5070 Ti and Ryzen 7 7800X3D in a reply. The window counter shows readings around 10–12 FPS in several sampled frames. The clip covers one interior, and the post supplies no public build or frame-time log for reproducing the range.",
+        "Separately, the public victory-perf fork reports 14 FPS in a prison corridor, 11 FPS inside the heist and 9 FPS in the cell. Heavier scenes run at 4.5–6.5 FPS. The maintainer used one RTX 4070 SUPER system at 50% render scale and approximated some missing lighting effects.",
+        "The reports show faster results in specific interiors. VICEPULSE keeps the short clip out of the scored rankings pending a repeatable benchmark. The crash-free gameplay checkpoint remains open."
+      ],
+      "video": {
+        "url": "https://video.twimg.com/amplify_video/2125505815343775744/vid/avc1/1280x720/NYmI8ku1ueOpDvok.mp4",
+        "post": "https://x.com/linux5real/status/2125506158551089171"
+      },
+      "sources": [
+        {
+          "outlet": "X · Linux4real",
+          "title": "Original prison gameplay clip and hardware reply",
+          "url": "https://x.com/linux5real/status/2125506158551089171"
+        },
+        {
+          "outlet": "GitHub · victory-perf",
+          "title": "Interior and heavy-scene benchmark figures",
+          "url": "https://github.com/vitutu1/victory-perf"
+        }
+      ]
+    },
     {
       "id": "2026-11-25-belobug-amd-open-world",
       "date": "2026-11-25",

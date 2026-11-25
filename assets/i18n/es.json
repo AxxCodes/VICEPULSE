@@ -330,5 +330,6 @@
   "metric.session": "Juego sin cierres",
   "metric.sessionDetail": "{minutes} min documentados",
   "metric.noSession": "Sin prueba cronometrada",
-  "readiness.method": "Los hitos son acumulativos. Los proyectos pueden avanzar en varias pruebas a la vez."
+  "readiness.method": "Los hitos son acumulativos. Los proyectos pueden avanzar en varias pruebas a la vez.",
+  "hero.watchingUnavailable": "Recuento de espectadores no disponible"
 }

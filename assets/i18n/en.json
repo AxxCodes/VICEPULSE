@@ -304,5 +304,6 @@
   "metric.session": "Crash-free play",
   "metric.sessionDetail": "{minutes} min documented",
   "metric.noSession": "No timed gameplay run",
-  "readiness.method": "The benchmarks show cumulative scores. Projects can improve several checks in parallel."
+  "readiness.method": "The benchmarks show cumulative scores. Projects can improve several checks in parallel.",
+  "hero.watchingUnavailable": "Viewer count unavailable"
 }
