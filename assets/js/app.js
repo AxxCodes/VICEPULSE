@@ -649,6 +649,7 @@ function renderWatchlist(data) {
     rows.map((e) => `
     <div class="w-row" role="row" id="effort-${esc(e.id)}">
       <div class="w-name" role="cell"><a href="${esc(repoUrl(e.repo, e.branch))}" target="_blank" rel="noopener">${esc(e.name)}</a><p>${esc(e.summary)}</p>
+        ${/^https:\/\/discord\.gg\/[A-Za-z0-9-]+$/.test(e.discord || '') ? `<p><a href="${esc(e.discord)}" target="_blank" rel="noopener noreferrer">Discord</a></p>` : ''}
         ${e.highlights?.length || e.blockers?.length ? `<details class="watch-details"><summary>Project evidence</summary>${checkList(e)}
           <ul>${[...(e.highlights || []), ...(e.blockers || [])].map((note) => `<li>${esc(note)}</li>`).join('')}</ul>
         </details>` : ''}

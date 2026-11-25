@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T01:12:34.881Z",
+  "updated": "2026-11-25T02:27:02.015Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-waterfront.webp",
@@ -17,6 +17,52 @@
   },
   "news": [
     {
+      "id": "2026-11-24-leonida-v2-ztrx-vitoriabr",
+      "date": "2026-11-24",
+      "category": "Port",
+      "title": "Leonida V2 joins the Watchlist as ZETTROX opens its source",
+      "dek": "Leonida V2 reports a blank startup window. ZETTROX has published its code, and PortWatch reports a second build reaching “Gone Fishing.”",
+      "body": [
+        "Leonida V2, described by its maintainers as aidity’s independent continuation of Leonida, is now on the VICEPULSE Watchlist. Its own README reports a blank startup window followed by a crash, with no intro, rendered game frame, or retail gameplay shown. The README distinguishes the project’s current tests from inherited documentation. The listing links its GitHub repo and community Discord.",
+        "ZETTROX has opened the source for ztrx, its NVIDIA-focused Windows build. PortWatch previously reported that a private test reached “Gone Fishing” at around 2 FPS. Source availability makes the work inspectable, but the specific gameplay run still needs independent reproduction.",
+        "PortWatch also reports that Uilian’s VItoriaBr reached “Gone Fishing” on stream at up to 4 FPS, with significant rendering issues. ScarlettCompat reports getting through executable startup without showing a rendered frame. These reports do not document sustained 30 FPS gameplay or a 30-minute crash-free Windows session."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · LNDA-V2",
+          "title": "Leonida V2 status and credits",
+          "url": "https://github.com/darkstarnow/LNDA-V2"
+        },
+        {
+          "outlet": "Discord",
+          "title": "Project Leonida V2 invite",
+          "url": "https://discord.gg/hUpwDxmDye"
+        },
+        {
+          "outlet": "GitHub · ZETTROX",
+          "title": "Public ztrx source",
+          "url": "https://github.com/Zettrox/ztrx"
+        },
+        {
+          "outlet": "GitHub · Uilian",
+          "title": "VItoriaBr repository",
+          "url": "https://github.com/uiliannn/VItoriaBr"
+        },
+        {
+          "outlet": "GitHub · ScarlettCompat",
+          "title": "Public status",
+          "url": "https://github.com/SSTGxf/ScarlettCompat"
+        },
+        {
+          "outlet": "PortWatch VI",
+          "title": "Project standings and milestone reports",
+          "url": "https://portwatch-vi.xyz/"
+        }
+      ],
+      "by": "archive",
+      "image": null
+    },
+    {
       "id": "2026-11-24-gta-vi-pc-reaches-gone-fishing",
       "date": "2026-11-24",
       "category": "Port",
@@ -25,7 +71,7 @@
       "body": [
         "PortWatch VI reports that a private Windows build from ZETTROX reached “Gone Fishing,” Jason’s first mission, after clearing Lucia’s prologue. The tracker reports roughly 2 FPS and poor rendering. Its broader report describes vehicle-control problems in the early mission, including trouble steering the boat on some builds.",
         "PortWatch also reports that suri’s private build shows better visuals in Lucia’s prologue at around 3 FPS. Early story progress and better rendering are two distinct results from these tests. The public fxceless fork that these builds are associated with is now named victory-fork.",
-        "There is no public reproduction of ZETTROX’s private run. The report does not establish sustained 30 FPS or a 30-minute crash-free Windows session, so this news does not move the stability countdown."
+        "ZETTROX has since published the ztrx source. The reported run still lacks independent reproduction and does not establish sustained 30 FPS or a 30-minute crash-free session."
       ],
       "sources": [
         {
@@ -42,6 +88,11 @@
           "outlet": "GitHub · fxceless",
           "title": "Public victory-fork repository",
           "url": "https://github.com/fxceless/victory-fork"
+        },
+        {
+          "outlet": "GitHub · ZETTROX",
+          "title": "Public ztrx source released after the reported run",
+          "url": "https://github.com/Zettrox/ztrx"
         }
       ],
       "by": "report",
@@ -2131,14 +2182,12 @@
       "tier": "watchlist",
       "approach": "Compatibility layer",
       "target": "GTA VI (Xbox Series)",
-      "summary": "Day-old C++ layer with a PE loader, TLS setup and a small registry of Xbox functions, some of them stubs; its first runtime call just returns success. Its rendered frame comes from its own test, not a console title.",
+      "summary": "ScarlettCompat reports that the game executable loads and runs its startup code. No game frame or menu has been demonstrated.",
       "highlights": [
-        "PE loader with relocations, TLS and imports routed to its own shims",
-        "Labels each Xbox function it covers as implemented, stub or missing"
+        "Executable startup reported by the project"
       ],
       "blockers": [
-        "No Xbox title has run; no shader translation or texture de-tiling",
-        "Audio, input and DirectStorage are stubs"
+        "No first game frame or menu demonstrated"
       ],
       "groundwork": {
         "loader": 0.15,
@@ -2148,7 +2197,7 @@
       },
       "provenOn": null,
       "gta": {
-        "loads": 0,
+        "loads": 1,
         "boots": 0,
         "menu": 0,
         "world": 0,
@@ -2164,15 +2213,15 @@
         "forks": 0,
         "openIssues": 0,
         "createdAt": "2026-11-23T02:45:46Z",
-        "pushedAt": "2026-11-24T18:47:59Z",
-        "commits7d": 23,
+        "pushedAt": "2026-11-25T01:22:12Z",
+        "commits7d": 68,
         "archived": false,
         "missing": false
       },
-      "assessedAt": "2026-11-23",
+      "assessedAt": "2026-11-24",
       "assessedBy": "claude",
       "claims": [],
-      "readmeSha": "f1b44dcd742283b68e446681aa298bb5e3ded3a3884299458ca798891c67155c",
+      "readmeSha": "d3edee602970bbcdd33e309d670ce79f4a7bfbbb832db13f427d3b30218e235f",
       "readmeChangedAt": "2026-11-24"
     },
     {
@@ -2573,9 +2622,18 @@
       "assessedAt": "2026-11-25",
       "assessedBy": "manual",
       "verification": "self-reported",
-      "stats": {},
+      "stats": {
+        "stars": 55,
+        "forks": 9,
+        "openIssues": 0,
+        "createdAt": "2026-11-25T01:12:08Z",
+        "pushedAt": "2026-11-25T01:12:15Z",
+        "archived": false,
+        "missing": false,
+        "commits7d": 100
+      },
       "name": "ZETTROX",
-      "summary": "PortWatch reports that this private build cleared Lucia’s prologue and reached “Gone Fishing” at about 2 FPS.",
+      "summary": "ZETTROX’s NVIDIA-focused Windows build has public source. PortWatch reports an earlier run reached “Gone Fishing” at about 2 FPS.",
       "highlights": [
         "Reached Jason’s first mission after Lucia’s prologue",
         "PortWatch reports player-controlled action after the transition"
@@ -2583,7 +2641,7 @@
       "blockers": [
         "Rendering remains poor",
         "About 2 FPS reported",
-        "Private build; no independently reproducible session"
+        "Source is public; independent reproduction of the reported run is pending"
       ],
       "visuals": {
         "color": 0.2,
@@ -2591,9 +2649,12 @@
       },
       "target": "GTA VI only",
       "approach": "Compatibility layer",
-      "byline": "Private build · PortWatch VI report",
+      "byline": "Public source · earlier run reported by PortWatch VI",
       "evidence": "Reported by PortWatch VI; independent reproduction pending",
-      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html"
+      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html",
+      "repo": "Zettrox/ztrx",
+      "branch": "main",
+      "readmeSha": "2eb9e3fd0ccda3c2cb44d01b019007b3fe221061ae73aac011c9c3e4fa231490"
     },
     {
       "id": "suri",
@@ -2637,6 +2698,93 @@
       "byline": "Private build · PortWatch VI report",
       "evidence": "Reported by PortWatch VI; independent reproduction pending",
       "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html"
+    },
+    {
+      "id": "lnda-v2",
+      "name": "Leonida V2",
+      "repo": "darkstarnow/LNDA-V2",
+      "branch": "main",
+      "tier": "watchlist",
+      "approach": "Static recompilation",
+      "target": "GTA VI on Windows",
+      "discord": "https://discord.gg/hUpwDxmDye",
+      "summary": "aidity’s independent community continuation of Leonida. The project reports reaching a blank startup window before a crash.",
+      "highlights": [
+        "Public source and project documentation",
+        "Current V2 status is documented separately from inherited Leonida results"
+      ],
+      "blockers": [
+        "No intro, rendered frame, or retail gameplay demonstrated",
+        "The integration branch reportedly crashes after showing a blank window"
+      ],
+      "gta": {
+        "loads": 0,
+        "boots": 0,
+        "menu": 0,
+        "world": 0,
+        "playable": 0,
+        "fps": 0,
+        "stability": "unknown"
+      },
+      "verification": "self-reported",
+      "assessedAt": "2026-11-24",
+      "stats": {
+        "stars": 10,
+        "forks": 1,
+        "openIssues": 0,
+        "pushedAt": "2026-11-24T23:06:18Z",
+        "createdAt": "2026-11-24T18:44:26Z"
+      }
+    },
+    {
+      "id": "vitoriabr",
+      "repo": "uiliannn/VItoriaBr",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.1,
+        "render": 0.2,
+        "fps": 4,
+        "stability": 0.4
+      },
+      "verification": "self-reported",
+      "stats": {
+        "stars": 30,
+        "forks": 5,
+        "openIssues": 3,
+        "createdAt": "2026-11-24T10:05:17Z",
+        "pushedAt": "2026-11-25T00:37:06Z",
+        "archived": false,
+        "missing": false,
+        "commits7d": 100
+      },
+      "readmeSha": "995aadc4207013b50c43be767270a5c71dd3bf65a8806c0f66d83181a4ca61b9",
+      "name": "VItoriaBr (Uilian)",
+      "basedOn": [
+        "victory-gta6"
+      ],
+      "assessedAt": "2026-11-24",
+      "summary": "PortWatch reports that Uilian’s streamed Windows build reached “Gone Fishing” at up to 4 FPS.",
+      "highlights": [
+        "Reported story progress into Jason’s first mission"
+      ],
+      "blockers": [
+        "Poor rendering and dark shadows reported",
+        "No measured sustained 30 FPS gameplay or documented 30-minute crash-free session"
+      ],
+      "visuals": {
+        "color": 0.15,
+        "shaders": 0.2
+      },
+      "evidence": "PortWatch VI stream coverage",
+      "link": "news/2026-11-24-leonida-v2-ztrx-vitoriabr.html"
     }
   ],
   "tools": [
@@ -6132,6 +6280,16 @@
       "date": "2026-11-24",
       "kind": "removed",
       "text": "GitHub publishes Take-Two’s Leonida takedown and says it processed it across the network of 3,007 repositories."
+    },
+    {
+      "date": "2026-11-24",
+      "kind": "new",
+      "text": "News: Leonida V2 joins the Watchlist; ztrx source goes public and VItoriaBr is added."
+    },
+    {
+      "date": "2026-11-24",
+      "kind": "up",
+      "text": "ScarlettCompat reports executable startup. No rendered frame has been demonstrated."
     }
   ],
   "history": [
@@ -6174,7 +6332,7 @@
       "leaderId": "suri",
       "top3": 34.6,
       "furthest": "ingame",
-      "tracked": 34
+      "tracked": 36
     }
   ],
   "scout": {

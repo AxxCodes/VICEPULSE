@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Wed, 25 Nov 2026 01:12:34 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 25 Nov 2026 02:27:02 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Leonida V2 joins the Watchlist as ZETTROX opens its source</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-leonida-v2-ztrx-vitoriabr.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-leonida-v2-ztrx-vitoriabr.html</guid>
+    <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>Leonida V2 reports a blank startup window. ZETTROX has published its code, and PortWatch reports a second build reaching “Gone Fishing.”</description>
+  </item>
   <item>
     <title>Private GTA VI PC build reportedly reaches Jason’s first mission</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html</link>
