@@ -332,5 +332,7 @@
   "metric.noSession": "Sin prueba cronometrada",
   "readiness.method": "Los porcentajes indican el peso de cada prueba. Cada prueba se puntúa por separado.",
   "hero.watchingUnavailable": "Recuento de espectadores no disponible",
-  "readiness.currentLead": "{name} lidera la clasificación."
+  "readiness.currentLead": "{name} lidera la clasificación.",
+  "hero.simulatedWatching": "{n} espectadores · simulación",
+  "hero.simulationTitle": "Contador de demostración."
 }

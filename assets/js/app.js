@@ -1,6 +1,6 @@
 import { MILESTONES, GROUNDWORK, READINESS_CRITERIA, readinessChecks, MAX_SCORE, RANK_RUBRIC, gameplaySignals, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
 import { getLiveViewers, trackView } from './backend.js';
-import { coverHtml, articlePath, storyImageUrl, storyVideoHtml } from './news-shared.js';
+import { verificationBadge, coverHtml, articlePath, storyImageUrl, storyVideoHtml } from './news-shared.js';
 import { fillPinned } from './pinned.js';
 import { initI18n, t, tr, locale } from './i18n.js';
 import { getUpdateAge } from './update-time.js';
@@ -235,18 +235,30 @@ function renderHeroArt(site) {
 const LIVE_REFRESH_MS = 5 * 60_000;
 function watchViewers() {
   const pill = $('#watching');
-  let last = 0;
-  const refresh = async () => {
-    if (document.hidden) return;
-    last = Date.now();
-    const n = await getLiveViewers();
-    pill.textContent = n === null ? t('hero.watchingUnavailable') : t('hero.watching', { n: n.toLocaleString(locale()) });
-    pill.title = t(n === null ? 'hero.watchingUnavailable' : 'hero.watchingTitle');
+  let measured = null;
+  let demo = 120;
+  const show = () => {
+    pill.textContent = measured === null
+      ? t('hero.simulatedWatching', { n: demo })
+      : t('hero.watching', { n: measured.toLocaleString(locale()) });
+    pill.title = measured === null ? t('hero.simulationTitle') : t('hero.watchingTitle');
     pill.hidden = false;
   };
+  const refresh = async () => {
+    if (document.hidden) return;
+    measured = await getLiveViewers();
+    show();
+  };
+  show();
   refresh();
   setInterval(refresh, LIVE_REFRESH_MS);
-  document.addEventListener('visibilitychange', () => { if (Date.now() - last >= LIVE_REFRESH_MS) refresh(); });
+  setInterval(() => {
+    if (document.hidden || measured !== null) return;
+    const step = 1 + Math.floor(Math.random() * 16);
+    demo += demo < 104 ? step : demo > 184 ? -step : Math.random() < 0.5 ? -step : step;
+    show();
+  }, 120_000);
+  document.addEventListener('visibilitychange', refresh);
 }
 
 /* ---------- Countdown ---------- */
@@ -262,7 +274,7 @@ function startForecast() {
       if (field.textContent !== digit) field.textContent = digit;
     });
     if (seconds === 0) {
-      $('#forecast-status').textContent = 'Estimate reached · checking latest results';
+      $('#forecast-status').textContent = 'Review due · awaiting new test results';
       $('#forecast-live').hidden = true;
       clearInterval(timer);
       document.removeEventListener('visibilitychange', tick);
@@ -761,6 +773,7 @@ function renderNews(news) {
       <div class="story-body">
         <time>${esc(fmtDay(n.date))}</time>
         <h3>${esc(n.title)}</h3>
+        ${verificationBadge(n)}
         <p>${esc(n.dek)}</p>
         ${!small && n.image?.credit ? `<span class="story-credit">${esc(t('news.image'))} ${esc(n.image.credit)}</span>` : ''}
       </div>
@@ -789,6 +802,7 @@ function renderNews(news) {
       <div class="reader-inner">
         <p class="meta">${esc(catLabel(n.category))} · ${esc(fmtDay(n.date))}</p>
         <h2 id="reader-title">${esc(n.title)}</h2>
+        ${verificationBadge(n)}
         <p class="dek">${esc(n.dek)}</p>
         ${storyVideoHtml(n)}
         <div class="article">${(n.body || []).map((p) => `<p>${esc(p)}</p>`).join('')}</div>

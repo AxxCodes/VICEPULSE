@@ -306,5 +306,7 @@
   "metric.noSession": "No timed gameplay run",
   "readiness.method": "The percentages below are score weights. Every check can earn credit independently.",
   "hero.watchingUnavailable": "Viewer count unavailable",
-  "readiness.currentLead": "{name} leads on gameplay readiness."
+  "readiness.currentLead": "{name} leads on gameplay readiness.",
+  "hero.simulatedWatching": "{n} watching · simulated",
+  "hero.simulationTitle": "Demo count. Actual traffic is unavailable."
 }

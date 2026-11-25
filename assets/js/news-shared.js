@@ -38,3 +38,8 @@ export const COVER_ICON = {
 };
 
 export const coverHtml = (cat) => `<div class="cover cover-${esc(cat)}">${COVER_ICON[cat] || COVER_ICON.Leak}</div>`;
+
+export function verificationBadge(story) {
+  if (!story.checked) return '';
+  return `<span class="vp-verified">Confirmed by VICEPULSE · ${esc(story.checked)}</span>`;
+}

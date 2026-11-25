@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T13:58:45.094Z",
+  "updated": "2026-11-25T16:33:52.535Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,55 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-25-dexnom-radeon-city",
+      "date": "2026-11-25",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Publication of the Radeon benchmark",
+      "title": "DexNom publishes a ray-tracing benchmark for GTA VI’s City scene",
+      "dek": "The public AMD fork reports 1.03 FPS with experimental ray tracing enabled on an RX 7900 XTX.",
+      "body": [
+        "VICEPULSE checked the published City benchmark. DexNom compared 50 frames from the same autosave before and after a memory-tracking fix. The team reports a rise from 0.29 to 1.03 FPS. Its diagnostic counter also recorded rays intersecting scene geometry. Lighting on individual objects remains under investigation.",
+        "A separate indoor test in the same report went from 3.52 to 4.05 FPS. These tests cover different scenes and settings. Neither measures long-session stability."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · DexNom",
+          "title": "City benchmark and test conditions",
+          "url": "https://github.com/DexNom/VIctory/blob/main/BENCHMARK.md"
+        },
+        {
+          "outlet": "GitHub · DexNom",
+          "title": "Public runtime source and status",
+          "url": "https://github.com/DexNom/VIctory"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-25-doomsday-scarlettcompat",
+      "date": "2026-11-25",
+      "category": "Port",
+      "by": "sources",
+      "title": "Doomsday reports private-build progress as ScarlettCompat advances through startup",
+      "dek": "Community coverage puts Doomsday at 3–5 FPS. ScarlettCompat’s public boot notes document 587 resolved imports.",
+      "body": [
+        "The latest community tracker lists Doomsday, a private group working from a Radeon-focused VIctory fork, with ray-traced lighting at a reported 3–5 FPS. The group’s build and a timed gameplay log were unavailable for independent testing. Its results do not count toward the open-source forecast.",
+        "ScarlettCompat’s own status table records all 587 executable imports resolving. Its boot notes describe progress into graphics pipeline setup. The developers still list the first displayed GTA VI frame and menu as outstanding."
+      ],
+      "sources": [
+        {
+          "outlet": "PortWatch VI",
+          "title": "Doomsday project entry and change feed",
+          "url": "https://portwatch-vi.xyz/"
+        },
+        {
+          "outlet": "GitHub · ScarlettCompat",
+          "title": "Boot and first-frame status",
+          "url": "https://github.com/SSTGxf/ScarlettCompat"
+        }
+      ]
+    },
     {
       "id": "2026-11-25-gta-vi-pc-interior-fps-tests",
       "date": "2026-11-25",

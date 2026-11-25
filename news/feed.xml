@@ -5,8 +5,24 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Wed, 25 Nov 2026 13:58:45 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 25 Nov 2026 16:33:52 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>DexNom publishes a ray-tracing benchmark for GTA VI’s City scene</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-25-dexnom-radeon-city.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-25-dexnom-radeon-city.html</guid>
+    <pubDate>Wed, 25 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The public AMD fork reports 1.03 FPS with experimental ray tracing enabled on an RX 7900 XTX.</description>
+  </item>
+  <item>
+    <title>Doomsday reports private-build progress as ScarlettCompat advances through startup</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-25-doomsday-scarlettcompat.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-25-doomsday-scarlettcompat.html</guid>
+    <pubDate>Wed, 25 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>Community coverage puts Doomsday at 3–5 FPS. ScarlettCompat’s public boot notes document 587 resolved imports.</description>
+  </item>
   <item>
     <title>GTA VI PC clips show faster interiors, with heavier scenes still slower</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-25-gta-vi-pc-interior-fps-tests.html</link>

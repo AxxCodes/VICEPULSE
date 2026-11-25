@@ -808,3 +808,5 @@ a.story { text-decoration: none; }
 .story-media .cover-Takedown, .story-media .cover-Legal { background-image: url("../img/news/cover-legal.webp"); }
 .story-media .cover-Safety, .story-media .cover-Security { background-image: url("../img/news/cover-safety.webp"); }
 .story-media .cover svg { display: none; }
+
+.vp-verified { display: inline-block; margin-block: .4rem; padding: .3rem .6rem; border: 1px solid #488568; border-radius: .65rem; background: #123b2b; color: #c4ffdf; font-size: .75rem; font-weight: 700; }
