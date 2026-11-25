@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T21:56:14.464Z",
+  "updated": "2026-11-25T23:11:12.992Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,42 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-25-avatarmanz-public-amd-fork",
+      "date": "2026-11-25",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Public repository and published benchmark",
+      "title": "AvatarManz opens AMD VIctory fork and reports 19–22 FPS on GTA VI’s boat mission",
+      "dek": "The maintainer reports a 41-minute session without a crash on an RX 7900 XTX. Heavy street scenes still drop to 6–10 FPS.",
+      "body": [
+        "AvatarManz has published the source of a VIctory fork tuned for the Radeon RX 7900 XTX. Its README reports 13–20 FPS in the indoor prologue and 19–22 FPS during the first boat mission, tested at 1440p on Windows 11 with an Intel Core i9-12900K and 64 GB of RAM.",
+        "The project reports one session lasting 41 minutes without a crash. The README also shows 6–10 FPS in a busy street chase, slower individual frames, and some outdoor flicker. The 30 FPS figure applies to menus, videos and loading screens. PortWatch estimates around 16 FPS in gameplay overall. The public benchmark covers one PC.",
+        "PortWatch also lists a separate NVIDIA demo streamed by NotNozy. Its build is private and the footage does not reproduce AvatarManz’s results on another PC. The countdown still points to the open-source evidence review for repeatable longer gameplay around 30 FPS."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · AvatarManz",
+          "title": "Public source and per-scene benchmark",
+          "url": "https://github.com/avatarmanz/VIctory-7900XTX"
+        },
+        {
+          "outlet": "PortWatch VI",
+          "title": "AvatarManz and NotNozy tracker entries",
+          "url": "https://portwatch-vi.xyz/"
+        },
+        {
+          "outlet": "Reddit",
+          "title": "Gameplay clip linked from the project’s tracker entry",
+          "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y5k8xu/actually_playable/"
+        },
+        {
+          "outlet": "Rumble",
+          "title": "NotNozy’s separate private-build stream",
+          "url": "https://rumble.com/v7iv98i-gta6-modding-stream.html"
+        }
+      ]
+    },
     {
       "id": "2026-11-25-private-victory-free-roam-24-fps",
       "date": "2026-11-25",
@@ -1091,6 +1127,67 @@
     }
   ],
   "efforts": [
+    {
+      "id": "avatarmanz",
+      "name": "AvatarManz (AMD)",
+      "repo": "avatarmanz/VIctory-7900XTX",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "basedOn": [
+        "marvis",
+        "victory-gta6",
+        "belobug"
+      ],
+      "summary": "Public Radeon RX 7900 XTX fork. Its maintainer reports up to 22 FPS on the first boat mission.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "fps": 16,
+        "stability": "unknown"
+      },
+      "visuals": {
+        "color": 0.8,
+        "lighting": 0.6,
+        "shaders": 0.65
+      },
+      "visualNotes": {
+        "color": "Most textures render; new textures can stream in late",
+        "lighting": "Some interiors remain too dark",
+        "shaders": "Outdoor foliage and distant buildings can flicker"
+      },
+      "fpsNote": "Around 16 FPS in community coverage. The README lists 6–10 FPS in a heavy chase and 19–22 on the boat.",
+      "sessionNote": "Maintainer reports 41 minutes without a crash on one PC.",
+      "highlights": [
+        "Source available on GitHub",
+        "Published scene-specific FPS and hardware",
+        "41-minute session reported by the maintainer"
+      ],
+      "blockers": [
+        "Independent long-session reproduction is still pending",
+        "Heavy scenes still run at 6–10 FPS"
+      ],
+      "verification": "self-reported",
+      "checked": "Public source and published benchmark",
+      "evidence": "Maintainer’s benchmark table and community gameplay coverage",
+      "assessedAt": "2026-11-25",
+      "assessedBy": "manual",
+      "link": "news/2026-11-25-avatarmanz-public-amd-fork.html",
+      "stats": {
+        "stars": 12,
+        "forks": 0,
+        "openIssues": 0,
+        "createdAt": "2026-11-25T22:18:14Z",
+        "pushedAt": "2026-11-25T22:18:27Z",
+        "archived": false,
+        "missing": false,
+        "commits7d": 100
+      }
+    },
     {
       "id": "victory-perf",
       "name": "victory-perf",
@@ -6694,6 +6791,11 @@
       "date": "2026-11-25",
       "kind": "up",
       "text": "A private demo streamed by darkworldhm is reported to peak at 24 FPS in free roam. Typical performance remains around 12–15 FPS."
+    },
+    {
+      "date": "2026-11-25",
+      "kind": "up",
+      "text": "AvatarManz leads at 62.5% after publishing the AMD VIctory fork and scene-by-scene benchmarks."
     }
   ],
   "history": [
@@ -6750,11 +6852,11 @@
     {
       "date": "2026-11-25",
       "rubric": "gameplay-v3",
-      "leader": 55.1,
-      "leaderId": "victory-perf",
-      "top3": 52.6,
+      "leader": 62.5,
+      "leaderId": "avatarmanz",
+      "top3": 56.8,
       "furthest": "ingame",
-      "tracked": 38
+      "tracked": 39
     }
   ],
   "scout": {
