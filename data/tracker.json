@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T21:01:23.425Z",
+  "updated": "2026-11-25T01:12:34.881Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-waterfront.webp",
@@ -16,6 +16,63 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-24-gta-vi-pc-reaches-gone-fishing",
+      "date": "2026-11-24",
+      "category": "Port",
+      "title": "Private GTA VI PC build reportedly reaches Jason’s first mission",
+      "dek": "PortWatch VI credits ZETTROX with getting past Lucia’s prologue into “Gone Fishing” at about 2 FPS.",
+      "body": [
+        "PortWatch VI reports that a private Windows build from ZETTROX reached “Gone Fishing,” Jason’s first mission, after clearing Lucia’s prologue. The tracker reports roughly 2 FPS and poor rendering. Its broader report describes vehicle-control problems in the early mission, including trouble steering the boat on some builds.",
+        "PortWatch also reports that suri’s private build shows better visuals in Lucia’s prologue at around 3 FPS. Early story progress and better rendering are two distinct results from these tests. The public fxceless fork that these builds are associated with is now named victory-fork.",
+        "There is no public reproduction of ZETTROX’s private run. The report does not establish sustained 30 FPS or a 30-minute crash-free Windows session, so this news does not move the stability countdown."
+      ],
+      "sources": [
+        {
+          "outlet": "PortWatch VI",
+          "title": "Report on the prologue and Gone Fishing",
+          "url": "https://portwatch-vi.xyz/news/2026-11-25-prologue-gone-fishing"
+        },
+        {
+          "outlet": "PortWatch VI",
+          "title": "Project reports for ZETTROX and suri",
+          "url": "https://portwatch-vi.xyz/#effort-zettrox"
+        },
+        {
+          "outlet": "GitHub · fxceless",
+          "title": "Public victory-fork repository",
+          "url": "https://github.com/fxceless/victory-fork"
+        }
+      ],
+      "by": "report",
+      "image": null
+    },
+    {
+      "id": "2026-11-24-leonida-dmca-fork-network",
+      "date": "2026-11-24",
+      "category": "Takedown",
+      "title": "GitHub processes Take-Two’s takedown across Leonida’s fork network",
+      "dek": "GitHub says the notice was processed against a network of 3,007 repositories, including the original.",
+      "body": [
+        "GitHub published a DMCA notice from Take-Two Interactive concerning the Leonida repository, an unofficial GTA VI PC effort. In an editorial note above the notice, GitHub says it processed the request against the entire network of 3,007 repositories.",
+        "Take-Two alleges copyright infringement and says Leonida relied on material from the leaked Xbox build. The public notice identifies Leonida and its fork network. The fxceless victory-fork repository was still publicly accessible when we checked.",
+        "VICEPULSE keeps Leonida visible as archived and records the published notice on its tracker entry."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub",
+          "title": "Take-Two DMCA notice and GitHub’s network count",
+          "url": "https://github.com/github/dmca/blob/master/2026/11/2026-11-24-take-two.md"
+        },
+        {
+          "outlet": "GitHub · fxceless",
+          "title": "Public victory-fork repository",
+          "url": "https://github.com/fxceless/victory-fork"
+        }
+      ],
+      "by": "archive",
+      "image": null
+    },
     {
       "id": "2026-11-24-gameplay-score-revamp",
       "date": "2026-11-24",
@@ -1220,7 +1277,7 @@
       "summary": "Made just for GTA VI, by Hookshot's author. Taken offline on Nov 23: its Discord vanished, the GitHub repo was deleted and the creator said he quit. Last result: the exe ran, frames stayed black.",
       "nuked": {
         "at": "2026-11-23",
-        "note": "Discord gone, GitHub repo deleted and creator quit on Nov 23. The code lives on in contributors' forks and a frozen mirror."
+        "note": "Archived. GitHub says it processed Take-Two’s November 24 DMCA notice against the entire network of 3,007 repositories."
       },
       "highlights": [
         "Retail exe ran up to 10 minutes without a crash on Windows and Wine, AMD and NVIDIA",
@@ -1230,7 +1287,8 @@
       "blockers": [
         "Taken offline: GitHub repo deleted, Discord gone, creator stepped away",
         "Code survives only in contributors' forks and a mirror frozen at 23:30 UTC",
-        "Last state: every presented frame was black"
+        "Last state: every presented frame was black",
+        "GitHub processed the DMCA notice against the Leonida network."
       ],
       "groundwork": {
         "loader": 0.7,
@@ -2440,63 +2498,20 @@
       "readmeChangedAt": "2026-11-24"
     },
     {
-      "id": "hyphennn",
-      "name": "hyphennn",
-      "repo": null,
-      "basedOn": [
-        "victory-gta6"
-      ],
-      "evidence": "Live streams on Rumble",
-      "byline": "Streams on Rumble as hyphennn · built on victory-gta6, a VIctory fork",
-      "tier": "tracked",
-      "summary": "A private Windows build based on fxceless’s victory-gta6 fork. PortWatch reports playable movement in the opening, better scene lighting and signs of ray tracing in Rumble footage.",
-      "highlights": [
-        "PortWatch describes player-controlled movement in the opening",
-        "Stream footage reportedly shows improved lighting and ray-traced effects"
-      ],
-      "blockers": [
-        "No measured frame rate or documented long session",
-        "Evidence is limited to the opening sequence",
-        "Private changes have no publicly reproducible build"
-      ],
-      "provenOn": null,
-      "gta": {
-        "loads": 1,
-        "boots": 1,
-        "menu": 1,
-        "world": 1,
-        "playable": 1,
-        "story": 0,
-        "render": 0.79,
-        "fps": 0,
-        "stability": "unknown"
-      },
-      "verification": "self-reported",
-      "stats": {},
-      "assessedAt": "2026-11-24",
-      "assessedBy": "manual",
-      "claims": [],
-      "link": "news/2026-11-24-gameplay-score-revamp.html",
-      "visuals": {
-        "color": 0.5,
-        "lighting": 0.5,
-        "shaders": 0.6
-      }
-    },
-    {
       "id": "victory-gta6",
-      "name": "victory-gta6",
-      "repo": "fxceless/victory-gta6",
+      "name": "victory-fork (hyphennn)",
+      "repo": "fxceless/victory-fork",
       "branch": "main",
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "fxceless’s public VIctory fork reports an interactive prologue at 2–4 FPS on one RTX 4070 system. The same README reports checkpoint autosave and reload.",
+      "summary": "The public fork previously called victory-gta6. PortWatch attributes the streamed hyphennn build to this project. The fork reports an interactive opening, checkpoint saves and low single-digit gameplay FPS.",
       "highlights": [
         "Characters, textures, sky and sunlit geometry render in the opening",
         "HUD, pause menu and controller input work",
         "Opening cutscene plays through and a checkpoint can be saved and reloaded",
-        "Fork adds its own meshlet, descriptor and shader fixes"
+        "Fork adds its own meshlet, descriptor and shader fixes",
+        "PortWatch reports improved lighting and hair in a stream attributed to this fork"
       ],
       "blockers": [
         "Most shadowed surfaces are black; bounce lighting and ray-traced shadows are missing",
@@ -2517,12 +2532,14 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 179,
-        "forks": 24,
-        "openIssues": 11,
-        "pushedAt": "2026-11-24T19:32:07Z",
+        "stars": 1258,
+        "forks": 274,
+        "openIssues": 164,
+        "createdAt": "2026-11-24T18:02:37Z",
+        "pushedAt": "2026-11-24T22:00:21Z",
         "archived": false,
-        "missing": false
+        "missing": false,
+        "commits7d": 100
       },
       "assessedAt": "2026-11-24",
       "assessedBy": "manual",
@@ -2532,9 +2549,94 @@
       ],
       "visuals": {
         "color": 0.5,
-        "lighting": 0.25,
-        "shaders": 0.45
+        "lighting": 0.5,
+        "shaders": 0.6
       }
+    },
+    {
+      "id": "zettrox",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.1,
+        "render": 0.3,
+        "fps": 2,
+        "stability": "sometimes"
+      },
+      "tier": "tracked",
+      "basedOn": [
+        "victory-gta6"
+      ],
+      "assessedAt": "2026-11-25",
+      "assessedBy": "manual",
+      "verification": "self-reported",
+      "stats": {},
+      "name": "ZETTROX",
+      "summary": "PortWatch reports that this private build cleared Lucia’s prologue and reached “Gone Fishing” at about 2 FPS.",
+      "highlights": [
+        "Reached Jason’s first mission after Lucia’s prologue",
+        "PortWatch reports player-controlled action after the transition"
+      ],
+      "blockers": [
+        "Rendering remains poor",
+        "About 2 FPS reported",
+        "Private build; no independently reproducible session"
+      ],
+      "visuals": {
+        "color": 0.2,
+        "shaders": 0.3
+      },
+      "target": "GTA VI only",
+      "approach": "Compatibility layer",
+      "byline": "Private build · PortWatch VI report",
+      "evidence": "Reported by PortWatch VI; independent reproduction pending",
+      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html"
+    },
+    {
+      "id": "suri",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0,
+        "render": 0.8,
+        "fps": 3,
+        "stability": "unknown"
+      },
+      "tier": "tracked",
+      "basedOn": [
+        "victory-gta6"
+      ],
+      "assessedAt": "2026-11-24",
+      "assessedBy": "manual",
+      "verification": "self-reported",
+      "stats": {},
+      "name": "suri",
+      "summary": "PortWatch reports player movement in Lucia’s opening at about 3 FPS, with better-looking rendering than earlier footage.",
+      "highlights": [
+        "More complete-looking rendering in the opening scene",
+        "Player-controlled movement reported by PortWatch"
+      ],
+      "blockers": [
+        "About 3 FPS reported",
+        "Evidence limited to the opening scene",
+        "Private build; no independently reproducible session"
+      ],
+      "visuals": {
+        "color": 0.6,
+        "lighting": 0.5,
+        "shaders": 0.6
+      },
+      "target": "GTA VI only",
+      "approach": "Compatibility layer",
+      "byline": "Private build · PortWatch VI report",
+      "evidence": "Reported by PortWatch VI; independent reproduction pending",
+      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html"
     }
   ],
   "tools": [
@@ -6020,6 +6122,16 @@
       "date": "2026-11-24",
       "kind": "new",
       "text": "The victory-gta6 fork reports checkpoint save and reload, with gameplay around 2–4 FPS on one Windows PC."
+    },
+    {
+      "date": "2026-11-24",
+      "kind": "new",
+      "text": "News: PortWatch reports that ZETTROX reached “Gone Fishing” at about 2 FPS and that suri’s prologue run showed better rendering."
+    },
+    {
+      "date": "2026-11-24",
+      "kind": "removed",
+      "text": "GitHub publishes Take-Two’s Leonida takedown and says it processed it across the network of 3,007 repositories."
     }
   ],
   "history": [
@@ -6058,11 +6170,11 @@
     {
       "date": "2026-11-24",
       "rubric": "gameplay-v2",
-      "leader": 34.7,
-      "leaderId": "hyphennn",
-      "top3": 33.2,
+      "leader": 36.4,
+      "leaderId": "suri",
+      "top3": 34.6,
       "furthest": "ingame",
-      "tracked": 33
+      "tracked": 34
     }
   ],
   "scout": {
