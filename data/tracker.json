@@ -1,9 +1,8 @@
 {
-  "updated": "2026-11-25T13:48:25.314Z",
+  "updated": "2026-11-25T13:58:45.094Z",
   "site": {
     "title": "VICEPULSE",
-    "heroImage": "assets/img/vice-waterfront.webp",
-    "heroCredit": "Original illustration · Miami at dusk"
+    "heroImage": "assets/img/vice-night.webp"
   },
   "exe": {
     "status": "released",
@@ -26,7 +25,7 @@
       "body": [
         "Linux4real (@Linux5real) posted a 29-second clip on X showing movement in Lucia’s prison area. The author claims 12–15 FPS and lists a GeForce RTX 5070 Ti and Ryzen 7 7800X3D in a reply. The window counter shows readings around 10–12 FPS in several sampled frames. The clip covers one interior, and the post supplies no public build or frame-time log for reproducing the range.",
         "Separately, the public victory-perf fork reports 14 FPS in a prison corridor, 11 FPS inside the heist and 9 FPS in the cell. Heavier scenes run at 4.5–6.5 FPS. The maintainer used one RTX 4070 SUPER system at 50% render scale and approximated some missing lighting effects.",
-        "The reports show faster results in specific interiors. VICEPULSE keeps the short clip out of the scored rankings pending a repeatable benchmark. The crash-free gameplay checkpoint remains open."
+        "VICEPULSE now scores the Linux4real footage as an early interior test, using 11 FPS to represent the sampled readings. The countdown estimates when a longer community gameplay session could emerge. The graphics, frame rate and crash-free benchmarks earn credit independently."
       ],
       "video": {
         "url": "https://video.twimg.com/amplify_video/2125505815343775744/vid/avc1/1280x720/NYmI8ku1ueOpDvok.mp4",
@@ -43,7 +42,12 @@
           "title": "Interior and heavy-scene benchmark figures",
           "url": "https://github.com/vitutu1/victory-perf"
         }
-      ]
+      ],
+      "image": {
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2125505815343775744/img/XR9RZ4VBWDFh5PH7.jpg",
+        "credit": "Linux4real via X",
+        "link": "https://x.com/linux5real/status/2125506158551089171"
+      }
     },
     {
       "id": "2026-11-25-belobug-amd-open-world",
@@ -972,6 +976,102 @@
     }
   ],
   "efforts": [
+    {
+      "id": "linux4real",
+      "name": "Linux4real",
+      "tier": "tracked",
+      "repo": null,
+      "link": "news/2026-11-25-gta-vi-pc-interior-fps-tests.html",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "summary": "A short Windows clip shows movement through Lucia’s prison interior. The on-screen counter is around 10–12 FPS in several sampled frames.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "stability": "unknown",
+        "fps": 11
+      },
+      "visuals": {
+        "color": 0.72,
+        "lighting": 0.65,
+        "shaders": 0.6
+      },
+      "fpsNote": "About 10–12 FPS in sampled frames from one interior",
+      "visualNotes": {
+        "color": "Walls, clothes and room surfaces are textured",
+        "lighting": "Interior lights and lit surfaces are visible",
+        "shaders": "Character and interior materials render in the clip"
+      },
+      "highlights": [
+        "Posted a 29-second player-controlled clip",
+        "Test hardware reported as RTX 5070 Ti and Ryzen 7 7800X3D"
+      ],
+      "blockers": [
+        "One interior shown",
+        "No published build or full frame-time log"
+      ],
+      "verification": "self-reported",
+      "evidence": "Original X clip and its window counter",
+      "assessedAt": "2026-11-25",
+      "assessedBy": "manual"
+    },
+    {
+      "id": "victory-perf",
+      "name": "victory-perf",
+      "tier": "tracked",
+      "repo": "vitutu1/victory-perf",
+      "branch": "main",
+      "link": "news/2026-11-25-gta-vi-pc-interior-fps-tests.html",
+      "basedOn": [
+        "victory-gta6"
+      ],
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "summary": "Public fork reports 9–14 FPS in several interiors at half render scale on an RTX 4070 SUPER.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "stability": "unknown",
+        "fps": 9
+      },
+      "visuals": {
+        "color": 0.6,
+        "lighting": 0.55,
+        "shaders": 0.55
+      },
+      "visualNotes": {
+        "color": "Opening interiors and characters render",
+        "lighting": "Shadowed interiors use lighting approximations",
+        "shaders": "Selected interiors and HUD render"
+      },
+      "fpsNote": "9–14 FPS indoors, 4.5–6.5 FPS in heavy scenes",
+      "highlights": [
+        "Published per-scene frame-rate results",
+        "Keyboard and controller movement reported"
+      ],
+      "blockers": [
+        "Runs were reported on one machine at 50% render scale"
+      ],
+      "verification": "self-reported",
+      "evidence": "Maintainer’s public benchmark table",
+      "assessedAt": "2026-11-25",
+      "assessedBy": "manual",
+      "stats": {
+        "stars": 18,
+        "forks": 7,
+        "openIssues": 2,
+        "pushedAt": "2026-11-25T13:31:35Z",
+        "createdAt": "2026-11-25T05:26:46Z",
+        "archived": false,
+        "missing": false
+      }
+    },
     {
       "id": "belobug",
       "name": "Belobug (AMD)",
@@ -6494,6 +6594,11 @@
       "date": "2026-11-25",
       "kind": "up",
       "text": "Belobug joins at 48.8% readiness. Its AMD build renders the open world at 3–5 FPS, with roughly 3 FPS while driving."
+    },
+    {
+      "date": "2026-11-25",
+      "kind": "up",
+      "text": "Linux4real leads at 58.3% under the revised readiness weights. The original clip shows about 10–12 FPS in several frames from the prison."
     }
   ],
   "history": [
@@ -6546,6 +6651,15 @@
       "top3": 37.3,
       "furthest": "ingame",
       "tracked": 37
+    },
+    {
+      "date": "2026-11-25",
+      "rubric": "gameplay-v3",
+      "leader": 58.3,
+      "leaderId": "linux4real",
+      "top3": 54.4,
+      "furthest": "ingame",
+      "tracked": 39
     }
   ],
   "scout": {

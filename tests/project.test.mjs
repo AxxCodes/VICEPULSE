@@ -22,8 +22,8 @@ test('headline, milestone and top-three average use the highest active community
   ];
   const result = overall(efforts);
   assert.equal(result.leader.effort.id, 'observed');
-  assert.equal(result.score, 26.6);
-  assert.equal(result.top3, 19);
+  assert.equal(result.score, 40.6);
+  assert.equal(result.top3, 23.7);
   assert.equal(result.furthest.key, 'ingame');
 });
 
@@ -33,12 +33,15 @@ test('scoring handles old boolean values, partial steps, missing steps and stabi
   assert.equal(scoreEffort({ gta: { loads: true, boots: .5, menu: true } }).score, 6);
   assert.equal(scoreEffort({ gta: { loads: 0, boots: 1 } }).reached, 'groundwork');
   const active = { loads: 1, boots: 1, menu: 1, ingame: 1 };
-  assert.equal(scoreEffort({ gta: { ...active, fps: 4 } }).score, 26.6);
-  assert.equal(scoreEffort({ gta: { ...active, fps: 30, stability: 'stable' } }).score, 37);
+  assert.equal(scoreEffort({ gta: { ...active, fps: 4 } }).score, 40.6);
+  assert.equal(scoreEffort({ gta: { ...active, fps: 30, stability: 'stable' } }).score, 60);
   const visuals = { color: 1, lighting: .5, shaders: 1 };
-  assert.equal(scoreEffort({ gta: { ...active, world: 1, playable: 0, fps: 30 }, visuals }).score, 32);
-  assert.equal(scoreEffort({ gta: { ...active, fps: 30, sustained30: true, sessionMinutes: 30 }, visuals }).score, 77);
-  assert.equal(scoreEffort({ gta: { ...active, fps: 5, sustained30: true } }).score, 27);
+  assert.equal(scoreEffort({ gta: { ...active, world: 1, playable: 0, fps: 30 }, visuals }).score, 29.5);
+  assert.equal(scoreEffort({ gta: { ...active, fps: 30, sustained30: true, sessionMinutes: 30 }, visuals }).score, 97.5);
+  assert.equal(scoreEffort({ gta: { ...active, fps: 5, sustained30: true } }).score, 42.1);
+  const fast = scoreEffort({ gta: { ...active, fps: 11 }, visuals: { color: .5, lighting: .5, shaders: .5 } });
+  const polished = scoreEffort({ gta: { ...active, fps: 3 }, visuals: { color: 1, lighting: 1, shaders: 1 } });
+  assert.ok(fast.score > polished.score);
 });
 
 test('a high-score archived effort is retained in data and excluded from the headline', () => {
@@ -115,7 +118,7 @@ test('public interface translations cover every new interactive label', async ()
 });
 
 test('branded image and font files referenced by the build are present', async () => {
-  for (const path of ['vice-mark.svg', 'favicon.svg', 'vice-waterfront.webp', 'vice-waterfront-mobile.webp', 'social.jpg', 'social-square.jpg']) {
+  for (const path of ['vice-mark.svg', 'favicon.svg', 'vice-night.webp', 'news/cover-port.webp', 'news/cover-leak.webp', 'news/cover-legal.webp', 'news/cover-safety.webp', 'social.jpg', 'social-square.jpg']) {
     await access(new URL(`../assets/img/${path}`, import.meta.url));
   }
   for (const font of ['inter', 'intertight', 'instrumentserif']) {

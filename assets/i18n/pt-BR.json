@@ -1,6 +1,6 @@
 {
   "road.positionsNote": "A escala mostra os seis projetos ativos com maior pontuação. A tabela registra o líder, a média dos três primeiros e o marco mais avançado de cada data.",
-  "meta.title": "VICEPULSE — Progresso de GTA VI no PC",
+  "meta.title": "VICEPULSE — GTA VI está mais perto do PC",
   "meta.boardTitle": "Fórum · VICEPULSE",
   "skip": "Pular para o ranking",
   "common.loading": "Carregando…",
@@ -29,7 +29,7 @@
   "hero.watching": "{n} assistindo agora",
   "hero.followX": "Seguir no X",
   "hero.githubSoon": "Código no GitHub",
-  "hero.title": "GTA VI no PC: situação atual",
+  "hero.title": "GTA VI está mais perto de rodar no PC",
   "hero.lede": "Acompanhe os projetos da comunidade para rodar GTA VI no PC, do primeiro quadro à jogabilidade estável.",
   "answer.notYet": "Ainda não.",
   "answer.sortOf": "Testes dentro do jogo em andamento.",
@@ -255,7 +255,7 @@
   "hero.pc": "para o PC.",
   "hero.explore": "Explorar os projetos",
   "hero.scoring": "Como pontuamos",
-  "hero.illustration": "Ilustração original · Miami ao anoitecer",
+  "hero.illustration": "Ilustração original · Miami à noite",
   "official.label": "Lançamento da Rockstar",
   "official.status": "Sem anúncio para PC",
   "official.context": "A Rockstar lista PS5 e Xbox Series X|S.",
@@ -330,6 +330,7 @@
   "metric.session": "Jogo sem travar",
   "metric.sessionDetail": "{minutes} min documentados",
   "metric.noSession": "Sem teste cronometrado",
-  "readiness.method": "Os marcos são cumulativos. Os projetos podem avançar em vários testes ao mesmo tempo.",
-  "hero.watchingUnavailable": "Contagem de espectadores indisponível"
+  "readiness.method": "As porcentagens indicam o peso de cada teste. Cada teste pontua separadamente.",
+  "hero.watchingUnavailable": "Contagem de espectadores indisponível",
+  "readiness.currentLead": "{name} lidera a classificação."
 }

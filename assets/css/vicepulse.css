@@ -111,7 +111,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
 .hero-photo {
   opacity: 1;
   transform: none;
-  background-image: url("../img/vice-waterfront.webp");
+  background-image: url("../img/vice-night.webp");
   background-position: center 59%;
   animation: waterfront-in .85s ease-out both;
 }
@@ -658,7 +658,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
 @media (max-width: 680px) {
   .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .hero .hero-side { max-width: 100%; }
-  .hero-photo { background-image: url("../img/vice-waterfront-mobile.webp"); background-position: center 58%; }
+  .hero-photo { background-image: url("../img/vice-night.webp"); background-position: 70% 58%; }
   .hero-scrim { background: linear-gradient(100deg, #261033cf, #26103355), linear-gradient(0deg, #32163eae, transparent 55%); }
   .hero .art-credit { bottom: 37px; }
   .hero-side .cd-digits span { font-size: clamp(1.6rem, 7vw, 2.55rem); }
@@ -696,7 +696,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
   background:
     linear-gradient(90deg, #1b102b 5%, #291333ed 52%, #3f18527a),
     linear-gradient(0deg, #160d22 6%, transparent 85%),
-    url("../img/vice-waterfront.webp") center 50% / cover, #171322;
+    url("../img/vice-night.webp") center 50% / cover, #171322;
   box-shadow: 0 19px 48px #1f102e48, inset 0 1px #ffdeee45;
 }
 .forecast-card::before {
@@ -814,3 +814,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visib
 }
 .forecast-refresh { margin: -.2rem 0 .9rem; color: #e0d1eb; font-size: .88rem; }
 .fps-status { margin: .75rem 0; font-weight: 700; }
+
+.forecast-previous { display: grid; gap: 3px; margin-top: 18px; color: #ead6e8; font-size: .78rem; }
+.forecast-previous s { font-family: var(--mono); }
+.forecast-previous time { margin-inline-start: .45rem; }
+.forecast-clock div { background: linear-gradient(160deg, #174d3b, #102b26 78%); border-color: #5cd99a99; box-shadow: inset 0 2px #b8ffd642, 0 8px 24px #0a231b9e; }
+.forecast-clock strong, .forecast-clock div:last-child strong { color: #adffcb; text-shadow: 0 0 19px #3fe98977; }
+.forecast-clock small { color: #dbf9e8; }
+.forecast-card .forecast-date time { color: #c5ffdc; }
+.forecast-head h2 { color: #ceffe1; }

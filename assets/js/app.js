@@ -1,4 +1,4 @@
-import { MILESTONES, GROUNDWORK, READINESS_PHASES, readinessChecks, MAX_SCORE, RANK_RUBRIC, gameplaySignals, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
+import { MILESTONES, GROUNDWORK, READINESS_CRITERIA, readinessChecks, MAX_SCORE, RANK_RUBRIC, gameplaySignals, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
 import { getLiveViewers, trackView } from './backend.js';
 import { coverHtml, articlePath, storyImageUrl, storyVideoHtml } from './news-shared.js';
 import { fillPinned } from './pinned.js';
@@ -218,7 +218,7 @@ function renderHeroArt(site) {
   $('#hero-photo').style.backgroundImage = '';
   $('#top').classList.remove('has-photo');
   const path = site.heroImage;
-  if (!/^assets\/img\/[\w/-]+\.(?:jpg|jpeg|png|webp)$/i.test(path || '') || path === 'assets/img/vice-waterfront.webp') return;
+  if (!/^assets\/img\/[\w/-]+\.(?:jpg|jpeg|png|webp)$/i.test(path || '') || path === 'assets/img/vice-night.webp') return;
   const img = new Image();
   img.onload = () => {
     if (state.data?.site?.heroImage !== path) return;
@@ -262,7 +262,7 @@ function startForecast() {
       if (field.textContent !== digit) field.textContent = digit;
     });
     if (seconds === 0) {
-      $('#forecast-status').textContent = 'Checkpoint reached · awaiting verified results';
+      $('#forecast-status').textContent = 'Estimate reached · checking latest results';
       $('#forecast-live').hidden = true;
       clearInterval(timer);
       document.removeEventListener('visibilitychange', tick);
@@ -379,18 +379,15 @@ function renderReadiness(overview) {
     track.style.setProperty('--score', `${axis(score)}%`);
   }
 
-  const next = READINESS_PHASES.find((phase) => phase.at > score);
   const leader = overview.leader?.effort;
   const scoreLink = $('#hero-readiness-score');
   scoreLink.hidden = !leader;
   scoreLink.textContent = label;
-  $('#hero-readiness-leader').textContent = !leader ? t('ov.none')
-    : next ? t('readiness.lead', { name: leader.name, phase: t(`readiness.${next.key}`), percent: percent(next.at) })
-      : t('readiness.complete', { name: leader.name });
+  $('#hero-readiness-leader').textContent = leader ? t('readiness.currentLead', { name: leader.name }) : t('ov.none');
   $('#hero-readiness').setAttribute('aria-busy', 'false');
-  $('#readiness-phases').innerHTML = READINESS_PHASES.map((phase) => `
-    <li class="${phase === next ? 'is-next' : ''}">
-      <span class="readiness-phase-score">${percent(phase.at)}</span>
+  $('#readiness-phases').innerHTML = READINESS_CRITERIA.map((phase) => `
+    <li>
+      <span class="readiness-phase-score">${percent(phase.weight)}</span>
       <b>${esc(t(`readiness.${phase.key}`))}</b>
       <span>${esc(t(`readiness.${phase.key}Detail`))}</span>
     </li>`).join('');
@@ -470,7 +467,7 @@ function renderHistory(history, efforts) {
   const x = (i) => (i / Math.max(1, pts.length - 1)) * W;
   const y = (v) => H - (v / MAX_SCORE) * (H - 6) - 3;
   const d = pts.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(p.leader).toFixed(1)}`).join(' ');
-  box.innerHTML = `<p>Gameplay-score history starts with the new rubric on November 24. Earlier percentage scores used a different method.</p>
+  box.innerHTML = `<p>The current scoring method starts on November 25.</p>
     ${pts.length > 1 ? `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-label="${esc(t('ov.historyLabel'))}">
       <defs><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#7a5cff"/><stop offset=".55" stop-color="#ff2e7e"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient>
       <linearGradient id="hf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2e7e" stop-opacity=".18"/><stop offset="1" stop-color="#ff2e7e" stop-opacity="0"/></linearGradient></defs>

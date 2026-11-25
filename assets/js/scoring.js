@@ -14,26 +14,29 @@ export const MILESTONES = [
 
 export const RENDER_CHECKS = [
   { key: 'color', label: 'Colors & textures', points: 5 },
-  { key: 'lighting', label: 'Lighting & shadows', points: 6 },
-  { key: 'shaders', label: 'Shaders in gameplay', points: 7 },
+  { key: 'lighting', label: 'Lighting & shadows', points: 5 },
+  { key: 'shaders', label: 'Shaders in gameplay', points: 5 },
 ];
 const FRAME_RATE_TARGET = 30;
 const SESSION_TARGET = 30;
-const FRAME_RATE_WEIGHT = 12;
-const SUSTAINED_WEIGHT = 5;
-const SESSION_WEIGHT = 20;
+const FRAME_RATE_WEIGHT = 35;
+const SUSTAINED_WEIGHT = 10;
+const SESSION_WEIGHT = 15;
 const CONTROL_SCORE = MILESTONES.at(-1).at;
 const RENDER_SCORE = CONTROL_SCORE + RENDER_CHECKS.reduce((sum, check) => sum + check.points, 0);
 export const MAX_SCORE = RENDER_SCORE + FRAME_RATE_WEIGHT + SUSTAINED_WEIGHT + SESSION_WEIGHT;
 
-export const READINESS_PHASES = [
-  { key: 'control', at: CONTROL_SCORE },
-  { key: 'graphics', at: RENDER_SCORE },
-  { key: 'frameRate', at: RENDER_SCORE + FRAME_RATE_WEIGHT },
-  { key: 'sustained', at: RENDER_SCORE + FRAME_RATE_WEIGHT + SUSTAINED_WEIGHT },
-  { key: 'session', at: MAX_SCORE },
+export const READINESS_CRITERIA = [
+  { key: 'control', weight: CONTROL_SCORE },
+  { key: 'graphics', weight: RENDER_SCORE - CONTROL_SCORE },
+  { key: 'frameRate', weight: FRAME_RATE_WEIGHT },
+  { key: 'sustained', weight: SUSTAINED_WEIGHT },
+  { key: 'session', weight: SESSION_WEIGHT },
 ];
-export const RANK_RUBRIC = 'gameplay-v2';
+export const RANK_RUBRIC = 'gameplay-v3';
+
+// Reward the jump from single-digit FPS while keeping full credit at 30 FPS.
+const frameRateScore = (progress) => progress ** 0.4;
 
 // Groundwork parts and their share of the initial boot milestone.
 export const GROUNDWORK = [
@@ -113,7 +116,7 @@ export function scoreEffort(effort) {
     score += checks.rendering.reduce((sum, check) => sum + check.points * check.progress, 0);
   }
   if (reached === 'ingame') {
-    score += FRAME_RATE_WEIGHT * checks.frameRate + SUSTAINED_WEIGHT * checks.sustained;
+    score += FRAME_RATE_WEIGHT * frameRateScore(checks.frameRate) + SUSTAINED_WEIGHT * checks.sustained;
     score += SESSION_WEIGHT * checks.session;
   }
 

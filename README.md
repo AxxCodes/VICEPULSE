@@ -14,7 +14,7 @@ VICEPULSE is an independent tracker of community efforts to run Grand Theft Auto
 | Sustained 30 FPS | A gameplay test holds 30 FPS over time. |
 | Crash-free play | A timed Windows gameplay run is measured against 30 minutes. |
 
-The headline percentage is a weighted score for the leading build. The graphics percentages are estimates based on the scenes available for review. Menu FPS stays outside the gameplay score. The countdown is an estimate for the crash-free benchmark and can change with new evidence.
+The headline percentage is a weighted score for the leading build. Player control accounts for 25%, graphics 15%, gameplay FPS 35%, sustained 30 FPS 10%, and crash-free play 15%. Checks score independently. Early gains in gameplay FPS earn credit along a curve. Menu FPS stays outside the gameplay score. The countdown is an editorial estimate for a community build capable of longer sessions.
 
 ## Source and corrections
 
@@ -25,4 +25,10 @@ The headline percentage is a weighted score for the leading build. The graphics 
 
 Send corrections or project updates through [GitHub Issues](https://github.com/AxxCodes/VICEPULSE/issues). Include the original source, build and test conditions when available.
 
-VICEPULSE is an unofficial project and is independent of Rockstar Games and Take-Two Interactive.
+## Attribution and independence
+
+VICEPULSE is an independently maintained fan project. It has no affiliation with, sponsorship from, or endorsement by Rockstar Games or Take-Two Interactive.
+
+Grand Theft Auto, GTA, Grand Theft Auto VI, and associated names, logos, artwork, and game content belong to their respective rights holders. This tracker uses game and project names to identify the subjects of its reporting. Third-party screenshots and video remain with their respective rights holders. The project links to sources and carries independent editorial illustrations.
+
+This repository contains the tracker’s source code and editorial data. It does not distribute game builds, executables, or keys. For a correction or rights inquiry, use the contact on the [AxxCodes profile](https://github.com/AxxCodes).

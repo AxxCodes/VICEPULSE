@@ -1,6 +1,6 @@
 {
   "road.positionsNote": "The strip plots the six highest-scoring active projects. The table records the leader, top-three average and furthest milestone for each dated snapshot.",
-  "meta.title": "VICEPULSE — GTA VI PC Progress",
+  "meta.title": "VICEPULSE — GTA VI on PC Is Getting Closer",
   "meta.boardTitle": "Board · VICEPULSE",
   "skip": "Skip to the leaderboard",
   "common.loading": "Loading…",
@@ -29,7 +29,7 @@
   "hero.watching": "{n} watching now",
   "hero.followX": "Follow on X",
   "hero.githubSoon": "GitHub source",
-  "hero.title": "GTA VI on PC: Where things stand",
+  "hero.title": "GTA VI on PC Is Getting Closer",
   "hero.lede": "Follow the community projects trying to run GTA VI on PC, from the first frame to stable gameplay.",
   "answer.notYet": "Not yet.",
   "answer.sortOf": "In-game tests underway.",
@@ -227,7 +227,7 @@
   "hero.pc": "to PC.",
   "hero.explore": "Explore the race",
   "hero.scoring": "How we score",
-  "hero.illustration": "Original illustration · Miami at dusk",
+  "hero.illustration": "Original illustration · Miami at night",
   "official.label": "Rockstar release",
   "official.status": "PC platform unannounced",
   "official.context": "Rockstar lists PS5 and Xbox Series X|S.",
@@ -304,6 +304,7 @@
   "metric.session": "Crash-free play",
   "metric.sessionDetail": "{minutes} min documented",
   "metric.noSession": "No timed gameplay run",
-  "readiness.method": "The benchmarks show cumulative scores. Projects can improve several checks in parallel.",
-  "hero.watchingUnavailable": "Viewer count unavailable"
+  "readiness.method": "The percentages below are score weights. Every check can earn credit independently.",
+  "hero.watchingUnavailable": "Viewer count unavailable",
+  "readiness.currentLead": "{name} leads on gameplay readiness."
 }

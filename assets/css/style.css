@@ -546,7 +546,7 @@ html:not([lang="en"]) .nav-links a { padding-inline: 9px; }
 .story { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); overflow: hidden; cursor: pointer; padding: 0; transition: transform .15s, box-shadow .2s; }
 .story:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .story-media { position: relative; aspect-ratio: 16 / 9; background: var(--soft-2); overflow: hidden; }
-.story-media img { width: 100%; height: 100%; object-fit: cover; }
+.story-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .story-cat { position: absolute; left: 14px; top: 14px; font-size: 11.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--glass); color: var(--ink); }
 .story-body { padding: 18px 20px 20px; }
 .story time { font-size: 12px; font-weight: 700; color: var(--faint); }
@@ -802,3 +802,9 @@ a.story { text-decoration: none; }
   .page { padding-top: 16px; }
   .archive { grid-template-columns: 1fr; }
 }
+
+.story-media .cover { background: #23132d url("../img/news/cover-port.webp") center / cover; }
+.story-media .cover-Leak { background-image: url("../img/news/cover-leak.webp"); }
+.story-media .cover-Takedown, .story-media .cover-Legal { background-image: url("../img/news/cover-legal.webp"); }
+.story-media .cover-Safety, .story-media .cover-Security { background-image: url("../img/news/cover-safety.webp"); }
+.story-media .cover svg { display: none; }

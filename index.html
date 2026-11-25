@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="meta.title">VICEPULSE — GTA VI PC Progress</title>
+  <title data-i18n="meta.title">VICEPULSE — GTA VI on PC Is Getting Closer</title>
   <meta name="description" content="Independent GTA VI PC tracker. Follow community projects, compare evidence and explore milestones from groundwork to stable gameplay.">
   <meta name="robots" content="max-image-preview:large">
   <meta property="og:site_name" content="VICEPULSE">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="VICEPULSE — GTA VI PC Progress">
+  <meta property="og:title" content="VICEPULSE — GTA VI on PC Is Getting Closer">
   <meta property="og:description" content="Follow community projects, compare evidence and explore milestones on the road to running GTA VI on PC.">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -18,11 +18,10 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="VICEPULSE news" href="news/feed.xml">
   <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "WebSite", "name": "VICEPULSE", "alternateName": "VICEPULSE — GTA VI PC Progress",
+    {"@context": "https://schema.org", "@type": "WebSite", "name": "VICEPULSE", "alternateName": "VICEPULSE — GTA VI on PC Is Getting Closer",
      "description": "Independent tracker of community projects working to run GTA VI on PC."}
   </script>
-  <link rel="preload" as="image" href="assets/img/vice-waterfront.webp" media="(min-width: 681px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/img/vice-waterfront-mobile.webp" media="(max-width: 680px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/vice-night.webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/vicepulse.css">
   <script src="assets/js/theme.js"></script>
@@ -73,7 +72,7 @@
             <p class="watching" id="watching" title="Active in the last 5 minutes" data-i18n-attr="title:hero.watchingTitle" hidden></p>
           </div>
           <p class="live-feedback" id="live-feedback" role="status"></p>
-          <h1 data-i18n="hero.title">GTA VI on PC: Where things stand</h1>
+          <h1 data-i18n="hero.title">GTA VI on PC Is Getting Closer</h1>
           <p class="answer" id="answer" hidden></p>
           <p class="lede" data-i18n="hero.lede">Follow the community projects trying to run GTA VI on PC, from the first frame to stable gameplay.</p>
           <div class="hero-actions">
@@ -140,7 +139,7 @@
             <span class="readiness-fill"></span>
           </div>
           <ol class="readiness-phases" id="readiness-phases"></ol>
-          <p class="readiness-method" data-i18n="readiness.method">The benchmarks show cumulative scores. Projects can improve several checks in parallel.</p>
+          <p class="readiness-method" data-i18n="readiness.method">The percentages below are score weights. Every check can earn credit independently.</p>
         </section>
       </div>
       <p class="art-credit" id="art-credit"></p>
@@ -152,14 +151,18 @@
         <header class="forecast-head">
           <div>
             <p class="kicker">GTA VI · Community forecast</p>
-            <h2 id="forecast-title">First stable PC session</h2>
+            <h2 id="forecast-title">New countdown</h2>
           </div>
           <div class="forecast-badges">
             <span class="forecast-live" id="forecast-live" hidden><span class="forecast-live-dot" aria-hidden="true"></span> Live countdown</span>
             <span class="forecast-chip">Low confidence</span>
           </div>
         </header>
-        <div class="forecast-clock" role="timer" aria-label="Time to the estimated first stable PC session">
+        <div class="forecast-previous">
+          <span>Previous estimate</span>
+          <s>04 days · 14 hours · 00 min · 00 sec <time datetime="2026-11-30T04:00:00Z">Nov 30, 04:00 UTC</time></s>
+        </div>
+        <div class="forecast-clock" role="timer" aria-label="Time to the next community PC gameplay checkpoint">
           <div><strong id="forecast-days">—</strong><small>Days</small></div>
           <div><strong id="forecast-hours">—</strong><small>Hours</small></div>
           <div><strong id="forecast-minutes">—</strong><small>Minutes</small></div>
@@ -167,26 +170,14 @@
         </div>
         <p class="forecast-date">
           <span id="forecast-status">Estimated checkpoint</span>
-          <time id="forecast-target" datetime="2026-11-30T04:00:00Z">November 30, 2026</time>
-          <span>Early window <b>Nov 28–Dec 7</b></span>
+          <time id="forecast-target" datetime="2026-11-27T00:00:00Z">November 27, 00:00 UTC</time>
         </p>
-        <p class="forecast-goal">Counting down to our current best estimate for a publicly documented 30-minute crash-free Windows gameplay session.</p>
-        <p class="forecast-refresh">Clock ticks every second. We review the date when new gameplay evidence comes in.</p>
+        <p class="forecast-goal">Our early estimate for a community PC build that can handle longer gameplay sessions.</p>
         <details class="forecast-method">
-          <summary>How the estimate works</summary>
-          <p>Early builds moved from booting to the opening scene quickly. CGBJ and omonkey still report single-digit gameplay FPS. The public victory-gta6 fork reports visible textures and direct sunlight, with most shadows still black.</p>
-          <p>A fix for a major crash could unlock a long session quickly. November 30 is a six-day editorial checkpoint based on the pace of those early milestones. The Nov 28–Dec 7 window assumes teams can resolve their current blockers, and may slip if crashes recur elsewhere in the game.</p>
-          <p>We’ll move the forecast when there’s a dated gameplay recording or repeatable test with the build, hardware, session length and crash behavior documented.</p>
-          <p>Nov 24 update: <a href="news/2026-11-24-gameplay-score-revamp.html">the revised leaderboard</a> now includes hyphennn and the public victory-gta6 fork. <a href="news/2026-11-24-omonkey-shaders-prison.html">omonkey’s reported 5 FPS prison test</a> shows additional rendering progress. The <a href="news/2026-11-24-gta-vi-m5-max-macbook.html">MacBook clip</a> also looks promising. Neither establishes the 30-minute crash-free Windows session this clock is tracking, so November 30 remains the checkpoint.</p>
-          <p>Evidence checked <time datetime="2026-11-24">Nov 24, 2026</time> · <a href="https://portwatch-vi.xyz/">PortWatch VI</a> · <a href="https://github.com/Marvisak/VIctory">VIctory status</a> · <a href="https://github.com/ivall/xcl/issues/505">XCL crash reports</a></p>
+          <summary>Why the estimate moved</summary>
+          <p>Recent tests show <a href="news/2026-11-25-gta-vi-pc-interior-fps-tests.html">double-digit FPS indoors</a> and <a href="news/2026-11-25-belobug-amd-open-world.html">a fuller open world on AMD</a>. Those are results from different builds. Heavier scenes still run slower, and longer sessions need repeatable tests.</p>
+          <p>A steady 30 FPS remains a separate benchmark. This countdown is a low-confidence community estimate. Rockstar’s platforms are listed in the release box above.</p>
         </details>
-        <div class="forecast-next">
-          <span class="forecast-next-icon" aria-hidden="true">30</span>
-          <div>
-            <h3>Next milestone · Smooth 30 FPS</h3>
-            <p>December is an early watch window. This takes correct rendering, steady frame pacing and repeatable runs on several PC configurations.</p>
-          </div>
-        </div>
       </div>
     </section>
 
