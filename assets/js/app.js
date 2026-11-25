@@ -1,4 +1,4 @@
-import { MILESTONES, GROUNDWORK, RENDER_CHECKS, MAX_SCORE, RANK_RUBRIC, gameplaySignals, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
+import { MILESTONES, GROUNDWORK, READINESS_PHASES, readinessChecks, MAX_SCORE, RANK_RUBRIC, gameplaySignals, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
 import { getLiveViewers, trackView } from './backend.js';
 import { coverHtml, articlePath, storyImageUrl, storyVideoHtml } from './news-shared.js';
 import { fillPinned } from './pinned.js';
@@ -135,6 +135,10 @@ async function refreshSnapshots(manual = false) {
     button.removeAttribute('aria-busy');
     if (announceRefresh || hadData && changed || !state.data && failed) {
       feedback.textContent = t(failed ? 'live.failed' : changed ? 'live.received' : 'live.current');
+    }
+    if (data.status === 'rejected' && !state.data) {
+      $('#hero-readiness').setAttribute('aria-busy', 'false');
+      $('#hero-readiness-leader').textContent = t('readiness.unavailable');
     }
     announceRefresh = false;
     return changed;
@@ -332,13 +336,9 @@ function renderOverall(data) {
   const ov = overall(all);
   const leader = ov.leader?.effort;
   $('#ov-score').textContent = pct(axis(ov.score));
-  $('#hero-progress-link').hidden = !leader;
-  $('#hero-progress-value').textContent = percent(ov.score);
-  $('#score-track').setAttribute('aria-valuenow', pct(axis(ov.score)));
-  $('#score-fill').style.setProperty('--score', `${axis(ov.score)}%`);
+  renderReadiness(ov);
   const hasStableRun = all.some((e) => !e.nuked && e._s.reached === 'ingame' && gameplaySignals(e.gta).sessionMinutes >= 30);
   const hasSustained30 = all.some((e) => !e.nuked && e._s.reached === 'ingame' && gameplaySignals(e.gta).sustained30);
-  $('#fps-status').textContent = t(hasSustained30 ? 'ov.fpsVerified' : 'ov.fpsPending');
   const answer = $('#answer');
   answer.hidden = !leader;
   answer.textContent = t(`answer.${hasStableRun ? 'yes' : hasSustained30 ? 'mostly' : ov.furthest.key === 'ingame' ? 'sortOf' : 'notYet'}`);
@@ -367,6 +367,32 @@ function renderOverall(data) {
   window.addEventListener('resize', markerResize);
 
   renderHistory(data.history || [], all);
+}
+
+function renderReadiness(overview) {
+  const score = overview.score;
+  const label = percent(score);
+  for (const id of ['#hero-readiness-track', '#score-track']) {
+    const track = $(id);
+    track.setAttribute('aria-valuenow', pct(axis(score)));
+    track.style.setProperty('--score', `${axis(score)}%`);
+  }
+
+  const next = READINESS_PHASES.find((phase) => phase.at > score);
+  const leader = overview.leader?.effort;
+  const scoreLink = $('#hero-readiness-score');
+  scoreLink.hidden = !leader;
+  scoreLink.textContent = label;
+  $('#hero-readiness-leader').textContent = !leader ? t('ov.none')
+    : next ? t('readiness.lead', { name: leader.name, phase: t(`readiness.${next.key}`), percent: percent(next.at) })
+      : t('readiness.complete', { name: leader.name });
+  $('#hero-readiness').setAttribute('aria-busy', 'false');
+  $('#readiness-phases').innerHTML = READINESS_PHASES.map((phase) => `
+    <li class="${phase === next ? 'is-next' : ''}">
+      <span class="readiness-phase-score">${percent(phase.at)}</span>
+      <b>${esc(t(`readiness.${phase.key}`))}</b>
+      <span>${esc(t(`readiness.${phase.key}Detail`))}</span>
+    </li>`).join('');
 }
 
 function renderRoute(furthest) {
@@ -510,20 +536,34 @@ function renderRace() {
 }
 
 function playChecks(e) {
-  const play = gameplaySignals(e.gta);
+  const checks = readinessChecks(e);
   return [
-    ...RENDER_CHECKS.map(({ key, label }) => {
-      const value = ladderValue(e.visuals?.[key]);
-      return { label, value: value === 1 ? 'Verified for the test scene' : value > 0 ? 'Partial' : 'Unverified', state: value === 1 ? 'pass' : value > 0 ? 'partial' : '' };
-    }),
-    { label: 'In-game frame rate', value: play.fps ? `${play.fps} FPS reported` : 'Unmeasured', state: play.fps ? 'partial' : '' },
-    { label: 'Sustained 30 FPS in gameplay', value: play.sustained30 ? 'Documented' : 'Not verified', state: play.sustained30 ? 'pass' : '' },
-    { label: 'Crash-free session', value: play.sessionMinutes ? `${play.sessionMinutes} min documented` : 'Unverified', state: play.sessionMinutes >= 30 ? 'pass' : play.sessionMinutes ? 'partial' : '' },
+    ...checks.rendering.map(({ key, progress }) => ({
+      label: t(`metric.${key}`),
+      progress,
+      detail: e.visualNotes?.[key] || t(progress ? 'metric.sceneEstimate' : 'metric.noScene'),
+    })),
+    { label: t('metric.frameRate'), progress: checks.frameRate,
+      detail: e.fpsNote || (checks.fps ? t('metric.fpsDetail', { fps: checks.fps }) : t('metric.noFps')) },
+    { label: t('metric.sustained'), progress: checks.sustained,
+      detail: t(checks.sustained ? 'metric.reached' : 'metric.notReached') },
+    { label: t('metric.session'), progress: checks.session,
+      detail: e.sessionNote || (checks.sessionMinutes ? t('metric.sessionDetail', { minutes: checks.sessionMinutes }) : t('metric.noSession')) },
   ];
 }
 
+function metricPercent(progress) {
+  return `${pct(progress * 100)}%`;
+}
+
 function checkList(e) {
-  return `<dl class="play-checks">${playChecks(e).map(({ label, value, state }) => `<div data-state="${state}"><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>`;
+  return `<dl class="play-checks">${playChecks(e).map(({ label, detail, progress }) => `
+    <div data-state="${progress === 1 ? 'pass' : progress ? 'partial' : ''}">
+      <dt>${esc(label)}</dt>
+      <dd class="check-value">${metricPercent(progress)}</dd>
+      <dd class="check-meter" aria-hidden="true"><span style="--check-progress:${metricPercent(progress)}"></span></dd>
+      <dd class="check-detail">${esc(detail)}</dd>
+    </div>`).join('')}</dl>`;
 }
 
 function effortCard(e, rank, open, overallRank = null) {
@@ -624,7 +664,7 @@ function mountComparison(efforts) {
     });
     const rows = [
       ['watch.progress', (e) => percent(e._s.score)],
-      ...playChecks(pair[0]).map(({ label }, i) => [label, (e) => playChecks(e)[i].value]),
+      ...playChecks(pair[0]).map(({ label }, i) => [label, (e) => `${metricPercent(playChecks(e)[i].progress)} · ${playChecks(e)[i].detail}`]),
       ['ov.furthest', (e) => msLabel(e._s.reached)],
       ['search.evidence', evidenceLabel],
       ['watch.approach', (e) => e.approach || '–'],
@@ -757,7 +797,7 @@ function renderNews(news) {
         <div class="sources">
           <h4>${esc(t('news.sources'))}</h4>
           <ul>${(n.sources || []).map((s) => `<li><a href="${esc(safeLink(s.url))}" ${s.url?.startsWith('#') ? '' : 'target="_blank" rel="noopener"'}>${esc(s.outlet)}: ${esc(s.title)}</a></li>`).join('')}</ul>
-          <p class="fine">${n.image?.credit ? `${esc(t('news.image'))} <a href="${esc(storyImageUrl(n.image.link || n.image.url) || '#')}" target="_blank" rel="noopener">${esc(n.image.credit)}</a>. ` : ''}${esc(n.by === 'claude' ? t('news.byClaude') : n.by === 'report' ? t('news.byReport') : t('news.bySources'))}${page ? ` <a href="${esc(page)}">${esc(t('news.link'))}</a>` : ''}</p>
+          <p class="fine">${n.image?.credit ? `${esc(t('news.image'))} <a href="${esc(storyImageUrl(n.image.link || n.image.url) || '#')}" target="_blank" rel="noopener">${esc(n.image.credit)}</a>. ` : ''}${esc(n.by === 'report' ? t('news.byReport') : t('news.bySources'))}${page ? ` <a href="${esc(page)}">${esc(t('news.link'))}</a>` : ''}</p>
         </div>
       </div>`;
     dlg.showModal();

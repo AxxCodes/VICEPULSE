@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T02:27:02.015Z",
+  "updated": "2026-11-25T03:01:52.104Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-waterfront.webp",
@@ -16,6 +16,31 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-24-gta-vi-pc-readiness-session-reports",
+      "date": "2026-11-24",
+      "category": "Port",
+      "title": "GTA VI PC builds report longer runs at 1–5 FPS",
+      "dek": "ZETTROX reports a 90-minute session. A contributor testing the AnyXboxX team’s VIctory fork reports finishing two missions.",
+      "body": [
+        "The ZETTROX README describes a playable prologue and 1–3 FPS on Windows 11 with an RTX 3050. It reports more than 90 minutes without a crash and gives the total session length. A continuous gameplay duration is still unknown.",
+        "The AnyXboxX maintainer reports 4.8–5.4 FPS while controlling the player on its VIctory fork. A separate contributor report describes about 45 minutes at 2 FPS across the first two missions. The README distinguishes that report from its own timed measurements.",
+        "The readiness cards now show the progress of each benchmark. The countdown still tracks a documented 30-minute Windows gameplay session."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · ZETTROX",
+          "title": "ztrx testing status",
+          "url": "https://github.com/Zettrox/ztrx#status-2026-11-25"
+        },
+        {
+          "outlet": "GitHub · AnyXboxX",
+          "title": "VIctory fork testing notes",
+          "url": "https://github.com/LooperSalty/AnyXboxX"
+        }
+      ],
+      "by": "report"
+    },
     {
       "id": "2026-11-24-leonida-v2-ztrx-vitoriabr",
       "date": "2026-11-24",
@@ -930,7 +955,13 @@
         "color": 0.25,
         "lighting": 0.15,
         "shaders": 0.35
-      }
+      },
+      "visualNotes": {
+        "color": "The opening prison scene is visible",
+        "lighting": "Prison lighting is incomplete",
+        "shaders": "Some shaders render in the prison"
+      },
+      "fpsNote": "About 5 FPS in the prison"
     },
     {
       "id": "cgbj",
@@ -981,7 +1012,13 @@
       "visuals": {
         "color": 0.25,
         "shaders": 0.2
-      }
+      },
+      "visualNotes": {
+        "color": "Some scene elements are visible",
+        "lighting": "The reported gameplay view was largely black",
+        "shaders": "Some scene rendering works"
+      },
+      "fpsNote": "About 4 FPS with player movement"
     },
     {
       "id": "marvis",
@@ -991,10 +1028,10 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "Marvis's Rust layer runs GTA VI's own code natively. Boot screens, intro, start screen and saves run at 30 fps. In the world some lighting now renders and the first cinematic plays with sound. Self-reported, unverified.",
+      "summary": "The base VIctory project renders the opening cinematic at 1–2 seconds per frame on a Radeon RX 6700 XT. Menus run at 30 FPS.",
       "highlights": [
         "README reports first-boot screens, intro video, start screen and saves working at 30 fps",
-        "In the world, some lighting renders and the first cinematic's audio plays",
+        "The cinematic shows streets, characters and vehicles with sound",
         "Reaches the world after about 50 s; the first mission's title card renders"
       ],
       "blockers": [
@@ -1031,9 +1068,16 @@
       "claims": [],
       "readmeSha": "a1f64bb3b89911c551bd175535c9ce09f36fe9e90af530e1bf8d96628a8eb0ae",
       "visuals": {
-        "lighting": 0.15,
+        "color": 0.15,
+        "lighting": 0,
         "shaders": 0.1
-      }
+      },
+      "visualNotes": {
+        "color": "World geometry visible; characters break in some shots",
+        "lighting": "Surfaces in the opening remain unlit",
+        "shaders": "The world renders with missing geometry"
+      },
+      "fpsNote": "1–2 seconds per frame in the opening cinematic"
     },
     {
       "id": "xbox-emulator",
@@ -1209,16 +1253,16 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "Any Xbox Series game",
-      "summary": "Native-first layer for unpacked Xbox Series games, tested mostly on Linux through Proton. GTA VI's exe now draws its player-selection prompt at 4K; input, intro and gameplay aren't shown yet. Self-reported.",
+      "summary": "TuxBox reports reaching the story intro on Linux with stock Proton Experimental.",
       "highlights": [
-        "GTA VI 1.0.2.1 shows its player-selection prompt at 3840×2160 on stock Proton, with a run record",
+        "Reached the GTA VI story intro on Linux",
         "The Matrix Awakens reached the highway chase and open city in Linux tests at reduced settings",
         "Ships a small test game (Lanes) that uses its Xbox graphics, memory and input libraries"
       ],
       "blockers": [
-        "No input sent to GTA VI yet; the recorded run exits after about 97 s",
-        "Only 2,755 of 11,429 captured GTA VI shader requests compile so far",
-        "Windows support still in development; results not yet reproduced"
+        "The intro test crashed after about 10 minutes",
+        "Many shaders remain unsupported",
+        "Windows support is in development"
       ],
       "groundwork": {
         "loader": 0.6,
@@ -1545,21 +1589,21 @@
     },
     {
       "id": "anyxboxx",
-      "name": "AnyXboxX",
+      "name": "AnyXboxX · VIctory build",
       "repo": "LooperSalty/AnyXboxX",
       "branch": "main",
       "tier": "tracked",
-      "approach": "HLE emulator",
-      "target": "Any Xbox Series game",
-      "summary": "French-language prototype: GDK runtime emulation on Unicorn, plus a Wine-style native mode that runs small GDK test games. Its GTA VI runs go through a bundled copy of VIctory, so they earn it no milestone.",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "summary": "The AnyXboxX team tests GTA VI through its own VIctory fork on Windows 11 with an RTX 4070 SUPER.",
       "highlights": [
-        "All 16 DLLs of the Scarlett package initialise with zero unemulated calls",
-        "Runs the free SimpleTriangle and SDL3 testgdk games natively",
-        "With Leonida's translator, 51 of the package's 52 ray-tracing builder shaders translate"
+        "The maintainer measured 4.8–5.4 FPS with player control in the world",
+        "Newer tests reported 5.3–6.9 FPS in a run from a fresh save into the world",
+        "A contributor reported about 45 minutes at about 2 FPS across the first two missions"
       ],
       "blockers": [
-        "Most GPU shader translation still to do",
-        "No retail game has run"
+        "The 45-minute report has no published run log",
+        "Some graphics pipelines fail and ray-traced effects are missing"
       ],
       "groundwork": {
         "loader": 0.65,
@@ -1569,14 +1613,14 @@
       },
       "provenOn": "GDK sample games (not retail)",
       "gta": {
-        "loads": 0,
-        "boots": 0,
-        "menu": 0,
-        "world": 0,
-        "playable": 0,
-        "story": 0,
-        "render": 0,
-        "fps": 0,
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.1,
+        "render": 0.55,
+        "fps": 5,
         "stability": "unknown"
       },
       "verification": "self-reported",
@@ -1591,15 +1635,26 @@
         "missing": false
       },
       "assessedAt": "2026-11-24",
-      "assessedBy": "claude",
+      "assessedBy": "manual",
       "readmeSha": "db6da79e869bec88cfaa2e3156185eacf786a75e3f04e62973d3686b1fb935dc",
-      "claims": [
-        {
-          "milestone": "fps30",
-          "text": "- ✅ The Xbox Series 1.0.2.1 build of GTA VI launches on PC: boot, profile screen, first-run settings, legal screens, loading, pause menu. Menus run at 30 fps."
-        }
+      "claims": [],
+      "readmeChangedAt": "2026-11-24",
+      "visualNotes": {
+        "color": "3D world visible; some walls can turn transparent",
+        "lighting": "Irradiance shaders render; ray tracing remains off",
+        "shaders": "Most of the tested scene draws; some pipelines fail"
+      },
+      "basedOn": [
+        "victory-gta6"
       ],
-      "readmeChangedAt": "2026-11-24"
+      "visuals": {
+        "color": 0.55,
+        "lighting": 0.35,
+        "shaders": 0.65
+      },
+      "fpsNote": "4.8–5.4 FPS measured with player control",
+      "sessionNote": "About 45 min reported by a contributor; no run log",
+      "evidence": "Maintainer-reported logs and contributor report"
     },
     {
       "id": "xvalkyrie",
@@ -2600,7 +2655,13 @@
         "color": 0.5,
         "lighting": 0.5,
         "shaders": 0.6
-      }
+      },
+      "visualNotes": {
+        "color": "Prologue textures, characters and sky render",
+        "lighting": "Direct sunlight works; shadows remain black",
+        "shaders": "The prologue renders with major lighting gaps"
+      },
+      "fpsNote": "2–4 FPS reported in the prologue"
     },
     {
       "id": "zettrox",
@@ -2633,15 +2694,14 @@
         "commits7d": 100
       },
       "name": "ZETTROX",
-      "summary": "ZETTROX’s NVIDIA-focused Windows build has public source. PortWatch reports an earlier run reached “Gone Fishing” at about 2 FPS.",
+      "summary": "The Windows build reports a playable prologue and 1–3 FPS on an RTX 3050. PortWatch reported a separate run reaching Gone Fishing.",
       "highlights": [
-        "Reached Jason’s first mission after Lucia’s prologue",
-        "PortWatch reports player-controlled action after the transition"
+        "The maintainers list playable prologue scenes through the boat chase",
+        "The maintainers report a session lasting 90+ minutes without a crash"
       ],
       "blockers": [
-        "Rendering remains poor",
-        "About 2 FPS reported",
-        "Source is public; independent reproduction of the reported run is pending"
+        "Shadowed surfaces are black and bright scenes overexpose",
+        "The 90+ minute report gives total session time"
       ],
       "visuals": {
         "color": 0.2,
@@ -2654,7 +2714,14 @@
       "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html",
       "repo": "Zettrox/ztrx",
       "branch": "main",
-      "readmeSha": "2eb9e3fd0ccda3c2cb44d01b019007b3fe221061ae73aac011c9c3e4fa231490"
+      "readmeSha": "2eb9e3fd0ccda3c2cb44d01b019007b3fe221061ae73aac011c9c3e4fa231490",
+      "visualNotes": {
+        "color": "Prologue is visible with blocky artifacts",
+        "lighting": "Black shadows and blown-out highlights",
+        "shaders": "Prologue scenes render with effects missing"
+      },
+      "fpsNote": "1–3 FPS in the world on an RTX 3050",
+      "sessionNote": "90+ min session reported; continuous play time unknown"
     },
     {
       "id": "suri",
@@ -2697,7 +2764,13 @@
       "approach": "Compatibility layer",
       "byline": "Private build · PortWatch VI report",
       "evidence": "Reported by PortWatch VI; independent reproduction pending",
-      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html"
+      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html",
+      "visualNotes": {
+        "color": "Opening scene shows more complete textures",
+        "lighting": "Opening lighting is visible",
+        "shaders": "Improved rendering shown in the opening"
+      },
+      "fpsNote": "About 3 FPS in Lucia’s opening"
     },
     {
       "id": "lnda-v2",
@@ -2776,15 +2849,20 @@
         "Reported story progress into Jason’s first mission"
       ],
       "blockers": [
-        "Poor rendering and dark shadows reported",
-        "No measured sustained 30 FPS gameplay or documented 30-minute crash-free session"
+        "Dark shadows and other rendering defects"
       ],
       "visuals": {
         "color": 0.15,
         "shaders": 0.2
       },
       "evidence": "PortWatch VI stream coverage",
-      "link": "news/2026-11-24-leonida-v2-ztrx-vitoriabr.html"
+      "link": "news/2026-11-24-leonida-v2-ztrx-vitoriabr.html",
+      "visualNotes": {
+        "color": "First missions shown with rendering defects",
+        "lighting": "Shadowed areas still render dark",
+        "shaders": "The world renders with shader dropouts"
+      },
+      "fpsNote": "Up to 4 FPS on stream"
     }
   ],
   "tools": [
@@ -6329,8 +6407,8 @@
       "date": "2026-11-24",
       "rubric": "gameplay-v2",
       "leader": 36.4,
-      "leaderId": "suri",
-      "top3": 34.6,
+      "leaderId": "anyxboxx",
+      "top3": 36.2,
       "furthest": "ingame",
       "tracked": 36
     }

@@ -80,19 +80,16 @@
             <a class="primary-action" href="#race" data-i18n="hero.explore">Explore the race</a>
             <a class="hero-text-link" href="#pc-forecast">PC forecast</a>
             <a class="hero-text-link hero-changes-link" href="#changes" data-i18n="changes.title">What changed</a>
-            <a class="hero-progress-link" id="hero-progress-link" href="#overall" hidden>
-              <strong id="hero-progress-value"></strong><span data-i18n="nav.overview">Overview</span>
-            </a>
           </div>
           <div class="hero-ctas">
               <a class="follow-x" href="https://x.com/axxcodes" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.62 21.5-7.47-10.9 6.97-8.1H18.7l-5.62 6.54L8.6 2.5H2.48L9.68 13l-7.3 8.5H4.8l5.96-6.93 4.76 6.93zM7.8 4.03l10.93 15.94H16.3L5.38 4.03z"/></svg>
                 <span data-i18n="hero.followX">Follow on X</span>
               </a>
-              <span class="github-soon">
+              <a class="github-soon" href="https://github.com/AxxCodes/VICEPULSE" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>
-                <span data-i18n="hero.githubSoon">GitHub public soon</span>
-              </span>
+                <span data-i18n="hero.githubSoon">GitHub source</span>
+              </a>
             </div>
         </div>
         <div class="hero-side">
@@ -131,6 +128,20 @@
                     <a href="https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions" target="_blank" rel="noopener noreferrer" data-i18n="official.source">Rockstar Support · 24 Nov 2026</a>
         </aside>
         </div>
+        <section class="hero-readiness" id="hero-readiness" aria-labelledby="hero-readiness-title" aria-busy="true">
+          <div class="hero-readiness-heading">
+            <div>
+              <h2 id="hero-readiness-title" data-i18n="ov.title">Gameplay readiness</h2>
+              <p id="hero-readiness-leader" role="status" data-i18n="common.loading">Loading…</p>
+            </div>
+            <a id="hero-readiness-score" href="#overall" aria-describedby="hero-readiness-title" hidden></a>
+          </div>
+          <div class="readiness-track" id="hero-readiness-track" role="progressbar" aria-labelledby="hero-readiness-title" aria-valuemin="0" aria-valuemax="100">
+            <span class="readiness-fill"></span>
+          </div>
+          <ol class="readiness-phases" id="readiness-phases"></ol>
+          <p class="readiness-method" data-i18n="readiness.method">The benchmarks show cumulative scores. Projects can improve several checks in parallel.</p>
+        </section>
       </div>
       <p class="art-credit" id="art-credit"></p>
     </section>
@@ -189,17 +200,16 @@
           </div>
           <div class="roadmap">
             <div class="roadmap-head">
-              <h3 id="route-title" data-i18n="road.title">The milestone route</h3>
+              <h3 id="route-title" data-i18n="road.title">Boot to player control</h3>
               <a href="#method" data-i18n="nav.scoring">Scoring</a>
             </div>
             <div class="roadmap-steps" id="mega-labels" role="group" aria-labelledby="route-title"></div>
             <p class="roadmap-detail" id="roadmap-detail" aria-live="polite"></p>
           </div>
         </div>
-        <div class="score-track" id="score-track" role="progressbar" aria-labelledby="ov-title" aria-valuemin="0" aria-valuemax="100">
-          <span id="score-fill"></span>
+        <div class="score-track readiness-track" id="score-track" role="progressbar" aria-labelledby="ov-title" aria-valuemin="0" aria-valuemax="100">
+          <span id="score-fill" class="readiness-fill"></span>
         </div>
-        <p class="fps-status" id="fps-status"></p>
         <div class="leader-checks" id="leader-checks"></div>
         <div class="ov-stats">
             <div class="ov-stat"><b id="ov-stage">-</b><small data-i18n="ov.furthest">Furthest milestone</small></div>

@@ -17,10 +17,25 @@ export const RENDER_CHECKS = [
   { key: 'lighting', label: 'Lighting & shadows', points: 6 },
   { key: 'shaders', label: 'Shaders in gameplay', points: 7 },
 ];
-export const MAX_SCORE = 80;
+const FRAME_RATE_TARGET = 30;
+const SESSION_TARGET = 30;
+const FRAME_RATE_WEIGHT = 12;
+const SUSTAINED_WEIGHT = 5;
+const SESSION_WEIGHT = 20;
+const CONTROL_SCORE = MILESTONES.at(-1).at;
+const RENDER_SCORE = CONTROL_SCORE + RENDER_CHECKS.reduce((sum, check) => sum + check.points, 0);
+export const MAX_SCORE = RENDER_SCORE + FRAME_RATE_WEIGHT + SUSTAINED_WEIGHT + SESSION_WEIGHT;
+
+export const READINESS_PHASES = [
+  { key: 'control', at: CONTROL_SCORE },
+  { key: 'graphics', at: RENDER_SCORE },
+  { key: 'frameRate', at: RENDER_SCORE + FRAME_RATE_WEIGHT },
+  { key: 'sustained', at: RENDER_SCORE + FRAME_RATE_WEIGHT + SUSTAINED_WEIGHT },
+  { key: 'session', at: MAX_SCORE },
+];
 export const RANK_RUBRIC = 'gameplay-v2';
 
-// Groundwork parts and their share of the first 25%.
+// Groundwork parts and their share of the initial boot milestone.
 export const GROUNDWORK = [
   { key: 'loader', label: 'Loader & system libraries', weight: 0.2, desc: 'PE loading plus stand-ins for the console-only DLLs (kernelx, xgameruntime, xmem…).' },
   { key: 'shaders', label: 'Shader translation', weight: 0.28, desc: "Share of GTA VI's ~26,500 precompiled RDNA2 shaders translated to PC formats (SPIR-V / DXIL)." },
@@ -59,8 +74,20 @@ export function gameplaySignals(gta = {}) {
     world: ladderValue(gta.world ?? gta.ingame),
     ingame: ladderValue(gta.playable ?? (ladderValue(gta.ingame) === 1 ? 1 : 0)),
     fps: Math.max(0, Number(gta.fps) || 0),
-    sustained30: gta.sustained30 === true && Number(gta.fps) >= 30,
+    sustained30: gta.sustained30 === true && Number(gta.fps) >= FRAME_RATE_TARGET,
     sessionMinutes: Math.max(0, Number(gta.sessionMinutes) || 0),
+  };
+}
+
+export function readinessChecks(effort) {
+  const play = gameplaySignals(effort.gta);
+  return {
+    fps: play.fps,
+    sessionMinutes: play.sessionMinutes,
+    rendering: RENDER_CHECKS.map((check) => ({ ...check, progress: ladderValue(effort.visuals?.[check.key]) })),
+    frameRate: clamp01(play.fps / FRAME_RATE_TARGET),
+    sustained: play.sustained30 ? 1 : 0,
+    session: clamp01(play.sessionMinutes / SESSION_TARGET),
   };
 }
 
@@ -68,6 +95,7 @@ export function scoreEffort(effort) {
   const gw = groundworkFraction(effort.groundwork);
   const gta = effort.gta || {};
   const play = gameplaySignals(gta);
+  const checks = readinessChecks(effort);
   let score = TICK.loads * gw;
   let reached = 'groundwork';
 
@@ -82,11 +110,11 @@ export function scoreEffort(effort) {
   }
 
   if (play.world === 1 && (reached === 'world' || reached === 'ingame')) {
-    score += RENDER_CHECKS.reduce((sum, check) => sum + check.points * ladderValue(effort.visuals?.[check.key]), 0);
+    score += checks.rendering.reduce((sum, check) => sum + check.points * check.progress, 0);
   }
   if (reached === 'ingame') {
-    score += 12 * Math.min(1, play.fps / 30) + (play.sustained30 ? 5 : 0);
-    score += 20 * Math.min(1, play.sessionMinutes / 30);
+    score += FRAME_RATE_WEIGHT * checks.frameRate + SUSTAINED_WEIGHT * checks.sustained;
+    score += SESSION_WEIGHT * checks.session;
   }
 
   return { score: Math.round(score * 10) / 10, groundwork: gw, reached, reachedLabel: MILESTONES.find((m) => m.key === reached).label };

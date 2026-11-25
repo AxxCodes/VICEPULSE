@@ -78,7 +78,9 @@ test('scout flags installer lures and duplicate descriptions and stores claims p
   assert.equal(spamCheck({ name: 'generic', description }, new Map([[normDesc(description), 3]])).cluster, 'auto-clone-networks');
   assert.equal(spamCheck({ name: 'legitimate-research', description: 'Original research notes' }, new Map()), null);
   const claim = detectClaims('GTA VI is now running in-game at 30 fps.');
-  assert.ok(claim.length > 0);
+  assert.equal(claim[0]?.milestone, 'fps30');
+  assert.equal(detectClaims('GTA VI menus run at 30 fps.')[0]?.milestone, undefined);
+  assert.ok(!detectClaims('GTA VI menus reach 30 fps, gameplay is 5 fps.').some(({ milestone }) => milestone === 'fps30'));
 });
 
 test('scout records a daily leader and replaces that day on rerun', async () => {

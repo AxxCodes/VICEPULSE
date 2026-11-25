@@ -402,6 +402,8 @@ const CLAIMS = [
   { milestone: 'boots', re: new RegExp(`${GTA}[^\\n]{0,140}(boots|first frame|intro|logos|loading screen|splash)`, 'i') },
   { milestone: 'loads', re: new RegExp(`${GTA}[^\\n]{0,140}(entry ?point (runs|reached)|executable (loads|runs)|imports resolve)`, 'i') },
 ];
+const GAMEPLAY_FRAME_RATE = /\b(?:in[- ]game|gameplay|player control)\b[^.!?;,]{0,48}(?<![\d.])(?:[3-9]\d|1\d\d)(?:\.\d+)?\s?fps\b|(?<![\d.])(?:[3-9]\d|1\d\d)(?:\.\d+)?\s?fps\b (?:in|during) (?:live )?(?:gameplay|the world)\b/i;
+const MENU_FRAME_RATE = /\b(?:menu|menus|title screen|cutscene|cinematic)\b/i;
 const NEGATED = /(\bno\b|\bnot\b|n't\b|\bnever\b|❌|blocked|\buntil\b|\bonce\b|\bwhen\b|\bwill\b|\bplan|todo|\bgoal\b|\bwaiting\b|\bmissing\b|\bif\b|\bcan(not)?\b)/i;
 const ORDER = ['groundwork', 'loads', 'boots', 'menu', 'ingame', 'fps30', 'stable'];
 
@@ -412,6 +414,8 @@ export function detectClaims(readme, reachedKey = 'groundwork') {
     if (line.length > 400 || NEGATED.test(line)) continue;
     for (const c of CLAIMS) {
       if (ORDER.indexOf(c.milestone) <= reachedIdx) continue;
+      if (c.milestone === 'fps30' && !line.split(/[;!?]|,\s+/).some((part) =>
+        GAMEPLAY_FRAME_RATE.test(part) && !MENU_FRAME_RATE.test(part))) continue;
       if (c.re.test(line)) {
         out.push({ milestone: c.milestone, text: line.replace(/[#*|`>_[\]]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 220) });
         break;

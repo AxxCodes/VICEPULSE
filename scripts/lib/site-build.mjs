@@ -139,8 +139,7 @@ function articlePage(n, others, siteUrl) {
   const credit = n.image?.credit && img
     ? `Image: ${storyImageUrl(n.image.link, '../') ? `<a href="${esc(storyImageUrl(n.image.link, '../'))}" target="_blank" rel="noopener">${esc(n.image.credit)}</a>` : esc(n.image.credit)}. `
     : '';
-  const byline = n.by === 'claude' ? 'Written automatically by Claude from the linked sources.'
-    : n.by === 'report' ? 'Reported by a third party; independent public confirmation is pending.'
+  const byline = n.by === 'report' ? 'Reported by a third party. Independent confirmation is pending.'
     : 'Based on the linked sources.';
   const more = others.slice(0, 6);
   const main = `    <nav class="crumbs" aria-label="Breadcrumb"><a href="../">VICEPULSE</a><span aria-hidden="true">/</span><a href="./">News</a></nav>
