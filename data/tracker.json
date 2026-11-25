@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T16:33:52.535Z",
+  "updated": "2026-11-25T20:00:33.024Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,41 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-25-free-roam-belobug-zettrox",
+      "date": "2026-11-25",
+      "category": "Port",
+      "by": "sources",
+      "title": "Belobug reports faster AMD gameplay as ZETTROX’s repo goes offline",
+      "dek": "Belobug now reports 5–7 FPS in the world. A separate free-roam stream is attributed to darkworldhm, whose build author remains unknown.",
+      "body": [
+        "Belobug’s public Radeon fork now reports 5–7 FPS in the world on its test PC. In one scene, it measured 5.4–6.7 FPS standing still and reported lower performance while driving. VICEPULSE checked the published figures. They come from one machine.",
+        "VICEPULSE checked that both the ZETTROX repository and its GitHub profile returned HTTP 404. The cause is unknown. Separately, the owner of the private omonkey build reportedly withdrew it. Both entries are now archived on VICEPULSE.",
+        "PortWatch attributes a separate Rumble free-roam stream to darkworldhm, with a reported 12–15 FPS and a peak around 18. VICEPULSE could not review the stream directly. We have no public source repository or build authorship for that demo. It remains separate from the prison clip shared by Linux4real."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · Belobug",
+          "title": "Updated Radeon benchmark",
+          "url": "https://github.com/Belobug/VIctory-Belobug-AMD"
+        },
+        {
+          "outlet": "GitHub · ZETTROX",
+          "title": "Previously public repository",
+          "url": "https://github.com/Zettrox/ztrx"
+        },
+        {
+          "outlet": "Rumble · darkworldhm",
+          "title": "Free-roam stream cited in the community report",
+          "url": "https://rumble.com/v7iwggw-gta-6-mooding-pc.html"
+        },
+        {
+          "outlet": "PortWatch VI",
+          "title": "Build names and change feed",
+          "url": "https://portwatch-vi.xyz/"
+        }
+      ]
+    },
     {
       "id": "2026-11-25-dexnom-radeon-city",
       "date": "2026-11-25",
@@ -70,11 +105,11 @@
       "category": "Port",
       "by": "sources",
       "title": "GTA VI PC clips show faster interiors, with heavier scenes still slower",
-      "dek": "Linux4real claims 12–15 FPS in the prison. A separate public fork reports up to 14 FPS indoors and 4.5–6.5 FPS in heavier scenes.",
+      "dek": "A prison clip shared by Linux4real shows sampled readings around 10–12 FPS. The build author is unknown. The separate victory-perf fork publishes its own numbers.",
       "body": [
-        "Linux4real (@Linux5real) posted a 29-second clip on X showing movement in Lucia’s prison area. The author claims 12–15 FPS and lists a GeForce RTX 5070 Ti and Ryzen 7 7800X3D in a reply. The window counter shows readings around 10–12 FPS in several sampled frames. The clip covers one interior, and the post supplies no public build or frame-time log for reproducing the range.",
+        "Linux4real (@Linux5real) shared a 29-second clip on X showing movement in Lucia’s prison area. The post claims 12–15 FPS and lists a GeForce RTX 5070 Ti and Ryzen 7 7800X3D in a reply. VICEPULSE saw readings around 10–12 FPS in several sampled frames. The footage does not establish who developed the build.",
         "Separately, the public victory-perf fork reports 14 FPS in a prison corridor, 11 FPS inside the heist and 9 FPS in the cell. Heavier scenes run at 4.5–6.5 FPS. The maintainer used one RTX 4070 SUPER system at 50% render scale and approximated some missing lighting effects.",
-        "VICEPULSE now scores the Linux4real footage as an early interior test, using 11 FPS to represent the sampled readings. The countdown estimates when a longer community gameplay session could emerge. The graphics, frame rate and crash-free benchmarks earn credit independently."
+        "The clip stays in the news as footage of an unidentified build. Only the separate victory-perf project gets a named ranking from its benchmark. The open-source stability review still requires longer, repeatable sessions."
       ],
       "video": {
         "url": "https://video.twimg.com/amplify_video/2125505815343775744/vid/avc1/1280x720/NYmI8ku1ueOpDvok.mp4",
@@ -96,7 +131,8 @@
         "url": "https://pbs.twimg.com/amplify_video_thumb/2125505815343775744/img/XR9RZ4VBWDFh5PH7.jpg",
         "credit": "Linux4real via X",
         "link": "https://x.com/linux5real/status/2125506158551089171"
-      }
+      },
+      "checked": "Original X footage and sampled counter readings"
     },
     {
       "id": "2026-11-25-belobug-amd-open-world",
@@ -1026,48 +1062,6 @@
   ],
   "efforts": [
     {
-      "id": "linux4real",
-      "name": "Linux4real",
-      "tier": "tracked",
-      "repo": null,
-      "link": "news/2026-11-25-gta-vi-pc-interior-fps-tests.html",
-      "approach": "Compatibility layer",
-      "target": "GTA VI only",
-      "summary": "A short Windows clip shows movement through Lucia’s prison interior. The on-screen counter is around 10–12 FPS in several sampled frames.",
-      "gta": {
-        "loads": 1,
-        "boots": 1,
-        "menu": 1,
-        "world": 1,
-        "playable": 1,
-        "stability": "unknown",
-        "fps": 11
-      },
-      "visuals": {
-        "color": 0.72,
-        "lighting": 0.65,
-        "shaders": 0.6
-      },
-      "fpsNote": "About 10–12 FPS in sampled frames from one interior",
-      "visualNotes": {
-        "color": "Walls, clothes and room surfaces are textured",
-        "lighting": "Interior lights and lit surfaces are visible",
-        "shaders": "Character and interior materials render in the clip"
-      },
-      "highlights": [
-        "Posted a 29-second player-controlled clip",
-        "Test hardware reported as RTX 5070 Ti and Ryzen 7 7800X3D"
-      ],
-      "blockers": [
-        "One interior shown",
-        "No published build or full frame-time log"
-      ],
-      "verification": "self-reported",
-      "evidence": "Original X clip and its window counter",
-      "assessedAt": "2026-11-25",
-      "assessedBy": "manual"
-    },
-    {
       "id": "victory-perf",
       "name": "victory-perf",
       "tier": "tracked",
@@ -1119,7 +1113,8 @@
         "createdAt": "2026-11-25T05:26:46Z",
         "archived": false,
         "missing": false
-      }
+      },
+      "checked": "Public repo and published benchmark"
     },
     {
       "id": "belobug",
@@ -1141,7 +1136,7 @@
         "playable": 1,
         "story": 0,
         "render": 0.8,
-        "fps": 3,
+        "fps": 5,
         "stability": "unknown"
       },
       "visuals": {
@@ -1154,11 +1149,12 @@
         "lighting": "Lit world with flat lighting in shadow",
         "shaders": "Water and sky render; some effects and distant trees are missing"
       },
-      "fpsNote": "3–5 FPS in the world, about 3 while driving",
+      "fpsNote": "5–7 FPS reported in the world; lower while driving",
       "sessionNote": "Driver timeout reported during testing",
       "highlights": [
         "Open-world gameplay shown on Windows 11 with an RX 9070 XT",
-        "Maintainer reports that saves load and persist"
+        "Maintainer reports that saves load and persist",
+        "New README reports 5–7 FPS in one test setup; driving is slower."
       ],
       "blockers": [
         "Moving vehicles can stretch or leave parts behind",
@@ -1179,7 +1175,8 @@
         "createdAt": "2026-11-25T09:41:37Z",
         "archived": false,
         "missing": false
-      }
+      },
+      "checked": "Public repo and published benchmark"
     },
     {
       "id": "omonkey",
@@ -1230,7 +1227,11 @@
         "lighting": "Prison lighting is incomplete",
         "shaders": "Some shaders render in the prison"
       },
-      "fpsNote": "About 5 FPS in the prison"
+      "fpsNote": "About 5 FPS in the prison",
+      "nuked": {
+        "at": "2026-11-25",
+        "note": "The owner reportedly withdrew the private build. No public code was available."
+      }
     },
     {
       "id": "cgbj",
@@ -2960,7 +2961,7 @@
         "createdAt": "2026-11-25T01:12:08Z",
         "pushedAt": "2026-11-25T01:12:15Z",
         "archived": false,
-        "missing": false,
+        "missing": true,
         "commits7d": 100
       },
       "name": "ZETTROX",
@@ -2991,7 +2992,12 @@
         "shaders": "Prologue scenes render with effects missing"
       },
       "fpsNote": "1–3 FPS in the world on an RTX 3050",
-      "sessionNote": "90+ min session reported; continuous play time unknown"
+      "sessionNote": "90+ min session reported; continuous play time unknown",
+      "nuked": {
+        "at": "2026-11-25",
+        "note": "GitHub repository was unavailable on Nov 25 (HTTP 404). The cause is unknown."
+      },
+      "checked": "Previously public repository now returns 404"
     },
     {
       "id": "suri",
@@ -6647,7 +6653,12 @@
     {
       "date": "2026-11-25",
       "kind": "up",
-      "text": "Linux4real leads at 58.3% under the revised readiness weights. The original clip shows about 10–12 FPS in several frames from the prison."
+      "text": "The prison clip shared by Linux4real shows about 10–12 FPS in sampled frames. Build authorship is unknown."
+    },
+    {
+      "date": "2026-11-25",
+      "kind": "up",
+      "text": "victory-perf leads at 55.1% after VICEPULSE removed an unattributed clip from the rankings."
     }
   ],
   "history": [
@@ -6704,11 +6715,11 @@
     {
       "date": "2026-11-25",
       "rubric": "gameplay-v3",
-      "leader": 58.3,
-      "leaderId": "linux4real",
-      "top3": 54.4,
+      "leader": 55.1,
+      "leaderId": "victory-perf",
+      "top3": 52.6,
       "furthest": "ingame",
-      "tracked": 39
+      "tracked": 38
     }
   ],
   "scout": {

@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Wed, 25 Nov 2026 16:33:52 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 25 Nov 2026 20:00:33 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Belobug reports faster AMD gameplay as ZETTROX’s repo goes offline</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-25-free-roam-belobug-zettrox.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-25-free-roam-belobug-zettrox.html</guid>
+    <pubDate>Wed, 25 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>Belobug now reports 5–7 FPS in the world. A separate free-roam stream is attributed to darkworldhm, whose build author remains unknown.</description>
+  </item>
   <item>
     <title>DexNom publishes a ray-tracing benchmark for GTA VI’s City scene</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-25-dexnom-radeon-city.html</link>
@@ -29,7 +37,7 @@
     <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-25-gta-vi-pc-interior-fps-tests.html</guid>
     <pubDate>Wed, 25 Nov 2026 12:00:00 GMT</pubDate>
     <category>Port</category>
-    <description>Linux4real claims 12–15 FPS in the prison. A separate public fork reports up to 14 FPS indoors and 4.5–6.5 FPS in heavier scenes.</description>
+    <description>A prison clip shared by Linux4real shows sampled readings around 10–12 FPS. The build author is unknown. The separate victory-perf fork publishes its own numbers.</description>
   </item>
   <item>
     <title>Belobug’s AMD build renders GTA VI’s open world at 3–5 FPS</title>
@@ -238,14 +246,6 @@
     <pubDate>Wed, 18 Nov 2026 12:00:00 GMT</pubDate>
     <category>Takedown</category>
     <description>Four DMCA notices, filed the day before GTA VI launched, took down unofficial GTA V ports along with hundreds of forks.</description>
-  </item>
-  <item>
-    <title>The 2022 GTA VI hacker pleads guilty and will be sentenced on Monday</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-16-kurtaj-plea.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-16-kurtaj-plea.html</guid>
-    <pubDate>Mon, 16 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Legal</category>
-    <description>Arion Kurtaj admitted hacking Rockstar and posting about 90 development clips. His sentencing falls on the same day as Cyberleek&#39;s executable deadline.</description>
   </item>
 </channel>
 </rss>

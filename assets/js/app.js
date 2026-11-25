@@ -582,6 +582,7 @@ function effortCard(e, rank, open, overallRank = null) {
   const ticks = MILESTONES.slice(1, -1).map((m) => `<i style="left:${axis(m.at)}%"></i>`).join('');
   const stale = st.pushedAt && daysSince(st.pushedAt) > 3;
   const tags = [
+    verificationBadge(e),
     e.approach && `<span class="tag">${esc(e.approach)}</span>`,
     e.target && `<span class="tag ${isGtaSpecific(e) ? 'tag-gta' : ''}">${esc(e.target)}</span>`,
     evidenceOf(e) === 'observed'
