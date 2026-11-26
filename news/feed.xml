@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Thu, 26 Nov 2026 15:20:58 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 26 Nov 2026 19:34:14 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Belobug takes the GTA VI PC lead with a reported 22 FPS average</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-26-belobug-takes-lead-22-fps.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-26-belobug-takes-lead-22-fps.html</guid>
+    <pubDate>Thu, 26 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>Belobug moves to 91.3% overall. A community test reports no crashes on an RX 9070 XT, with the session duration still unknown.</description>
+  </item>
   <item>
     <title>AvatarManz leads the public race and reports 22 FPS in a GTA VI city test</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-26-public-race-avatarmanz-22-fps.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
     <category>Port</category>
     <description>The Wine-style layer says Minecraft Preview is fully playable on Windows. GTA VI still can&#39;t start, because its executable is missing.</description>
-  </item>
-  <item>
-    <title>The missing GTA VI executable is due Monday at 18:00 CET, and votes cost money</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-22-exe-deadline-time.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-22-exe-deadline-time.html</guid>
-    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Leak</category>
-    <description>Cyberleek&#39;s countdown ends at 17:00 UTC on Nov 23 while its site charges for poll votes; the early-release token goal is reportedly down to $6 million.</description>
   </item>
 </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T15:20:58.966Z",
+  "updated": "2026-11-26T19:34:14.571Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,32 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-26-belobug-takes-lead-22-fps",
+      "date": "2026-11-26",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Public repository and separate city benchmark",
+      "title": "Belobug takes the GTA VI PC lead with a reported 22 FPS average",
+      "dek": "Belobug moves to 91.3% overall. A community test reports no crashes on an RX 9070 XT, with the session duration still unknown.",
+      "body": [
+        "Belobug now leads the VICEPULSE Race at 91.3%, ahead of CGBJ at 89.6% overall and AvatarManz at 81.8% in the public race. A community report puts Belobug at about 22 FPS on average on an RX 9070 XT and describes a run with no crashes, using around 30 GB of system memory and 12 GB of video memory. The report does not provide the session length.",
+        "The current public README documents a separate result: about 22 FPS in a city-street test on an RX 7900 XTX, using the Series S profile with ray tracing off. That benchmark measures one scene on one PC. The 80% story estimate is part of the tracker assessment.",
+        "The countdown still points to the scheduled evidence review. A timed run near 30 FPS across gameplay on a public build would give a clearer indication of stability."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · Belobug",
+          "title": "Public repository and city benchmark",
+          "url": "https://github.com/Belobug/VIctory-Belobug-AMD"
+        },
+        {
+          "outlet": "Reddit",
+          "title": "Community footage linked to Belobug’s update",
+          "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y67xnd/belo_top_dawg/"
+        }
+      ]
+    },
     {
       "id": "2026-11-26-public-race-avatarmanz-22-fps",
       "date": "2026-11-26",
@@ -1137,7 +1163,7 @@
     {
       "id": "kelvaroq",
       "name": "Kelvaroq",
-      "repo": "fablinoo/kelvaroq",
+      "repo": "stellarr-studio/kelvaroq",
       "branch": "main",
       "tier": "tracked",
       "approach": "Compatibility layer",
@@ -1158,14 +1184,14 @@
         "stability": 0.8
       },
       "stats": {
-        "stars": 84,
-        "forks": 22,
-        "openIssues": 3,
+        "stars": 189,
+        "forks": 52,
+        "openIssues": 13,
         "createdAt": "2026-11-24T22:58:04Z",
-        "pushedAt": "2026-11-26T13:27:09Z",
+        "pushedAt": "2026-11-26T17:59:10Z",
         "archived": false,
         "missing": false,
-        "commits7d": 47
+        "commits7d": 52
       },
       "raceScore": 68.8,
       "summary": "Public project in the VICEPULSE Race.",
@@ -1183,17 +1209,17 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "This Radeon-focused VIctory fork renders the open world on an RX 9070 XT. A community tracker reports seeing it run through missions.",
+      "summary": "Leads the VICEPULSE Race at 91.3%. A community report describes about 22 FPS average on an RX 9070 XT. The current public README documents a separate test on an RX 7900 XTX.",
       "gta": {
         "loads": 1,
         "boots": 1,
         "menu": 1,
         "world": 1,
         "playable": 1,
-        "story": 0.5,
-        "render": 0.7,
-        "fps": 8,
-        "stability": 0.7
+        "story": 0.8,
+        "render": 0.8,
+        "fps": 22,
+        "stability": 1
       },
       "visuals": {
         "color": 0.8,
@@ -1205,36 +1231,35 @@
         "lighting": "Lit world with flat lighting in shadow",
         "shaders": "Water and sky render; some effects and distant trees are missing"
       },
-      "fpsNote": "8 FPS reported in community testing",
+      "fpsNote": "About 22 FPS average reported on an RX 9070 XT; detailed run log unavailable",
       "sessionNote": "Driver timeout reported during testing",
       "highlights": [
-        "Open-world gameplay shown on Windows 11 with an RX 9070 XT",
-        "Maintainer reports that saves load and persist",
-        "New README reports 5–7 FPS in one test setup; driving is slower."
+        "Community report puts gameplay around 22 FPS on an RX 9070 XT and reports no crashes during the test.",
+        "Public README separately records around 22 FPS in one city scene on an RX 7900 XTX."
       ],
       "blockers": [
-        "Moving vehicles can stretch or leave parts behind",
-        "Published results cover one AMD PC"
+        "Run duration and frame-time log for the RX 9070 XT result are unavailable.",
+        "The public benchmark does not establish sustained 30 FPS."
       ],
       "verification": "self-reported",
-      "evidence": "Maintainer’s hardware and FPS report plus a community tracker gameplay coverage",
+      "evidence": "Community gameplay report, linked footage, and a separate published city benchmark",
       "byline": "Public source · a community tracker gameplay coverage",
       "assessedAt": "2026-11-25",
       "assessedBy": "manual",
-      "link": "news/2026-11-25-belobug-amd-open-world.html",
+      "link": "news/2026-11-26-belobug-takes-lead-22-fps.html",
       "readmeSha": "0daa560302b551899beaacd1c1ca876658ed72491cb005ba560c0b55fc49d8cc",
       "stats": {
-        "stars": 1739,
-        "forks": 308,
-        "openIssues": 220,
-        "pushedAt": "2026-11-26T00:57:17Z",
+        "stars": 2071,
+        "forks": 457,
+        "openIssues": 246,
+        "pushedAt": "2026-11-26T17:52:43Z",
         "createdAt": "2026-11-25T09:41:37Z",
         "archived": false,
         "missing": false,
         "commits7d": 100
       },
-      "checked": "Public repo and published benchmark",
-      "raceScore": 77.2,
+      "checked": "Public repo and published city benchmark",
+      "raceScore": 91.3,
       "proof": {
         "label": "First PC Trickshot",
         "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y55bgm/first_pc_trickshot_by_belo/"
@@ -1260,9 +1285,9 @@
         "stability": 0.7
       },
       "stats": {
-        "stars": 1014,
-        "forks": 124,
-        "openIssues": 64,
+        "stars": 1227,
+        "forks": 158,
+        "openIssues": 90,
         "createdAt": "2026-11-25T12:14:33Z",
         "pushedAt": "2026-11-26T01:12:12Z",
         "archived": false,
@@ -1361,9 +1386,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 216,
-        "forks": 48,
-        "openIssues": 81,
+        "stars": 222,
+        "forks": 50,
+        "openIssues": 85,
         "createdAt": "2026-11-24T10:05:17Z",
         "pushedAt": "2026-11-26T04:09:11Z",
         "archived": false,
@@ -1444,11 +1469,11 @@
       "assessedBy": "manual",
       "link": "news/2026-11-26-public-race-avatarmanz-22-fps.html",
       "stats": {
-        "stars": 1585,
-        "forks": 461,
-        "openIssues": 185,
+        "stars": 1804,
+        "forks": 584,
+        "openIssues": 282,
         "createdAt": "2026-11-25T22:18:14Z",
-        "pushedAt": "2026-11-26T12:50:00Z",
+        "pushedAt": "2026-11-26T17:26:45Z",
         "archived": false,
         "missing": false,
         "commits7d": 100,
@@ -1753,11 +1778,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 3199,
-        "forks": 951,
-        "openIssues": 1145,
+        "stars": 3255,
+        "forks": 969,
+        "openIssues": 1181,
         "createdAt": "2026-11-24T18:02:37Z",
-        "pushedAt": "2026-11-26T13:30:42Z",
+        "pushedAt": "2026-11-26T18:08:14Z",
         "archived": false,
         "missing": false,
         "commits7d": 100
@@ -1811,9 +1836,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 12974,
-        "forks": 2121,
-        "openIssues": 1958,
+        "stars": 13192,
+        "forks": 2203,
+        "openIssues": 2042,
         "createdAt": "2026-11-23T21:47:25Z",
         "pushedAt": "2026-11-25T23:27:48Z",
         "commits7d": 100,
@@ -1880,8 +1905,8 @@
         "drycheetah84/TomBox"
       ],
       "stats": {
-        "stars": 1851,
-        "forks": 125,
+        "stars": 1850,
+        "forks": 126,
         "openIssues": 54,
         "createdAt": "2026-11-21T08:08:39Z",
         "pushedAt": "2026-11-25T13:47:56Z",
@@ -1935,11 +1960,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 8454,
-        "forks": 1172,
-        "openIssues": 1799,
+        "stars": 8559,
+        "forks": 1192,
+        "openIssues": 1850,
         "createdAt": "2026-11-20T20:03:21Z",
-        "pushedAt": "2026-11-26T06:10:46Z",
+        "pushedAt": "2026-11-26T18:26:53Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -1991,7 +2016,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 266,
+        "stars": 267,
         "forks": 27,
         "openIssues": 39,
         "createdAt": "2026-11-20T06:54:47Z",
@@ -2046,11 +2071,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 376,
-        "forks": 44,
-        "openIssues": 17,
+        "stars": 380,
+        "forks": 46,
+        "openIssues": 33,
         "createdAt": "2026-11-21T12:07:28Z",
-        "pushedAt": "2026-11-26T11:59:43Z",
+        "pushedAt": "2026-11-26T18:52:34Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2178,7 +2203,7 @@
         "archived": false,
         "missing": true,
         "missingStatus": 404,
-        "mentions7d": 8,
+        "mentions7d": 6,
         "dmca": {
           "date": "2026-11-24",
           "url": "https://github.com/github/dmca/blob/master/2026/11/2026-11-24-take-two.md"
@@ -2230,11 +2255,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 104,
+        "stars": 105,
         "forks": 12,
         "openIssues": 8,
         "createdAt": "2026-11-21T14:35:25Z",
-        "pushedAt": "2026-11-26T13:03:03Z",
+        "pushedAt": "2026-11-26T16:17:31Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2339,11 +2364,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 1962,
-        "forks": 234,
-        "openIssues": 167,
+        "stars": 1963,
+        "forks": 233,
+        "openIssues": 211,
         "createdAt": "2026-11-20T17:43:52Z",
-        "pushedAt": "2026-11-26T13:34:45Z",
+        "pushedAt": "2026-11-26T18:49:24Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2393,11 +2418,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 395,
-        "forks": 63,
-        "openIssues": 101,
+        "stars": 408,
+        "forks": 70,
+        "openIssues": 116,
         "createdAt": "2026-11-21T00:18:13Z",
-        "pushedAt": "2026-11-26T12:46:36Z",
+        "pushedAt": "2026-11-26T19:03:50Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2500,7 +2525,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 236,
+        "stars": 235,
         "forks": 14,
         "openIssues": 9,
         "createdAt": "2026-11-20T00:25:27Z",
@@ -2551,7 +2576,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 69,
+        "stars": 72,
         "forks": 13,
         "openIssues": 20,
         "createdAt": "2026-11-19T20:32:01Z",
@@ -2921,7 +2946,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 13,
+        "stars": 14,
         "forks": 1,
         "openIssues": 3,
         "createdAt": "2026-11-22T07:31:37Z",
@@ -3191,7 +3216,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 88,
+        "stars": 92,
         "forks": 4,
         "openIssues": 1,
         "createdAt": "2026-11-21T04:47:46Z",
@@ -3234,7 +3259,7 @@
         "stability": "unknown"
       },
       "stats": {
-        "stars": 8,
+        "stars": 10,
         "forks": 2,
         "openIssues": 0,
         "createdAt": "2026-11-24T19:59:37Z",
@@ -3283,11 +3308,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 221,
-        "forks": 16,
-        "openIssues": 12,
+        "stars": 224,
+        "forks": 17,
+        "openIssues": 11,
         "createdAt": "2026-11-23T09:57:42Z",
-        "pushedAt": "2026-11-26T13:35:17Z",
+        "pushedAt": "2026-11-26T18:14:09Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -3338,7 +3363,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 12,
+        "stars": 14,
         "forks": 1,
         "openIssues": 3,
         "createdAt": "2026-11-20T15:07:18Z",
@@ -3449,7 +3474,7 @@
         "forks": 3,
         "openIssues": 1,
         "createdAt": "2026-11-24T22:05:23Z",
-        "pushedAt": "2026-11-26T13:15:56Z",
+        "pushedAt": "2026-11-26T19:01:57Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -7098,6 +7123,11 @@
       "date": "2026-11-26",
       "kind": "up",
       "text": "AvatarManz leads the public Race at 81.8% and reports about 22 FPS in one city test. CGBJ leads overall at 89.6% in Private Builds."
+    },
+    {
+      "date": "2026-11-26",
+      "kind": "up",
+      "text": "Belobug leads at 91.3% after a community report of about 22 FPS average. Its public README records a separate city benchmark."
     }
   ],
   "history": [
@@ -7437,7 +7467,7 @@
     }
   ],
   "raceSnapshot": {
-    "updated": "2026-11-26T13:35:57.194Z",
+    "updated": "2026-11-26T19:14:28.197Z",
     "history": [
       {
         "date": "2026-11-21",
@@ -7481,9 +7511,9 @@
       },
       {
         "date": "2026-11-26",
-        "leader": 89.6,
-        "leaderId": "cgbj",
-        "top3": 87.2,
+        "leader": 91.3,
+        "leaderId": "belobug",
+        "top3": 89.3,
         "furthest": "ingame"
       }
     ]
