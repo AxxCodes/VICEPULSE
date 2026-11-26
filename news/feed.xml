@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Wed, 25 Nov 2026 23:11:12 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 26 Nov 2026 10:41:37 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>GTA VI PC tracker records a 25 FPS report for CGBJ</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-26-cgbj-25-fps-avatarmanz-city.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-26-cgbj-25-fps-avatarmanz-city.html</guid>
+    <pubDate>Thu, 26 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The CGBJ footage shows the boat mission. Its GitHub repository returns 404, while AvatarManz’s public AMD fork reports about 19 FPS in a city-street test.</description>
+  </item>
   <item>
     <title>AvatarManz opens AMD VIctory fork and reports 19–22 FPS on GTA VI’s boat mission</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-25-avatarmanz-public-amd-fork.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
     <category>Safety</category>
     <description>On its first run, our scout found three copies of Leonida under other accounts. One had been renamed and given a vague description.</description>
-  </item>
-  <item>
-    <title>Cyberleek&#39;s Xbox build is out, except the file that runs it</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-21-exe-deadline.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-21-exe-deadline.html</guid>
-    <pubDate>Sat, 21 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Leak</category>
-    <description>The leaker says the missing executable will be released on Monday, Nov 23, or sooner if its meme coin reaches a $15 million market cap.</description>
   </item>
 </channel>
 </rss>

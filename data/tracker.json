@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T23:11:12.992Z",
+  "updated": "2026-11-26T10:41:37.290Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -16,6 +16,42 @@
   },
   "news": [
     {
+      "id": "2026-11-26-cgbj-25-fps-avatarmanz-city",
+      "date": "2026-11-26",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Linked footage and GitHub repository status",
+      "title": "GTA VI PC tracker records a 25 FPS report for CGBJ",
+      "dek": "The CGBJ footage shows the boat mission. Its GitHub repository returns 404, while AvatarManz’s public AMD fork reports about 19 FPS in a city-street test.",
+      "body": [
+        "PortWatch lists CGBJ, associated with codec-d’s cool_fox repository, at an average of 25 FPS on NVIDIA hardware. VICEPULSE reviewed the linked 55-second video. It shows the boat mission and its driving HUD. The clip does not establish the gameplay average or a sustained 30 FPS run.",
+        "The GitHub repository returned 404 when checked on November 26. The cause is unknown. We kept the result in the news and archived the leaderboard entry while the code is unavailable.",
+        "Separately, AvatarManz’s public Radeon fork reports about 19 FPS in a city-street scene, up from about 13–17 FPS in the same scene. The new trial used an RX 7900 XTX with ray tracing off and two experimental renderer options enabled. That is one hardware configuration and one scene. The leaderboard uses that published result and the countdown still tracks the evidence review for extended gameplay near 30 FPS."
+      ],
+      "sources": [
+        {
+          "outlet": "PortWatch VI",
+          "title": "CGBJ gameplay average and project status",
+          "url": "https://portwatch-vi.xyz/data/tracker.json"
+        },
+        {
+          "outlet": "Reddit",
+          "title": "Linked CGBJ boat-mission footage",
+          "url": "https://v.redd.it/137k5pow5w3i1"
+        },
+        {
+          "outlet": "GitHub · codec-d",
+          "title": "cool_fox repository status",
+          "url": "https://github.com/codec-d/cool_fox"
+        },
+        {
+          "outlet": "GitHub · AvatarManz",
+          "title": "November 26 city-street benchmark",
+          "url": "https://github.com/avatarmanz/VIctory-7900XTX"
+        }
+      ]
+    },
+    {
       "id": "2026-11-25-avatarmanz-public-amd-fork",
       "date": "2026-11-25",
       "category": "Port",
@@ -26,7 +62,7 @@
       "body": [
         "AvatarManz has published the source of a VIctory fork tuned for the Radeon RX 7900 XTX. Its README reports 13–20 FPS in the indoor prologue and 19–22 FPS during the first boat mission, tested at 1440p on Windows 11 with an Intel Core i9-12900K and 64 GB of RAM.",
         "The project reports one session lasting 41 minutes without a crash. The README also shows 6–10 FPS in a busy street chase, slower individual frames, and some outdoor flicker. The 30 FPS figure applies to menus, videos and loading screens. PortWatch estimates around 16 FPS in gameplay overall. The public benchmark covers one PC.",
-        "PortWatch also lists a separate NVIDIA demo streamed by NotNozy. Its build is private and the footage does not reproduce AvatarManz’s results on another PC. The countdown still points to the open-source evidence review for repeatable longer gameplay around 30 FPS."
+        "PortWatch also lists a separate AMD demo streamed by NotNozy. Its build is private and the footage does not reproduce AvatarManz’s results on another PC. The countdown still points to the open-source evidence review for repeatable longer gameplay around 30 FPS."
       ],
       "sources": [
         {
@@ -1140,14 +1176,14 @@
         "victory-gta6",
         "belobug"
       ],
-      "summary": "Public Radeon RX 7900 XTX fork. Its maintainer reports up to 22 FPS on the first boat mission.",
+      "summary": "Public Radeon RX 7900 XTX fork. Its latest benchmark reports about 19 FPS in a city street with two experimental options enabled.",
       "gta": {
         "loads": 1,
         "boots": 1,
         "menu": 1,
         "world": 1,
         "playable": 1,
-        "fps": 16,
+        "fps": 19,
         "stability": "unknown"
       },
       "visuals": {
@@ -1160,12 +1196,13 @@
         "lighting": "Some interiors remain too dark",
         "shaders": "Outdoor foliage and distant buildings can flicker"
       },
-      "fpsNote": "Around 16 FPS in community coverage. The README lists 6–10 FPS in a heavy chase and 19–22 on the boat.",
+      "fpsNote": "About 19 FPS in a city-street trial with ray tracing off and experimental options enabled",
       "sessionNote": "Maintainer reports 41 minutes without a crash on one PC.",
       "highlights": [
         "Source available on GitHub",
         "Published scene-specific FPS and hardware",
-        "41-minute session reported by the maintainer"
+        "41-minute session reported by the maintainer",
+        "November 26 city-street test improved from 13–17 FPS to about 19 FPS"
       ],
       "blockers": [
         "Independent long-session reproduction is still pending",
@@ -1174,9 +1211,9 @@
       "verification": "self-reported",
       "checked": "Public source and published benchmark",
       "evidence": "Maintainer’s benchmark table and community gameplay coverage",
-      "assessedAt": "2026-11-25",
+      "assessedAt": "2026-11-26",
       "assessedBy": "manual",
-      "link": "news/2026-11-25-avatarmanz-public-amd-fork.html",
+      "link": "news/2026-11-26-cgbj-25-fps-avatarmanz-city.html",
       "stats": {
         "stars": 12,
         "forks": 0,
@@ -1363,27 +1400,25 @@
     {
       "id": "cgbj",
       "name": "CGBJ",
-      "repo": null,
+      "repo": "codec-d/cool_fox",
       "basedOn": [
         "marvis",
         "xcl"
       ],
-      "evidence": "Checked by PortWatch with the group",
-      "link": "news/2026-11-24-cgbj-in-game.html",
+      "evidence": "Community report, linked boat-mission footage, and GitHub status check",
+      "link": "news/2026-11-26-cgbj-25-fps-avatarmanz-city.html",
       "byline": "Private code · based on VIctory and XCL",
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "A private build based on VIctory, using some of XCL's work. A third-party tracker reported that it gets in game: a player moves and talks to NPCs, very slowly. A video shows the opening in flat, unlit colours. Code not public.",
+      "summary": "PortWatch attributes newer footage to CGBJ and reports a 25 FPS average on NVIDIA. The associated repository returned 404.",
       "highlights": [
-        "A player moves with a controller, talks to NPCs and opens the in-game menu",
-        "A video on X shows the opening scenes in flat colours: a car, a street, a prison yard",
-        "Built on VIctory's runtime, with some of XCL's work added"
+        "Linked footage shows the boat mission",
+        "PortWatch reports a 25 FPS gameplay average"
       ],
       "blockers": [
-        "No lighting yet, and the screen was black while a player walked around",
-        "Runs very slowly",
-        "Code is private, so nobody outside the group can test or reproduce it"
+        "Repository currently unavailable",
+        "Sustained 30 FPS and benchmark duration are unknown"
       ],
       "provenOn": null,
       "gta": {
@@ -1394,12 +1429,14 @@
         "playable": 1,
         "story": 0,
         "render": 0.25,
-        "fps": 4,
+        "fps": 25,
         "stability": "unknown"
       },
       "verification": "self-reported",
-      "stats": {},
-      "assessedAt": "2026-11-24",
+      "stats": {
+        "missing": true
+      },
+      "assessedAt": "2026-11-26",
       "assessedBy": "manual",
       "claims": [],
       "observation": {
@@ -1415,7 +1452,12 @@
         "lighting": "The reported gameplay view was largely black",
         "shaders": "Some scene rendering works"
       },
-      "fpsNote": "About 4 FPS with player movement"
+      "fpsNote": "25 FPS average reported by PortWatch; sample length unavailable",
+      "checked": "Boat-mission footage and repository status",
+      "nuked": {
+        "at": "2026-11-26",
+        "note": "The public GitHub repository returns 404. The reason is unknown."
+      }
     },
     {
       "id": "marvis",
@@ -6796,6 +6838,11 @@
       "date": "2026-11-25",
       "kind": "up",
       "text": "AvatarManz leads at 62.5% after publishing the AMD VIctory fork and scene-by-scene benchmarks."
+    },
+    {
+      "date": "2026-11-26",
+      "kind": "up",
+      "text": "AvatarManz leads the active leaderboard at 64.4% after publishing a new city-street benchmark. CGBJ’s reported 25 FPS is covered in the news while its repository is offline."
     }
   ],
   "history": [
@@ -6855,6 +6902,15 @@
       "leader": 62.5,
       "leaderId": "avatarmanz",
       "top3": 56.8,
+      "furthest": "ingame",
+      "tracked": 39
+    },
+    {
+      "date": "2026-11-26",
+      "rubric": "gameplay-v3",
+      "leader": 64.4,
+      "leaderId": "avatarmanz",
+      "top3": 57.4,
       "furthest": "ingame",
       "tracked": 39
     }
