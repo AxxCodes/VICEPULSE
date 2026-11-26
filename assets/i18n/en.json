@@ -68,7 +68,7 @@
   "changes.title": "What changed",
   "race.kicker": "Leaderboard",
   "race.title": "The race",
-  "race.sub": "Public standings and scores follow PortWatch VI. Confirmation badges verify the listing.",
+  "race.sub": "VICEPULSE standings for public community builds.",
   "race.filterLabel": "Filter efforts",
   "race.all": "All",
   "race.gta": "GTA VI-specific",
@@ -160,7 +160,7 @@
   "safety.seen": "{n} seen",
   "method.kicker": "Methodology",
   "method.title": "How we score",
-  "method.sub": "The race scores follow PortWatch VI. The checks below explain the technical evidence VICEPULSE tracks.",
+  "method.sub": "VICEPULSE tracks rendering, performance, and stability evidence.",
   "method.gwTitle": "Groundwork, weighted",
   "method.fine1": "Only gameplay FPS counts. Sustained 30 FPS needs its own evidence, and crash-free play is measured separately against a 30-minute session.",
   "method.fine2": "Maintain a project and think it's mis-scored? Open an issue with a link to your evidence.",
@@ -304,6 +304,6 @@
   "metric.session": "Crash-free play",
   "metric.sessionDetail": "{minutes} min documented",
   "metric.noSession": "No timed gameplay run",
-  "readiness.method": "The score comes from PortWatch VI. The cards below describe VICEPULSE’s gameplay checks.",
+  "readiness.method": "The score reflects the current standings. The cards below describe VICEPULSE’s gameplay checks.",
   "readiness.currentLead": "{name} leads on gameplay readiness."
 }

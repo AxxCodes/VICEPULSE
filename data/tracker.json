@@ -24,16 +24,11 @@
       "title": "GTA VI PC tracker records a 25 FPS report for CGBJ",
       "dek": "The CGBJ footage shows the boat mission. Its GitHub repository returns 404, while AvatarManz’s public AMD fork reports about 19 FPS in a city-street test.",
       "body": [
-        "PortWatch lists CGBJ, associated with codec-d’s cool_fox repository, at an average of 25 FPS on NVIDIA hardware. VICEPULSE reviewed the linked 55-second video. It shows the boat mission and its driving HUD. The clip does not establish the gameplay average or a sustained 30 FPS run.",
-        "The GitHub repository returned 404 when checked on November 26. The cause is unknown. PortWatch keeps CGBJ on its board at 91.5%, and VICEPULSE now follows that ranking while flagging the repository status.",
-        "Separately, AvatarManz’s public Radeon fork reports about 19 FPS in a city-street scene, up from about 13–17 FPS in the same scene. The new trial used an RX 7900 XTX with ray tracing off and two experimental renderer options enabled. That is one hardware configuration and one scene. The leaderboard follows PortWatch’s standings, and the countdown still tracks the evidence review for extended gameplay near 30 FPS."
+        "A community tracker lists CGBJ, associated with codec-d’s cool_fox repository, at an average of 25 FPS on NVIDIA hardware. VICEPULSE reviewed the linked 55-second video. It shows the boat mission and its driving HUD. The clip does not establish the gameplay average or a sustained 30 FPS run.",
+        "The GitHub repository returned 404 when checked on November 26. The cause is unknown. CGBJ remains on the VICEPULSE leaderboard at 91.5%, with the repository status flagged.",
+        "Separately, AvatarManz’s public Radeon fork reports about 19 FPS in a city-street scene, up from about 13–17 FPS in the same scene. The new trial used an RX 7900 XTX with ray tracing off and two experimental renderer options enabled. That is one hardware configuration and one scene. The countdown still tracks the evidence review for extended gameplay near 30 FPS."
       ],
       "sources": [
-        {
-          "outlet": "PortWatch VI",
-          "title": "CGBJ gameplay average and project status",
-          "url": "https://portwatch-vi.xyz/data/tracker.json"
-        },
         {
           "outlet": "Reddit",
           "title": "Linked CGBJ boat-mission footage",
@@ -61,19 +56,14 @@
       "dek": "The maintainer reports a 41-minute session without a crash on an RX 7900 XTX. Heavy street scenes still drop to 6–10 FPS.",
       "body": [
         "AvatarManz has published the source of a VIctory fork tuned for the Radeon RX 7900 XTX. Its README reports 13–20 FPS in the indoor prologue and 19–22 FPS during the first boat mission, tested at 1440p on Windows 11 with an Intel Core i9-12900K and 64 GB of RAM.",
-        "The project reports one session lasting 41 minutes without a crash. The README also shows 6–10 FPS in a busy street chase, slower individual frames, and some outdoor flicker. The 30 FPS figure applies to menus, videos and loading screens. PortWatch estimates around 16 FPS in gameplay overall. The public benchmark covers one PC.",
-        "PortWatch also lists a separate AMD demo streamed by NotNozy. Its build is private and the footage does not reproduce AvatarManz’s results on another PC. The countdown still points to the open-source evidence review for repeatable longer gameplay around 30 FPS."
+        "The project reports one session lasting 41 minutes without a crash. The README also shows 6–10 FPS in a busy street chase, slower individual frames, and some outdoor flicker. The 30 FPS figure applies to menus, videos and loading screens. A community tracker estimates around 16 FPS in gameplay overall. The public benchmark covers one PC.",
+        "A community tracker also lists a separate AMD demo streamed by NotNozy. Its build is private and the footage does not reproduce AvatarManz’s results on another PC. The countdown still points to the open-source evidence review for repeatable longer gameplay around 30 FPS."
       ],
       "sources": [
         {
           "outlet": "GitHub · AvatarManz",
           "title": "Public source and per-scene benchmark",
           "url": "https://github.com/avatarmanz/VIctory-7900XTX"
-        },
-        {
-          "outlet": "PortWatch VI",
-          "title": "AvatarManz and NotNozy tracker entries",
-          "url": "https://portwatch-vi.xyz/"
         },
         {
           "outlet": "Reddit",
@@ -101,11 +91,6 @@
       ],
       "sources": [
         {
-          "outlet": "PortWatch VI",
-          "title": "Dated build entry and change feed",
-          "url": "https://portwatch-vi.xyz/data/tracker.json"
-        },
-        {
           "outlet": "Rumble",
           "title": "Stream attributed to darkworldhm",
           "url": "https://rumble.com/v7iwggw-gta-6-mooding-pc.html"
@@ -127,7 +112,7 @@
       "body": [
         "Belobug’s public Radeon fork now reports 5–7 FPS in the world on its test PC. In one scene, it measured 5.4–6.7 FPS standing still and reported lower performance while driving. VICEPULSE checked the published figures. They come from one machine.",
         "VICEPULSE checked that both the ZETTROX repository and its GitHub profile returned HTTP 404. The cause is unknown. Separately, the owner of the private omonkey build reportedly withdrew it. Both entries are now archived on VICEPULSE.",
-        "PortWatch attributes a separate Rumble free-roam stream to darkworldhm, with a reported 12–15 FPS and a peak around 18. VICEPULSE could not review the stream directly. We have no public source repository or build authorship for that demo. It remains separate from the prison clip shared by Linux4real."
+        "A community tracker attributes a separate Rumble free-roam stream to darkworldhm, with a reported 12–15 FPS and a peak around 18. VICEPULSE could not review the stream directly. We have no public source repository or build authorship for that demo. It remains separate from the prison clip shared by Linux4real."
       ],
       "sources": [
         {
@@ -144,11 +129,6 @@
           "outlet": "Rumble · darkworldhm",
           "title": "Free-roam stream cited in the community report",
           "url": "https://rumble.com/v7iwggw-gta-6-mooding-pc.html"
-        },
-        {
-          "outlet": "PortWatch VI",
-          "title": "Build names and change feed",
-          "url": "https://portwatch-vi.xyz/"
         }
       ]
     },
@@ -189,11 +169,6 @@
         "ScarlettCompat’s own status table records all 587 executable imports resolving. Its boot notes describe progress into graphics pipeline setup. The developers still list the first displayed GTA VI frame and menu as outstanding."
       ],
       "sources": [
-        {
-          "outlet": "PortWatch VI",
-          "title": "Doomsday project entry and change feed",
-          "url": "https://portwatch-vi.xyz/"
-        },
         {
           "outlet": "GitHub · ScarlettCompat",
           "title": "Boot and first-frame status",
@@ -244,7 +219,7 @@
       "title": "Belobug’s AMD build renders GTA VI’s open world at 3–5 FPS",
       "dek": "The Radeon fork shows textured streets, traffic, vegetation and water. Driving runs at about 3 FPS on an RX 9070 XT.",
       "body": [
-        "Belobug published a Radeon-focused fork of Marvisak’s VIctory. The maintainer reports a lit open world with textured surfaces, people, vehicles, vegetation and water on Windows 11 with an RX 9070 XT, Ryzen 7 9800X3D and 64 GB of RAM. PortWatch says it saw the build running through missions.",
+        "Belobug published a Radeon-focused fork of Marvisak’s VIctory. The maintainer reports a lit open world with textured surfaces, people, vehicles, vegetation and water on Windows 11 with an RX 9070 XT, Ryzen 7 9800X3D and 64 GB of RAM. A community tracker says it saw the build running through missions.",
         "The maintainer reports 3–5 FPS in the world and around 3 FPS while driving. Distant trees are missing, moving vehicles can stretch or leave parts behind, and shaded areas use a flat lighting approximation. The README records a driver timeout during the test session.",
         "Separately, hyphennn’s victory-fork reports cutting one CPU-side graphics pass from 70–220 ms to about 3 ms. That test still took 250–380 ms per frame overall, or roughly 3–4 FPS, with the GPU setting the pace.",
         "Belobug leads VICEPULSE’s readiness ranking on the strength of its rendering. The documented crash-free gameplay checkpoint remains open."
@@ -254,11 +229,6 @@
           "outlet": "GitHub · Belobug",
           "title": "AMD fork test results and known issues",
           "url": "https://github.com/Belobug/VIctory-Belobug-AMD"
-        },
-        {
-          "outlet": "PortWatch VI",
-          "title": "Firsthand coverage of Belobug’s gameplay",
-          "url": "https://portwatch-vi.xyz/news/2026-11-25-belobug-way-ahead.html"
         },
         {
           "outlet": "GitHub · victory-fork",
@@ -297,11 +267,11 @@
       "date": "2026-11-24",
       "category": "Port",
       "title": "Leonida V2 joins the Watchlist as ZETTROX opens its source",
-      "dek": "Leonida V2 reports a blank startup window. ZETTROX has published its code, and PortWatch reports a second build reaching “Gone Fishing.”",
+      "dek": "Leonida V2 reports a blank startup window. ZETTROX has published its code, and a community tracker reports a second build reaching “Gone Fishing.”",
       "body": [
         "Leonida V2, described by its maintainers as aidity’s independent continuation of Leonida, is now on the VICEPULSE Watchlist. Its own README reports a blank startup window followed by a crash, with no intro, rendered game frame, or retail gameplay shown. The README distinguishes the project’s current tests from inherited documentation. The listing links its GitHub repo and community Discord.",
-        "ZETTROX has opened the source for ztrx, its NVIDIA-focused Windows build. PortWatch previously reported that a private test reached “Gone Fishing” at around 2 FPS. Source availability makes the work inspectable, but the specific gameplay run still needs independent reproduction.",
-        "PortWatch also reports that Uilian’s VItoriaBr reached “Gone Fishing” on stream at up to 4 FPS, with significant rendering issues. ScarlettCompat reports getting through executable startup without showing a rendered frame. These reports do not document sustained 30 FPS gameplay or a 30-minute crash-free Windows session."
+        "ZETTROX has opened the source for ztrx, its NVIDIA-focused Windows build. A community tracker previously reported that a private test reached “Gone Fishing” at around 2 FPS. Source availability makes the work inspectable, but the specific gameplay run still needs independent reproduction.",
+        "A community tracker also reports that Uilian’s VItoriaBr reached “Gone Fishing” on stream at up to 4 FPS, with significant rendering issues. ScarlettCompat reports getting through executable startup without showing a rendered frame. These reports do not document sustained 30 FPS gameplay or a 30-minute crash-free Windows session."
       ],
       "sources": [
         {
@@ -328,11 +298,6 @@
           "outlet": "GitHub · ScarlettCompat",
           "title": "Public status",
           "url": "https://github.com/SSTGxf/ScarlettCompat"
-        },
-        {
-          "outlet": "PortWatch VI",
-          "title": "Project standings and milestone reports",
-          "url": "https://portwatch-vi.xyz/"
         }
       ],
       "by": "archive",
@@ -343,23 +308,13 @@
       "date": "2026-11-24",
       "category": "Port",
       "title": "Private GTA VI PC build reportedly reaches Jason’s first mission",
-      "dek": "PortWatch VI credits ZETTROX with getting past Lucia’s prologue into “Gone Fishing” at about 2 FPS.",
+      "dek": "A community tracker credits ZETTROX with getting past Lucia’s prologue into “Gone Fishing” at about 2 FPS.",
       "body": [
-        "PortWatch VI reports that a private Windows build from ZETTROX reached “Gone Fishing,” Jason’s first mission, after clearing Lucia’s prologue. The tracker reports roughly 2 FPS and poor rendering. Its broader report describes vehicle-control problems in the early mission, including trouble steering the boat on some builds.",
-        "PortWatch also reports that suri’s private build shows better visuals in Lucia’s prologue at around 3 FPS. Early story progress and better rendering are two distinct results from these tests. The public fxceless fork that these builds are associated with is now named victory-fork.",
+        "A community tracker reports that a private Windows build from ZETTROX reached “Gone Fishing,” Jason’s first mission, after clearing Lucia’s prologue. The tracker reports roughly 2 FPS and poor rendering. Its broader report describes vehicle-control problems in the early mission, including trouble steering the boat on some builds.",
+        "A community tracker also reports that suri’s private build shows better visuals in Lucia’s prologue at around 3 FPS. Early story progress and better rendering are two distinct results from these tests. The public fxceless fork that these builds are associated with is now named victory-fork.",
         "ZETTROX has since published the ztrx source. The reported run still lacks independent reproduction and does not establish sustained 30 FPS or a 30-minute crash-free session."
       ],
       "sources": [
-        {
-          "outlet": "PortWatch VI",
-          "title": "Report on the prologue and Gone Fishing",
-          "url": "https://portwatch-vi.xyz/news/2026-11-25-prologue-gone-fishing"
-        },
-        {
-          "outlet": "PortWatch VI",
-          "title": "Project reports for ZETTROX and suri",
-          "url": "https://portwatch-vi.xyz/#effort-zettrox"
-        },
         {
           "outlet": "GitHub · fxceless",
           "title": "Public victory-fork repository",
@@ -407,16 +362,11 @@
       "title": "GTA VI PC tracker now scores rendering, frame rate and stability",
       "dek": "The new leaderboard separates getting into the game from correct graphics, sustained 30 FPS and crash-free sessions.",
       "body": [
-        "PortWatch VI has changed its scale and added two tests worth following. It describes playable movement and improved lighting, including reported ray-traced effects, in hyphennn’s private opening-scene build. That build is based on fxceless’s public victory-gta6 fork. The clips do not give us a measured frame rate or a verified long run.",
+        "Two community tests are worth following. It describes playable movement and improved lighting, including reported ray-traced effects, in hyphennn’s private opening-scene build. That build is based on fxceless’s public victory-gta6 fork. The clips do not give us a measured frame rate or a verified long run.",
         "The public fork’s README reports characters, textures and sunlit geometry in the opening, with shadows still going black and performance around 2–4 FPS on one test machine. It also documents checkpoint save and reload, which H4NK highlighted on X. omonkey’s streamed test remains about 5 FPS, and CGBJ’s earlier report remains around 4 FPS. The older X lighting clip is still unattributed to a confirmed build.",
         "VICEPULSE shows gameplay readiness as a percentage. Early milestones carry less weight, and the cards show colors and textures, lighting and shadows, shader behavior, measured FPS, sustained 30 FPS, and crash-free time. A missing measurement earns no credit for that check. November 30 stays a low-confidence checkpoint for a documented 30-minute crash-free Windows session."
       ],
       "sources": [
-        {
-          "outlet": "PortWatch VI",
-          "title": "Project standings and revised rubric",
-          "url": "https://portwatch-vi.xyz/"
-        },
         {
           "outlet": "GitHub · fxceless",
           "title": "Public victory-gta6 build status",
@@ -480,18 +430,13 @@
       "date": "2026-11-24",
       "category": "Port",
       "title": "omonkey reportedly reaches GTA VI’s prison scene at about 5 FPS",
-      "dek": "PortWatch VI reports character movement and partial shader rendering in a private Windows build. It also reports progress on Five Star Recomp.",
+      "dek": "A community tracker reports character movement and partial shader rendering in a private Windows build. It also reports progress on Five Star Recomp.",
       "body": [
-        "PortWatch VI reports that omonkey’s build shows movement around the opening prison area at roughly 5 FPS, with some shaders beginning to render. It points to development streams on Swaggely’s Rumble channel. The build is private, and there is no public test that establishes longer sessions.",
-        "PortWatch VI placed the run at 76%. On VICEPULSE’s published rubric, reaching in-game at a reported 5 FPS with unknown stability scores 72.5%, just ahead of CGBJ at 72%. These are tracker points and use different scoring judgments.",
+        "A community tracker reports that omonkey’s build shows movement around the opening prison area at roughly 5 FPS, with some shaders beginning to render. It points to development streams on Swaggely’s Rumble channel. The build is private, and there is no public test that establishes longer sessions.",
+        "A community tracker placed the run at 76%. On VICEPULSE’s published rubric, reaching in-game at a reported 5 FPS with unknown stability scores 72.5%, just ahead of CGBJ at 72%. These are tracker points and use different scoring judgments.",
         "Five Star Recomp’s public project also reports reaching the story intro’s title card before a GPU frame stalls. VICEPULSE records its completed menu milestone at 55%. The Windows countdown still targets November 30 as a low-confidence checkpoint for a publicly documented 30-minute crash-free session."
       ],
       "sources": [
-        {
-          "outlet": "PortWatch VI",
-          "title": "Report on omonkey’s streamed build",
-          "url": "https://portwatch-vi.xyz/news/2026-11-24-omonkey-shaders-prison"
-        },
         {
           "outlet": "Rumble · Swaggely",
           "title": "Development stream channel",
@@ -557,16 +502,11 @@
       "title": "The next GTA VI PC milestone is a crash-free session",
       "dek": "VICEPULSE is watching for a documented 30-minute gameplay run after a fast jump from menus to the game world.",
       "body": [
-        "PortWatch VI’s Nov 24 afternoon snapshot keeps CGBJ at the top of its milestone scale. The private demo reportedly shows movement and NPC interaction at roughly four frames per second, with lighting missing. That is evidence of progress into the world. The project has yet to show a public, reproducible session with correct graphics.",
+        "the community tracker’s Nov 24 afternoon snapshot keeps CGBJ at the top of its milestone scale. The private demo reportedly shows movement and NPC interaction at roughly four frames per second, with lighting missing. That is evidence of progress into the world. The project has yet to show a public, reproducible session with correct graphics.",
         "XCL testers have reported reaching world loading and then hitting the game’s GPU watchdog. A reported frame rate without a documented scene and session length cannot establish sustained gameplay. For the next score change, look for repeatable tests with the hardware, settings, frame pacing and crash behavior documented.",
         "VICEPULSE is counting down to November 30 as a low-confidence checkpoint for one documented 30-minute session without a crash. A broadly reproducible 30 FPS build is a later milestone. The estimate can move as developers publish longer gameplay tests."
       ],
       "sources": [
-        {
-          "outlet": "PortWatch VI",
-          "title": "November 24 tracker snapshot",
-          "url": "https://portwatch-vi.xyz/"
-        },
         {
           "outlet": "GitHub",
           "title": "XCL tester reports on world loading and GPU watchdog",
@@ -1196,13 +1136,13 @@
         "missing": false,
         "commits7d": 44
       },
-      "portwatchScore": 68.8,
-      "summary": "Public project listed on PortWatch VI.",
+      "raceScore": 68.8,
+      "summary": "Public project in the VICEPULSE Race.",
       "proof": {
         "label": "36-minute external playtest",
         "url": "https://github.com/fablinoo/kelvaroq#external-playtest-one-36-minute-session"
       },
-      "fpsNote": "10 FPS listed by PortWatch VI"
+      "fpsNote": "10 FPS reported in community testing"
     },
     {
       "id": "belobug",
@@ -1212,7 +1152,7 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "This Radeon-focused VIctory fork renders the open world on an RX 9070 XT. PortWatch reports seeing it run through missions.",
+      "summary": "This Radeon-focused VIctory fork renders the open world on an RX 9070 XT. A community tracker reports seeing it run through missions.",
       "gta": {
         "loads": 1,
         "boots": 1,
@@ -1234,7 +1174,7 @@
         "lighting": "Lit world with flat lighting in shadow",
         "shaders": "Water and sky render; some effects and distant trees are missing"
       },
-      "fpsNote": "8 FPS listed by PortWatch VI",
+      "fpsNote": "8 FPS reported in community testing",
       "sessionNote": "Driver timeout reported during testing",
       "highlights": [
         "Open-world gameplay shown on Windows 11 with an RX 9070 XT",
@@ -1246,8 +1186,8 @@
         "Published results cover one AMD PC"
       ],
       "verification": "self-reported",
-      "evidence": "Maintainer’s hardware and FPS report plus PortWatch gameplay coverage",
-      "byline": "Public source · PortWatch gameplay coverage",
+      "evidence": "Maintainer’s hardware and FPS report plus a community tracker gameplay coverage",
+      "byline": "Public source · a community tracker gameplay coverage",
       "assessedAt": "2026-11-25",
       "assessedBy": "manual",
       "link": "news/2026-11-25-belobug-amd-open-world.html",
@@ -1263,7 +1203,7 @@
         "commits7d": 100
       },
       "checked": "Public repo and published benchmark",
-      "portwatchScore": 79,
+      "raceScore": 79,
       "proof": {
         "label": "First PC Trickshot",
         "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y55bgm/first_pc_trickshot_by_belo/"
@@ -1298,9 +1238,9 @@
         "missing": false,
         "commits7d": 100
       },
-      "portwatchScore": 78,
-      "summary": "Public project listed on PortWatch VI.",
-      "fpsNote": "3 FPS listed by PortWatch VI"
+      "raceScore": 78,
+      "summary": "Public project in the VICEPULSE Race.",
+      "fpsNote": "3 FPS reported in community testing"
     },
     {
       "id": "zettrox",
@@ -1331,7 +1271,7 @@
         "missingStatus": 404
       },
       "name": "ZETTROX",
-      "summary": "The Windows build reports a playable prologue and 1–3 FPS on an RTX 3050. PortWatch reported a separate run reaching Gone Fishing.",
+      "summary": "The Windows build reports a playable prologue and 1–3 FPS on an RTX 3050. A community tracker reported a separate run reaching Gone Fishing.",
       "highlights": [
         "The maintainers list playable prologue scenes through the boat chase",
         "The maintainers report a session lasting 90+ minutes without a crash"
@@ -1346,8 +1286,8 @@
       },
       "target": "GTA VI only",
       "approach": "Compatibility layer",
-      "byline": "Public source · earlier run reported by PortWatch VI",
-      "evidence": "Reported by PortWatch VI; independent reproduction pending",
+      "byline": "Public source · earlier run reported by a community tracker",
+      "evidence": "Reported by a community tracker; independent reproduction pending",
       "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html",
       "repo": "Zettrox/ztrx",
       "branch": "main",
@@ -1364,7 +1304,7 @@
         "note": "GitHub repo and the Zettrox account gone on Nov 25 (HTTP 404 by 17:26 UTC). No DMCA notice is published yet."
       },
       "checked": "Previously public repository now returns 404",
-      "portwatchScore": 64.2,
+      "raceScore": 64.2,
       "proof": {
         "label": "Watch the first kill",
         "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y4u9v2/first_kill/"
@@ -1402,7 +1342,7 @@
       "readmeSha": "995aadc4207013b50c43be767270a5c71dd3bf65a8806c0f66d83181a4ca61b9",
       "name": "Uilian",
       "assessedAt": "2026-11-24",
-      "summary": "PortWatch reports that Uilian’s streamed Windows build reached “Gone Fishing” at up to 4 FPS.",
+      "summary": "A community tracker reports that Uilian’s streamed Windows build reached “Gone Fishing” at up to 4 FPS.",
       "highlights": [
         "Reported story progress into Jason’s first mission"
       ],
@@ -1413,7 +1353,7 @@
         "color": 0.15,
         "shaders": 0.2
       },
-      "evidence": "PortWatch VI stream coverage",
+      "evidence": "A community tracker stream coverage",
       "link": "news/2026-11-24-leonida-v2-ztrx-vitoriabr.html",
       "visualNotes": {
         "color": "First missions shown with rendering defects",
@@ -1421,7 +1361,7 @@
         "shaders": "The world renders with shader dropouts"
       },
       "fpsNote": "Up to 4 FPS on stream",
-      "portwatchScore": 59.6
+      "raceScore": 59.6
     },
     {
       "id": "avatarmanz",
@@ -1453,7 +1393,7 @@
         "lighting": "Some interiors remain too dark",
         "shaders": "Outdoor foliage and distant buildings can flicker"
       },
-      "fpsNote": "16 FPS listed by PortWatch VI",
+      "fpsNote": "16 FPS reported in community testing",
       "sessionNote": "Maintainer reports 41 minutes without a crash on one PC.",
       "highlights": [
         "Source available on GitHub",
@@ -1482,7 +1422,7 @@
         "commits7d": 100,
         "mentions7d": 1
       },
-      "portwatchScore": 83.1,
+      "raceScore": 83.1,
       "proof": {
         "label": "Video on Reddit",
         "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y5k8xu/actually_playable/"
@@ -1506,13 +1446,13 @@
         "stability": 0.9
       },
       "stats": {},
-      "portwatchScore": 87.8,
-      "summary": "Private AMD build. PortWatch lists it at 87.8%; its owner estimated story progress at 80%.",
+      "raceScore": 87.8,
+      "summary": "Private AMD build. It is listed at 87.8%; its owner estimated story progress at 80%.",
       "proof": {
         "label": "Watch on Rumble",
         "url": "https://rumble.com/v7iv98i-gta6-modding-stream.html"
       },
-      "fpsNote": "No measured average supplied; PortWatch uses a comparison estimate"
+      "fpsNote": "No measured average supplied; a community tracker uses a comparison estimate"
     },
     {
       "id": "doomsday",
@@ -1532,13 +1472,13 @@
         "stability": 0.8
       },
       "stats": {},
-      "portwatchScore": 84,
-      "summary": "Private build listed on PortWatch VI.",
+      "raceScore": 84,
+      "summary": "Private build tracked by VICEPULSE.",
       "proof": {
         "label": "Doomsday on X",
         "url": "https://x.com/Stu9ao"
       },
-      "fpsNote": "4 FPS listed by PortWatch VI"
+      "fpsNote": "4 FPS reported in community testing"
     },
     {
       "id": "darkworldhm",
@@ -1560,13 +1500,13 @@
         "stability": 0.7
       },
       "stats": {},
-      "portwatchScore": 84.8,
-      "summary": "Private build listed on PortWatch VI.",
+      "raceScore": 84.8,
+      "summary": "Private build tracked by VICEPULSE.",
       "proof": {
         "label": "Watch on Rumble",
         "url": "https://rumble.com/v7iwggw-gta-6-mooding-pc.html"
       },
-      "fpsNote": "15 FPS listed by PortWatch VI"
+      "fpsNote": "15 FPS reported in community testing"
     },
     {
       "id": "suri",
@@ -1590,10 +1530,10 @@
       "verification": "self-reported",
       "stats": {},
       "name": "suri",
-      "summary": "PortWatch reports player movement in Lucia’s opening at about 3 FPS, with better-looking rendering than earlier footage.",
+      "summary": "A community tracker reports player movement in Lucia’s opening at about 3 FPS, with better-looking rendering than earlier footage.",
       "highlights": [
         "More complete-looking rendering in the opening scene",
-        "Player-controlled movement reported by PortWatch"
+        "Player-controlled movement reported by a community tracker"
       ],
       "blockers": [
         "About 3 FPS reported",
@@ -1605,8 +1545,8 @@
         "lighting": 0.5,
         "shaders": 0.6
       },
-      "byline": "Private build · PortWatch VI report",
-      "evidence": "Reported by PortWatch VI; independent reproduction pending",
+      "byline": "Private build · a community tracker report",
+      "evidence": "Reported by a community tracker; independent reproduction pending",
       "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html",
       "visualNotes": {
         "color": "Opening scene shows more complete textures",
@@ -1615,7 +1555,7 @@
       },
       "fpsNote": "About 3 FPS in Lucia’s opening",
       "repo": null,
-      "portwatchScore": 75
+      "raceScore": 75
     },
     {
       "id": "omonkey",
@@ -1628,11 +1568,11 @@
       "link": "news/2026-11-24-omonkey-shaders-prison.html",
       "byline": "Streamed on Rumble by Swaggely · built on victory-gta6, a VIctory fork",
       "tier": "tracked",
-      "summary": "PortWatch VI reports player movement in the opening prison area at about 5 FPS, with some shaders loading. The build is private and stability is unknown.",
+      "summary": "A community tracker reports player movement in the opening prison area at about 5 FPS, with some shaders loading. The build is private and stability is unknown.",
       "highlights": [
         "Some shaders reportedly render in the opening prison sequence",
         "A player reportedly moves around the scene at about 5 FPS",
-        "PortWatch VI points to footage from Swaggely’s Rumble streams"
+        "A community tracker points to footage from Swaggely’s Rumble streams"
       ],
       "blockers": [
         "Stuck in the opening prison scene",
@@ -1671,7 +1611,7 @@
         "at": "2026-11-25",
         "note": "Taken down on Nov 25 (the owner's report). Its code was never public; Swaggely's Rumble channel, where it was streamed, still loaded at 18:18 UTC."
       },
-      "portwatchScore": 57.9
+      "raceScore": 57.9
     },
     {
       "id": "cgbj",
@@ -1687,10 +1627,10 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "PortWatch ranks CGBJ first at 91.5% and lists a 25 FPS gameplay average. Its GitHub repository currently returns 404.",
+      "summary": "CGBJ ranks first at 91.5%, with a reported 25 FPS gameplay average. Its GitHub repository currently returns 404.",
       "highlights": [
         "Linked footage shows the boat mission",
-        "PortWatch reports a 25 FPS gameplay average"
+        "A community tracker reports a 25 FPS gameplay average"
       ],
       "blockers": [
         "Repository currently unavailable",
@@ -1737,9 +1677,9 @@
         "lighting": "The reported gameplay view was largely black",
         "shaders": "Some scene rendering works"
       },
-      "fpsNote": "25 FPS average reported by PortWatch; sample length unavailable",
+      "fpsNote": "25 FPS average reported by a community tracker; sample length unavailable",
       "checked": "Linked footage and GitHub status",
-      "portwatchScore": 91.5,
+      "raceScore": 91.5,
       "proof": {
         "label": "Watch video",
         "url": "https://v.redd.it/137k5pow5w3i1"
@@ -1753,13 +1693,13 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "The public fork previously called victory-gta6. PortWatch attributes the streamed hyphennn build to this project. The fork reports an interactive opening, checkpoint saves and low single-digit gameplay FPS.",
+      "summary": "The public fork previously called victory-gta6. A community tracker attributes the streamed hyphennn build to this project. The fork reports an interactive opening, checkpoint saves and low single-digit gameplay FPS.",
       "highlights": [
         "Characters, textures, sky and sunlit geometry render in the opening",
         "HUD, pause menu and controller input work",
         "Opening cutscene plays through and a checkpoint can be saved and reloaded",
         "Fork adds its own meshlet, descriptor and shader fixes",
-        "PortWatch reports improved lighting and hair in a stream attributed to this fork",
+        "A community tracker reports improved lighting and hair in a stream attributed to this fork",
         "A CPU graphics pass fell from 70–220 ms to about 3 ms. Whole frames still took 250–380 ms in that test."
       ],
       "blockers": [
@@ -1804,7 +1744,7 @@
         "shaders": "The prologue renders with major lighting gaps"
       },
       "fpsNote": "2–4 FPS reported in the prologue",
-      "portwatchScore": 59.8
+      "raceScore": 59.8
     },
     {
       "id": "marvis",
@@ -1863,8 +1803,8 @@
         "lighting": "Surfaces in the opening remain unlit",
         "shaders": "The world renders with missing geometry"
       },
-      "fpsNote": "1 FPS listed by PortWatch VI",
-      "portwatchScore": 50.3
+      "fpsNote": "1 FPS reported in community testing",
+      "raceScore": 50.3
     },
     {
       "id": "xbox-emulator",
@@ -1922,7 +1862,7 @@
       "readmeSha": "bd169712dd4dc6d36ca44a2e90a599351c7f52e4dc94c164993f2d4792a0d650",
       "claims": [],
       "readmeChangedAt": "2026-11-23",
-      "portwatchScore": 6.5
+      "raceScore": 6.5
     },
     {
       "id": "xcl",
@@ -1978,7 +1918,7 @@
       "readmeSha": "60109b4e46f226fc14b0d0c0a170ba03f6d3b57f762c4c4c710234a730ad99c7",
       "claims": [],
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 35
+      "raceScore": 35
     },
     {
       "id": "scarlettx",
@@ -2033,7 +1973,7 @@
       "readmeSha": "d6881fdffe0e3afee79751e1cc5e23b817bce89a59041b24a509f90e208c1dec",
       "claims": [],
       "readmeChangedAt": "2026-11-22",
-      "portwatchScore": 5.2
+      "raceScore": 5.2
     },
     {
       "id": "tuxbox",
@@ -2088,7 +2028,7 @@
       "readmeSha": "64db7c7f3454f3bd039d99fd7a3668ff007f76ab0ec472dd222e5076032b1725",
       "claims": [],
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 20
+      "raceScore": 20
     },
     {
       "id": "americas-recomp",
@@ -2151,7 +2091,7 @@
       "readmeSha": "12c7930af7957f9fe62fdcb2d904d17e36f7e458bc85494d874e1e60177abace",
       "claims": [],
       "readmeChangedAt": "2026-11-22",
-      "portwatchScore": 4.8
+      "raceScore": 4.8
     },
     {
       "id": "leonida",
@@ -2217,7 +2157,7 @@
       "readmeSha": "c9ac7e9e6dfb9de3e4f0efd7590346f176b246756384ca751999608f3f8da2e6",
       "claims": [],
       "readmeChangedAt": "2026-11-23",
-      "portwatchScore": 10
+      "raceScore": 10
     },
     {
       "id": "openscarlett",
@@ -2272,7 +2212,7 @@
       "readmeSha": "cd34116981a2f5b746798d35e0a6f312d4f7aca5cc86ca2bf81511a23c6bd382",
       "claims": [],
       "readmeChangedAt": "2026-11-23",
-      "portwatchScore": 4.5
+      "raceScore": 4.5
     },
     {
       "id": "scarlett-layer",
@@ -2326,7 +2266,7 @@
       "readmeSha": "a8cb717802a3ccce2c81573fcef3cfb48f6b06588373f8c479ab9e4b096ad017",
       "claims": [],
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 3.4
+      "raceScore": 3.4
     },
     {
       "id": "xbox2windows",
@@ -2381,7 +2321,7 @@
       "readmeSha": "b14134dfab68c62d557aa2bd18f8898a1c7b40620c14751bf9b33625f123ad91",
       "claims": [],
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 25
+      "raceScore": 25
     },
     {
       "id": "anyxboxx",
@@ -2448,7 +2388,7 @@
       "fpsNote": "4.8–5.4 FPS measured with player control",
       "sessionNote": "About 45 min reported by a contributor; no run log",
       "evidence": "Maintainer-reported logs and contributor report",
-      "portwatchScore": 2.5
+      "raceScore": 2.5
     },
     {
       "id": "keylime",
@@ -2486,8 +2426,8 @@
         "commits7d": 67,
         "missingStatus": 404
       },
-      "portwatchScore": 30,
-      "summary": "Public project listed on PortWatch VI."
+      "raceScore": 30,
+      "summary": "Public project in the VICEPULSE Race."
     },
     {
       "id": "xvalkyrie",
@@ -2542,7 +2482,7 @@
       "claims": [],
       "readmeSha": "b9166c08d268dcd3c676c14f56f3eea75395745c9f5b87122cda4e4e928c3872",
       "readmeChangedAt": "2026-11-23",
-      "portwatchScore": 2.9
+      "raceScore": 2.9
     },
     {
       "id": "gtavi-recomp",
@@ -2593,7 +2533,7 @@
       "readmeSha": "bf7af157055b4e3bfcbaddf92b9e19869e59359ac018ab758501045ec9bddde1",
       "claims": [],
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 2.1
+      "raceScore": 2.1
     },
     {
       "id": "anyxboxseries",
@@ -2647,7 +2587,7 @@
       "readmeSha": "32da05be734a513ea7ab5e97fee287889fec4efb1afa16e8a846ef0c5ede20d6",
       "claims": [],
       "readmeChangedAt": "2026-11-22",
-      "portwatchScore": 1
+      "raceScore": 1
     },
     {
       "id": "scarab",
@@ -2699,7 +2639,7 @@
       "readmeSha": "f9ada1bc3e3b4645bd612f50a90e937e2114b41e7d9d888e1703324e8fa9364b",
       "claims": [],
       "readmeChangedAt": "2026-11-23",
-      "portwatchScore": 1
+      "raceScore": 1
     },
     {
       "id": "anybox",
@@ -2752,7 +2692,7 @@
       "readmeSha": "320b58692de246f9512a8812c45671038f003e5618059ee23af5e08b6899af21",
       "claims": [],
       "readmeChangedAt": "2026-11-23",
-      "portwatchScore": 0.7
+      "raceScore": 0.7
     },
     {
       "id": "percyscarlett",
@@ -2806,7 +2746,7 @@
       "readmeSha": "eb85950b3d2025b749365118cd28a9569182f122e42ffb874474c3ef48411501",
       "claims": [],
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 10
+      "raceScore": 10
     },
     {
       "id": "grandtheftxbox",
@@ -2857,7 +2797,7 @@
       "assessedBy": "manual",
       "readmeSha": "eda8af691482e3d70eccd136edd7c9cb15a4a0e8d99aab4393893b20f008cc62",
       "claims": [],
-      "portwatchScore": 0.3
+      "raceScore": 0.3
     },
     {
       "id": "scarlett-windows-compat",
@@ -2909,7 +2849,7 @@
       "readmeSha": "7bffaff08200d85bfd60fc49365b0242c020f0a2f575e828324460a70c48198e",
       "claims": [],
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 0.1
+      "raceScore": 0.1
     },
     {
       "id": "dedsec",
@@ -2964,7 +2904,7 @@
       "claims": [],
       "readmeSha": "2a584d30973b09fa113642748ecfd8477ab82cb3749dbb84f00e13c4a1a361d2",
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 1.2
+      "raceScore": 1.2
     },
     {
       "id": "xbgtasix",
@@ -3018,7 +2958,7 @@
       "claims": [],
       "readmeSha": "72f6e1e79842f889c90179f2765e549f625e3a3559b0c6c1059ad041a1e914c8",
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 1.2
+      "raceScore": 1.2
     },
     {
       "id": "seriesx-emulator",
@@ -3071,7 +3011,7 @@
       "claims": [],
       "readmeSha": "4800e564eb3de0cc08416d4c7011252389a8125f4376b2e266467c26be978cf5",
       "readmeChangedAt": "2026-11-23",
-      "portwatchScore": 0.3
+      "raceScore": 0.3
     },
     {
       "id": "gta6-compat-layer",
@@ -3122,7 +3062,7 @@
       "claims": [],
       "readmeSha": "d3edee602970bbcdd33e309d670ce79f4a7bfbbb832db13f427d3b30218e235f",
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 10
+      "raceScore": 10
     },
     {
       "id": "xlaunchvi",
@@ -3178,7 +3118,7 @@
       "claims": [],
       "readmeSha": "03b9af6c1679af3949a65fc62afdd4cc1cae256c1d5796384632c217e0c374bf",
       "readmeChangedAt": "2026-11-23",
-      "portwatchScore": 1.4
+      "raceScore": 1.4
     },
     {
       "id": "openscarlett-ce",
@@ -3234,7 +3174,7 @@
       "claims": [],
       "readmeSha": "5ba0bdd173fc80a8596db722adc82569fd29275b1c677870f612cb407984a405",
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 4.9
+      "raceScore": 4.9
     },
     {
       "id": "port-of-the-americas",
@@ -3271,8 +3211,8 @@
         "archived": false,
         "missing": false
       },
-      "portwatchScore": 25,
-      "summary": "Public project listed on PortWatch VI."
+      "raceScore": 25,
+      "summary": "Public project in the VICEPULSE Race."
     },
     {
       "id": "five-star-recomp",
@@ -3325,7 +3265,7 @@
       "claims": [],
       "readmeSha": "4a57db7f9bea84859306b8ce7c2c91153aa6a0bd0b3c7969deb39678db4e1dd3",
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 30
+      "raceScore": 30
     },
     {
       "id": "g6recomp",
@@ -3379,7 +3319,7 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "164285286ae2798f50db40b8bead9376e88e7d060124e5d743e4f5ae22261ca1",
-      "portwatchScore": 0.7
+      "raceScore": 0.7
     },
     {
       "id": "gta6-boottest",
@@ -3433,7 +3373,7 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "e7c316aa21181e7f36a0f6fad3dfab38befe494514d169ae4846f45478e038e4",
-      "portwatchScore": 10
+      "raceScore": 10
     },
     {
       "id": "palmetto",
@@ -3488,7 +3428,7 @@
       "claims": [],
       "readmeSha": "edd4cb2f51b07c5f076529e265d3c284e8fe6b35414363ceeb9068e75d2b0b23",
       "readmeChangedAt": "2026-11-24",
-      "portwatchScore": 10
+      "raceScore": 10
     },
     {
       "id": "victory-perf",
@@ -6508,7 +6448,7 @@
       "seenAt": "2026-11-24"
     },
     {
-      "repo": "hubby121/portwatch-vi",
+      "repo": "hubby121/a community tracker-vi",
       "reason": "thin (substance 20)",
       "auto": true,
       "seenAt": "2026-11-24",
@@ -6650,7 +6590,7 @@
     {
       "date": "2026-11-24",
       "kind": "up",
-      "text": "omonkey joins at 72.5% on VICEPULSE. PortWatch VI reports early shader rendering and movement in the prison scene at roughly 5 FPS."
+      "text": "omonkey joins at 72.5% on VICEPULSE. A community tracker reports early shader rendering and movement in the prison scene at roughly 5 FPS."
     },
     {
       "date": "2026-11-24",
@@ -7070,7 +7010,7 @@
     {
       "date": "2026-11-24",
       "kind": "new",
-      "text": "News: PortWatch reports that ZETTROX reached “Gone Fishing” at about 2 FPS and that suri’s prologue run showed better rendering."
+      "text": "News: a community tracker reports that ZETTROX reached “Gone Fishing” at about 2 FPS and that suri’s prologue run showed better rendering."
     },
     {
       "date": "2026-11-24",
@@ -7120,7 +7060,7 @@
     {
       "date": "2026-11-26",
       "kind": "up",
-      "text": "The race now follows PortWatch’s standings. CGBJ leads at 91.5%, with a reported 25 FPS average."
+      "text": "The VICEPULSE Race standings have been updated. CGBJ leads at 91.5%, with a reported 25 FPS average."
     }
   ],
   "history": [
@@ -7459,7 +7399,7 @@
       "tracked": []
     }
   ],
-  "portwatch": {
+  "raceSnapshot": {
     "updated": "2026-11-26T10:23:53.338Z",
     "history": [
       {

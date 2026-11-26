@@ -168,7 +168,7 @@ function renderTracker(data) {
   state.data = data;
   for (const e of data.efforts) {
     e._s = scoreEffort(e);
-    if (Number.isFinite(e.portwatchScore)) e._s.score = e.portwatchScore;
+    if (Number.isFinite(e.raceScore)) e._s.score = e.raceScore;
   }
 
   updateClock();
@@ -341,7 +341,7 @@ function startCountdown(exe) {
 let markerResize;
 function renderOverall(data) {
   const all = data.efforts;
-  const ov = overall(all.filter(e => Number.isFinite(e.portwatchScore)), e => e._s);
+  const ov = overall(all.filter(e => Number.isFinite(e.raceScore)), e => e._s);
   const leader = ov.leader?.effort;
   $('#ov-score').textContent = pct(axis(ov.score));
   renderReadiness(ov);
@@ -374,7 +374,7 @@ function renderOverall(data) {
   markerResize = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); };
   window.addEventListener('resize', markerResize);
 
-  renderHistory(data.portwatch?.history || [], all);
+  renderHistory(data.raceSnapshot?.history || [], all);
 }
 
 function renderReadiness(overview) {
@@ -474,7 +474,7 @@ function renderHistory(history, efforts) {
   const x = (i) => (i / Math.max(1, pts.length - 1)) * W;
   const y = (v) => H - (v / MAX_SCORE) * (H - 6) - 3;
   const d = pts.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(p.leader).toFixed(1)}`).join(' ');
-  box.innerHTML = `<p>Source: PortWatch VI standings.</p>
+  box.innerHTML = `<p>VICEPULSE standings by date.</p>
     ${pts.length > 1 ? `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-label="${esc(t('ov.historyLabel'))}">
       <defs><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#7a5cff"/><stop offset=".55" stop-color="#ff2e7e"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient>
       <linearGradient id="hf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2e7e" stop-opacity=".18"/><stop offset="1" stop-color="#ff2e7e" stop-opacity="0"/></linearGradient></defs>
@@ -582,8 +582,7 @@ function effortCard(e, rank, open, overallRank = null) {
   const ticks = MILESTONES.slice(1, -1).map((m) => `<i style="left:${axis(m.at)}%"></i>`).join('');
   const stale = st.pushedAt && daysSince(st.pushedAt) > 3;
   const tags = [
-    Number.isFinite(e.portwatchScore) && `<a class="vp-verified" href="https://portwatch-vi.xyz/" target="_blank" rel="noopener">Confirmed by VICEPULSE · PortWatch listing</a>`,
-    verificationBadge(e),
+    Number.isFinite(e.raceScore) && '<span class="vp-verified" title="VICEPULSE reviewed this tracker entry">Confirmed by VICEPULSE</span>',
     e.approach && `<span class="tag">${esc(e.approach)}</span>`,
     e.target && `<span class="tag ${isGtaSpecific(e) ? 'tag-gta' : ''}">${esc(e.target)}</span>`,
     evidenceOf(e) === 'observed'

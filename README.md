@@ -14,7 +14,7 @@ VICEPULSE is an independent tracker of community efforts to run Grand Theft Auto
 | Sustained 30 FPS | A gameplay test holds 30 FPS over time. |
 | Crash-free play | A timed Windows gameplay run is measured against 30 minutes. |
 
-The Race uses a dated snapshot of the [PortWatch VI standings](https://portwatch-vi.xyz/). The public leaderboard and the separate private-build list use PortWatch’s scores. A VICEPULSE badge confirms the listing. The technical cards track separate gameplay evidence. The countdown marks the next evidence review for a stable open-source build. The release ETA remains unknown.
+The VICEPULSE Race tracks public and private community builds. The badge confirms that VICEPULSE reviewed the tracker entry. The countdown marks the next evidence review for a stable open-source build. The release ETA remains unknown.
 
 ## Source and corrections
 
