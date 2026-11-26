@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Thu, 26 Nov 2026 12:50:54 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 26 Nov 2026 15:20:58 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>AvatarManz leads the public race and reports 22 FPS in a GTA VI city test</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-26-public-race-avatarmanz-22-fps.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-26-public-race-avatarmanz-22-fps.html</guid>
+    <pubDate>Thu, 26 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>CGBJ leads overall at 89.6% in Private Builds. DexNom and Belobug follow AvatarManz in the public standings.</description>
+  </item>
   <item>
     <title>GTA VI PC tracker records a 25 FPS report for CGBJ</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-26-cgbj-25-fps-avatarmanz-city.html</link>
@@ -85,7 +93,7 @@
     <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-leonida-v2-ztrx-vitoriabr.html</guid>
     <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
     <category>Port</category>
-    <description>Leonida V2 reports a blank startup window. ZETTROX has published its code, and PortWatch reports a second build reaching “Gone Fishing.”</description>
+    <description>Leonida V2 reports a blank startup window. ZETTROX has published its code, and a community tracker reports a second build reaching “Gone Fishing.”</description>
   </item>
   <item>
     <title>Private GTA VI PC build reportedly reaches Jason’s first mission</title>
@@ -93,7 +101,7 @@
     <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html</guid>
     <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
     <category>Port</category>
-    <description>PortWatch VI credits ZETTROX with getting past Lucia’s prologue into “Gone Fishing” at about 2 FPS.</description>
+    <description>A community tracker credits ZETTROX with getting past Lucia’s prologue into “Gone Fishing” at about 2 FPS.</description>
   </item>
   <item>
     <title>GitHub processes Take-Two’s takedown across Leonida’s fork network</title>
@@ -125,7 +133,7 @@
     <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-omonkey-shaders-prison.html</guid>
     <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
     <category>Port</category>
-    <description>PortWatch VI reports character movement and partial shader rendering in a private Windows build. It also reports progress on Five Star Recomp.</description>
+    <description>A community tracker reports character movement and partial shader rendering in a private Windows build. It also reports progress on Five Star Recomp.</description>
   </item>
   <item>
     <title>GTA VI PC footage shows sunlight and working lamps</title>
@@ -238,14 +246,6 @@
     <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
     <category>Leak</category>
     <description>Cyberleek&#39;s countdown ends at 17:00 UTC on Nov 23 while its site charges for poll votes; the early-release token goal is reportedly down to $6 million.</description>
-  </item>
-  <item>
-    <title>Re-uploads of the leading GTA VI projects are already circulating</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-22-copies.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-22-copies.html</guid>
-    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Safety</category>
-    <description>On its first run, our scout found three copies of Leonida under other accounts. One had been renamed and given a vague description.</description>
   </item>
 </channel>
 </rss>

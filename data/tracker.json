@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T12:50:54.516Z",
+  "updated": "2026-11-26T15:20:58.966Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -16,6 +16,37 @@
   },
   "news": [
     {
+      "id": "2026-11-26-public-race-avatarmanz-22-fps",
+      "date": "2026-11-26",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Published city-street benchmark and repository status",
+      "title": "AvatarManz leads the public race and reports 22 FPS in a GTA VI city test",
+      "dek": "CGBJ leads overall at 89.6% in Private Builds. DexNom and Belobug follow AvatarManz in the public standings.",
+      "body": [
+        "CGBJ remains first overall at 89.6%, with a reported 25 FPS gameplay average. Its associated repository still returns 404, so it now appears in Private Builds. AvatarManz leads the public Race at 81.8%, followed by DexNom at 77.4% and Belobug at 77.2% after a revision to rendering scores.",
+        "AvatarManz’s latest README reports about 22 FPS in one city-street test on an RX 7900 XTX. That trial used the Series S profile, experimental renderer patches and ray tracing off. The README separately lists about 19 FPS for a Series X profile test. The 22 FPS result applies to that city scene.",
+        "The countdown still ends at the scheduled evidence review. Sustained gameplay near 30 FPS on a public build remains the target."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · AvatarManz",
+          "title": "November 26 benchmark table and test settings",
+          "url": "https://github.com/avatarmanz/VIctory-7900XTX"
+        },
+        {
+          "outlet": "GitHub · codec-d",
+          "title": "Associated CGBJ repository status",
+          "url": "https://github.com/codec-d/cool_fox"
+        },
+        {
+          "outlet": "GitHub · DexNom",
+          "title": "Public source and rendering work",
+          "url": "https://github.com/DexNom/VIctory"
+        }
+      ]
+    },
+    {
       "id": "2026-11-26-cgbj-25-fps-avatarmanz-city",
       "date": "2026-11-26",
       "category": "Port",
@@ -25,7 +56,7 @@
       "dek": "The CGBJ footage shows the boat mission. Its GitHub repository returns 404, while AvatarManz’s public AMD fork reports about 19 FPS in a city-street test.",
       "body": [
         "A community tracker lists CGBJ, associated with codec-d’s cool_fox repository, at an average of 25 FPS on NVIDIA hardware. VICEPULSE reviewed the linked 55-second video. It shows the boat mission and its driving HUD. The clip does not establish the gameplay average or a sustained 30 FPS run.",
-        "The GitHub repository returned 404 when checked on November 26. The cause is unknown. CGBJ remains on the VICEPULSE leaderboard at 91.5%, with the repository status flagged.",
+        "The GitHub repository returned 404 when checked on November 26. In the latest standings, CGBJ leads overall at 89.6% and appears in Private Builds.",
         "Separately, AvatarManz’s public Radeon fork reports about 19 FPS in a city-street scene, up from about 13–17 FPS in the same scene. The new trial used an RX 7900 XTX with ray tracing off and two experimental renderer options enabled. That is one hardware configuration and one scene. The countdown still tracks the evidence review for extended gameplay near 30 FPS."
       ],
       "sources": [
@@ -1127,14 +1158,14 @@
         "stability": 0.8
       },
       "stats": {
-        "stars": 53,
-        "forks": 8,
+        "stars": 84,
+        "forks": 22,
         "openIssues": 3,
         "createdAt": "2026-11-24T22:58:04Z",
-        "pushedAt": "2026-11-26T03:26:25Z",
+        "pushedAt": "2026-11-26T13:27:09Z",
         "archived": false,
         "missing": false,
-        "commits7d": 44
+        "commits7d": 47
       },
       "raceScore": 68.8,
       "summary": "Public project in the VICEPULSE Race.",
@@ -1160,7 +1191,7 @@
         "world": 1,
         "playable": 1,
         "story": 0.5,
-        "render": 0.85,
+        "render": 0.7,
         "fps": 8,
         "stability": 0.7
       },
@@ -1193,9 +1224,9 @@
       "link": "news/2026-11-25-belobug-amd-open-world.html",
       "readmeSha": "0daa560302b551899beaacd1c1ca876658ed72491cb005ba560c0b55fc49d8cc",
       "stats": {
-        "stars": 1710,
-        "forks": 304,
-        "openIssues": 208,
+        "stars": 1739,
+        "forks": 308,
+        "openIssues": 220,
         "pushedAt": "2026-11-26T00:57:17Z",
         "createdAt": "2026-11-25T09:41:37Z",
         "archived": false,
@@ -1203,7 +1234,7 @@
         "commits7d": 100
       },
       "checked": "Public repo and published benchmark",
-      "raceScore": 79,
+      "raceScore": 77.2,
       "proof": {
         "label": "First PC Trickshot",
         "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y55bgm/first_pc_trickshot_by_belo/"
@@ -1224,13 +1255,13 @@
         "world": 1,
         "playable": 1,
         "story": 0.5,
-        "render": 0.9,
+        "render": 0.85,
         "fps": 3,
         "stability": 0.7
       },
       "stats": {
-        "stars": 1003,
-        "forks": 123,
+        "stars": 1014,
+        "forks": 124,
         "openIssues": 64,
         "createdAt": "2026-11-25T12:14:33Z",
         "pushedAt": "2026-11-26T01:12:12Z",
@@ -1238,7 +1269,7 @@
         "missing": false,
         "commits7d": 100
       },
-      "raceScore": 78,
+      "raceScore": 77.4,
       "summary": "Public project in the VICEPULSE Race.",
       "fpsNote": "3 FPS reported in community testing"
     },
@@ -1330,9 +1361,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 211,
-        "forks": 47,
-        "openIssues": 77,
+        "stars": 216,
+        "forks": 48,
+        "openIssues": 81,
         "createdAt": "2026-11-24T10:05:17Z",
         "pushedAt": "2026-11-26T04:09:11Z",
         "archived": false,
@@ -1371,7 +1402,7 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "Public Radeon RX 7900 XTX fork. Its latest benchmark reports about 19 FPS in a city street with two experimental options enabled.",
+      "summary": "Public Radeon fork and public race leader at 81.8%. Its latest city-street test reached about 22 FPS with the Series S profile and experimental renderer patches.",
       "gta": {
         "loads": 1,
         "boots": 1,
@@ -1379,7 +1410,7 @@
         "world": 1,
         "playable": 1,
         "story": 0.5,
-        "render": 0.8,
+        "render": 0.7,
         "fps": 16,
         "stability": 0.9
       },
@@ -1393,13 +1424,14 @@
         "lighting": "Some interiors remain too dark",
         "shaders": "Outdoor foliage and distant buildings can flicker"
       },
-      "fpsNote": "16 FPS reported in community testing",
+      "fpsNote": "Reported gameplay figure: 16 FPS. The latest city-street test separately reached about 22 FPS.",
       "sessionNote": "Maintainer reports 41 minutes without a crash on one PC.",
       "highlights": [
         "Source available on GitHub",
         "Published scene-specific FPS and hardware",
         "41-minute session reported by the maintainer",
-        "November 26 city-street test improved from 13–17 FPS to about 19 FPS"
+        "November 26 city-street test improved from 13–17 FPS to about 19 FPS",
+        "New city-street test reaches about 22 FPS with the Series S profile."
       ],
       "blockers": [
         "Independent long-session reproduction is still pending",
@@ -1410,19 +1442,19 @@
       "evidence": "Maintainer’s benchmark table and community gameplay coverage",
       "assessedAt": "2026-11-26",
       "assessedBy": "manual",
-      "link": "news/2026-11-26-cgbj-25-fps-avatarmanz-city.html",
+      "link": "news/2026-11-26-public-race-avatarmanz-22-fps.html",
       "stats": {
-        "stars": 1423,
-        "forks": 401,
-        "openIssues": 105,
+        "stars": 1585,
+        "forks": 461,
+        "openIssues": 185,
         "createdAt": "2026-11-25T22:18:14Z",
-        "pushedAt": "2026-11-26T10:17:57Z",
+        "pushedAt": "2026-11-26T12:50:00Z",
         "archived": false,
         "missing": false,
         "commits7d": 100,
         "mentions7d": 1
       },
-      "raceScore": 83.1,
+      "raceScore": 81.8,
       "proof": {
         "label": "Video on Reddit",
         "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y5k8xu/actually_playable/"
@@ -1441,12 +1473,12 @@
         "world": 1,
         "playable": 1,
         "story": 0.8,
-        "render": 0.76,
+        "render": 0.7,
         "fps": 16,
         "stability": 0.9
       },
       "stats": {},
-      "raceScore": 87.8,
+      "raceScore": 87.1,
       "summary": "Private AMD build. It is listed at 87.8%; its owner estimated story progress at 80%.",
       "proof": {
         "label": "Watch on Rumble",
@@ -1467,12 +1499,12 @@
         "world": 1,
         "playable": 1,
         "story": 0.8,
-        "render": 0.85,
+        "render": 0.7,
         "fps": 4,
         "stability": 0.8
       },
       "stats": {},
-      "raceScore": 84,
+      "raceScore": 82.1,
       "summary": "Private build tracked by VICEPULSE.",
       "proof": {
         "label": "Doomsday on X",
@@ -1517,7 +1549,7 @@
         "world": 1,
         "playable": 1,
         "story": 0.8,
-        "render": 0.8,
+        "render": 0.7,
         "fps": 3,
         "stability": "unknown"
       },
@@ -1555,7 +1587,7 @@
       },
       "fpsNote": "About 3 FPS in Lucia’s opening",
       "repo": null,
-      "raceScore": 75
+      "raceScore": 73.8
     },
     {
       "id": "omonkey",
@@ -1616,18 +1648,18 @@
     {
       "id": "cgbj",
       "name": "CGBJ",
-      "repo": "codec-d/cool_fox",
+      "repo": null,
       "basedOn": [
         "marvis",
         "xcl"
       ],
       "evidence": "Community report, linked boat-mission footage, and GitHub status check",
-      "link": "news/2026-11-26-cgbj-25-fps-avatarmanz-city.html",
-      "byline": "Private code · based on VIctory and XCL",
+      "link": "news/2026-11-26-public-race-avatarmanz-22-fps.html",
+      "byline": "Private build · repository unavailable",
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "CGBJ ranks first at 91.5%, with a reported 25 FPS gameplay average. Its GitHub repository currently returns 404.",
+      "summary": "Overall leader at 89.6%, with a reported 25 FPS gameplay average. Its associated GitHub repository returned 404, so the build is listed in Private Builds.",
       "highlights": [
         "Linked footage shows the boat mission",
         "A community tracker reports a 25 FPS gameplay average"
@@ -1644,7 +1676,7 @@
         "world": 1,
         "playable": 1,
         "story": 0.8,
-        "render": 0.85,
+        "render": 0.7,
         "fps": 25,
         "stability": 0.85
       },
@@ -1678,8 +1710,8 @@
         "shaders": "Some scene rendering works"
       },
       "fpsNote": "25 FPS average reported by a community tracker; sample length unavailable",
-      "checked": "Linked footage and GitHub status",
-      "raceScore": 91.5,
+      "checked": "Linked footage and repository status",
+      "raceScore": 89.6,
       "proof": {
         "label": "Watch video",
         "url": "https://v.redd.it/137k5pow5w3i1"
@@ -1721,11 +1753,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 3175,
-        "forks": 939,
-        "openIssues": 1134,
+        "stars": 3199,
+        "forks": 951,
+        "openIssues": 1145,
         "createdAt": "2026-11-24T18:02:37Z",
-        "pushedAt": "2026-11-26T08:37:07Z",
+        "pushedAt": "2026-11-26T13:30:42Z",
         "archived": false,
         "missing": false,
         "commits7d": 100
@@ -1779,9 +1811,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 12882,
-        "forks": 2114,
-        "openIssues": 1902,
+        "stars": 12974,
+        "forks": 2121,
+        "openIssues": 1958,
         "createdAt": "2026-11-23T21:47:25Z",
         "pushedAt": "2026-11-25T23:27:48Z",
         "commits7d": 100,
@@ -1848,8 +1880,8 @@
         "drycheetah84/TomBox"
       ],
       "stats": {
-        "stars": 1848,
-        "forks": 123,
+        "stars": 1851,
+        "forks": 125,
         "openIssues": 54,
         "createdAt": "2026-11-21T08:08:39Z",
         "pushedAt": "2026-11-25T13:47:56Z",
@@ -1903,9 +1935,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 8412,
-        "forks": 1164,
-        "openIssues": 1766,
+        "stars": 8454,
+        "forks": 1172,
+        "openIssues": 1799,
         "createdAt": "2026-11-20T20:03:21Z",
         "pushedAt": "2026-11-26T06:10:46Z",
         "commits7d": 100,
@@ -1959,7 +1991,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 268,
+        "stars": 266,
         "forks": 27,
         "openIssues": 39,
         "createdAt": "2026-11-20T06:54:47Z",
@@ -2014,11 +2046,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 374,
+        "stars": 376,
         "forks": 44,
-        "openIssues": 13,
+        "openIssues": 17,
         "createdAt": "2026-11-21T12:07:28Z",
-        "pushedAt": "2026-11-26T08:27:36Z",
+        "pushedAt": "2026-11-26T11:59:43Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2146,7 +2178,7 @@
         "archived": false,
         "missing": true,
         "missingStatus": 404,
-        "mentions7d": 11,
+        "mentions7d": 8,
         "dmca": {
           "date": "2026-11-24",
           "url": "https://github.com/github/dmca/blob/master/2026/11/2026-11-24-take-two.md"
@@ -2198,11 +2230,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 103,
+        "stars": 104,
         "forks": 12,
         "openIssues": 8,
         "createdAt": "2026-11-21T14:35:25Z",
-        "pushedAt": "2026-11-26T09:42:29Z",
+        "pushedAt": "2026-11-26T13:03:03Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2307,11 +2339,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 1961,
-        "forks": 232,
-        "openIssues": 148,
+        "stars": 1962,
+        "forks": 234,
+        "openIssues": 167,
         "createdAt": "2026-11-20T17:43:52Z",
-        "pushedAt": "2026-11-26T10:17:31Z",
+        "pushedAt": "2026-11-26T13:34:45Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2361,11 +2393,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 393,
+        "stars": 395,
         "forks": 63,
-        "openIssues": 86,
+        "openIssues": 101,
         "createdAt": "2026-11-21T00:18:13Z",
-        "pushedAt": "2026-11-26T09:31:49Z",
+        "pushedAt": "2026-11-26T12:46:36Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2521,7 +2553,7 @@
       "stats": {
         "stars": 69,
         "forks": 13,
-        "openIssues": 19,
+        "openIssues": 20,
         "createdAt": "2026-11-19T20:32:01Z",
         "pushedAt": "2026-11-25T12:51:20Z",
         "commits7d": 56,
@@ -2572,8 +2604,8 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 2,
-        "forks": 1,
+        "stars": 3,
+        "forks": 2,
         "openIssues": 0,
         "createdAt": "2026-11-20T22:59:15Z",
         "pushedAt": "2026-11-25T06:43:07Z",
@@ -2948,7 +2980,7 @@
         "forks": 1,
         "openIssues": 0,
         "createdAt": "2026-11-22T14:40:55Z",
-        "pushedAt": "2026-11-25T23:09:31Z",
+        "pushedAt": "2026-11-26T12:52:16Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -3202,7 +3234,7 @@
         "stability": "unknown"
       },
       "stats": {
-        "stars": 6,
+        "stars": 8,
         "forks": 2,
         "openIssues": 0,
         "createdAt": "2026-11-24T19:59:37Z",
@@ -3251,11 +3283,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 220,
-        "forks": 14,
-        "openIssues": 13,
+        "stars": 221,
+        "forks": 16,
+        "openIssues": 12,
         "createdAt": "2026-11-23T09:57:42Z",
-        "pushedAt": "2026-11-26T10:18:07Z",
+        "pushedAt": "2026-11-26T13:35:17Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -3306,7 +3338,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 11,
+        "stars": 12,
         "forks": 1,
         "openIssues": 3,
         "createdAt": "2026-11-20T15:07:18Z",
@@ -3417,7 +3449,7 @@
         "forks": 3,
         "openIssues": 1,
         "createdAt": "2026-11-24T22:05:23Z",
-        "pushedAt": "2026-11-26T10:11:01Z",
+        "pushedAt": "2026-11-26T13:15:56Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -7061,6 +7093,11 @@
       "date": "2026-11-26",
       "kind": "up",
       "text": "The VICEPULSE Race standings have been updated. CGBJ leads at 91.5%, with a reported 25 FPS average."
+    },
+    {
+      "date": "2026-11-26",
+      "kind": "up",
+      "text": "AvatarManz leads the public Race at 81.8% and reports about 22 FPS in one city test. CGBJ leads overall at 89.6% in Private Builds."
     }
   ],
   "history": [
@@ -7400,7 +7437,7 @@
     }
   ],
   "raceSnapshot": {
-    "updated": "2026-11-26T10:23:53.338Z",
+    "updated": "2026-11-26T13:35:57.194Z",
     "history": [
       {
         "date": "2026-11-21",
@@ -7444,9 +7481,9 @@
       },
       {
         "date": "2026-11-26",
-        "leader": 91.5,
+        "leader": 89.6,
         "leaderId": "cgbj",
-        "top3": 88,
+        "top3": 87.2,
         "furthest": "ingame"
       }
     ]
