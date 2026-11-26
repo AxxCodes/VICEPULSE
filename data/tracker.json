@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T10:41:37.290Z",
+  "updated": "2026-11-26T12:50:54.516Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -25,8 +25,8 @@
       "dek": "The CGBJ footage shows the boat mission. Its GitHub repository returns 404, while AvatarManz’s public AMD fork reports about 19 FPS in a city-street test.",
       "body": [
         "PortWatch lists CGBJ, associated with codec-d’s cool_fox repository, at an average of 25 FPS on NVIDIA hardware. VICEPULSE reviewed the linked 55-second video. It shows the boat mission and its driving HUD. The clip does not establish the gameplay average or a sustained 30 FPS run.",
-        "The GitHub repository returned 404 when checked on November 26. The cause is unknown. We kept the result in the news and archived the leaderboard entry while the code is unavailable.",
-        "Separately, AvatarManz’s public Radeon fork reports about 19 FPS in a city-street scene, up from about 13–17 FPS in the same scene. The new trial used an RX 7900 XTX with ray tracing off and two experimental renderer options enabled. That is one hardware configuration and one scene. The leaderboard uses that published result and the countdown still tracks the evidence review for extended gameplay near 30 FPS."
+        "The GitHub repository returned 404 when checked on November 26. The cause is unknown. PortWatch keeps CGBJ on its board at 91.5%, and VICEPULSE now follows that ranking while flagging the repository status.",
+        "Separately, AvatarManz’s public Radeon fork reports about 19 FPS in a city-street scene, up from about 13–17 FPS in the same scene. The new trial used an RX 7900 XTX with ray tracing off and two experimental renderer options enabled. That is one hardware configuration and one scene. The leaderboard follows PortWatch’s standings, and the countdown still tracks the evidence review for extended gameplay near 30 FPS."
       ],
       "sources": [
         {
@@ -1164,133 +1164,54 @@
   ],
   "efforts": [
     {
-      "id": "avatarmanz",
-      "name": "AvatarManz (AMD)",
-      "repo": "avatarmanz/VIctory-7900XTX",
+      "id": "kelvaroq",
+      "name": "Kelvaroq",
+      "repo": "fablinoo/kelvaroq",
       "branch": "main",
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
       "basedOn": [
         "marvis",
-        "victory-gta6",
-        "belobug"
-      ],
-      "summary": "Public Radeon RX 7900 XTX fork. Its latest benchmark reports about 19 FPS in a city street with two experimental options enabled.",
-      "gta": {
-        "loads": 1,
-        "boots": 1,
-        "menu": 1,
-        "world": 1,
-        "playable": 1,
-        "fps": 19,
-        "stability": "unknown"
-      },
-      "visuals": {
-        "color": 0.8,
-        "lighting": 0.6,
-        "shaders": 0.65
-      },
-      "visualNotes": {
-        "color": "Most textures render; new textures can stream in late",
-        "lighting": "Some interiors remain too dark",
-        "shaders": "Outdoor foliage and distant buildings can flicker"
-      },
-      "fpsNote": "About 19 FPS in a city-street trial with ray tracing off and experimental options enabled",
-      "sessionNote": "Maintainer reports 41 minutes without a crash on one PC.",
-      "highlights": [
-        "Source available on GitHub",
-        "Published scene-specific FPS and hardware",
-        "41-minute session reported by the maintainer",
-        "November 26 city-street test improved from 13–17 FPS to about 19 FPS"
-      ],
-      "blockers": [
-        "Independent long-session reproduction is still pending",
-        "Heavy scenes still run at 6–10 FPS"
-      ],
-      "verification": "self-reported",
-      "checked": "Public source and published benchmark",
-      "evidence": "Maintainer’s benchmark table and community gameplay coverage",
-      "assessedAt": "2026-11-26",
-      "assessedBy": "manual",
-      "link": "news/2026-11-26-cgbj-25-fps-avatarmanz-city.html",
-      "stats": {
-        "stars": 12,
-        "forks": 0,
-        "openIssues": 0,
-        "createdAt": "2026-11-25T22:18:14Z",
-        "pushedAt": "2026-11-25T22:18:27Z",
-        "archived": false,
-        "missing": false,
-        "commits7d": 100
-      }
-    },
-    {
-      "id": "victory-perf",
-      "name": "victory-perf",
-      "tier": "tracked",
-      "repo": "vitutu1/victory-perf",
-      "branch": "main",
-      "link": "news/2026-11-25-gta-vi-pc-interior-fps-tests.html",
-      "basedOn": [
         "victory-gta6"
       ],
-      "approach": "Compatibility layer",
-      "target": "GTA VI only",
-      "summary": "Public fork reports 9–14 FPS in several interiors at half render scale on an RTX 4070 SUPER.",
       "gta": {
         "loads": 1,
         "boots": 1,
         "menu": 1,
         "world": 1,
         "playable": 1,
-        "stability": "unknown",
-        "fps": 9
+        "story": 0.25,
+        "render": 0.25,
+        "fps": 10,
+        "stability": 0.8
       },
-      "visuals": {
-        "color": 0.6,
-        "lighting": 0.55,
-        "shaders": 0.55
-      },
-      "visualNotes": {
-        "color": "Opening interiors and characters render",
-        "lighting": "Shadowed interiors use lighting approximations",
-        "shaders": "Selected interiors and HUD render"
-      },
-      "fpsNote": "9–14 FPS indoors, 4.5–6.5 FPS in heavy scenes",
-      "highlights": [
-        "Published per-scene frame-rate results",
-        "Keyboard and controller movement reported"
-      ],
-      "blockers": [
-        "Runs were reported on one machine at 50% render scale"
-      ],
-      "verification": "self-reported",
-      "evidence": "Maintainer’s public benchmark table",
-      "assessedAt": "2026-11-25",
-      "assessedBy": "manual",
       "stats": {
-        "stars": 18,
-        "forks": 7,
-        "openIssues": 2,
-        "pushedAt": "2026-11-25T13:31:35Z",
-        "createdAt": "2026-11-25T05:26:46Z",
+        "stars": 53,
+        "forks": 8,
+        "openIssues": 3,
+        "createdAt": "2026-11-24T22:58:04Z",
+        "pushedAt": "2026-11-26T03:26:25Z",
         "archived": false,
-        "missing": false
+        "missing": false,
+        "commits7d": 44
       },
-      "checked": "Public repo and published benchmark"
+      "portwatchScore": 68.8,
+      "summary": "Public project listed on PortWatch VI.",
+      "proof": {
+        "label": "36-minute external playtest",
+        "url": "https://github.com/fablinoo/kelvaroq#external-playtest-one-36-minute-session"
+      },
+      "fpsNote": "10 FPS listed by PortWatch VI"
     },
     {
       "id": "belobug",
-      "name": "Belobug (AMD)",
+      "name": "Belobug",
       "repo": "Belobug/VIctory-Belobug-AMD",
       "branch": "main",
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "basedOn": [
-        "marvis"
-      ],
       "summary": "This Radeon-focused VIctory fork renders the open world on an RX 9070 XT. PortWatch reports seeing it run through missions.",
       "gta": {
         "loads": 1,
@@ -1298,10 +1219,10 @@
         "menu": 1,
         "world": 1,
         "playable": 1,
-        "story": 0,
-        "render": 0.8,
-        "fps": 5,
-        "stability": "unknown"
+        "story": 0.5,
+        "render": 0.85,
+        "fps": 8,
+        "stability": 0.7
       },
       "visuals": {
         "color": 0.8,
@@ -1313,7 +1234,7 @@
         "lighting": "Lit world with flat lighting in shadow",
         "shaders": "Water and sky render; some effects and distant trees are missing"
       },
-      "fpsNote": "5–7 FPS reported in the world; lower while driving",
+      "fpsNote": "8 FPS listed by PortWatch VI",
       "sessionNote": "Driver timeout reported during testing",
       "highlights": [
         "Open-world gameplay shown on Windows 11 with an RX 9070 XT",
@@ -1332,15 +1253,369 @@
       "link": "news/2026-11-25-belobug-amd-open-world.html",
       "readmeSha": "0daa560302b551899beaacd1c1ca876658ed72491cb005ba560c0b55fc49d8cc",
       "stats": {
-        "stars": 356,
-        "forks": 56,
-        "openIssues": 7,
-        "pushedAt": "2026-11-25T09:42:39Z",
+        "stars": 1710,
+        "forks": 304,
+        "openIssues": 208,
+        "pushedAt": "2026-11-26T00:57:17Z",
         "createdAt": "2026-11-25T09:41:37Z",
         "archived": false,
-        "missing": false
+        "missing": false,
+        "commits7d": 100
       },
-      "checked": "Public repo and published benchmark"
+      "checked": "Public repo and published benchmark",
+      "portwatchScore": 79,
+      "proof": {
+        "label": "First PC Trickshot",
+        "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y55bgm/first_pc_trickshot_by_belo/"
+      }
+    },
+    {
+      "id": "dexnom",
+      "name": "DexNom",
+      "repo": "DexNom/VIctory",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.5,
+        "render": 0.9,
+        "fps": 3,
+        "stability": 0.7
+      },
+      "stats": {
+        "stars": 1003,
+        "forks": 123,
+        "openIssues": 64,
+        "createdAt": "2026-11-25T12:14:33Z",
+        "pushedAt": "2026-11-26T01:12:12Z",
+        "archived": false,
+        "missing": false,
+        "commits7d": 100
+      },
+      "portwatchScore": 78,
+      "summary": "Public project listed on PortWatch VI.",
+      "fpsNote": "3 FPS listed by PortWatch VI"
+    },
+    {
+      "id": "zettrox",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.1,
+        "render": 0.3,
+        "fps": 2,
+        "stability": 0.8
+      },
+      "tier": "tracked",
+      "assessedAt": "2026-11-25",
+      "assessedBy": "manual",
+      "verification": "self-reported",
+      "stats": {
+        "stars": 1499,
+        "forks": 290,
+        "openIssues": 146,
+        "createdAt": "2026-11-25T01:12:08Z",
+        "pushedAt": "2026-11-25T01:12:15Z",
+        "archived": false,
+        "missing": true,
+        "commits7d": 100,
+        "missingStatus": 404
+      },
+      "name": "ZETTROX",
+      "summary": "The Windows build reports a playable prologue and 1–3 FPS on an RTX 3050. PortWatch reported a separate run reaching Gone Fishing.",
+      "highlights": [
+        "The maintainers list playable prologue scenes through the boat chase",
+        "The maintainers report a session lasting 90+ minutes without a crash"
+      ],
+      "blockers": [
+        "Shadowed surfaces are black and bright scenes overexpose",
+        "The 90+ minute report gives total session time"
+      ],
+      "visuals": {
+        "color": 0.2,
+        "shaders": 0.3
+      },
+      "target": "GTA VI only",
+      "approach": "Compatibility layer",
+      "byline": "Public source · earlier run reported by PortWatch VI",
+      "evidence": "Reported by PortWatch VI; independent reproduction pending",
+      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html",
+      "repo": "Zettrox/ztrx",
+      "branch": "main",
+      "readmeSha": "2eb9e3fd0ccda3c2cb44d01b019007b3fe221061ae73aac011c9c3e4fa231490",
+      "visualNotes": {
+        "color": "Prologue is visible with blocky artifacts",
+        "lighting": "Black shadows and blown-out highlights",
+        "shaders": "Prologue scenes render with effects missing"
+      },
+      "fpsNote": "1–3 FPS in the world on an RTX 3050",
+      "sessionNote": "90+ min session reported; continuous play time unknown",
+      "nuked": {
+        "at": "2026-11-25",
+        "note": "GitHub repo and the Zettrox account gone on Nov 25 (HTTP 404 by 17:26 UTC). No DMCA notice is published yet."
+      },
+      "checked": "Previously public repository now returns 404",
+      "portwatchScore": 64.2,
+      "proof": {
+        "label": "Watch the first kill",
+        "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y4u9v2/first_kill/"
+      }
+    },
+    {
+      "id": "vitoriabr",
+      "repo": "uiliannn/VItoriaBr",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.1,
+        "render": 0.2,
+        "fps": 4,
+        "stability": 0.4
+      },
+      "verification": "self-reported",
+      "stats": {
+        "stars": 211,
+        "forks": 47,
+        "openIssues": 77,
+        "createdAt": "2026-11-24T10:05:17Z",
+        "pushedAt": "2026-11-26T04:09:11Z",
+        "archived": false,
+        "missing": false,
+        "commits7d": 100
+      },
+      "readmeSha": "995aadc4207013b50c43be767270a5c71dd3bf65a8806c0f66d83181a4ca61b9",
+      "name": "Uilian",
+      "assessedAt": "2026-11-24",
+      "summary": "PortWatch reports that Uilian’s streamed Windows build reached “Gone Fishing” at up to 4 FPS.",
+      "highlights": [
+        "Reported story progress into Jason’s first mission"
+      ],
+      "blockers": [
+        "Dark shadows and other rendering defects"
+      ],
+      "visuals": {
+        "color": 0.15,
+        "shaders": 0.2
+      },
+      "evidence": "PortWatch VI stream coverage",
+      "link": "news/2026-11-24-leonida-v2-ztrx-vitoriabr.html",
+      "visualNotes": {
+        "color": "First missions shown with rendering defects",
+        "lighting": "Shadowed areas still render dark",
+        "shaders": "The world renders with shader dropouts"
+      },
+      "fpsNote": "Up to 4 FPS on stream",
+      "portwatchScore": 59.6
+    },
+    {
+      "id": "avatarmanz",
+      "name": "AvatarManz",
+      "repo": "avatarmanz/VIctory-7900XTX",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "summary": "Public Radeon RX 7900 XTX fork. Its latest benchmark reports about 19 FPS in a city street with two experimental options enabled.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.5,
+        "render": 0.8,
+        "fps": 16,
+        "stability": 0.9
+      },
+      "visuals": {
+        "color": 0.8,
+        "lighting": 0.6,
+        "shaders": 0.65
+      },
+      "visualNotes": {
+        "color": "Most textures render; new textures can stream in late",
+        "lighting": "Some interiors remain too dark",
+        "shaders": "Outdoor foliage and distant buildings can flicker"
+      },
+      "fpsNote": "16 FPS listed by PortWatch VI",
+      "sessionNote": "Maintainer reports 41 minutes without a crash on one PC.",
+      "highlights": [
+        "Source available on GitHub",
+        "Published scene-specific FPS and hardware",
+        "41-minute session reported by the maintainer",
+        "November 26 city-street test improved from 13–17 FPS to about 19 FPS"
+      ],
+      "blockers": [
+        "Independent long-session reproduction is still pending",
+        "Heavy scenes still run at 6–10 FPS"
+      ],
+      "verification": "self-reported",
+      "checked": "Public source and published benchmark",
+      "evidence": "Maintainer’s benchmark table and community gameplay coverage",
+      "assessedAt": "2026-11-26",
+      "assessedBy": "manual",
+      "link": "news/2026-11-26-cgbj-25-fps-avatarmanz-city.html",
+      "stats": {
+        "stars": 1423,
+        "forks": 401,
+        "openIssues": 105,
+        "createdAt": "2026-11-25T22:18:14Z",
+        "pushedAt": "2026-11-26T10:17:57Z",
+        "archived": false,
+        "missing": false,
+        "commits7d": 100,
+        "mentions7d": 1
+      },
+      "portwatchScore": 83.1,
+      "proof": {
+        "label": "Video on Reddit",
+        "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y5k8xu/actually_playable/"
+      }
+    },
+    {
+      "id": "notnozy",
+      "name": "NotNozy",
+      "repo": null,
+      "tier": "tracked",
+      "basedOn": [],
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.8,
+        "render": 0.76,
+        "fps": 16,
+        "stability": 0.9
+      },
+      "stats": {},
+      "portwatchScore": 87.8,
+      "summary": "Private AMD build. PortWatch lists it at 87.8%; its owner estimated story progress at 80%.",
+      "proof": {
+        "label": "Watch on Rumble",
+        "url": "https://rumble.com/v7iv98i-gta6-modding-stream.html"
+      },
+      "fpsNote": "No measured average supplied; PortWatch uses a comparison estimate"
+    },
+    {
+      "id": "doomsday",
+      "name": "Doomsday",
+      "repo": null,
+      "tier": "tracked",
+      "basedOn": [],
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.8,
+        "render": 0.85,
+        "fps": 4,
+        "stability": 0.8
+      },
+      "stats": {},
+      "portwatchScore": 84,
+      "summary": "Private build listed on PortWatch VI.",
+      "proof": {
+        "label": "Doomsday on X",
+        "url": "https://x.com/Stu9ao"
+      },
+      "fpsNote": "4 FPS listed by PortWatch VI"
+    },
+    {
+      "id": "darkworldhm",
+      "name": "darkworldhm",
+      "repo": null,
+      "tier": "tracked",
+      "basedOn": [
+        "marvis"
+      ],
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.8,
+        "render": 0.7,
+        "fps": 15,
+        "stability": 0.7
+      },
+      "stats": {},
+      "portwatchScore": 84.8,
+      "summary": "Private build listed on PortWatch VI.",
+      "proof": {
+        "label": "Watch on Rumble",
+        "url": "https://rumble.com/v7iwggw-gta-6-mooding-pc.html"
+      },
+      "fpsNote": "15 FPS listed by PortWatch VI"
+    },
+    {
+      "id": "suri",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.8,
+        "render": 0.8,
+        "fps": 3,
+        "stability": "unknown"
+      },
+      "tier": "tracked",
+      "basedOn": [
+        "victory-gta6"
+      ],
+      "assessedAt": "2026-11-24",
+      "assessedBy": "manual",
+      "verification": "self-reported",
+      "stats": {},
+      "name": "suri",
+      "summary": "PortWatch reports player movement in Lucia’s opening at about 3 FPS, with better-looking rendering than earlier footage.",
+      "highlights": [
+        "More complete-looking rendering in the opening scene",
+        "Player-controlled movement reported by PortWatch"
+      ],
+      "blockers": [
+        "About 3 FPS reported",
+        "Evidence limited to the opening scene",
+        "Private build; no independently reproducible session"
+      ],
+      "visuals": {
+        "color": 0.6,
+        "lighting": 0.5,
+        "shaders": 0.6
+      },
+      "byline": "Private build · PortWatch VI report",
+      "evidence": "Reported by PortWatch VI; independent reproduction pending",
+      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html",
+      "visualNotes": {
+        "color": "Opening scene shows more complete textures",
+        "lighting": "Opening lighting is visible",
+        "shaders": "Improved rendering shown in the opening"
+      },
+      "fpsNote": "About 3 FPS in Lucia’s opening",
+      "repo": null,
+      "portwatchScore": 75
     },
     {
       "id": "omonkey",
@@ -1394,8 +1669,9 @@
       "fpsNote": "About 5 FPS in the prison",
       "nuked": {
         "at": "2026-11-25",
-        "note": "The owner reportedly withdrew the private build. No public code was available."
-      }
+        "note": "Taken down on Nov 25 (the owner's report). Its code was never public; Swaggely's Rumble channel, where it was streamed, still loaded at 18:18 UTC."
+      },
+      "portwatchScore": 57.9
     },
     {
       "id": "cgbj",
@@ -1411,7 +1687,7 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "PortWatch attributes newer footage to CGBJ and reports a 25 FPS average on NVIDIA. The associated repository returned 404.",
+      "summary": "PortWatch ranks CGBJ first at 91.5% and lists a 25 FPS gameplay average. Its GitHub repository currently returns 404.",
       "highlights": [
         "Linked footage shows the boat mission",
         "PortWatch reports a 25 FPS gameplay average"
@@ -1427,14 +1703,23 @@
         "menu": 1,
         "world": 1,
         "playable": 1,
-        "story": 0,
-        "render": 0.25,
+        "story": 0.8,
+        "render": 0.85,
         "fps": 25,
-        "stability": "unknown"
+        "stability": 0.85
       },
       "verification": "self-reported",
       "stats": {
-        "missing": true
+        "missing": true,
+        "stars": 293,
+        "forks": 82,
+        "openIssues": 1,
+        "createdAt": "2026-11-26T04:16:02Z",
+        "pushedAt": "2026-11-26T06:58:37Z",
+        "archived": false,
+        "commits7d": 100,
+        "mentions7d": 1,
+        "missingStatus": 404
       },
       "assessedAt": "2026-11-26",
       "assessedBy": "manual",
@@ -1453,11 +1738,73 @@
         "shaders": "Some scene rendering works"
       },
       "fpsNote": "25 FPS average reported by PortWatch; sample length unavailable",
-      "checked": "Boat-mission footage and repository status",
-      "nuked": {
-        "at": "2026-11-26",
-        "note": "The public GitHub repository returns 404. The reason is unknown."
+      "checked": "Linked footage and GitHub status",
+      "portwatchScore": 91.5,
+      "proof": {
+        "label": "Watch video",
+        "url": "https://v.redd.it/137k5pow5w3i1"
       }
+    },
+    {
+      "id": "victory-gta6",
+      "name": "hyphennn",
+      "repo": "fxceless/victory-fork",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "summary": "The public fork previously called victory-gta6. PortWatch attributes the streamed hyphennn build to this project. The fork reports an interactive opening, checkpoint saves and low single-digit gameplay FPS.",
+      "highlights": [
+        "Characters, textures, sky and sunlit geometry render in the opening",
+        "HUD, pause menu and controller input work",
+        "Opening cutscene plays through and a checkpoint can be saved and reloaded",
+        "Fork adds its own meshlet, descriptor and shader fixes",
+        "PortWatch reports improved lighting and hair in a stream attributed to this fork",
+        "A CPU graphics pass fell from 70–220 ms to about 3 ms. Whole frames still took 250–380 ms in that test."
+      ],
+      "blockers": [
+        "Most shadowed surfaces are black; bounce lighting and ray-traced shadows are missing",
+        "Reported 2–4 FPS on an i7-14700KF, RTX 4070 and 32 GB RAM; Windows 11",
+        "Some fixes are specific to the tested game and GPU; independent reproduction pending"
+      ],
+      "provenOn": null,
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0,
+        "render": 0.7,
+        "fps": 3,
+        "stability": "unknown"
+      },
+      "verification": "self-reported",
+      "stats": {
+        "stars": 3175,
+        "forks": 939,
+        "openIssues": 1134,
+        "createdAt": "2026-11-24T18:02:37Z",
+        "pushedAt": "2026-11-26T08:37:07Z",
+        "archived": false,
+        "missing": false,
+        "commits7d": 100
+      },
+      "assessedAt": "2026-11-25",
+      "assessedBy": "manual",
+      "claims": [],
+      "visuals": {
+        "color": 0.5,
+        "lighting": 0.5,
+        "shaders": 0.6
+      },
+      "visualNotes": {
+        "color": "Prologue textures, characters and sky render",
+        "lighting": "Direct sunlight works; shadows remain black",
+        "shaders": "The prologue renders with major lighting gaps"
+      },
+      "fpsNote": "2–4 FPS reported in the prologue",
+      "portwatchScore": 59.8
     },
     {
       "id": "marvis",
@@ -1484,19 +1831,19 @@
         "boots": 1,
         "menu": 1,
         "world": 1,
-        "playable": 0,
+        "playable": 1,
         "story": 0,
         "render": 0,
-        "fps": 0,
+        "fps": 1,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 10576,
-        "forks": 1530,
-        "openIssues": 1299,
+        "stars": 12882,
+        "forks": 2114,
+        "openIssues": 1902,
         "createdAt": "2026-11-23T21:47:25Z",
-        "pushedAt": "2026-11-24T09:55:08Z",
+        "pushedAt": "2026-11-25T23:27:48Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -1516,14 +1863,15 @@
         "lighting": "Surfaces in the opening remain unlit",
         "shaders": "The world renders with missing geometry"
       },
-      "fpsNote": "1–2 seconds per frame in the opening cinematic"
+      "fpsNote": "1 FPS listed by PortWatch VI",
+      "portwatchScore": 50.3
     },
     {
       "id": "xbox-emulator",
       "name": "xbox-emulator",
       "repo": "omonkeyz/xbox-emulator",
       "branch": "main",
-      "tier": "tracked",
+      "tier": "watchlist",
       "approach": "Compatibility runtime",
       "target": "Any Xbox Series game",
       "summary": "Rust runtime that runs dumped Xbox Series builds as normal Windows processes, continuing the TomBox project. It reports Trackmania races driving at about 60 fps and Terraria reaching its world, plus Fortnite's lobby. Self-reported.",
@@ -1560,11 +1908,11 @@
         "drycheetah84/TomBox"
       ],
       "stats": {
-        "stars": 1792,
-        "forks": 119,
-        "openIssues": 162,
+        "stars": 1848,
+        "forks": 123,
+        "openIssues": 54,
         "createdAt": "2026-11-21T08:08:39Z",
-        "pushedAt": "2026-11-23T11:58:17Z",
+        "pushedAt": "2026-11-25T13:47:56Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -1573,7 +1921,8 @@
       "assessedBy": "claude",
       "readmeSha": "bd169712dd4dc6d36ca44a2e90a599351c7f52e4dc94c164993f2d4792a0d650",
       "claims": [],
-      "readmeChangedAt": "2026-11-23"
+      "readmeChangedAt": "2026-11-23",
+      "portwatchScore": 6.5
     },
     {
       "id": "xcl",
@@ -1614,11 +1963,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 7528,
-        "forks": 962,
-        "openIssues": 1094,
+        "stars": 8412,
+        "forks": 1164,
+        "openIssues": 1766,
         "createdAt": "2026-11-20T20:03:21Z",
-        "pushedAt": "2026-11-24T18:29:22Z",
+        "pushedAt": "2026-11-26T06:10:46Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -1628,14 +1977,15 @@
       "assessedBy": "claude",
       "readmeSha": "60109b4e46f226fc14b0d0c0a170ba03f6d3b57f762c4c4c710234a730ad99c7",
       "claims": [],
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 35
     },
     {
       "id": "scarlettx",
       "name": "ScarlettX",
       "repo": "Freminet/ScarlettX",
       "branch": "main",
-      "tier": "tracked",
+      "tier": "watchlist",
       "approach": "HLE emulator",
       "target": "Any Xbox Series game",
       "summary": "Clean-room high-level emulator of the Scarlett OS and GDK runtime. It reports two retail Xbox Series games, Concept Destruction and Unicorn Overlord, playable on Windows.",
@@ -1669,9 +2019,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 256,
-        "forks": 24,
-        "openIssues": 27,
+        "stars": 268,
+        "forks": 27,
+        "openIssues": 39,
         "createdAt": "2026-11-20T06:54:47Z",
         "pushedAt": "2026-11-22T10:38:07Z",
         "commits7d": 57,
@@ -1682,14 +2032,15 @@
       "assessedBy": "claude",
       "readmeSha": "d6881fdffe0e3afee79751e1cc5e23b817bce89a59041b24a509f90e208c1dec",
       "claims": [],
-      "readmeChangedAt": "2026-11-22"
+      "readmeChangedAt": "2026-11-22",
+      "portwatchScore": 5.2
     },
     {
       "id": "tuxbox",
       "name": "TuxBox",
       "repo": "brcly/TuxBox",
       "branch": "main",
-      "tier": "tracked",
+      "tier": "watchlist",
       "approach": "Compatibility layer",
       "target": "Any Xbox Series game",
       "summary": "TuxBox reports reaching the story intro on Linux with stock Proton Experimental.",
@@ -1723,11 +2074,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 296,
-        "forks": 22,
-        "openIssues": 29,
+        "stars": 374,
+        "forks": 44,
+        "openIssues": 13,
         "createdAt": "2026-11-21T12:07:28Z",
-        "pushedAt": "2026-11-24T17:30:45Z",
+        "pushedAt": "2026-11-26T08:27:36Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -1736,7 +2087,8 @@
       "assessedBy": "claude",
       "readmeSha": "64db7c7f3454f3bd039d99fd7a3668ff007f76ab0ec472dd222e5076032b1725",
       "claims": [],
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 20
     },
     {
       "id": "americas-recomp",
@@ -1798,7 +2150,8 @@
       "assessedBy": "claude",
       "readmeSha": "12c7930af7957f9fe62fdcb2d904d17e36f7e458bc85494d874e1e60177abace",
       "claims": [],
-      "readmeChangedAt": "2026-11-22"
+      "readmeChangedAt": "2026-11-22",
+      "portwatchScore": 4.8
     },
     {
       "id": "leonida",
@@ -1811,7 +2164,7 @@
       "summary": "Made just for GTA VI, by Hookshot's author. Taken offline on Nov 23: its Discord vanished, the GitHub repo was deleted and the creator said he quit. Last result: the exe ran, frames stayed black.",
       "nuked": {
         "at": "2026-11-23",
-        "note": "Archived. GitHub says it processed Take-Two’s November 24 DMCA notice against the entire network of 3,007 repositories."
+        "note": "Discord gone, GitHub repo deleted and creator quit on Nov 23. On Nov 24 a Take-Two DMCA notice disabled its network of 3,007 GitHub forks; separately uploaded copies and a frozen mirror remain."
       },
       "highlights": [
         "Retail exe ran up to 10 minutes without a crash on Windows and Wine, AMD and NVIDIA",
@@ -1853,7 +2206,7 @@
         "archived": false,
         "missing": true,
         "missingStatus": 404,
-        "mentions7d": 17,
+        "mentions7d": 11,
         "dmca": {
           "date": "2026-11-24",
           "url": "https://github.com/github/dmca/blob/master/2026/11/2026-11-24-take-two.md"
@@ -1863,14 +2216,15 @@
       "assessedBy": "claude",
       "readmeSha": "c9ac7e9e6dfb9de3e4f0efd7590346f176b246756384ca751999608f3f8da2e6",
       "claims": [],
-      "readmeChangedAt": "2026-11-23"
+      "readmeChangedAt": "2026-11-23",
+      "portwatchScore": 10
     },
     {
       "id": "openscarlett",
       "name": "OpenScarlett",
       "repo": "californiaAlmonds/OpenScarlett",
       "branch": "main",
-      "tier": "tracked",
+      "tier": "watchlist",
       "approach": "Compatibility layer",
       "target": "Any Xbox Series game",
       "summary": "MIT-licensed C++20 translation layer targeting D3D12 and Vulkan. It now claims 17 boot stops cleared on a retail title it doesn't name, with no run record or frame shown, so no GTA VI milestone yet.",
@@ -1904,11 +2258,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 86,
+        "stars": 103,
         "forks": 12,
-        "openIssues": 17,
+        "openIssues": 8,
         "createdAt": "2026-11-21T14:35:25Z",
-        "pushedAt": "2026-11-24T06:47:57Z",
+        "pushedAt": "2026-11-26T09:42:29Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -1917,14 +2271,15 @@
       "assessedBy": "claude",
       "readmeSha": "cd34116981a2f5b746798d35e0a6f312d4f7aca5cc86ca2bf81511a23c6bd382",
       "claims": [],
-      "readmeChangedAt": "2026-11-23"
+      "readmeChangedAt": "2026-11-23",
+      "portwatchScore": 4.5
     },
     {
       "id": "scarlett-layer",
       "name": "scarlett-layer",
       "repo": "jadeowaowa/scarlett-layer",
       "branch": "main",
-      "tier": "tracked",
+      "tier": "watchlist",
       "approach": "Compatibility layer",
       "target": "Any Xbox Series game",
       "summary": "Loader plus injected hook DLL that redirects console-only calls to Windows shims, with its own d3d12_xs wrapper and shader lifter. It reports Terraria's GDK build rendering its menus with audio; no gameplay yet.",
@@ -1957,8 +2312,8 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 40,
-        "forks": 4,
+        "stars": 46,
+        "forks": 3,
         "openIssues": 2,
         "createdAt": "2026-11-20T23:54:18Z",
         "pushedAt": "2026-11-24T00:30:36Z",
@@ -1970,14 +2325,15 @@
       "assessedBy": "claude",
       "readmeSha": "a8cb717802a3ccce2c81573fcef3cfb48f6b06588373f8c479ab9e4b096ad017",
       "claims": [],
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 3.4
     },
     {
       "id": "xbox2windows",
       "name": "Xbox2Windows",
       "repo": "R0Y00/Xbox2Windows",
       "branch": "main",
-      "tier": "tracked",
+      "tier": "watchlist",
       "approach": "Static recompilation",
       "target": "Any Xbox Series game",
       "summary": "Static recompilation research turning Xbox Series code and shaders into Windows C++ and DXIL, with over 50 contributors. Footage the project shared shows GTA VI's menus, unstable. Its README now reports a modified diagnostic exe playing the intro and setup text; the original exe and the menus remain unverified.",
@@ -2011,11 +2367,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 1877,
-        "forks": 211,
-        "openIssues": 206,
+        "stars": 1961,
+        "forks": 232,
+        "openIssues": 148,
         "createdAt": "2026-11-20T17:43:52Z",
-        "pushedAt": "2026-11-24T19:13:11Z",
+        "pushedAt": "2026-11-26T10:17:31Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2024,16 +2380,17 @@
       "assessedBy": "manual",
       "readmeSha": "b14134dfab68c62d557aa2bd18f8898a1c7b40620c14751bf9b33625f123ad91",
       "claims": [],
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 25
     },
     {
       "id": "anyxboxx",
-      "name": "AnyXboxX · VIctory build",
+      "name": "AnyXboxX",
       "repo": "LooperSalty/AnyXboxX",
       "branch": "main",
-      "tier": "tracked",
-      "approach": "Compatibility layer",
-      "target": "GTA VI only",
+      "tier": "watchlist",
+      "approach": "HLE emulator",
+      "target": "Any Xbox Series game",
       "summary": "The AnyXboxX team tests GTA VI through its own VIctory fork on Windows 11 with an RTX 4070 SUPER.",
       "highlights": [
         "The maintainer measured 4.8–5.4 FPS with player control in the world",
@@ -2052,23 +2409,23 @@
       },
       "provenOn": "GDK sample games (not retail)",
       "gta": {
-        "loads": 1,
-        "boots": 1,
-        "menu": 1,
-        "world": 1,
-        "playable": 1,
-        "story": 0.1,
-        "render": 0.55,
-        "fps": 5,
+        "loads": 0,
+        "boots": 0,
+        "menu": 0,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
+        "fps": 0,
         "stability": "unknown"
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 233,
-        "forks": 25,
-        "openIssues": 43,
+        "stars": 393,
+        "forks": 63,
+        "openIssues": 86,
         "createdAt": "2026-11-21T00:18:13Z",
-        "pushedAt": "2026-11-24T17:19:25Z",
+        "pushedAt": "2026-11-26T09:31:49Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2083,9 +2440,6 @@
         "lighting": "Irradiance shaders render; ray tracing remains off",
         "shaders": "Most of the tested scene draws; some pipelines fail"
       },
-      "basedOn": [
-        "victory-gta6"
-      ],
       "visuals": {
         "color": 0.55,
         "lighting": 0.35,
@@ -2093,14 +2447,54 @@
       },
       "fpsNote": "4.8–5.4 FPS measured with player control",
       "sessionNote": "About 45 min reported by a contributor; no run log",
-      "evidence": "Maintainer-reported logs and contributor report"
+      "evidence": "Maintainer-reported logs and contributor report",
+      "portwatchScore": 2.5
+    },
+    {
+      "id": "keylime",
+      "name": "keylime",
+      "repo": "ethan00013/keylime",
+      "branch": "main",
+      "tier": "watchlist",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "groundwork": {
+        "loader": 0.5,
+        "shaders": 0.1,
+        "graphics": 0.35,
+        "proven": 0
+      },
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
+        "fps": 0,
+        "stability": "unknown"
+      },
+      "stats": {
+        "stars": 5,
+        "forks": 1,
+        "openIssues": 0,
+        "createdAt": "2026-11-25T00:33:55Z",
+        "pushedAt": "2026-11-25T21:52:57Z",
+        "archived": false,
+        "missing": true,
+        "commits7d": 67,
+        "missingStatus": 404
+      },
+      "portwatchScore": 30,
+      "summary": "Public project listed on PortWatch VI."
     },
     {
       "id": "xvalkyrie",
       "name": "XValkyrie",
       "repo": "sammwyy/xvalkyrie",
       "branch": "main",
-      "tier": "tracked",
+      "tier": "watchlist",
       "approach": "Compatibility layer",
       "target": "Any Xbox One or Series game",
       "summary": "Wine-style C++ layer for Xbox One and Series titles with native code and RDNA2-to-HLSL shaders. It now calls Minecraft Preview and Unicorn Overlord playable, though its Minecraft note describes only the main menu. Unverified.",
@@ -2134,11 +2528,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 217,
-        "forks": 11,
-        "openIssues": 11,
+        "stars": 236,
+        "forks": 14,
+        "openIssues": 9,
         "createdAt": "2026-11-20T00:25:27Z",
-        "pushedAt": "2026-11-23T19:24:06Z",
+        "pushedAt": "2026-11-26T03:43:36Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2147,7 +2541,8 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "b9166c08d268dcd3c676c14f56f3eea75395745c9f5b87122cda4e4e928c3872",
-      "readmeChangedAt": "2026-11-23"
+      "readmeChangedAt": "2026-11-23",
+      "portwatchScore": 2.9
     },
     {
       "id": "gtavi-recomp",
@@ -2184,12 +2579,12 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 59,
-        "forks": 6,
-        "openIssues": 0,
+        "stars": 69,
+        "forks": 13,
+        "openIssues": 19,
         "createdAt": "2026-11-19T20:32:01Z",
-        "pushedAt": "2026-11-24T13:09:35Z",
-        "commits7d": 40,
+        "pushedAt": "2026-11-25T12:51:20Z",
+        "commits7d": 56,
         "archived": false,
         "missing": false
       },
@@ -2197,7 +2592,8 @@
       "assessedBy": "manual",
       "readmeSha": "bf7af157055b4e3bfcbaddf92b9e19869e59359ac018ab758501045ec9bddde1",
       "claims": [],
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 2.1
     },
     {
       "id": "anyxboxseries",
@@ -2236,21 +2632,22 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 21,
-        "forks": 0,
+        "stars": 2,
+        "forks": 1,
         "openIssues": 0,
         "createdAt": "2026-11-20T22:59:15Z",
-        "pushedAt": "2026-11-22T02:38:22Z",
-        "commits7d": 22,
+        "pushedAt": "2026-11-25T06:43:07Z",
+        "commits7d": 27,
         "archived": false,
-        "missing": true,
+        "missing": false,
         "missingStatus": 404
       },
       "assessedAt": "2026-11-22",
       "assessedBy": "claude",
       "readmeSha": "32da05be734a513ea7ab5e97fee287889fec4efb1afa16e8a846ef0c5ede20d6",
       "claims": [],
-      "readmeChangedAt": "2026-11-22"
+      "readmeChangedAt": "2026-11-22",
+      "portwatchScore": 1
     },
     {
       "id": "scarab",
@@ -2301,7 +2698,8 @@
       "assessedBy": "claude",
       "readmeSha": "f9ada1bc3e3b4645bd612f50a90e937e2114b41e7d9d888e1703324e8fa9364b",
       "claims": [],
-      "readmeChangedAt": "2026-11-23"
+      "readmeChangedAt": "2026-11-23",
+      "portwatchScore": 1
     },
     {
       "id": "anybox",
@@ -2339,21 +2737,22 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 10,
-        "forks": 3,
-        "openIssues": 11,
+        "stars": 4,
+        "forks": 1,
+        "openIssues": 0,
         "createdAt": "2026-11-20T19:20:23Z",
-        "pushedAt": "2026-11-23T07:20:39Z",
-        "commits7d": 84,
+        "pushedAt": "2026-11-26T09:31:06Z",
+        "commits7d": 94,
         "archived": false,
-        "missing": true,
+        "missing": false,
         "missingStatus": 404
       },
       "assessedAt": "2026-11-23",
       "assessedBy": "claude",
       "readmeSha": "320b58692de246f9512a8812c45671038f003e5618059ee23af5e08b6899af21",
       "claims": [],
-      "readmeChangedAt": "2026-11-23"
+      "readmeChangedAt": "2026-11-23",
+      "portwatchScore": 0.7
     },
     {
       "id": "percyscarlett",
@@ -2393,12 +2792,12 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 38,
-        "forks": 3,
-        "openIssues": 8,
+        "stars": 42,
+        "forks": 5,
+        "openIssues": 3,
         "createdAt": "2026-11-21T16:49:38Z",
-        "pushedAt": "2026-11-24T09:38:35Z",
-        "commits7d": 73,
+        "pushedAt": "2026-11-25T09:58:34Z",
+        "commits7d": 76,
         "archived": false,
         "missing": false
       },
@@ -2406,7 +2805,8 @@
       "assessedBy": "claude",
       "readmeSha": "eb85950b3d2025b749365118cd28a9569182f122e42ffb874474c3ef48411501",
       "claims": [],
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 10
     },
     {
       "id": "grandtheftxbox",
@@ -2456,7 +2856,8 @@
       "assessedAt": "2026-11-21",
       "assessedBy": "manual",
       "readmeSha": "eda8af691482e3d70eccd136edd7c9cb15a4a0e8d99aab4393893b20f008cc62",
-      "claims": []
+      "claims": [],
+      "portwatchScore": 0.3
     },
     {
       "id": "scarlett-windows-compat",
@@ -2495,10 +2896,10 @@
       "verification": "self-reported",
       "stats": {
         "stars": 2,
-        "forks": 1,
-        "openIssues": 12,
+        "forks": 2,
+        "openIssues": 14,
         "createdAt": "2026-11-21T21:05:28Z",
-        "pushedAt": "2026-11-24T19:07:33Z",
+        "pushedAt": "2026-11-25T06:00:33Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2507,7 +2908,8 @@
       "assessedBy": "claude",
       "readmeSha": "7bffaff08200d85bfd60fc49365b0242c020f0a2f575e828324460a70c48198e",
       "claims": [],
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 0.1
     },
     {
       "id": "dedsec",
@@ -2547,8 +2949,8 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 7,
-        "forks": 0,
+        "stars": 13,
+        "forks": 1,
         "openIssues": 3,
         "createdAt": "2026-11-22T07:31:37Z",
         "pushedAt": "2026-11-23T22:48:15Z",
@@ -2561,7 +2963,8 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "2a584d30973b09fa113642748ecfd8477ab82cb3749dbb84f00e13c4a1a361d2",
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 1.2
     },
     {
       "id": "xbgtasix",
@@ -2601,11 +3004,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 2,
-        "forks": 0,
+        "stars": 4,
+        "forks": 1,
         "openIssues": 0,
         "createdAt": "2026-11-22T14:40:55Z",
-        "pushedAt": "2026-11-24T06:27:50Z",
+        "pushedAt": "2026-11-25T23:09:31Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2614,7 +3017,8 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "72f6e1e79842f889c90179f2765e549f625e3a3559b0c6c1059ad041a1e914c8",
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 1.2
     },
     {
       "id": "seriesx-emulator",
@@ -2653,12 +3057,12 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 3,
-        "forks": 0,
+        "stars": 4,
+        "forks": 1,
         "openIssues": 1,
         "createdAt": "2026-11-22T15:09:24Z",
-        "pushedAt": "2026-11-23T19:36:47Z",
-        "commits7d": 16,
+        "pushedAt": "2026-11-25T17:03:56Z",
+        "commits7d": 17,
         "archived": false,
         "missing": false
       },
@@ -2666,7 +3070,8 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "4800e564eb3de0cc08416d4c7011252389a8125f4376b2e266467c26be978cf5",
-      "readmeChangedAt": "2026-11-23"
+      "readmeChangedAt": "2026-11-23",
+      "portwatchScore": 0.3
     },
     {
       "id": "gta6-compat-layer",
@@ -2703,12 +3108,12 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 4,
-        "forks": 0,
-        "openIssues": 0,
+        "stars": 8,
+        "forks": 2,
+        "openIssues": 1,
         "createdAt": "2026-11-23T02:45:46Z",
-        "pushedAt": "2026-11-25T01:22:12Z",
-        "commits7d": 68,
+        "pushedAt": "2026-11-26T10:11:20Z",
+        "commits7d": 100,
         "archived": false,
         "missing": false
       },
@@ -2716,7 +3121,8 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "d3edee602970bbcdd33e309d670ce79f4a7bfbbb832db13f427d3b30218e235f",
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 10
     },
     {
       "id": "xlaunchvi",
@@ -2757,28 +3163,29 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 4,
-        "forks": 1,
-        "openIssues": 55,
+        "stars": 10,
+        "forks": 3,
+        "openIssues": 56,
         "createdAt": "2026-11-22T20:45:44Z",
-        "pushedAt": "2026-11-24T19:04:46Z",
+        "pushedAt": "2026-11-25T18:27:10Z",
         "commits7d": 5,
         "archived": false,
-        "missing": false,
+        "missing": true,
         "missingStatus": 404
       },
       "assessedAt": "2026-11-23",
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "03b9af6c1679af3949a65fc62afdd4cc1cae256c1d5796384632c217e0c374bf",
-      "readmeChangedAt": "2026-11-23"
+      "readmeChangedAt": "2026-11-23",
+      "portwatchScore": 1.4
     },
     {
       "id": "openscarlett-ce",
       "name": "OpenScarlett (Community Edition)",
       "repo": "OpenCommunityEdition/OpenScarlett",
       "branch": "main",
-      "tier": "tracked",
+      "tier": "watchlist",
       "approach": "Compatibility layer",
       "target": "Any Xbox Series game",
       "summary": "AGPL C++ layer, separate from the other OpenScarlett, that swaps console DLLs for PC Direct3D 12 ones and translates console GPU code. It reports Minecraft Preview playable at about 60 fps, and an unnamed newer retail game reaching its start screen. Self-reported; no GTA VI credit until it names the game's files.",
@@ -2812,11 +3219,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 69,
-        "forks": 3,
+        "stars": 88,
+        "forks": 4,
         "openIssues": 1,
         "createdAt": "2026-11-21T04:47:46Z",
-        "pushedAt": "2026-11-24T17:44:54Z",
+        "pushedAt": "2026-11-25T09:45:19Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -2826,7 +3233,46 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "5ba0bdd173fc80a8596db722adc82569fd29275b1c677870f612cb407984a405",
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 4.9
+    },
+    {
+      "id": "port-of-the-americas",
+      "name": "Port of the Americas",
+      "repo": "Steinkoloss/port-of-the-americas",
+      "branch": "main",
+      "tier": "watchlist",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "groundwork": {
+        "loader": 0.5,
+        "shaders": 0.1,
+        "graphics": 0.35,
+        "proven": 0
+      },
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 0.5,
+        "world": 0,
+        "playable": 0,
+        "story": 0,
+        "render": 0,
+        "fps": 0,
+        "stability": "unknown"
+      },
+      "stats": {
+        "stars": 6,
+        "forks": 2,
+        "openIssues": 0,
+        "createdAt": "2026-11-24T19:59:37Z",
+        "pushedAt": "2026-11-25T00:01:01Z",
+        "commits7d": 88,
+        "archived": false,
+        "missing": false
+      },
+      "portwatchScore": 25,
+      "summary": "Public project listed on PortWatch VI."
     },
     {
       "id": "five-star-recomp",
@@ -2865,11 +3311,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 174,
-        "forks": 8,
-        "openIssues": 6,
+        "stars": 220,
+        "forks": 14,
+        "openIssues": 13,
         "createdAt": "2026-11-23T09:57:42Z",
-        "pushedAt": "2026-11-24T19:12:57Z",
+        "pushedAt": "2026-11-26T10:18:07Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2878,7 +3324,8 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "4a57db7f9bea84859306b8ce7c2c91153aa6a0bd0b3c7969deb39678db4e1dd3",
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 30
     },
     {
       "id": "g6recomp",
@@ -2919,9 +3366,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 7,
-        "forks": 0,
-        "openIssues": 2,
+        "stars": 11,
+        "forks": 1,
+        "openIssues": 3,
         "createdAt": "2026-11-20T15:07:18Z",
         "pushedAt": "2026-11-24T07:52:34Z",
         "commits7d": 61,
@@ -2931,7 +3378,8 @@
       "assessedAt": "2026-11-23",
       "assessedBy": "claude",
       "claims": [],
-      "readmeSha": "164285286ae2798f50db40b8bead9376e88e7d060124e5d743e4f5ae22261ca1"
+      "readmeSha": "164285286ae2798f50db40b8bead9376e88e7d060124e5d743e4f5ae22261ca1",
+      "portwatchScore": 0.7
     },
     {
       "id": "gta6-boottest",
@@ -2971,8 +3419,8 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 41,
-        "forks": 3,
+        "stars": 44,
+        "forks": 4,
         "openIssues": 2,
         "createdAt": "2026-11-23T16:34:11Z",
         "pushedAt": "2026-11-24T01:09:59Z",
@@ -2984,7 +3432,8 @@
       "assessedAt": "2026-11-24",
       "assessedBy": "claude",
       "claims": [],
-      "readmeSha": "e7c316aa21181e7f36a0f6fad3dfab38befe494514d169ae4846f45478e038e4"
+      "readmeSha": "e7c316aa21181e7f36a0f6fad3dfab38befe494514d169ae4846f45478e038e4",
+      "portwatchScore": 10
     },
     {
       "id": "palmetto",
@@ -3024,11 +3473,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 134,
-        "forks": 54,
-        "openIssues": 4,
-        "createdAt": "2026-11-23T22:56:30Z",
-        "pushedAt": "2026-11-24T19:13:18Z",
+        "stars": 15,
+        "forks": 3,
+        "openIssues": 1,
+        "createdAt": "2026-11-24T22:05:23Z",
+        "pushedAt": "2026-11-26T10:11:01Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -3038,184 +3487,63 @@
       "assessedBy": "claude",
       "claims": [],
       "readmeSha": "edd4cb2f51b07c5f076529e265d3c284e8fe6b35414363ceeb9068e75d2b0b23",
-      "readmeChangedAt": "2026-11-24"
+      "readmeChangedAt": "2026-11-24",
+      "portwatchScore": 10
     },
     {
-      "id": "victory-gta6",
-      "name": "victory-fork (hyphennn)",
-      "repo": "fxceless/victory-fork",
+      "id": "victory-perf",
+      "name": "victory-perf",
+      "tier": "watchlist",
+      "repo": "vitutu1/victory-perf",
       "branch": "main",
-      "tier": "tracked",
-      "approach": "Compatibility layer",
-      "target": "GTA VI only",
-      "summary": "The public fork previously called victory-gta6. PortWatch attributes the streamed hyphennn build to this project. The fork reports an interactive opening, checkpoint saves and low single-digit gameplay FPS.",
-      "highlights": [
-        "Characters, textures, sky and sunlit geometry render in the opening",
-        "HUD, pause menu and controller input work",
-        "Opening cutscene plays through and a checkpoint can be saved and reloaded",
-        "Fork adds its own meshlet, descriptor and shader fixes",
-        "PortWatch reports improved lighting and hair in a stream attributed to this fork",
-        "A CPU graphics pass fell from 70–220 ms to about 3 ms. Whole frames still took 250–380 ms in that test."
-      ],
-      "blockers": [
-        "Most shadowed surfaces are black; bounce lighting and ray-traced shadows are missing",
-        "Reported 2–4 FPS on an i7-14700KF, RTX 4070 and 32 GB RAM; Windows 11",
-        "Some fixes are specific to the tested game and GPU; independent reproduction pending"
-      ],
-      "provenOn": null,
-      "gta": {
-        "loads": 1,
-        "boots": 1,
-        "menu": 1,
-        "world": 1,
-        "playable": 1,
-        "story": 0,
-        "render": 0.5,
-        "fps": 3,
-        "stability": "unknown"
-      },
-      "verification": "self-reported",
-      "stats": {
-        "stars": 1258,
-        "forks": 274,
-        "openIssues": 164,
-        "createdAt": "2026-11-24T18:02:37Z",
-        "pushedAt": "2026-11-25T10:20:53Z",
-        "archived": false,
-        "missing": false,
-        "commits7d": 100
-      },
-      "assessedAt": "2026-11-25",
-      "assessedBy": "manual",
-      "claims": [],
-      "basedOn": [
-        "marvis"
-      ],
-      "visuals": {
-        "color": 0.5,
-        "lighting": 0.5,
-        "shaders": 0.6
-      },
-      "visualNotes": {
-        "color": "Prologue textures, characters and sky render",
-        "lighting": "Direct sunlight works; shadows remain black",
-        "shaders": "The prologue renders with major lighting gaps"
-      },
-      "fpsNote": "2–4 FPS reported in the prologue"
-    },
-    {
-      "id": "zettrox",
-      "gta": {
-        "loads": 1,
-        "boots": 1,
-        "menu": 1,
-        "world": 1,
-        "playable": 1,
-        "story": 0.1,
-        "render": 0.3,
-        "fps": 2,
-        "stability": "sometimes"
-      },
-      "tier": "tracked",
+      "link": "news/2026-11-25-gta-vi-pc-interior-fps-tests.html",
       "basedOn": [
         "victory-gta6"
       ],
-      "assessedAt": "2026-11-25",
-      "assessedBy": "manual",
-      "verification": "self-reported",
-      "stats": {
-        "stars": 55,
-        "forks": 9,
-        "openIssues": 0,
-        "createdAt": "2026-11-25T01:12:08Z",
-        "pushedAt": "2026-11-25T01:12:15Z",
-        "archived": false,
-        "missing": true,
-        "commits7d": 100
-      },
-      "name": "ZETTROX",
-      "summary": "The Windows build reports a playable prologue and 1–3 FPS on an RTX 3050. PortWatch reported a separate run reaching Gone Fishing.",
-      "highlights": [
-        "The maintainers list playable prologue scenes through the boat chase",
-        "The maintainers report a session lasting 90+ minutes without a crash"
-      ],
-      "blockers": [
-        "Shadowed surfaces are black and bright scenes overexpose",
-        "The 90+ minute report gives total session time"
-      ],
-      "visuals": {
-        "color": 0.2,
-        "shaders": 0.3
-      },
-      "target": "GTA VI only",
       "approach": "Compatibility layer",
-      "byline": "Public source · earlier run reported by PortWatch VI",
-      "evidence": "Reported by PortWatch VI; independent reproduction pending",
-      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html",
-      "repo": "Zettrox/ztrx",
-      "branch": "main",
-      "readmeSha": "2eb9e3fd0ccda3c2cb44d01b019007b3fe221061ae73aac011c9c3e4fa231490",
-      "visualNotes": {
-        "color": "Prologue is visible with blocky artifacts",
-        "lighting": "Black shadows and blown-out highlights",
-        "shaders": "Prologue scenes render with effects missing"
-      },
-      "fpsNote": "1–3 FPS in the world on an RTX 3050",
-      "sessionNote": "90+ min session reported; continuous play time unknown",
-      "nuked": {
-        "at": "2026-11-25",
-        "note": "GitHub repository was unavailable on Nov 25 (HTTP 404). The cause is unknown."
-      },
-      "checked": "Previously public repository now returns 404"
-    },
-    {
-      "id": "suri",
+      "target": "GTA VI only",
+      "summary": "Public fork reports 9–14 FPS in several interiors at half render scale on an RTX 4070 SUPER.",
       "gta": {
         "loads": 1,
         "boots": 1,
         "menu": 1,
         "world": 1,
         "playable": 1,
-        "story": 0,
-        "render": 0.8,
-        "fps": 3,
-        "stability": "unknown"
+        "stability": "unknown",
+        "fps": 9
       },
-      "tier": "tracked",
-      "basedOn": [
-        "victory-gta6"
-      ],
-      "assessedAt": "2026-11-24",
-      "assessedBy": "manual",
-      "verification": "self-reported",
-      "stats": {},
-      "name": "suri",
-      "summary": "PortWatch reports player movement in Lucia’s opening at about 3 FPS, with better-looking rendering than earlier footage.",
-      "highlights": [
-        "More complete-looking rendering in the opening scene",
-        "Player-controlled movement reported by PortWatch"
-      ],
-      "blockers": [
-        "About 3 FPS reported",
-        "Evidence limited to the opening scene",
-        "Private build; no independently reproducible session"
-      ],
       "visuals": {
         "color": 0.6,
-        "lighting": 0.5,
-        "shaders": 0.6
+        "lighting": 0.55,
+        "shaders": 0.55
       },
-      "target": "GTA VI only",
-      "approach": "Compatibility layer",
-      "byline": "Private build · PortWatch VI report",
-      "evidence": "Reported by PortWatch VI; independent reproduction pending",
-      "link": "news/2026-11-24-gta-vi-pc-reaches-gone-fishing.html",
       "visualNotes": {
-        "color": "Opening scene shows more complete textures",
-        "lighting": "Opening lighting is visible",
-        "shaders": "Improved rendering shown in the opening"
+        "color": "Opening interiors and characters render",
+        "lighting": "Shadowed interiors use lighting approximations",
+        "shaders": "Selected interiors and HUD render"
       },
-      "fpsNote": "About 3 FPS in Lucia’s opening"
+      "fpsNote": "9–14 FPS indoors, 4.5–6.5 FPS in heavy scenes",
+      "highlights": [
+        "Published per-scene frame-rate results",
+        "Keyboard and controller movement reported"
+      ],
+      "blockers": [
+        "Runs were reported on one machine at 50% render scale"
+      ],
+      "verification": "self-reported",
+      "evidence": "Maintainer’s public benchmark table",
+      "assessedAt": "2026-11-25",
+      "assessedBy": "manual",
+      "stats": {
+        "stars": 18,
+        "forks": 7,
+        "openIssues": 2,
+        "pushedAt": "2026-11-25T13:31:35Z",
+        "createdAt": "2026-11-25T05:26:46Z",
+        "archived": false,
+        "missing": false
+      },
+      "checked": "Public repo and published benchmark"
     },
     {
       "id": "lnda-v2",
@@ -3253,61 +3581,6 @@
         "pushedAt": "2026-11-24T23:06:18Z",
         "createdAt": "2026-11-24T18:44:26Z"
       }
-    },
-    {
-      "id": "vitoriabr",
-      "repo": "uiliannn/VItoriaBr",
-      "branch": "main",
-      "tier": "tracked",
-      "approach": "Compatibility layer",
-      "target": "GTA VI only",
-      "gta": {
-        "loads": 1,
-        "boots": 1,
-        "menu": 1,
-        "world": 1,
-        "playable": 1,
-        "story": 0.1,
-        "render": 0.2,
-        "fps": 4,
-        "stability": 0.4
-      },
-      "verification": "self-reported",
-      "stats": {
-        "stars": 30,
-        "forks": 5,
-        "openIssues": 3,
-        "createdAt": "2026-11-24T10:05:17Z",
-        "pushedAt": "2026-11-25T00:37:06Z",
-        "archived": false,
-        "missing": false,
-        "commits7d": 100
-      },
-      "readmeSha": "995aadc4207013b50c43be767270a5c71dd3bf65a8806c0f66d83181a4ca61b9",
-      "name": "VItoriaBr (Uilian)",
-      "basedOn": [
-        "victory-gta6"
-      ],
-      "assessedAt": "2026-11-24",
-      "summary": "PortWatch reports that Uilian’s streamed Windows build reached “Gone Fishing” at up to 4 FPS.",
-      "highlights": [
-        "Reported story progress into Jason’s first mission"
-      ],
-      "blockers": [
-        "Dark shadows and other rendering defects"
-      ],
-      "visuals": {
-        "color": 0.15,
-        "shaders": 0.2
-      },
-      "evidence": "PortWatch VI stream coverage",
-      "link": "news/2026-11-24-leonida-v2-ztrx-vitoriabr.html",
-      "visualNotes": {
-        "color": "First missions shown with rendering defects",
-        "lighting": "Shadowed areas still render dark",
-        "shaders": "The world renders with shader dropouts"
-      },
-      "fpsNote": "Up to 4 FPS on stream"
     }
   ],
   "tools": [
@@ -6842,7 +7115,12 @@
     {
       "date": "2026-11-26",
       "kind": "up",
-      "text": "AvatarManz leads the active leaderboard at 64.4% after publishing a new city-street benchmark. CGBJ’s reported 25 FPS is covered in the news while its repository is offline."
+      "text": "AvatarManz published a city-street benchmark at around 19 FPS; CGBJ’s reported 25 FPS average is covered in the news."
+    },
+    {
+      "date": "2026-11-26",
+      "kind": "up",
+      "text": "The race now follows PortWatch’s standings. CGBJ leads at 91.5%, with a reported 25 FPS average."
     }
   ],
   "history": [
@@ -7180,5 +7458,57 @@
       "gta6": false,
       "tracked": []
     }
-  ]
+  ],
+  "portwatch": {
+    "updated": "2026-11-26T10:23:53.338Z",
+    "history": [
+      {
+        "date": "2026-11-21",
+        "leader": 6.3,
+        "leaderId": "xbox-emulator",
+        "top3": 5.6,
+        "furthest": "groundwork",
+        "tracked": 17
+      },
+      {
+        "date": "2026-11-22",
+        "leader": 8.8,
+        "leaderId": "xcl",
+        "top3": 6.8,
+        "furthest": "groundwork",
+        "tracked": 20
+      },
+      {
+        "date": "2026-11-23",
+        "leader": 30,
+        "leaderId": "marvis",
+        "top3": 16.7,
+        "furthest": "menu",
+        "tracked": 27
+      },
+      {
+        "date": "2026-11-24",
+        "leader": 61,
+        "leaderId": "suri",
+        "top3": 59.6,
+        "furthest": "ingame",
+        "tracked": 33
+      },
+      {
+        "date": "2026-11-25",
+        "leader": 83.1,
+        "leaderId": "avatarmanz",
+        "top3": 81.7,
+        "furthest": "ingame",
+        "tracked": 43
+      },
+      {
+        "date": "2026-11-26",
+        "leader": 91.5,
+        "leaderId": "cgbj",
+        "top3": 88,
+        "furthest": "ingame"
+      }
+    ]
+  }
 }

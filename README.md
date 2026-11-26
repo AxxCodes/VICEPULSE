@@ -14,7 +14,7 @@ VICEPULSE is an independent tracker of community efforts to run Grand Theft Auto
 | Sustained 30 FPS | A gameplay test holds 30 FPS over time. |
 | Crash-free play | A timed Windows gameplay run is measured against 30 minutes. |
 
-The headline percentage is a weighted score for the leading build. Player control accounts for 25%, graphics 15%, gameplay FPS 35%, sustained 30 FPS 10%, and crash-free play 15%. Checks score independently. Early gains in gameplay FPS earn credit along a curve. Menu FPS stays outside the gameplay score. The countdown marks the next evidence review for a stable open-source build. The release ETA remains unknown.
+The Race uses a dated snapshot of the [PortWatch VI standings](https://portwatch-vi.xyz/). The public leaderboard and the separate private-build list use PortWatch’s scores. A VICEPULSE badge confirms the listing. The technical cards track separate gameplay evidence. The countdown marks the next evidence review for a stable open-source build. The release ETA remains unknown.
 
 ## Source and corrections
 

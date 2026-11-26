@@ -1,4 +1,4 @@
-import { MILESTONES, GROUNDWORK, READINESS_CRITERIA, readinessChecks, MAX_SCORE, RANK_RUBRIC, gameplaySignals, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
+import { MILESTONES, GROUNDWORK, READINESS_CRITERIA, readinessChecks, MAX_SCORE, gameplaySignals, scoreEffort, overall, ladderValue, byStars } from './scoring.js';
 import { getLiveViewers, trackView } from './backend.js';
 import { verificationBadge, coverHtml, articlePath, storyImageUrl, storyVideoHtml } from './news-shared.js';
 import { fillPinned } from './pinned.js';
@@ -166,7 +166,10 @@ async function main() {
 function renderTracker(data) {
   const previous = state.data;
   state.data = data;
-  for (const e of data.efforts) e._s = scoreEffort(e);
+  for (const e of data.efforts) {
+    e._s = scoreEffort(e);
+    if (Number.isFinite(e.portwatchScore)) e._s.score = e.portwatchScore;
+  }
 
   updateClock();
   if (!previous || JSON.stringify(data.site) !== JSON.stringify(previous.site)) renderHeroArt(data.site || {});
@@ -338,7 +341,7 @@ function startCountdown(exe) {
 let markerResize;
 function renderOverall(data) {
   const all = data.efforts;
-  const ov = overall(all);
+  const ov = overall(all.filter(e => Number.isFinite(e.portwatchScore)), e => e._s);
   const leader = ov.leader?.effort;
   $('#ov-score').textContent = pct(axis(ov.score));
   renderReadiness(ov);
@@ -371,7 +374,7 @@ function renderOverall(data) {
   markerResize = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); };
   window.addEventListener('resize', markerResize);
 
-  renderHistory(data.history || [], all);
+  renderHistory(data.portwatch?.history || [], all);
 }
 
 function renderReadiness(overview) {
@@ -463,7 +466,7 @@ function drawMarkers(ranked, leader) {
 
 function renderHistory(history, efforts) {
   const box = $('#ov-history');
-  const pts = history.filter((h) => h.rubric === RANK_RUBRIC && Number.isFinite(h.leader)).sort((a, b) => a.date.localeCompare(b.date));
+  const pts = history.filter((h) => Number.isFinite(h.leader)).sort((a, b) => a.date.localeCompare(b.date));
   const names = new Map(efforts.map((effort) => [effort.id, effort.name]));
   box.hidden = pts.length === 0;
   if (box.hidden) return;
@@ -471,7 +474,7 @@ function renderHistory(history, efforts) {
   const x = (i) => (i / Math.max(1, pts.length - 1)) * W;
   const y = (v) => H - (v / MAX_SCORE) * (H - 6) - 3;
   const d = pts.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(p.leader).toFixed(1)}`).join(' ');
-  box.innerHTML = `<p>The current scoring method starts on November 25.</p>
+  box.innerHTML = `<p>Source: PortWatch VI standings.</p>
     ${pts.length > 1 ? `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-label="${esc(t('ov.historyLabel'))}">
       <defs><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#7a5cff"/><stop offset=".55" stop-color="#ff2e7e"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient>
       <linearGradient id="hf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2e7e" stop-opacity=".18"/><stop offset="1" stop-color="#ff2e7e" stop-opacity="0"/></linearGradient></defs>
@@ -521,12 +524,17 @@ function renderRace() {
     stars: byStars,
     active: (a, b) => (Date.parse(b.stats?.pushedAt) || 0) - (Date.parse(a.stats?.pushedAt) || 0),
   };
-  const ranked = [...data.efforts.filter((e) => e.tier === 'tracked' && !e.nuked)].sort(byScore);
-  const rankedInFilter = list.filter((e) => !e.nuked).sort(byScore);
+  const publicEntry = (e) => e.tier === 'tracked' && hasRepo(e) && !e.nuked;
+  const ranked = data.efforts.filter(publicEntry).sort(byScore);
+  const rankedInFilter = list.filter(publicEntry).sort(byScore);
+  const privateList = list.filter(e => !hasRepo(e) && !e.nuked).sort(byScore);
+  list = list.filter(e => evidence === 'archived' ? e.nuked : publicEntry(e));
+  $('#private-builds').hidden = !privateList.length;
+  $('#private-list').innerHTML = privateList.map(e => effortCard(e, null, false)).join('');
   const filtered = filter !== 'all';
   const sortBy = sorters[sort] || byScore;
   list.sort((a, b) => Number(!!a.nuked) - Number(!!b.nuked) || sortBy(a, b));
-  $('#race-results').textContent = t(list.length === 1 ? 'search.one' : 'search.count', { n: list.length });
+  $('#race-results').textContent = t(list.length + privateList.length === 1 ? 'search.one' : 'search.count', { n: list.length + privateList.length });
   $('#race-list').innerHTML = list.map((e, i) => {
     const overall = e.nuked ? null : ranked.indexOf(e) + 1;
     const rank = e.nuked ? null : filtered ? rankedInFilter.indexOf(e) + 1 : overall;
@@ -574,6 +582,7 @@ function effortCard(e, rank, open, overallRank = null) {
   const ticks = MILESTONES.slice(1, -1).map((m) => `<i style="left:${axis(m.at)}%"></i>`).join('');
   const stale = st.pushedAt && daysSince(st.pushedAt) > 3;
   const tags = [
+    Number.isFinite(e.portwatchScore) && `<a class="vp-verified" href="https://portwatch-vi.xyz/" target="_blank" rel="noopener">Confirmed by VICEPULSE · PortWatch listing</a>`,
     verificationBadge(e),
     e.approach && `<span class="tag">${esc(e.approach)}</span>`,
     e.target && `<span class="tag ${isGtaSpecific(e) ? 'tag-gta' : ''}">${esc(e.target)}</span>`,
@@ -597,7 +606,7 @@ function effortCard(e, rank, open, overallRank = null) {
   const external = hasRepo(e) ? ' target="_blank" rel="noopener"' : '';
   return `
   <li class="effort ${rank && rank <= 3 ? 'is-top' : ''}${e.nuked ? ' is-nuked' : ''}" id="effort-${esc(e.id)}">
-    <div class="e-rank">${e.nuked ? `<span class="nuke-rank" title="${esc(t('effort.nukedTitle', { date: e.nuked.at || '' }))}">${ICON.nuke}</span>` : rank}${overallRank ? `<small class="e-rank-overall" title="${esc(t('race.overallTitle'))}">${esc(t('race.overall', { n: overallRank }))}</small>` : ''}</div>
+    <div class="e-rank">${e.nuked ? `<span class="nuke-rank" title="${esc(t('effort.nukedTitle', { date: e.nuked.at || '' }))}">${ICON.nuke}</span>` : (rank ?? '—')}${overallRank ? `<small class="e-rank-overall" title="${esc(t('race.overallTitle'))}">${esc(t('race.overall', { n: overallRank }))}</small>` : ''}</div>
     <div class="e-main">
       ${e.nuked ? `<div class="nuke-banner" title="${esc(t('effort.nukedTitle', { date: e.nuked.at || '' }))}">${ICON.nuke}<b>${esc(t('effort.nuked'))}</b><span>${esc(e.nuked.note || '')}</span></div>` : ''}
       <div class="e-top">
@@ -647,7 +656,7 @@ function effortCard(e, rank, open, overallRank = null) {
 }
 
 function mountComparison(efforts) {
-  const active = overall(efforts).ranked.map(({ effort }) => effort);
+  const active = overall(efforts.filter(e => e.tier === 'tracked' && hasRepo(e)), e => e._s).ranked.map(({ effort }) => effort);
   const box = $('#comparison');
   box.hidden = active.length < 2;
   if (box.hidden) return;

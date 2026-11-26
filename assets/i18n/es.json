@@ -68,7 +68,7 @@
   "changes.title": "Qué cambió",
   "race.kicker": "Clasificación",
   "race.title": "La carrera",
-  "race.sub": "Compara puntuaciones y evidencias de la comunidad. Cada etiqueta distingue afirmaciones, observaciones de la redacción y reproducciones independientes.",
+  "race.sub": "La clasificación y las puntuaciones siguen a PortWatch VI. La insignia confirma la ficha.",
   "race.filterLabel": "Filtrar proyectos",
   "race.all": "Todos",
   "race.gta": "Específicos de GTA VI",
@@ -188,7 +188,7 @@
   "safety.seen": "{n} detectados",
   "method.kicker": "Metodología",
   "method.title": "Cómo puntuamos",
-  "method.sub": "El porcentaje indica qué parte de la lista de requisitos de juego ha demostrado una versión. Se valora el renderizado, el rendimiento y el tiempo sin fallos.",
+  "method.sub": "Las puntuaciones siguen a PortWatch VI. Estos criterios explican las pruebas que sigue VICEPULSE.",
   "method.gwTitle": "Preparación, con pesos",
   "method.fine1": "Solo cuentan los FPS durante el juego. Mantener 30 FPS requiere pruebas propias y el tiempo sin fallos se mide respecto a una sesión de 30 minutos.",
   "method.fine2": "¿Mantienes un proyecto y crees que está mal puntuado? Abre un issue con un enlace a tus pruebas.",
@@ -330,6 +330,6 @@
   "metric.session": "Juego sin cierres",
   "metric.sessionDetail": "{minutes} min documentados",
   "metric.noSession": "Sin prueba cronometrada",
-  "readiness.method": "Los porcentajes indican el peso de cada prueba. Cada prueba se puntúa por separado.",
+  "readiness.method": "La puntuación proviene de PortWatch VI. Las tarjetas describen los criterios de VICEPULSE.",
   "readiness.currentLead": "{name} lidera la clasificación."
 }
