@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Thu, 26 Nov 2026 19:34:14 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 27 Nov 2026 20:48:00 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>VIctory-NVIDIA leads at 90% as a private GTA VI demo shows multiplayer</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-27-nvidia-multiplayer-and-eta.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-27-nvidia-multiplayer-and-eta.html</guid>
+    <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The public fork reports 26–30 rendered FPS in opening rooms. Belobug and AvatarManz are now archived, and the stability forecast is low confidence.</description>
+  </item>
   <item>
     <title>Belobug takes the GTA VI PC lead with a reported 22 FPS average</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-26-belobug-takes-lead-22-fps.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
     <category>Safety</category>
     <description>The suspension is real, but the cause isn&#39;t public, and an account blaming the two companies also promotes a crypto token.</description>
-  </item>
-  <item>
-    <title>XCL takes the lead after running its first retail Xbox games on PC</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-22-xcl-takes-lead.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-22-xcl-takes-lead.html</guid>
-    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Port</category>
-    <description>The Wine-style layer says Minecraft Preview is fully playable on Windows. GTA VI still can&#39;t start, because its executable is missing.</description>
   </item>
 </channel>
 </rss>

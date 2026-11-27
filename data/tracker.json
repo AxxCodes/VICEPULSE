@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T19:34:14.571Z",
+  "updated": "2026-11-27T20:48:00.779Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,47 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-27-nvidia-multiplayer-and-eta",
+      "date": "2026-11-27",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Public benchmark, original post, and repository status",
+      "title": "VIctory-NVIDIA leads at 90% as a private GTA VI demo shows multiplayer",
+      "dek": "The public fork reports 26–30 rendered FPS in opening rooms. Belobug and AvatarManz are now archived, and the stability forecast is low confidence.",
+      "body": [
+        "VIctory-NVIDIA leads the active VICEPULSE Race at 90%. Its maintainer reports mostly 26–30 rendered FPS in the opening rooms on one RTX 5070 PC at 1440p output with DLSS Quality. That benchmark counts rendered frames separately from generated frames. The broader community figure is about 20 FPS, and the project does not give a timed run across heavier scenes.",
+        "TeK posted a roughly 38-second clip described as a private multiplayer test with characters, vehicles, proximity voice chat and 25–30 FPS. VICEPULSE verified the post and its claim. The clip provides no public build or independently repeatable frame-rate test.",
+        "The previously public Belobug and AvatarManz repositories both returned HTTP 404 when checked. Their scores remain in the archive. The 91.3% Belobug entry reflects its earlier result.",
+        "VICEPULSE’s low-confidence watch window for a public test build meeting the stability target is December 1–7. That depends on a timed test of gameplay near 30 rendered FPS across heavier scenes with a public revision and reproduction on a second PC. No developer has scheduled that milestone. The next evidence review is November 29 at 8 p.m. Martinique time."
+      ],
+      "video": {
+        "url": "https://video.twimg.com/amplify_video/2126014861226160129/vid/avc1/1280x720/sx6aG6dQlUSso_f7.mp4",
+        "post": "https://x.com/TeKGameR950/status/2126015173274312796"
+      },
+      "sources": [
+        {
+          "outlet": "GitHub · VIctory-NVIDIA",
+          "title": "Public project and rendered-FPS benchmark",
+          "url": "https://github.com/trustno1-coder/VIctory-NVIDIA"
+        },
+        {
+          "outlet": "X · TeK",
+          "title": "Original private multiplayer demo",
+          "url": "https://x.com/TeKGameR950/status/2126015173274312796"
+        },
+        {
+          "outlet": "GitHub · Belobug",
+          "title": "Former repository address",
+          "url": "https://github.com/Belobug/VIctory-Belobug-AMD"
+        },
+        {
+          "outlet": "GitHub · AvatarManz",
+          "title": "Former repository address",
+          "url": "https://github.com/avatarmanz/VIctory-7900XTX"
+        }
+      ]
+    },
     {
       "id": "2026-11-26-belobug-takes-lead-22-fps",
       "date": "2026-11-26",
@@ -1184,14 +1225,15 @@
         "stability": 0.8
       },
       "stats": {
-        "stars": 189,
-        "forks": 52,
-        "openIssues": 13,
+        "stars": 485,
+        "forks": 127,
+        "openIssues": 29,
         "createdAt": "2026-11-24T22:58:04Z",
-        "pushedAt": "2026-11-26T17:59:10Z",
+        "pushedAt": "2026-11-27T09:40:56Z",
         "archived": false,
         "missing": false,
-        "commits7d": 52
+        "commits7d": 54,
+        "mentions7d": 1
       },
       "raceScore": 68.8,
       "summary": "Public project in the VICEPULSE Race.",
@@ -1204,12 +1246,12 @@
     {
       "id": "belobug",
       "name": "Belobug",
-      "repo": "Belobug/VIctory-Belobug-AMD",
+      "repo": null,
       "branch": "main",
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "Leads the VICEPULSE Race at 91.3%. A community report describes about 22 FPS average on an RX 9070 XT. The current public README documents a separate test on an RX 7900 XTX.",
+      "summary": "Belobug’s previously public AMD repository is unavailable. Its score is retained in the archive.",
       "gta": {
         "loads": 1,
         "boots": 1,
@@ -1246,7 +1288,7 @@
       "byline": "Public source · a community tracker gameplay coverage",
       "assessedAt": "2026-11-25",
       "assessedBy": "manual",
-      "link": "news/2026-11-26-belobug-takes-lead-22-fps.html",
+      "link": "news/2026-11-27-nvidia-multiplayer-and-eta.html",
       "readmeSha": "0daa560302b551899beaacd1c1ca876658ed72491cb005ba560c0b55fc49d8cc",
       "stats": {
         "stars": 2071,
@@ -1258,11 +1300,15 @@
         "missing": false,
         "commits7d": 100
       },
-      "checked": "Public repo and published city benchmark",
+      "checked": "Repository status",
       "raceScore": 91.3,
       "proof": {
         "label": "First PC Trickshot",
         "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y55bgm/first_pc_trickshot_by_belo/"
+      },
+      "nuked": {
+        "at": "2026-11-27",
+        "note": "The previously public GitHub repository returned 404 on November 27."
       }
     },
     {
@@ -1285,11 +1331,11 @@
         "stability": 0.7
       },
       "stats": {
-        "stars": 1227,
-        "forks": 158,
-        "openIssues": 90,
+        "stars": 1382,
+        "forks": 180,
+        "openIssues": 122,
         "createdAt": "2026-11-25T12:14:33Z",
-        "pushedAt": "2026-11-26T01:12:12Z",
+        "pushedAt": "2026-11-26T23:11:14Z",
         "archived": false,
         "missing": false,
         "commits7d": 100
@@ -1386,11 +1432,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 222,
-        "forks": 50,
-        "openIssues": 85,
+        "stars": 239,
+        "forks": 56,
+        "openIssues": 87,
         "createdAt": "2026-11-24T10:05:17Z",
-        "pushedAt": "2026-11-26T04:09:11Z",
+        "pushedAt": "2026-11-27T10:40:21Z",
         "archived": false,
         "missing": false,
         "commits7d": 100
@@ -1422,12 +1468,12 @@
     {
       "id": "avatarmanz",
       "name": "AvatarManz",
-      "repo": "avatarmanz/VIctory-7900XTX",
+      "repo": null,
       "branch": "main",
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "Public Radeon fork and public race leader at 81.8%. Its latest city-street test reached about 22 FPS with the Series S profile and experimental renderer patches.",
+      "summary": "AvatarManz’s previously public AMD repository is unavailable. Its score is retained in the archive.",
       "gta": {
         "loads": 1,
         "boots": 1,
@@ -1463,11 +1509,11 @@
         "Heavy scenes still run at 6–10 FPS"
       ],
       "verification": "self-reported",
-      "checked": "Public source and published benchmark",
+      "checked": "Repository status",
       "evidence": "Maintainer’s benchmark table and community gameplay coverage",
       "assessedAt": "2026-11-26",
       "assessedBy": "manual",
-      "link": "news/2026-11-26-public-race-avatarmanz-22-fps.html",
+      "link": "news/2026-11-27-nvidia-multiplayer-and-eta.html",
       "stats": {
         "stars": 1804,
         "forks": 584,
@@ -1483,6 +1529,10 @@
       "proof": {
         "label": "Video on Reddit",
         "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y5k8xu/actually_playable/"
+      },
+      "nuked": {
+        "at": "2026-11-27",
+        "note": "The previously public GitHub repository returned 404 on November 27."
       }
     },
     {
@@ -1778,11 +1828,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 3255,
-        "forks": 969,
-        "openIssues": 1181,
+        "stars": 3344,
+        "forks": 1015,
+        "openIssues": 1242,
         "createdAt": "2026-11-24T18:02:37Z",
-        "pushedAt": "2026-11-26T18:08:14Z",
+        "pushedAt": "2026-11-27T19:06:17Z",
         "archived": false,
         "missing": false,
         "commits7d": 100
@@ -1836,9 +1886,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 13192,
-        "forks": 2203,
-        "openIssues": 2042,
+        "stars": 13732,
+        "forks": 2345,
+        "openIssues": 2264,
         "createdAt": "2026-11-23T21:47:25Z",
         "pushedAt": "2026-11-25T23:27:48Z",
         "commits7d": 100,
@@ -1905,9 +1955,9 @@
         "drycheetah84/TomBox"
       ],
       "stats": {
-        "stars": 1850,
-        "forks": 126,
-        "openIssues": 54,
+        "stars": 1851,
+        "forks": 123,
+        "openIssues": 53,
         "createdAt": "2026-11-21T08:08:39Z",
         "pushedAt": "2026-11-25T13:47:56Z",
         "commits7d": 100,
@@ -1960,11 +2010,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 8559,
-        "forks": 1192,
-        "openIssues": 1850,
+        "stars": 8702,
+        "forks": 1217,
+        "openIssues": 1980,
         "createdAt": "2026-11-20T20:03:21Z",
-        "pushedAt": "2026-11-26T18:26:53Z",
+        "pushedAt": "2026-11-27T16:16:53Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -2017,11 +2067,11 @@
       "verification": "self-reported",
       "stats": {
         "stars": 267,
-        "forks": 27,
-        "openIssues": 39,
+        "forks": 26,
+        "openIssues": 38,
         "createdAt": "2026-11-20T06:54:47Z",
         "pushedAt": "2026-11-22T10:38:07Z",
-        "commits7d": 57,
+        "commits7d": 44,
         "archived": false,
         "missing": false
       },
@@ -2071,11 +2121,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 380,
-        "forks": 46,
-        "openIssues": 33,
+        "stars": 395,
+        "forks": 53,
+        "openIssues": 17,
         "createdAt": "2026-11-21T12:07:28Z",
-        "pushedAt": "2026-11-26T18:52:34Z",
+        "pushedAt": "2026-11-27T19:05:19Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2203,7 +2253,7 @@
         "archived": false,
         "missing": true,
         "missingStatus": 404,
-        "mentions7d": 6,
+        "mentions7d": 5,
         "dmca": {
           "date": "2026-11-24",
           "url": "https://github.com/github/dmca/blob/master/2026/11/2026-11-24-take-two.md"
@@ -2255,9 +2305,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 105,
+        "stars": 108,
         "forks": 12,
-        "openIssues": 8,
+        "openIssues": 9,
         "createdAt": "2026-11-21T14:35:25Z",
         "pushedAt": "2026-11-26T16:17:31Z",
         "commits7d": 100,
@@ -2364,11 +2414,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 1963,
-        "forks": 233,
-        "openIssues": 211,
+        "stars": 2038,
+        "forks": 247,
+        "openIssues": 259,
         "createdAt": "2026-11-20T17:43:52Z",
-        "pushedAt": "2026-11-26T18:49:24Z",
+        "pushedAt": "2026-11-27T18:51:00Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2418,11 +2468,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 408,
-        "forks": 70,
-        "openIssues": 116,
+        "stars": 511,
+        "forks": 93,
+        "openIssues": 111,
         "createdAt": "2026-11-21T00:18:13Z",
-        "pushedAt": "2026-11-26T19:03:50Z",
+        "pushedAt": "2026-11-27T19:01:11Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2525,11 +2575,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 235,
-        "forks": 14,
-        "openIssues": 9,
+        "stars": 237,
+        "forks": 15,
+        "openIssues": 12,
         "createdAt": "2026-11-20T00:25:27Z",
-        "pushedAt": "2026-11-26T03:43:36Z",
+        "pushedAt": "2026-11-26T21:35:38Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -2576,12 +2626,12 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 72,
+        "stars": 81,
         "forks": 13,
         "openIssues": 20,
         "createdAt": "2026-11-19T20:32:01Z",
         "pushedAt": "2026-11-25T12:51:20Z",
-        "commits7d": 56,
+        "commits7d": 48,
         "archived": false,
         "missing": false
       },
@@ -2738,8 +2788,8 @@
         "forks": 1,
         "openIssues": 0,
         "createdAt": "2026-11-20T19:20:23Z",
-        "pushedAt": "2026-11-26T09:31:06Z",
-        "commits7d": 94,
+        "pushedAt": "2026-11-26T19:46:18Z",
+        "commits7d": 97,
         "archived": false,
         "missing": false,
         "missingStatus": 404
@@ -2789,7 +2839,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 42,
+        "stars": 44,
         "forks": 5,
         "openIssues": 3,
         "createdAt": "2026-11-21T16:49:38Z",
@@ -2892,7 +2942,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 2,
+        "stars": 3,
         "forks": 2,
         "openIssues": 14,
         "createdAt": "2026-11-21T21:05:28Z",
@@ -2946,9 +2996,9 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 14,
+        "stars": 17,
         "forks": 1,
-        "openIssues": 3,
+        "openIssues": 4,
         "createdAt": "2026-11-22T07:31:37Z",
         "pushedAt": "2026-11-23T22:48:15Z",
         "commits7d": 51,
@@ -3109,7 +3159,7 @@
         "forks": 2,
         "openIssues": 1,
         "createdAt": "2026-11-23T02:45:46Z",
-        "pushedAt": "2026-11-26T10:11:20Z",
+        "pushedAt": "2026-11-26T22:55:43Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -3216,7 +3266,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 92,
+        "stars": 95,
         "forks": 4,
         "openIssues": 1,
         "createdAt": "2026-11-21T04:47:46Z",
@@ -3259,8 +3309,8 @@
         "stability": "unknown"
       },
       "stats": {
-        "stars": 10,
-        "forks": 2,
+        "stars": 16,
+        "forks": 3,
         "openIssues": 0,
         "createdAt": "2026-11-24T19:59:37Z",
         "pushedAt": "2026-11-25T00:01:01Z",
@@ -3308,11 +3358,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 224,
+        "stars": 234,
         "forks": 17,
-        "openIssues": 11,
+        "openIssues": 12,
         "createdAt": "2026-11-23T09:57:42Z",
-        "pushedAt": "2026-11-26T18:14:09Z",
+        "pushedAt": "2026-11-27T19:04:25Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
@@ -3416,7 +3466,7 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 44,
+        "stars": 45,
         "forks": 4,
         "openIssues": 2,
         "createdAt": "2026-11-23T16:34:11Z",
@@ -3470,11 +3520,11 @@
       },
       "verification": "self-reported",
       "stats": {
-        "stars": 15,
-        "forks": 3,
+        "stars": 19,
+        "forks": 4,
         "openIssues": 1,
         "createdAt": "2026-11-24T22:05:23Z",
-        "pushedAt": "2026-11-26T19:01:57Z",
+        "pushedAt": "2026-11-27T16:14:01Z",
         "commits7d": 100,
         "archived": false,
         "missing": false,
@@ -3578,6 +3628,58 @@
         "pushedAt": "2026-11-24T23:06:18Z",
         "createdAt": "2026-11-24T18:44:26Z"
       }
+    },
+    {
+      "id": "victory-nvidia",
+      "name": "VIctory-NVIDIA",
+      "repo": "trustno1-coder/VIctory-NVIDIA",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "basedOn": [
+        "marvis"
+      ],
+      "raceScore": 90,
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "story": 0.8,
+        "render": 0.75,
+        "fps": 20,
+        "stability": 1
+      },
+      "stats": {
+        "stars": 1826,
+        "forks": 628,
+        "openIssues": 134,
+        "createdAt": "2026-11-25T23:35:29Z",
+        "pushedAt": "2026-11-27T19:06:07Z",
+        "archived": false,
+        "missing": false,
+        "commits7d": 100,
+        "mentions7d": 1
+      },
+      "summary": "Public Race leader at 90%. The README reports mostly 26–30 rendered FPS in opening rooms on an RTX 5070 with DLSS Quality.",
+      "fpsNote": "About 20 FPS in community coverage; the README reports 26–30 rendered FPS in opening rooms.",
+      "sessionNote": "Maintainer reports no crashes in measured runs; run lengths are unavailable.",
+      "highlights": [
+        "Public project benchmark specifies test hardware and settings",
+        "Frame generation is measured separately from rendered frames"
+      ],
+      "blockers": [
+        "Benchmarks cover the opening on one PC",
+        "Ray tracing remains off in the test setup"
+      ],
+      "verification": "self-reported",
+      "checked": "Public benchmark and test settings",
+      "evidence": "Maintainer’s public results and community testing",
+      "assessedAt": "2026-11-27",
+      "assessedBy": "manual",
+      "link": "news/2026-11-27-nvidia-multiplayer-and-eta.html"
     }
   ],
   "tools": [
@@ -7128,6 +7230,11 @@
       "date": "2026-11-26",
       "kind": "up",
       "text": "Belobug leads at 91.3% after a community report of about 22 FPS average. Its public README records a separate city benchmark."
+    },
+    {
+      "date": "2026-11-27",
+      "kind": "up",
+      "text": "VIctory-NVIDIA leads the active Race at 90%. Its README reports 26–30 rendered FPS in opening rooms; two former AMD leaders are archived."
     }
   ],
   "history": [
@@ -7467,7 +7574,7 @@
     }
   ],
   "raceSnapshot": {
-    "updated": "2026-11-26T19:14:28.197Z",
+    "updated": "2026-11-27T19:13:01.931Z",
     "history": [
       {
         "date": "2026-11-21",
@@ -7514,6 +7621,13 @@
         "leader": 91.3,
         "leaderId": "belobug",
         "top3": 89.3,
+        "furthest": "ingame"
+      },
+      {
+        "date": "2026-11-27",
+        "leader": 90,
+        "leaderId": "victory-nvidia",
+        "top3": 88.9,
         "furthest": "ingame"
       }
     ]
