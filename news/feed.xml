@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Fri, 27 Nov 2026 20:48:00 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 27 Nov 2026 22:38:50 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>SeriesX Emulator and Port of the Americas repositories go offline</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-27-two-project-repositories-unavailable.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-27-two-project-repositories-unavailable.html</guid>
+    <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>Both GitHub addresses now return 404. VIctory-NVIDIA still leads the active Race at 90%.</description>
+  </item>
   <item>
     <title>VIctory-NVIDIA leads at 90% as a private GTA VI demo shows multiplayer</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-27-nvidia-multiplayer-and-eta.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
     <category>Leak</category>
     <description>The leaker posted the release at 15:36 CET. Nobody has confirmed the file is genuine yet, and no project has booted the game.</description>
-  </item>
-  <item>
-    <title>AnyPS5 developer suspended on X, with no evidence Sony or Rockstar was behind it</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-22-anyps5-developer-x-suspended.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-22-anyps5-developer-x-suspended.html</guid>
-    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Safety</category>
-    <description>The suspension is real, but the cause isn&#39;t public, and an account blaming the two companies also promotes a crypto token.</description>
   </item>
 </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T20:48:00.779Z",
+  "updated": "2026-11-27T22:38:50.650Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,36 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-27-two-project-repositories-unavailable",
+      "date": "2026-11-27",
+      "category": "Port",
+      "by": "sources",
+      "checked": "GitHub repository status",
+      "title": "SeriesX Emulator and Port of the Americas repositories go offline",
+      "dek": "Both GitHub addresses now return 404. VIctory-NVIDIA still leads the active Race at 90%.",
+      "body": [
+        "VICEPULSE checked the GitHub repositories for SeriesX Emulator and Port of the Americas on November 27. Both returned 404. The status confirms that those addresses are unavailable to the public. The reason is unknown.",
+        "VIctory-NVIDIA remains the active leader at 90%. Its README still reports mostly 26–30 rendered FPS in opening rooms on one RTX 5070 system. The published result covers the opening rooms, so the December 1–7 watch window remains low confidence."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub",
+          "title": "SeriesX Emulator repository",
+          "url": "https://github.com/anrq0/SeriesX-Emulator"
+        },
+        {
+          "outlet": "GitHub",
+          "title": "Port of the Americas repository",
+          "url": "https://github.com/Steinkoloss/port-of-the-americas"
+        },
+        {
+          "outlet": "GitHub · VIctory-NVIDIA",
+          "title": "Public opening-room benchmark",
+          "url": "https://github.com/trustno1-coder/VIctory-NVIDIA"
+        }
+      ]
+    },
     {
       "id": "2026-11-27-nvidia-multiplayer-and-eta",
       "date": "2026-11-27",
@@ -3111,7 +3141,8 @@
         "pushedAt": "2026-11-25T17:03:56Z",
         "commits7d": 17,
         "archived": false,
-        "missing": false
+        "missing": true,
+        "missingStatus": 404
       },
       "assessedAt": "2026-11-23",
       "assessedBy": "claude",
@@ -3316,7 +3347,8 @@
         "pushedAt": "2026-11-25T00:01:01Z",
         "commits7d": 88,
         "archived": false,
-        "missing": false
+        "missing": true,
+        "missingStatus": 404
       },
       "raceScore": 25,
       "summary": "Public project in the VICEPULSE Race."
@@ -7235,6 +7267,11 @@
       "date": "2026-11-27",
       "kind": "up",
       "text": "VIctory-NVIDIA leads the active Race at 90%. Its README reports 26–30 rendered FPS in opening rooms; two former AMD leaders are archived."
+    },
+    {
+      "date": "2026-11-27",
+      "kind": "removed",
+      "text": "SeriesX Emulator and Port of the Americas now return 404 on GitHub. Both listings show the repository status."
     }
   ],
   "history": [
