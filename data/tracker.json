@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T10:35:46.107Z",
+  "updated": "2026-11-28T12:39:26.772Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,33 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-28-victory-4080super-40-fps-samples",
+      "date": "2026-11-28",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Dated project results, sampling windows and build settings",
+      "title": "Victory-4080Super reports around 40 rendered FPS in a two-minute GTA VI sample",
+      "dek": "The 4K readings came from one area during a 36-minute run. A separate Proton fork reports a 33 FPS mean in its own boat-mission test.",
+      "body": [
+        "Victory-4080Super’s November 27 Run 10 lasted 36 minutes and ended without a reported crash. On an RTX 4080 SUPER with frame generation off and 3840 × 2160 output, its in-game overlay showed 40.9, 38.4 and 40.1 rendered FPS, with 1% lows of 29–31 FPS. Those three readings span about two minutes in one area. The report gives no session-wide FPS average.",
+        "An earlier run on the same PC lasted about 87 minutes and showed 38.1 rendered FPS in one night-city reading. Some overlay samples had single-digit 1% lows when the world failed to stream around the camera. The newer run still showed flat character textures and intermittent flashing.",
+        "Separately, the Linux fork of VIctory-NVIDIA reports a rise from 30.8 to 33.0 FPS mean across alternating windows in one run of the boat mission on an RTX 5070 Ti under Proton. The comparison isolates a setting that held GPU clocks up between submissions. The notes give no separate generated-frame count or continuous near-30 FPS duration for that run.",
+        "Victory-4080Super joins the Watchlist and the Proton fork enters the Race on its reported gameplay test. VIctory-NVIDIA still leads at 90%. A timed near-30 rendered FPS result across heavier scenes with repeatable results on another PC is still needed. The next evidence review is November 29 at 8 p.m. Martinique time. The December 1–7 watch window remains low confidence, and the release date is unknown."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · Victory-4080Super",
+          "title": "Run 10 overlay readings, duration and texture findings",
+          "url": "https://github.com/jzvgrow-dot/Victory-4080Super/blob/7a719f5d148a9f6658ff586f8fa032af81464b0e/RESULTS.md#run-10--november-27-2026"
+        },
+        {
+          "outlet": "GitHub · VIctory-NVIDIA Linux fork",
+          "title": "November 28 open-world A/B test under Proton",
+          "url": "https://github.com/victory-linux/victory-nvidia/blob/604cc079cdecbf0f1863446d66169891abc49159/docs/FORK-FINDINGS.md"
+        }
+      ]
+    },
     {
       "id": "2026-11-28-victory-reloaded-cell-rdna-long-run",
       "date": "2026-11-28",
@@ -4057,6 +4084,76 @@
         "url": "https://github.com/Biskwit/VIctory-reloaded/blob/0768c1f121cf3956d581682f4cef334a165b89e5/README.md#measurements"
       },
       "link": "news/2026-11-28-victory-reloaded-cell-rdna-long-run.html"
+    },
+    {
+      "id": "victory-4080super",
+      "name": "Victory-4080Super",
+      "repo": "jzvgrow-dot/Victory-4080Super",
+      "branch": "main",
+      "tier": "watchlist",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "basedOn": [
+        "vice-tay"
+      ],
+      "summary": "Public fork tuned for RTX 4080 SUPER. Three in-world readings around 40 rendered FPS cover about two minutes in one area during a 36-minute, crash-free run at 4K output.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1
+      },
+      "highlights": [
+        "The test used frame generation off. The three readings have 1% lows of 29–31 FPS."
+      ],
+      "blockers": [
+        "No session-wide FPS average or repeat on a second PC. Texture streaming and flashing remain."
+      ],
+      "verification": "self-reported",
+      "assessedAt": "2026-11-28",
+      "assessedBy": "manual",
+      "checked": "Dated measurements and build settings",
+      "link": "news/2026-11-28-victory-4080super-40-fps-samples.html",
+      "proof": {
+        "label": "Run 10 results",
+        "url": "https://github.com/jzvgrow-dot/Victory-4080Super/blob/7a719f5d148a9f6658ff586f8fa032af81464b0e/RESULTS.md#run-10--november-27-2026"
+      }
+    },
+    {
+      "id": "victory-nvidia-linux",
+      "name": "VIctory-NVIDIA (Linux fork)",
+      "repo": "victory-linux/victory-nvidia",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "basedOn": [
+        "victory-nvidia"
+      ],
+      "summary": "Proton fork tested on an RTX 5070 Ti. A single boat-mission A/B run reports 33.0 FPS mean with the GPU keep-awake option off.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1
+      },
+      "fpsNote": "33.0 FPS mean over selected five-second windows. The run’s notes give no separate generated-frame count. It still needs a rendered-FPS breakdown for the Race’s frame-rate check.",
+      "highlights": [
+        "Published test alternates one setting during the same boat-mission run"
+      ],
+      "blockers": [
+        "No continuous run near 30 rendered FPS is established. The prologue still stutters in a separate test."
+      ],
+      "verification": "self-reported",
+      "assessedAt": "2026-11-28",
+      "assessedBy": "manual",
+      "checked": "Published gameplay A/B measurements",
+      "link": "news/2026-11-28-victory-4080super-40-fps-samples.html",
+      "proof": {
+        "label": "November 28 Proton testing",
+        "url": "https://github.com/victory-linux/victory-nvidia/blob/604cc079cdecbf0f1863446d66169891abc49159/docs/FORK-FINDINGS.md"
+      }
     }
   ],
   "tools": [
