@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T00:19:41.662Z",
+  "updated": "2026-11-28T02:45:12.595Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,33 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-27-vice-tay-and-vi-br-port-boat-tests",
+      "date": "2026-11-27",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Dated maintainer benchmarks and test settings",
+      "title": "Vice-Tay and VI-BR-PORT approach 30 FPS in short GTA VI boat tests",
+      "dek": "Vice-Tay reports 26.72 rendered FPS at 4K output. VI-BR-PORT reports 28.7–29.1 FPS at 1080p on an 8 GB RTX 4060 Ti.",
+      "body": [
+        "Vice-Tay’s November 27 test repeated the same boat sequence on an RTX 4090 using the Series S profile, DLSS Quality upscaling from 1440p to 4K, and 2× FSR frame generation. Across about 39 seconds of telemetry on each local build, the rendered average rose from 16.12 to 26.72 FPS. The experimental build added 26.72 generated FPS, for 53.44 presented FPS. The comparison measures several changes together on one boat route.",
+        "Vice-Tay’s separate 30-minute playtest on November 26 logged a median of 21.1 rendered FPS and a 17.0 FPS 1% low across the prison, boat and on-foot sections. A November 27 six-minute boat run at 1080p reported medians of 22.4 rendered FPS and 44.9 presented FPS. The longer runs give a clearer picture of performance through gameplay.",
+        "VI-BR-PORT’s maintainer reports 28.7–29.1 FPS over 70 seconds of boat driving and 26.6–27.9 FPS over a scripted three-minute prison walk. The test used the Series S profile at 1080p on an 8 GB RTX 4060 Ti. The source reports game log FPS and describes the game’s own upscaler. It gives no separate generated or presented FPS. The maintainer also recorded one game crash four minutes into a separate run.",
+        "Both projects enter the VICEPULSE Race with maintainer-reported evidence. VIctory-NVIDIA remains the active leader at 90%. A timed run near 30 rendered FPS across heavier scenes and replicated on a second PC is still needed. The next evidence review is November 29 at 8 p.m. Martinique time. December 1–7 remains a low-confidence watch window for a qualifying community build. The release date remains unknown."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · Vice-Tay",
+          "title": "November 27 boat telemetry and November 26 gameplay baseline",
+          "url": "https://github.com/TaynanGT/Vice-Tay/blob/fe7c6e52198f2070805ffafc4e55a7163291bad0/docs/measurements.md"
+        },
+        {
+          "outlet": "GitHub · VI-BR-PORT",
+          "title": "November 27 benchmarks and stability notes",
+          "url": "https://github.com/edsuuu/VI-BR-PORT/blob/cf3394b681da15949d631b7f9fbc1407fff5bea2/README.md"
+        }
+      ]
+    },
     {
       "id": "2026-11-27-fxceless-nvidia-open-world-test",
       "date": "2026-11-27",
@@ -3748,6 +3775,93 @@
       "proof": {
         "label": "25-minute RTX 4070 open-world test",
         "url": "https://github.com/fxceless/victory-fork/blob/2eade68cade9b2f8cd2511cc97328e83f58508c3/README.md"
+      }
+    },
+    {
+      "id": "vice-tay",
+      "name": "Vice-Tay",
+      "repo": "TaynanGT/Vice-Tay",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "basedOn": [
+        "marvis"
+      ],
+      "summary": "Public VIctory fork tuned on an RTX 4090. Its maintainer reports a 21.1 rendered FPS median in a 30-minute playtest and 26.72 rendered FPS over a short boat test at 4K output.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "fps": 21.1
+      },
+      "fpsNote": "21.1 rendered FPS median in the 30-minute session. The separate 39-second boat test reports 26.72 rendered FPS and 53.44 presented FPS with frame generation.",
+      "sessionNote": "30-minute playtest spans prison, boat and on-foot sections. The measurement notes do not give an explicit crash count for that run.",
+      "highlights": [
+        "HUD, minimap, mission prompts and checkpoint retries worked along the test route"
+      ],
+      "blockers": [
+        "The 26.72 rendered FPS result comes from an experimental local build and one boat route"
+      ],
+      "verification": "self-reported",
+      "assessedAt": "2026-11-27",
+      "assessedBy": "manual",
+      "checked": "Published frame counts, run lengths and test settings",
+      "link": "news/2026-11-27-vice-tay-and-vi-br-port-boat-tests.html",
+      "proof": {
+        "label": "Published measurements",
+        "url": "https://github.com/TaynanGT/Vice-Tay/blob/fe7c6e52198f2070805ffafc4e55a7163291bad0/docs/measurements.md"
+      },
+      "stats": {
+        "stars": 355,
+        "forks": 138,
+        "openIssues": 134,
+        "createdAt": "2026-11-26T08:32:46Z",
+        "pushedAt": "2026-11-27T22:56:28Z"
+      }
+    },
+    {
+      "id": "vi-br-port",
+      "name": "VI-BR-PORT",
+      "repo": "edsuuu/VI-BR-PORT",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "summary": "Public fork tuned for 8 GB NVIDIA cards. Its November 27 notes report player control through the prison and boat sections on an RTX 4060 Ti.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "fps": 26.6
+      },
+      "fpsNote": "26.6–27.9 FPS reported from game logs in a scripted three-minute prison walk. A 70-second boat test reported 28.7–29.1 FPS.",
+      "sessionNote": "Maintainer reports 4–12-minute test runs and one crash four minutes into a November 27 run.",
+      "highlights": [
+        "Published Series S profile benchmarks at 1080p on an RTX 4060 Ti with 8 GB VRAM"
+      ],
+      "blockers": [
+        "Lighting and texture artifacts remain, and published tests cover one PC"
+      ],
+      "verification": "self-reported",
+      "assessedAt": "2026-11-27",
+      "assessedBy": "manual",
+      "checked": "Published benchmark and stability notes",
+      "link": "news/2026-11-27-vice-tay-and-vi-br-port-boat-tests.html",
+      "proof": {
+        "label": "November 27 benchmark",
+        "url": "https://github.com/edsuuu/VI-BR-PORT/blob/cf3394b681da15949d631b7f9fbc1407fff5bea2/README.md"
+      },
+      "stats": {
+        "stars": 185,
+        "forks": 40,
+        "openIssues": 2,
+        "createdAt": "2026-11-24T03:07:05Z",
+        "pushedAt": "2026-11-27T23:30:24Z"
       }
     }
   ],

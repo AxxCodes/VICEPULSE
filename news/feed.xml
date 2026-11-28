@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Sat, 28 Nov 2026 00:19:41 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Nov 2026 02:45:12 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Vice-Tay and VI-BR-PORT approach 30 FPS in short GTA VI boat tests</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-27-vice-tay-and-vi-br-port-boat-tests.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-27-vice-tay-and-vi-br-port-boat-tests.html</guid>
+    <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>Vice-Tay reports 26.72 rendered FPS at 4K output. VI-BR-PORT reports 28.7–29.1 FPS at 1080p on an 8 GB RTX 4060 Ti.</description>
+  </item>
   <item>
     <title>fxceless adopts VIctory-NVIDIA as a new release trades FPS for better lighting</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-27-fxceless-nvidia-open-world-test.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
     <category>Port</category>
     <description>Contributors&#39; builds run the game&#39;s own code for minutes behind a blank window; posts in its Discord say it won&#39;t be playable today, but maybe tomorrow.</description>
-  </item>
-  <item>
-    <title>Cyberleek&#39;s README frames the leak as a protest and asks for crypto</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-exe-readme.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-exe-readme.html</guid>
-    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Leak</category>
-    <description>A note said to ship with the executable says donations fund a secret project and counts every token trade as a vote. None of it can be checked.</description>
   </item>
 </channel>
 </rss>
