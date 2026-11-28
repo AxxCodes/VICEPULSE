@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T12:39:26.772Z",
+  "updated": "2026-11-28T15:07:32.761Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,38 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-28-foxhound-driving-test-victory-input",
+      "date": "2026-11-28",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Published driving telemetry and prerelease notes",
+      "title": "foxhound logs near 30 rendered FPS over 20 minutes of scripted GTA VI driving",
+      "dek": "The RTX 4070 SUPER test ran with frame generation off. VIctory-NVIDIA separately adds in-game mouse and keyboard remapping.",
+      "body": [
+        "The foxhound maintainer reports a median frame time of 33.3 ms, about 30 rendered FPS, over roughly 20 minutes of scripted driving on an RTX 4070 SUPER. The full v0.2.0-pre.3 launcher test took 26 minutes. It used the Series X profile at 1440p output with DLSS Quality, precompiled graphics pipelines and frame generation off.",
+        "Performance still varied along the route: 97 of 1,175 one-second samples were at 40 ms per frame or slower, equivalent to 25 FPS or below. A separate earlier played test in heavier scenes reported 16–21 FPS. The documented driving run covers one PC, and its notes give no explicit crash count.",
+        "The newer foxhound pre.5 release addresses missing textures under VRAM pressure. In shorter Series S tests on the same 12 GB card capped at 6 GB, the maintainer reports a median of 27.9 rendered FPS and about 56 FPS shown with generated frames included. The heaviest opening shots fell to 16–22 rendered FPS. Those figures apply to different settings and scenes from the 20-minute driving run.",
+        "VIctory-NVIDIA’s November 28 release also adds mouse and keyboard rebinding and sensitivity adjustment through its settings menu. These input changes have no accompanying gameplay FPS benchmark. foxhound joins the VICEPULSE Race on its published tests. VIctory-NVIDIA remains the active leader at 90%. The next evidence review is November 29 at 8 p.m. Martinique time. December 1–7 remains a low-confidence watch window, and the release date is unknown."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · foxhound",
+          "title": "Scripted route, frame times and test settings",
+          "url": "https://github.com/readmet3xt-lab/foxhound/blob/7c535276b136b3bf4542cebdf208c78747732fee/README.md#where-it-stands"
+        },
+        {
+          "outlet": "GitHub · foxhound",
+          "title": "Pre.5 results with rendered and displayed FPS",
+          "url": "https://github.com/readmet3xt-lab/foxhound/releases/tag/v0.2.0-pre.5"
+        },
+        {
+          "outlet": "GitHub · VIctory-NVIDIA",
+          "title": "November 28 input release notes",
+          "url": "https://github.com/trustno1-coder/VIctory-NVIDIA/releases/tag/v2026.11.28.03"
+        }
+      ]
+    },
     {
       "id": "2026-11-28-victory-4080super-40-fps-samples",
       "date": "2026-11-28",
@@ -3842,7 +3874,8 @@
       "approach": "Compatibility layer",
       "target": "GTA VI only",
       "basedOn": [
-        "marvis"
+        "marvis",
+        "foxhound"
       ],
       "raceScore": 90,
       "gta": {
@@ -3874,7 +3907,8 @@
         "Public project benchmark specifies test hardware and settings",
         "Frame generation is measured separately from rendered frames",
         "The fxceless maintainer reports about 17 FPS at 1440p on an RTX 4070 in a 25-minute open-world test",
-        "Release v2026.11.27.8 improves lighting and texture rendering. Its maintainer warns of lower FPS."
+        "Release v2026.11.27.8 improves lighting and texture rendering. Its maintainer warns of lower FPS.",
+        "November 28 release adds in-game mouse and keyboard rebinding and sensitivity adjustment"
       ],
       "blockers": [
         "No cited timed open-world test shows sustained 30 rendered FPS",
@@ -4153,6 +4187,51 @@
       "proof": {
         "label": "November 28 Proton testing",
         "url": "https://github.com/victory-linux/victory-nvidia/blob/604cc079cdecbf0f1863446d66169891abc49159/docs/FORK-FINDINGS.md"
+      }
+    },
+    {
+      "id": "foxhound",
+      "name": "foxhound",
+      "repo": "readmet3xt-lab/foxhound",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "basedOn": [
+        "marvis"
+      ],
+      "summary": "Public Windows compatibility fork. Its maintainer reports a median near 30 rendered FPS over 20 minutes of scripted driving on a 12 GB RTX 4070 SUPER.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "fps": 30
+      },
+      "fpsNote": "About 30 rendered FPS at the median frame time for scripted driving with frame generation off. An earlier heavier played sequence ran at 16–21 FPS.",
+      "sessionNote": "26-minute launcher run, with roughly 20 minutes of scripted driving. The report gives no explicit crash count.",
+      "highlights": [
+        "Dated notes document the route, graphics settings and the one-second sampling method"
+      ],
+      "blockers": [
+        "The driving benchmark covers one PC and warmed pipelines. It does not show sustained 30 rendered FPS in heavier gameplay."
+      ],
+      "verification": "self-reported",
+      "assessedAt": "2026-11-28",
+      "assessedBy": "manual",
+      "checked": "Published benchmark settings and release notes",
+      "link": "news/2026-11-28-foxhound-driving-test-victory-input.html",
+      "proof": {
+        "label": "Published driving test",
+        "url": "https://github.com/readmet3xt-lab/foxhound/blob/7c535276b136b3bf4542cebdf208c78747732fee/README.md#where-it-stands"
+      },
+      "stats": {
+        "stars": 134,
+        "forks": 36,
+        "openIssues": 14,
+        "createdAt": "2026-11-26T21:26:45Z",
+        "pushedAt": "2026-11-28T10:57:59Z"
       }
     }
   ],

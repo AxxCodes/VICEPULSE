@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Sat, 28 Nov 2026 12:39:26 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Nov 2026 15:07:32 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>foxhound logs near 30 rendered FPS over 20 minutes of scripted GTA VI driving</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-28-foxhound-driving-test-victory-input.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-28-foxhound-driving-test-victory-input.html</guid>
+    <pubDate>Sat, 28 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The RTX 4070 SUPER test ran with frame generation off. VIctory-NVIDIA separately adds in-game mouse and keyboard remapping.</description>
+  </item>
   <item>
     <title>Victory-4080Super reports around 40 rendered FPS in a two-minute GTA VI sample</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-28-victory-4080super-40-fps-samples.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
     <category>Port</category>
     <description>The team refused to say more for fear of being nuked, but hinted to one of our members that it&#39;s working really well. Update: testers&#39; reports now show it loading into the world.</description>
-  </item>
-  <item>
-    <title>TuxBox draws GTA VI&#39;s first screen as VIctory edges into the world</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-24-tuxbox-first-frame-victory-world.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-24-tuxbox-first-frame-victory-world.html</guid>
-    <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Port</category>
-    <description>Overnight, a Linux-first layer showed GTA VI&#39;s player-selection prompt, VIctory reported a title card inside the game world, and two smaller projects got GTA VI&#39;s code running.</description>
   </item>
 </channel>
 </rss>
