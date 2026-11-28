@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Sat, 28 Nov 2026 06:12:11 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Nov 2026 10:35:46 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>VIctory-reloaded reports 29.6 FPS in the cell as a longer Radeon run slows</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-28-victory-reloaded-cell-rdna-long-run.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-28-victory-reloaded-cell-rdna-long-run.html</guid>
+    <pubDate>Sat, 28 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The RTX 4090 test covered one prologue scene. VIctory-RDNA’s 37-minute 4K capture on an RX 7900 XT logged a 15.35 rendered FPS median.</description>
+  </item>
   <item>
     <title>AnyXboxX reports 24 FPS median in a GTA VI launcher test</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-28-anyxboxx-24-fps-launcher-test.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
     <category>Port</category>
     <description>Within an hour on Monday night the biggest GTA VI port lost its Discord server and its GitHub repository, and its creator said he was stepping away.</description>
-  </item>
-  <item>
-    <title>Leonida&#39;s Discord server disappears as the project moves to a new GitHub account</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-discord-down.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-discord-down.html</guid>
-    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Takedown</category>
-    <description>The 179,000-member server stopped resolving late on Monday. Members say Discord banned it; nobody has said why. Update: the GitHub repository has since been deleted too.</description>
   </item>
 </channel>
 </rss>

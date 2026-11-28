@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T06:12:11.764Z",
+  "updated": "2026-11-28T10:35:46.107Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,32 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-28-victory-reloaded-cell-rdna-long-run",
+      "date": "2026-11-28",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Dated maintainer measurements and benchmark settings",
+      "title": "VIctory-reloaded reports 29.6 FPS in the cell as a longer Radeon run slows",
+      "dek": "The RTX 4090 test covered one prologue scene. VIctory-RDNA’s 37-minute 4K capture on an RX 7900 XT logged a 15.35 rendered FPS median.",
+      "body": [
+        "VIctory-reloaded’s November 28 notes report a 29.6 FPS median in a 12-minute session on an RTX 4090. The Series S test stayed in the prologue cell. Across three separate warm launches, the new build recorded 28.8 FPS over the first settled minute in the cell, compared with 17.4 FPS on the Vice-Tay revision the fork started from. The figures come from the game’s frame-rate logs. The measurement notes give no separate generated or presented FPS figure.",
+        "VIctory-RDNA’s extended November 28 capture logged 37 minutes and 28 seconds from startup to a clean window close. At 4K output on an RX 7900 XT with the RDNA3 Fast preset, the maintainer reports a median of 15.35 rendered FPS across 410 gameplay samples and 14.7 FPS in heavier samples. Frame generation was off. The gameplay-sample median fell from 19.8 FPS in the first five minutes to 13.5 in the final five. Workload also changed, and the log does not establish the cause of the slowdown.",
+        "That Radeon run used a different preset from the earlier 23-minute capture at 20.8 rendered FPS, so the two medians cannot quantify a regression. The new tests sharpen the evidence for one fast scene and one longer session, respectively. VICEPULSE’s stability target still requires extended gameplay around 30 rendered FPS and a repeat on another PC. The next evidence review remains November 29 at 8 p.m. Martinique time. December 1–7 is a low-confidence watch window, with the release date unknown."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · VIctory-reloaded",
+          "title": "November 28 prologue-cell measurements",
+          "url": "https://github.com/Biskwit/VIctory-reloaded/blob/0768c1f121cf3956d581682f4cef334a165b89e5/README.md#measurements"
+        },
+        {
+          "outlet": "GitHub · VIctory-RDNA",
+          "title": "Extended Series X 4K session and late-run samples",
+          "url": "https://github.com/XaviFortes/VIctory-RDNA/blob/4e3a4d2a2c8b47c1c7355d7847def528a506af28/README.md#extended-series-x-4k-session-rdna-t2"
+        }
+      ]
+    },
     {
       "id": "2026-11-28-anyxboxx-24-fps-launcher-test",
       "date": "2026-11-28",
@@ -3971,32 +3997,66 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "Public Radeon-tuned fork. Its 4K Series X capture on an RX 7900 XT reached a 20.8 rendered FPS median.",
+      "summary": "Public Radeon-tuned fork. A 37-minute run on an RX 7900 XT with the 4K Fast preset logged 15.35 rendered FPS and exited cleanly.",
       "gta": {
         "loads": 1,
         "boots": 1,
         "menu": 1,
         "world": 1,
         "playable": 1,
-        "fps": 20.8
+        "fps": 15.35
       },
-      "fpsNote": "20.8 rendered FPS median across qualified samples, with 20.3 FPS in heavier samples. Frame generation was off.",
-      "sessionNote": "The maintainer’s 23-minute, 50-second capture ended with a clean exit.",
+      "fpsNote": "15.35 rendered FPS median across gameplay samples in the latest longer test. An earlier 23-minute run on the default preset reached 20.8 rendered FPS.",
+      "sessionNote": "37 minutes and 28 seconds from launch to a clean window close. Gameplay-sample median fell from 19.8 FPS in the first five minutes to 13.5 in the final five.",
       "highlights": [
         "Published telemetry separates general gameplay from heavier samples"
       ],
       "blockers": [
-        "The capture is under 30 minutes and does not establish sustained 30 rendered FPS"
+        "Sustained 30 rendered FPS remains unverified. Late-session performance was lower in the November 28 run."
       ],
       "verification": "self-reported",
       "assessedAt": "2026-11-28",
       "assessedBy": "manual",
-      "checked": "Published Radeon capture and frame-generation settings",
-      "link": "news/2026-11-28-cbl-victory-rdna-longer-tests.html",
+      "checked": "Published Radeon captures and frame-generation settings",
+      "link": "news/2026-11-28-victory-reloaded-cell-rdna-long-run.html",
       "proof": {
-        "label": "4K Radeon benchmark",
-        "url": "https://github.com/XaviFortes/VIctory-RDNA/blob/0acbf5d4cb170b131af94a83a234b3e93933ad8f/README.md"
+        "label": "Extended 4K Radeon capture",
+        "url": "https://github.com/XaviFortes/VIctory-RDNA/blob/4e3a4d2a2c8b47c1c7355d7847def528a506af28/README.md#extended-series-x-4k-session-rdna-t2"
       }
+    },
+    {
+      "id": "victory-reloaded",
+      "name": "VIctory-reloaded",
+      "repo": "Biskwit/VIctory-reloaded",
+      "branch": "main",
+      "tier": "watchlist",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "basedOn": [
+        "vice-tay"
+      ],
+      "summary": "Public fork based on Vice-Tay. The maintainer reports 29.6 FPS in a 12-minute prologue-cell session on an RTX 4090.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1
+      },
+      "highlights": [
+        "Published game-log FPS from repeat tests in the prologue cell"
+      ],
+      "blockers": [
+        "The measured session covers one scene. Frame generation and crash behavior are unspecified."
+      ],
+      "verification": "self-reported",
+      "assessedAt": "2026-11-28",
+      "assessedBy": "manual",
+      "checked": "Published scene benchmarks",
+      "proof": {
+        "label": "Prologue-cell measurements",
+        "url": "https://github.com/Biskwit/VIctory-reloaded/blob/0768c1f121cf3956d581682f4cef334a165b89e5/README.md#measurements"
+      },
+      "link": "news/2026-11-28-victory-reloaded-cell-rdna-long-run.html"
     }
   ],
   "tools": [
