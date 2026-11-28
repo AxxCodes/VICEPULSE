@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Fri, 27 Nov 2026 22:38:50 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Nov 2026 00:19:41 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>fxceless adopts VIctory-NVIDIA as a new release trades FPS for better lighting</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-27-fxceless-nvidia-open-world-test.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-27-fxceless-nvidia-open-world-test.html</guid>
+    <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>One maintainer reports about 17 FPS in a 25-minute open-world run on an RTX 4070. The latest upstream release warns of lower FPS with the improved visuals.</description>
+  </item>
   <item>
     <title>SeriesX Emulator and Port of the Americas repositories go offline</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-27-two-project-repositories-unavailable.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
     <category>Leak</category>
     <description>A note said to ship with the executable says donations fund a secret project and counts every token trade as a vote. None of it can be checked.</description>
-  </item>
-  <item>
-    <title>Cyberleek says the missing GTA VI executable is out, hours before its own deadline</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-exe-released.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-exe-released.html</guid>
-    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Leak</category>
-    <description>The leaker posted the release at 15:36 CET. Nobody has confirmed the file is genuine yet, and no project has booted the game.</description>
   </item>
 </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T22:38:50.650Z",
+  "updated": "2026-11-28T00:19:41.662Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,33 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-27-fxceless-nvidia-open-world-test",
+      "date": "2026-11-27",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Dated maintainer benchmark and public release notes",
+      "title": "fxceless adopts VIctory-NVIDIA as a new release trades FPS for better lighting",
+      "dek": "One maintainer reports about 17 FPS in a 25-minute open-world run on an RTX 4070. The latest upstream release warns of lower FPS with the improved visuals.",
+      "body": [
+        "On November 27, the maintainer of fxceless’s victory-fork said it had ended its previous development line and adopted VIctory-NVIDIA. The maintainer reports averaging about 17 FPS over 25 minutes in the open world at 2560 × 1440 on an RTX 4070 with 32 GB of RAM. The earlier fxceless code averaged about 10 FPS at a lower render size in different scenes. Those runs cannot establish the size of the improvement on the same route.",
+        "The README gives the 17 FPS figure as a reported average and leaves frame generation and crash behavior unspecified for that run. The separate RTX 5070 opening-room test still stands at mostly 26–30 rendered FPS. Frame generation inserts extra display frames, which VICEPULSE excludes from its sustained rendered-FPS target.",
+        "The rebased fxceless fork enables experimental ray tracing by default. In a separate 1080p test on the RTX 4070, its maintainer measured roughly 10–12.6 FPS as scene complexity varied. Later on November 27, upstream VIctory-NVIDIA released v2026.11.27.8 with improved water lighting enabled by default and fixes for texture and lighting artifacts. The release notes warn of lower FPS and give no new timed benchmark.",
+        "VIctory-NVIDIA remains at 90% in the active VICEPULSE Race. The longer run broadens the evidence, but sustained gameplay near 30 rendered FPS still needs repeatable results across heavier scenes. The next evidence review is November 29 at 8 p.m. Martinique time. December 1–7 remains a low-confidence watch window for a qualifying community build. The release date remains unknown."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · fxceless",
+          "title": "November 27 rebase and RTX 4070 test notes",
+          "url": "https://github.com/fxceless/victory-fork/blob/2eade68cade9b2f8cd2511cc97328e83f58508c3/README.md"
+        },
+        {
+          "outlet": "GitHub · VIctory-NVIDIA",
+          "title": "November 27 release notes for v2026.11.27.8",
+          "url": "https://github.com/trustno1-coder/VIctory-NVIDIA/releases/tag/v2026.11.27.8"
+        }
+      ]
+    },
     {
       "id": "2026-11-27-two-project-repositories-unavailable",
       "date": "2026-11-27",
@@ -1830,19 +1857,15 @@
       "tier": "tracked",
       "approach": "Compatibility layer",
       "target": "GTA VI only",
-      "summary": "The public fork previously called victory-gta6. A community tracker attributes the streamed hyphennn build to this project. The fork reports an interactive opening, checkpoint saves and low single-digit gameplay FPS.",
+      "summary": "Public fxceless fork previously associated with the streamed hyphennn build. It adopted VIctory-NVIDIA on November 27 and adds experimental ray-tracing changes. Its current Race score reflects the previously assessed build.",
       "highlights": [
-        "Characters, textures, sky and sunlit geometry render in the opening",
-        "HUD, pause menu and controller input work",
-        "Opening cutscene plays through and a checkpoint can be saved and reloaded",
-        "Fork adds its own meshlet, descriptor and shader fixes",
-        "A community tracker reports improved lighting and hair in a stream attributed to this fork",
-        "A CPU graphics pass fell from 70–220 ms to about 3 ms. Whole frames still took 250–380 ms in that test."
+        "Maintainer documents the switch to VIctory-NVIDIA and credits upstream contributors",
+        "Experimental ray tracing is enabled by default on the rebased fork",
+        "The rebased fork’s RTX 4070 ray-tracing test reports roughly 10–12.6 FPS at 1080p, depending on scene complexity"
       ],
       "blockers": [
-        "Most shadowed surfaces are black; bounce lighting and ray-traced shadows are missing",
-        "Reported 2–4 FPS on an i7-14700KF, RTX 4070 and 32 GB RAM; Windows 11",
-        "Some fixes are specific to the tested game and GPU; independent reproduction pending"
+        "The ray-tracing test covers one PC and supplies no timed crash results",
+        "The 25-minute, 17 FPS open-world result was obtained on upstream VIctory-NVIDIA"
       ],
       "provenOn": null,
       "gta": {
@@ -1880,8 +1903,16 @@
         "lighting": "Direct sunlight works; shadows remain black",
         "shaders": "The prologue renders with major lighting gaps"
       },
-      "fpsNote": "2–4 FPS reported in the prologue",
-      "raceScore": 59.8
+      "fpsNote": "2–4 FPS is the earlier prologue report used in the Race score. The rebased fork separately reports about 10–12.6 FPS with experimental ray tracing.",
+      "raceScore": 59.8,
+      "basedOn": [
+        "victory-nvidia"
+      ],
+      "proof": {
+        "label": "November 27 maintainer test notes",
+        "url": "https://github.com/fxceless/victory-fork/blob/2eade68cade9b2f8cd2511cc97328e83f58508c3/README.md"
+      },
+      "link": "news/2026-11-27-fxceless-nvidia-open-world-test.html"
     },
     {
       "id": "marvis",
@@ -3695,23 +3726,29 @@
         "commits7d": 100,
         "mentions7d": 1
       },
-      "summary": "Public Race leader at 90%. The README reports mostly 26–30 rendered FPS in opening rooms on an RTX 5070 with DLSS Quality.",
+      "summary": "Public Race leader at 90%. Its maintainer reports mostly 26–30 rendered FPS in opening rooms. A separate open-world test on an RTX 4070 reports about 17 FPS over 25 minutes.",
       "fpsNote": "About 20 FPS in community coverage; the README reports 26–30 rendered FPS in opening rooms.",
-      "sessionNote": "Maintainer reports no crashes in measured runs; run lengths are unavailable.",
+      "sessionNote": "The RTX 4070 test ran for 25 minutes. The tester did not specify crash behavior or frame generation for that run.",
       "highlights": [
         "Public project benchmark specifies test hardware and settings",
-        "Frame generation is measured separately from rendered frames"
+        "Frame generation is measured separately from rendered frames",
+        "The fxceless maintainer reports about 17 FPS at 1440p on an RTX 4070 in a 25-minute open-world test",
+        "Release v2026.11.27.8 improves lighting and texture rendering. Its maintainer warns of lower FPS."
       ],
       "blockers": [
-        "Benchmarks cover the opening on one PC",
-        "Ray tracing remains off in the test setup"
+        "No cited timed open-world test shows sustained 30 rendered FPS",
+        "The latest release has no timed benchmark in its release notes. The earlier opening-room test used ray tracing off."
       ],
       "verification": "self-reported",
-      "checked": "Public benchmark and test settings",
-      "evidence": "Maintainer’s public results and community testing",
+      "checked": "Public benchmark, test settings and dated maintainer report",
+      "evidence": "Maintainer’s opening-room benchmark, community reporting and a separate timed open-world test by the fxceless maintainer",
       "assessedAt": "2026-11-27",
       "assessedBy": "manual",
-      "link": "news/2026-11-27-nvidia-multiplayer-and-eta.html"
+      "link": "news/2026-11-27-fxceless-nvidia-open-world-test.html",
+      "proof": {
+        "label": "25-minute RTX 4070 open-world test",
+        "url": "https://github.com/fxceless/victory-fork/blob/2eade68cade9b2f8cd2511cc97328e83f58508c3/README.md"
+      }
     }
   ],
   "tools": [
