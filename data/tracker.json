@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T02:45:12.595Z",
+  "updated": "2026-11-28T04:29:43.438Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,32 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-28-cbl-victory-rdna-longer-tests",
+      "date": "2026-11-28",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Dated maintainer results, run logs and frame-generation settings",
+      "title": "CBL VIctory and VIctory-RDNA document longer GTA VI PC runs",
+      "dek": "CBL reports a clean exit after 72 minutes of uptime on an RTX 5080. VIctory-RDNA logs a 20.8 rendered FPS median on an RX 7900 XT.",
+      "body": [
+        "CBL VIctory, a fork using Vice-Tay’s renderer, recorded 72 minutes and 53 seconds of process uptime on an RTX 5080 at 1440p output. The November 28 results describe a manual controller playthrough from the prison through early missions and into free roam, followed by an idle check, a save and a clean exit. Across about 59 minutes of gameplay and cutscenes before idle, the reported median was 14.5 rendered FPS. Frame generation was off. The night drive dropped to a 10.3 FPS median, and dark patches on water remained visible.",
+        "VIctory-RDNA reports a 23-minute, 50-second capture on an RX 7900 XT using the Series X profile at 4K output. It recorded a median of 20.8 rendered FPS across 260 qualified samples and 20.3 FPS in 144 heavier-scene samples. The run ended cleanly, and the project lists these benchmark figures with frame generation off.",
+        "Both projects enter the VICEPULSE Race on the strength of their published results. These runs show that the builds can stay open through longer tests on the machines used. A public build still needs to sustain around 30 rendered FPS through longer gameplay across heavier scenes and repeat the result on a second PC. The next evidence review is November 29 at 8 p.m. Martinique time. December 1–7 remains a low-confidence watch window for a qualifying community build, and the release date is unknown."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · CBL VIctory",
+          "title": "Endurance results, hardware and session timeline",
+          "url": "https://github.com/cocainebunnylaboratories/cblvictoryvi/blob/4bb264b5961bc13dea5984d71890ecef14f0ed56/results.md"
+        },
+        {
+          "outlet": "GitHub · VIctory-RDNA",
+          "title": "Radeon gameplay captures and rendered FPS",
+          "url": "https://github.com/XaviFortes/VIctory-RDNA/blob/0acbf5d4cb170b131af94a83a234b3e93933ad8f/README.md"
+        }
+      ]
+    },
     {
       "id": "2026-11-27-vice-tay-and-vi-br-port-boat-tests",
       "date": "2026-11-27",
@@ -3862,6 +3888,79 @@
         "openIssues": 2,
         "createdAt": "2026-11-24T03:07:05Z",
         "pushedAt": "2026-11-27T23:30:24Z"
+      }
+    },
+    {
+      "id": "cbl-victory",
+      "name": "CBL VIctory",
+      "repo": "cocainebunnylaboratories/cblvictoryvi",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "basedOn": [
+        "vice-tay"
+      ],
+      "summary": "Public fork using Vice-Tay’s renderer. The maintainer documents a clean exit following a manual playthrough into free roam at 1440p on an RTX 5080.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "fps": 14.5
+      },
+      "fpsNote": "14.5 rendered FPS median across about 59 minutes of gameplay and cutscenes before idle. Frame generation was off.",
+      "sessionNote": "72 minutes and 53 seconds of process uptime, including loading and idle. The tester reports a manual save and a clean exit.",
+      "highlights": [
+        "Dated timeline covers the prison, early missions, driving and on-foot free roam"
+      ],
+      "blockers": [
+        "Low-light shadows and water artifacts remain. The night-driving segment had a median of 10.3 FPS."
+      ],
+      "verification": "self-reported",
+      "assessedAt": "2026-11-28",
+      "assessedBy": "manual",
+      "checked": "Published endurance run and test settings",
+      "link": "news/2026-11-28-cbl-victory-rdna-longer-tests.html",
+      "proof": {
+        "label": "Endurance results and logs",
+        "url": "https://github.com/cocainebunnylaboratories/cblvictoryvi/blob/4bb264b5961bc13dea5984d71890ecef14f0ed56/results.md"
+      }
+    },
+    {
+      "id": "victory-rdna",
+      "name": "VIctory-RDNA",
+      "repo": "XaviFortes/VIctory-RDNA",
+      "branch": "main",
+      "tier": "tracked",
+      "approach": "Compatibility layer",
+      "target": "GTA VI only",
+      "summary": "Public Radeon-tuned fork. Its 4K Series X capture on an RX 7900 XT reached a 20.8 rendered FPS median.",
+      "gta": {
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
+        "fps": 20.8
+      },
+      "fpsNote": "20.8 rendered FPS median across qualified samples, with 20.3 FPS in heavier samples. Frame generation was off.",
+      "sessionNote": "The maintainer’s 23-minute, 50-second capture ended with a clean exit.",
+      "highlights": [
+        "Published telemetry separates general gameplay from heavier samples"
+      ],
+      "blockers": [
+        "The capture is under 30 minutes and does not establish sustained 30 rendered FPS"
+      ],
+      "verification": "self-reported",
+      "assessedAt": "2026-11-28",
+      "assessedBy": "manual",
+      "checked": "Published Radeon capture and frame-generation settings",
+      "link": "news/2026-11-28-cbl-victory-rdna-longer-tests.html",
+      "proof": {
+        "label": "4K Radeon benchmark",
+        "url": "https://github.com/XaviFortes/VIctory-RDNA/blob/0acbf5d4cb170b131af94a83a234b3e93933ad8f/README.md"
       }
     }
   ],

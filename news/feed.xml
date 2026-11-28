@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Sat, 28 Nov 2026 02:45:12 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Nov 2026 04:29:43 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>CBL VIctory and VIctory-RDNA document longer GTA VI PC runs</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-28-cbl-victory-rdna-longer-tests.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-28-cbl-victory-rdna-longer-tests.html</guid>
+    <pubDate>Sat, 28 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>CBL reports a clean exit after 72 minutes of uptime on an RTX 5080. VIctory-RDNA logs a 20.8 rendered FPS median on an RX 7900 XT.</description>
+  </item>
   <item>
     <title>Vice-Tay and VI-BR-PORT approach 30 FPS in short GTA VI boat tests</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-27-vice-tay-and-vi-br-port-boat-tests.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
     <category>Port</category>
     <description>He has since published the code as VIctory, but nobody else has reproduced the run yet. Viewers who studied the stream think it is most likely real.</description>
-  </item>
-  <item>
-    <title>Leonida gets GTA VI&#39;s executable running, but nothing is on screen yet</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-exe-runs.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-leonida-exe-runs.html</guid>
-    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Port</category>
-    <description>Contributors&#39; builds run the game&#39;s own code for minutes behind a blank window; posts in its Discord say it won&#39;t be playable today, but maybe tomorrow.</description>
   </item>
 </channel>
 </rss>
