@@ -5,8 +5,16 @@
   <link>https://axxcodes.github.io/VICEPULSE/news/</link>
   <description>Takedowns, leaks, legal news, scams and real progress on running GTA VI on PC.</description>
   <language>en</language>
-  <lastBuildDate>Sat, 28 Nov 2026 04:29:43 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Nov 2026 06:12:11 GMT</lastBuildDate>
   <atom:link href="https://axxcodes.github.io/VICEPULSE/news/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>AnyXboxX reports 24 FPS median in a GTA VI launcher test</title>
+    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-28-anyxboxx-24-fps-launcher-test.html</link>
+    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-28-anyxboxx-24-fps-launcher-test.html</guid>
+    <pubDate>Sat, 28 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Port</category>
+    <description>The 14-minute run reached the 30 FPS cap in lighter scenes. Heavy scenes still fell to 10–18 FPS.</description>
+  </item>
   <item>
     <title>CBL VIctory and VIctory-RDNA document longer GTA VI PC runs</title>
     <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-28-cbl-victory-rdna-longer-tests.html</link>
@@ -238,14 +246,6 @@
     <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
     <category>Takedown</category>
     <description>The 179,000-member server stopped resolving late on Monday. Members say Discord banned it; nobody has said why. Update: the GitHub repository has since been deleted too.</description>
-  </item>
-  <item>
-    <title>Exclusive: Marvis livestreams GTA VI reaching its menus at about 15 fps</title>
-    <link>https://axxcodes.github.io/VICEPULSE/news/2026-11-23-marvis-menus-stream.html</link>
-    <guid isPermaLink="true">https://axxcodes.github.io/VICEPULSE/news/2026-11-23-marvis-menus-stream.html</guid>
-    <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
-    <category>Port</category>
-    <description>He has since published the code as VIctory, but nobody else has reproduced the run yet. Viewers who studied the stream think it is most likely real.</description>
   </item>
 </channel>
 </rss>

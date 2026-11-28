@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T04:29:43.438Z",
+  "updated": "2026-11-28T06:12:11.764Z",
   "site": {
     "title": "VICEPULSE",
     "heroImage": "assets/img/vice-night.webp"
@@ -15,6 +15,33 @@
     "source": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/"
   },
   "news": [
+    {
+      "id": "2026-11-28-anyxboxx-24-fps-launcher-test",
+      "date": "2026-11-28",
+      "category": "Port",
+      "by": "sources",
+      "checked": "Dated maintainer report and renderer merge notes",
+      "title": "AnyXboxX reports 24 FPS median in a GTA VI launcher test",
+      "dek": "The 14-minute run reached the 30 FPS cap in lighter scenes. Heavy scenes still fell to 10–18 FPS.",
+      "body": [
+        "The AnyXboxX team reported a 24.4 FPS median in the game world during a 14-minute launcher session on November 27. The test used the Series X profile at 1080p output with a warm shader cache on an RTX 4070 SUPER and Core i7-13700KF. The game reached its 30 FPS cap in scenes with up to about 4,000 draw calls. Heavier scenes with roughly 7,000–11,000 calls fell to 10–18 FPS.",
+        "The benchmark notes give the in-game FPS figure without a separate rendered and generated frame count. They also give no crash count or continuous gameplay duration within the 14-minute launcher session. The same update documents mouse camera controls and an in-game performance overlay.",
+        "AnyXboxX ran GTA VI through its bundled build of the Vice-Tay renderer. A later merge updated that renderer and added frame-generation options. The 24.4 FPS measurement applies to the earlier tested build. The later merge notes leave a follow-up warm-cache gameplay comparison pending.",
+        "AnyXboxX moves from the Watchlist into the VICEPULSE Race based on the documented gameplay test. VIctory-NVIDIA remains the active leader at 90%. The next evidence review is November 29 at 8 p.m. Martinique time. December 1–7 remains a low-confidence watch window for a qualifying community build, and the release date is unknown."
+      ],
+      "sources": [
+        {
+          "outlet": "GitHub · AnyXboxX",
+          "title": "November 27 launcher benchmark and input updates",
+          "url": "https://github.com/LooperSalty/AnyXboxX/pull/467"
+        },
+        {
+          "outlet": "GitHub · AnyXboxX",
+          "title": "Later Vice-Tay renderer merge and pending gameplay test",
+          "url": "https://github.com/LooperSalty/AnyXboxX/pull/563"
+        }
+      ]
+    },
     {
       "id": "2026-11-28-cbl-victory-rdna-longer-tests",
       "date": "2026-11-28",
@@ -2549,18 +2576,17 @@
       "name": "AnyXboxX",
       "repo": "LooperSalty/AnyXboxX",
       "branch": "main",
-      "tier": "watchlist",
+      "tier": "tracked",
       "approach": "HLE emulator",
       "target": "Any Xbox Series game",
-      "summary": "The AnyXboxX team tests GTA VI through its own VIctory fork on Windows 11 with an RTX 4070 SUPER.",
+      "summary": "AnyXboxX runs GTA VI through a bundled fork of the Vice-Tay renderer. Its maintainer reports a 24.4 FPS median in the world at 1080p output on an RTX 4070 SUPER.",
       "highlights": [
-        "The maintainer measured 4.8–5.4 FPS with player control in the world",
-        "Newer tests reported 5.3–6.9 FPS in a run from a fresh save into the world",
-        "A contributor reported about 45 minutes at about 2 FPS across the first two missions"
+        "Reached the 30 FPS game cap in lighter scenes during the 14-minute launcher test",
+        "The launcher adds mouse camera controls and an in-game performance overlay"
       ],
       "blockers": [
-        "The 45-minute report has no published run log",
-        "Some graphics pipelines fail and ray-traced effects are missing"
+        "Heavy scenes dropped to 10–18 FPS, with dark interiors and missing graphics",
+        "A later renderer merge has no comparable warm-cache gameplay result in its notes"
       ],
       "groundwork": {
         "loader": 0.65,
@@ -2570,14 +2596,14 @@
       },
       "provenOn": "GDK sample games (not retail)",
       "gta": {
-        "loads": 0,
-        "boots": 0,
-        "menu": 0,
-        "world": 0,
-        "playable": 0,
+        "loads": 1,
+        "boots": 1,
+        "menu": 1,
+        "world": 1,
+        "playable": 1,
         "story": 0,
         "render": 0,
-        "fps": 0,
+        "fps": 24.4,
         "stability": "unknown"
       },
       "verification": "self-reported",
@@ -2586,30 +2612,39 @@
         "forks": 93,
         "openIssues": 111,
         "createdAt": "2026-11-21T00:18:13Z",
-        "pushedAt": "2026-11-27T19:01:11Z",
+        "pushedAt": "2026-11-28T00:01:45Z",
         "commits7d": 100,
         "archived": false,
         "missing": false
       },
-      "assessedAt": "2026-11-24",
+      "assessedAt": "2026-11-28",
       "assessedBy": "manual",
       "readmeSha": "db6da79e869bec88cfaa2e3156185eacf786a75e3f04e62973d3686b1fb935dc",
       "claims": [],
       "readmeChangedAt": "2026-11-24",
       "visualNotes": {
         "color": "3D world visible; some walls can turn transparent",
-        "lighting": "Irradiance shaders render; ray tracing remains off",
-        "shaders": "Most of the tested scene draws; some pipelines fail"
+        "lighting": "Shadowed and indoor areas remain dark with ray tracing off",
+        "shaders": "Some effects are missing in the maintainer’s test"
       },
       "visuals": {
         "color": 0.55,
         "lighting": 0.35,
         "shaders": 0.65
       },
-      "fpsNote": "4.8–5.4 FPS measured with player control",
-      "sessionNote": "About 45 min reported by a contributor; no run log",
-      "evidence": "Maintainer-reported logs and contributor report",
-      "raceScore": 2.5
+      "fpsNote": "24.4 FPS median reported in-world at 1080p output. The benchmark gives no generated-frame breakdown.",
+      "sessionNote": "14-minute launcher session. The maintainer does not specify crash count or uninterrupted gameplay duration.",
+      "evidence": "Maintainer’s dated gameplay benchmark and renderer merge notes",
+      "raceScore": 65,
+      "basedOn": [
+        "vice-tay"
+      ],
+      "checked": "Published benchmark settings and repository history",
+      "link": "news/2026-11-28-anyxboxx-24-fps-launcher-test.html",
+      "proof": {
+        "label": "November 27 launcher benchmark",
+        "url": "https://github.com/LooperSalty/AnyXboxX/pull/467"
+      }
     },
     {
       "id": "keylime",
